@@ -1,10 +1,11 @@
 import { Box } from './Box';
+import { Button } from './Button';
 import { Line } from './Line';
 import { Text } from './Text';
 
 export const Hero = () => {
   return (
-    <Box>
+    <Box width="max-content">
       <Text as="h1" fontSizeFluid="8">
         Hi, I&apos;m Christian.
       </Text>
@@ -17,6 +18,11 @@ export const Hero = () => {
         tend to focus on include developer experience tooling, responsive web
         design, and occasionally some attempts at teaching.
       </Text>
+      <Box marginTop="7">
+        <Button variant="cta" aria-label="Open contact form.">
+          Contact
+        </Button>
+      </Box>
     </Box>
   );
 };

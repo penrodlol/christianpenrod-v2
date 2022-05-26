@@ -1,5 +1,3 @@
-import { BREAKPOINTS } from './breakpoints';
-
 function setProp(name: string, size: number) {
   return [...Array(size + 1)].map((_, i) => `var(--${name}-${i})`);
 }
@@ -25,7 +23,7 @@ export const THEME = {
   sizes: setProp('size', 15),
   sizeContents: setProp('size-content', 3),
   space: setProp('size', 15),
-  breakpoints: BREAKPOINTS,
+  // breakpoints: BREAKPOINTS,
 
   // Misc
   borders: setProp('border-size', 5),
