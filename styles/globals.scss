@@ -1,0 +1,12 @@
+@import 'typography';
+@import 'theme';
+
+html {
+  font-family: var(--font-serif);
+  font-weight: var(--font-weight-8);
+  letter-spacing: var(--font-letterspacing-1);
+  color: var(--text-1);
+  background: var(--surface-3);
+  scrollbar-gutter: stable;
+  -webkit-font-smoothing: antialiased;
+}

@@ -1,0 +1,25 @@
+@import 'open-props/normalize';
+@import 'open-props/fonts';
+@import 'open-props/sizes';
+@import 'open-props/zindex';
+@import 'open-props/borders';
+@import 'open-props/shadows';
+@import 'open-props/easings';
+@import 'open-props/animations';
+
+:root {
+  --brand-1: hsl(229, 42%, 69%);
+  --brand-2: hsl(230, 26%, 59%);
+  --brand-3: hsl(230, 14%, 41%);
+  --brand-4: hsl(233, 8%, 23%);
+
+  --text-1: hsl(0, 0%, 95%);
+  --text-2: hsl(0, 0%, 75%);
+
+  --surface-1: hsl(0, 0%, 23%);
+  --surface-2: hsl(0, 0%, 18%);
+  --surface-3: hsl(0, 0%, 15%);
+
+  --accent-1: hsl(265, 62%, 90%);
+  --accent-2: hsl(266, 77%, 88%);
+}
