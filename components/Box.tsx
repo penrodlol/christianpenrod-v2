@@ -1,9 +1,9 @@
 import styled, { css } from 'styled-components';
 import {
-  background,
-  BackgroundProps,
   border,
   BorderProps,
+  color,
+  ColorProps,
   compose,
   grid,
   GridProps,
@@ -29,7 +29,7 @@ export interface BoxProps
   extends SpaceProps,
     LayoutProps,
     GridProps,
-    BackgroundProps,
+    ColorProps,
     BorderProps,
     PositionProps,
     ShadowProps {
@@ -41,15 +41,6 @@ export const Box = styled.div<BoxProps>(
   (props) => css`
     ${props.grid && 'display: grid;'}
 
-    ${compose(
-      space,
-      layout,
-      grid,
-      background,
-      border,
-      position,
-      shadow,
-      additional,
-    )}
+    ${compose(space, layout, grid, color, border, position, shadow, additional)}
   `,
 );
