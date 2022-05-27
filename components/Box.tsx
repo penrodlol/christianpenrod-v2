@@ -34,12 +34,14 @@ export interface BoxProps
     PositionProps,
     ShadowProps {
   grid?: boolean;
+  gap?: string;
   borderRadiusBlob?: string;
 }
 
 export const Box = styled.div<BoxProps>(
   (props) => css`
     ${props.grid && 'display: grid;'}
+    ${props.gap && `gap: var(--size-${props.gap});`}
 
     ${compose(space, layout, grid, color, border, position, shadow, additional)}
   `,
