@@ -35,7 +35,7 @@ export const Button = styled.button<ButtonProps>`
       },
       cta: {
         bg: 'accent.2',
-        color: 'buttontext',
+        color: 'surface.1',
         boxShadow: '3',
         padding: '0.8rem var(--size-7)',
         '&:hover:enabled': {
