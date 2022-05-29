@@ -9,7 +9,7 @@ export const Line: FC<LineProps> = ({ size }) => (
   <Box
     backgroundColor="brand.1"
     borderRadius="2"
-    height="1"
+    height="2"
     marginY={size || '3'}
   />
 );
