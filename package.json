@@ -9,7 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@artsy/fresnel": "^3.5.0",
     "@fontsource/balsamiq-sans": "^4.5.7",
     "@fontsource/nunito": "^4.5.9",
     "next": "12.1.6",
