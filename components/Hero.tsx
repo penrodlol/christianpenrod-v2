@@ -12,13 +12,13 @@ export const Hero = () => {
       <Text as="h3" color="text.2" fontSizeFluid="5">
         Front-End Web Developer
       </Text>
-      <Line />
-      <Text as="p" fontSize="3" fontWeight="6">
+      <Line size="7" />
+      <Text as="p" fontSize="4" fontWeight="6">
         Developing for the web since 2015, based in Pittsburgh PA. A few areas I
         tend to focus on include developer experience tooling, responsive web
         design, and occasionally some attempts at teaching.
       </Text>
-      <Box marginTop="7">
+      <Box marginTop="9">
         <Button variant="cta" aria-label="Open contact form.">
           Contact
         </Button>
