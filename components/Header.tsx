@@ -22,7 +22,7 @@ export const Header = () => {
         <Box flexContainer gap="8">
           {ROUTES.map((route) => (
             <Route key={route} href={`/`} passHref>
-              <Anchor fontSize="4" aria-label={`Navigate to ${route}`}>
+              <Anchor fontSize="3" aria-label={`Navigate to ${route}`}>
                 {route}
               </Anchor>
             </Route>
