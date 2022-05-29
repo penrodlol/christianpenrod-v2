@@ -17,6 +17,6 @@ export const Anchor = styled(Text.withComponent('a')).attrs<AnchorProps>(
   border-radius: var(--radius-2);
 
   &:hover {
-    color: var(--accent-2);
+    color: var(--brand-1);
   }
 `;
