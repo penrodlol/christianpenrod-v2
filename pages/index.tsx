@@ -1,4 +1,5 @@
 import { Box } from '@components/Box';
+import { GridSurface } from '@components/GridSurface';
 import { Header } from '@components/Header';
 import { Hero } from '@components/Hero';
 import { Layout } from '@components/Layout';
@@ -30,7 +31,7 @@ const Home = () => {
           </Box>
         </Box>
         <Box flex="40%" height="100%" padding="4">
-          <Box bg="surface.1" size="inherit" borderRadius="3"></Box>
+          <GridSurface size="inherit" borderRadius="3"></GridSurface>
         </Box>
       </Box>
     </Layout>
