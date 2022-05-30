@@ -5,20 +5,18 @@ import { Box } from './Box';
 export type GridSurfaceProps = PropsWithChildren<typeof Box.defaultProps>;
 
 export const GridSurface = (({ children, ...props }: GridSurfaceProps) => (
-  <Wrapper {...props}>
-    <InnerWrapper>{children}</InnerWrapper>
+  <Wrapper position="relative" zIndex="1" bg="surface.1" {...props}>
+    <Box position="relative" zIndex="2">
+      {children}
+    </Box>
   </Wrapper>
 )) as typeof Box;
 
 const Wrapper = styled(Box)`
-  --horizontal: linear-gradient(var(--brand-1) 2px, transparent 0);
-  --vertical: linear-gradient(90deg, var(--brand-1) 2px, transparent 0);
-
-  position: relative;
-  z-index: var(--layer-2);
-  background: var(--surface-1);
-
   &::before {
+    --horizontal: linear-gradient(var(--brand-1) 2px, transparent 0);
+    --vertical: linear-gradient(90deg, var(--brand-1) 2px, transparent 0);
+
     content: '';
     position: absolute;
     inset: 0;
@@ -29,9 +27,4 @@ const Wrapper = styled(Box)`
     background-image: var(--horizontal), var(--vertical);
     background-size: var(--size-10) var(--size-10);
   }
-`;
-
-const InnerWrapper = styled.div`
-  position: relative;
-  z-index: var(--layer-2);
 `;

@@ -1,7 +1,9 @@
 import { BREAKPOINTS, initBreakpointAliases } from './breakpoints';
 
-function setProp(name: string, size: number) {
-  return [...Array(size + 1)].map((_, i) => `var(--${name}-${i})`);
+function setProp(name: string, size: number, more?: Record<string, string>) {
+  const prop = [...Array(size + 1)].map((_, i) => `var(--${name}-${i})`);
+  if (more) Object.entries(more).forEach(([k, v]) => ((prop as any)[k] = v));
+  return prop;
 }
 
 export const THEME = {
@@ -32,6 +34,7 @@ export const THEME = {
   radii: setProp('radius', 6),
   radiiBlobs: setProp('radius-blob', 5),
   shadows: setProp('shadow', 6),
+  zIndices: setProp('layer', 5, { important: 'var(--layer-important)' }),
 };
 
 initBreakpointAliases();
