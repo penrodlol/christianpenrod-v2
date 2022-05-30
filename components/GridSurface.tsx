@@ -22,7 +22,7 @@ const Wrapper = styled(Box)`
     content: '';
     position: absolute;
     inset: 0;
-    opacity: 0.25;
+    opacity: 0.125;
     border-radius: inherit;
     z-index: var(--layer-1);
     box-shadow: inset 0px 0px 0px 2px var(--brand-1);
