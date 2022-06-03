@@ -10,3 +10,19 @@ html {
   scrollbar-gutter: stable;
   -webkit-font-smoothing: antialiased;
 }
+
+body {
+  &::before {
+    --horizontal: linear-gradient(var(--brand-1) 2px, transparent 0);
+    --vertical: linear-gradient(90deg, var(--brand-1) 2px, transparent 0);
+
+    content: '';
+    position: fixed;
+    inset: -2rem;
+    z-index: var(--layer-1);
+    opacity: 0.075;
+    box-shadow: inset 0px 0px 0px 2px var(--brand-1);
+    background-image: var(--horizontal), var(--vertical);
+    background-size: var(--size-10) var(--size-10);
+  }
+}

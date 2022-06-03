@@ -1,5 +1,4 @@
 import { Box } from '@components/Box';
-import { GridSurface } from '@components/GridSurface';
 import { Header } from '@components/Header';
 import { Hero } from '@components/Hero';
 import { Layout } from '@components/Layout';
@@ -8,9 +7,9 @@ import { SocialLinks } from '@components/SocialLinks';
 const Home = () => {
   return (
     <Layout>
-      <Box flexContainer position="absolute" inset="0px" gap="4">
+      <Box flexContainer height="100vh" gap="4">
         <Box
-          flex="60%"
+          flex="65%"
           flexContainer
           flexDirection="column"
           margin="4"
@@ -23,15 +22,16 @@ const Home = () => {
             flexContainer
             flexDirection="column"
             justifyContent="space-between"
+            gap="8"
             margin="0 auto"
-            marginTop="11"
+            paddingTop="11"
           >
             <Hero />
             <SocialLinks />
           </Box>
         </Box>
-        <Box flex="40%" height="100%" padding="4">
-          <GridSurface size="inherit" borderRadius="3"></GridSurface>
+        <Box flex="35%" flexContainer padding="4">
+          <Box bg="surface.1" size="100%" borderRadius="3"></Box>
         </Box>
       </Box>
     </Layout>
