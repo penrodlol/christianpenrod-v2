@@ -1,3 +1,5 @@
+// @ts-ignore
+import OpenPropSizes from 'open-props/src/sizes';
 import { THEME } from './theme';
 
 export type BreakpointAlias = typeof BREAKPOINT_ALIASES[number];
@@ -7,7 +9,7 @@ export type Breakpoints = Array<string> & Partial<BreakpointAliases>;
 // prettier-ignore
 export const BREAKPOINT_ALIASES = ['xxs', 'xs', 'sm', 'md', 'lg', 'xl', 'xxl'] as const;
 export const BREAKPOINTS: Breakpoints = BREAKPOINT_ALIASES.map(
-  (alias) => `var(--size-${alias})`,
+  (alias) => OpenPropSizes[`--size-${alias}`],
 );
 
 export function initBreakpointAliases() {
