@@ -7,7 +7,7 @@ const moveUpAnimation = keyframes`
 `;
 
 export interface ButtonProps {
-  variant: 'primary' | 'cta' | 'basic' | 'icon';
+  variant: 'primary' | 'cta' | 'icon';
 }
 
 export const Button = styled.button<ButtonProps>`
@@ -41,13 +41,6 @@ export const Button = styled.button<ButtonProps>`
         '&:hover:enabled': {
           bg: 'accent.1',
           boxShadow: '4',
-        },
-      },
-      basic: {
-        bg: 'transparent',
-        color: 'text.1',
-        '&:hover:enabled': {
-          animation: 'unset',
         },
       },
       icon: {
