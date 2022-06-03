@@ -1,4 +1,3 @@
-import { MOTION_OK } from '@const/motion';
 import styled, { keyframes } from 'styled-components';
 import { variant } from 'styled-system';
 
@@ -15,7 +14,7 @@ export const Button = styled.button<ButtonProps>`
   font-size: var(--font-size-3);
   border-radius: var(--radius-2);
 
-  ${MOTION_OK} {
+  @media (prefers-reduced-motion: no-preference) {
     &:hover:enabled {
       animation: ${moveUpAnimation} 0.5s forwards;
       animation-timing-function: var(--ease-squish-5);
