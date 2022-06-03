@@ -9,6 +9,7 @@ const Home = () => {
     <Layout>
       <Box flexContainer height="100vh" gap="4">
         <Box
+          as="section"
           flex="65%"
           flexContainer
           flexDirection="column"
@@ -30,7 +31,7 @@ const Home = () => {
             <SocialLinks />
           </Box>
         </Box>
-        <Box flex="35%" flexContainer padding="4">
+        <Box as="section" flex="35%" flexContainer padding="4">
           <Box bg="surface.1" size="100%" borderRadius="3"></Box>
         </Box>
       </Box>
