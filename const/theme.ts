@@ -31,7 +31,7 @@ export const THEME = {
 
   // Misc
   borders: setProp('border-size', 5),
-  radii: setProp('radius', 6),
+  radii: setProp('radius', 6, { round: 'var(--radius-round)' }),
   radiiBlobs: setProp('radius-blob', 5),
   shadows: setProp('shadow', 6),
   zIndices: setProp('layer', 5, { important: 'var(--layer-important)' }),
