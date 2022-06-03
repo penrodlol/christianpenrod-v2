@@ -43,7 +43,10 @@ const Home = () => {
             flexDirection="column"
             gap="8"
             paddingX="8"
-            borderY="solid var(--size-8) var(--surface-1)"
+            paddingTop="4"
+            paddingBottom="6"
+            borderTop="solid var(--size-6) var(--surface-1)"
+            borderBottom="solid var(--size-8) var(--surface-1)"
             boxShadow="4"
             overflowY="auto"
           >
