@@ -1,6 +1,6 @@
 import { BREAKPOINTS, initBreakpointAliases } from './breakpoints';
 
-function setProp(name: string, size: number, more?: Record<string, string>) {
+function setProp(name: string, size: number, more?: Record<string, unknown>) {
   const prop = [...Array(size + 1)].map((_, i) => `var(--${name}-${i})`);
   if (more) Object.entries(more).forEach(([k, v]) => ((prop as any)[k] = v));
   return prop;
@@ -24,9 +24,9 @@ export const THEME = {
   fontWeights: setProp('font-weight', 9),
 
   // Layout
-  sizes: setProp('size', 15),
+  sizes: setProp('size', 15, { fluid: setProp('size-fluid', 10) }),
   sizeContents: setProp('size-content', 3),
-  space: setProp('size', 15),
+  space: setProp('size', 15, { fluid: setProp('size-fluid', 10) }),
   breakpoints: BREAKPOINTS,
 
   // Misc
