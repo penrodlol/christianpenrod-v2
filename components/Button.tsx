@@ -1,9 +1,5 @@
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 import { variant } from 'styled-system';
-
-const moveUpAnimation = keyframes`
-  to { transform: translateY(-0.125rem); }
-`;
 
 export interface ButtonProps {
   variant: 'primary' | 'cta' | 'icon';
@@ -13,13 +9,6 @@ export const Button = styled.button<ButtonProps>`
   font-weight: var(--font-weight-8);
   font-size: var(--font-size-3);
   border-radius: var(--radius-2);
-
-  @media (prefers-reduced-motion: no-preference) {
-    &:hover:enabled {
-      animation: ${moveUpAnimation} 0.5s forwards;
-      animation-timing-function: var(--ease-squish-5);
-    }
-  }
 
   ${variant({
     variants: {
@@ -34,7 +23,7 @@ export const Button = styled.button<ButtonProps>`
       },
       cta: {
         bg: 'accent.2',
-        color: 'surface.1',
+        color: 'black',
         boxShadow: '3',
         padding: '0.8rem var(--size-7)',
         '&:hover:enabled': {

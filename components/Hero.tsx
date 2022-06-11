@@ -6,10 +6,10 @@ import { Text } from './Text';
 export const Hero = () => {
   return (
     <>
-      <Text as="h1" fontSizeFluid="8">
+      <Text as="h1" fontSize="fluid.8">
         Hi, I&apos;m Christian.
       </Text>
-      <Text as="h3" color="text.2" fontSizeFluid="5">
+      <Text as="h3" color="text.2" fontSize="fluid.5">
         Front-End Web Developer
       </Text>
       <Line size="7" />

@@ -12,6 +12,7 @@ export const Anchor = styled(Text.withComponent('a')).attrs<AnchorProps>(
     rel: external ? 'noopener noreferrer' : undefined,
   }),
 )<AnchorProps>`
+  color: var(--text-1);
   position: relative;
   text-decoration: none;
   border-radius: var(--radius-2);
