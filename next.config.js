@@ -1,5 +1,5 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
+const nextConfig = require('next-contentlayer').withContentlayer({
   reactStrictMode: true,
   swcMinify: true,
   compiler: { styledComponents: true },
@@ -7,11 +7,11 @@ const nextConfig = {
     config.module.rules.push({
       test: /\.svg$/i,
       issuer: /\.[jt]sx?$/,
-      use: ["@svgr/webpack"],
+      use: ['@svgr/webpack'],
     });
 
     return config;
   },
-};
+});
 
 module.exports = nextConfig;
