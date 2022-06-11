@@ -5,7 +5,7 @@ import { Text } from './Text';
 
 export const Hero = () => {
   return (
-    <Box maxWidth="max-content">
+    <>
       <Text as="h1" fontSizeFluid="8">
         Hi, I&apos;m Christian.
       </Text>
@@ -23,6 +23,6 @@ export const Hero = () => {
           Contact
         </Button>
       </Box>
-    </Box>
+    </>
   );
 };

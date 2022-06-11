@@ -1,10 +1,12 @@
 import { PropsWithChildren } from 'react';
 import { Box } from './Box';
+import { Header } from './Header';
 
-export const Layout = ({ children }: PropsWithChildren<{}>) => {
+export const Layout = ({ children }: PropsWithChildren<unknown>) => {
   return (
-    <Box as="main" position="relative" zIndex="2">
-      {children}
+    <Box position="relative" zIndex="2">
+      <Header />
+      <main> {children}</main>
     </Box>
   );
 };

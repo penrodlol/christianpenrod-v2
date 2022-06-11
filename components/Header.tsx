@@ -7,28 +7,38 @@ const ROUTES = ['About', 'Projects', 'Blog'];
 
 export const Header = () => {
   return (
-    <header>
+    <Box as="header" bg="surface.3" boxShadow="2">
       <Box
         as="nav"
         flexContainer
         alignItems="center"
         justifyContent="space-between"
+        paddingY="fluid.1"
+        paddingX="fluid.3"
+        maxWidth="xl"
+        margin="0 auto"
       >
         <Route href="/" passHref>
           <Anchor aria-label="Navigate to Home">
             <LogoIcon height={40} width={50} />
           </Anchor>
         </Route>
-        <Box flexContainer gap="8">
-          {ROUTES.map((route) => (
-            <Route key={route} href={`/`} passHref>
-              <Anchor fontSize="3" aria-label={`Navigate to ${route}`}>
-                {route}
-              </Anchor>
-            </Route>
-          ))}
-        </Box>
+        <DesktopHeader />
       </Box>
-    </header>
+    </Box>
   );
 };
+
+const DesktopHeader = () => (
+  <Box flexContainer gap="9">
+    {ROUTES.map((route) => (
+      <Route key={route} href={`/`} passHref>
+        <Anchor fontSize="3" aria-label={`Navigate to ${route}`}>
+          {route}
+        </Anchor>
+      </Route>
+    ))}
+  </Box>
+);
+
+const MobileHeader = () => <Box></Box>;
