@@ -7,7 +7,15 @@ const ROUTES = ['About', 'Projects', 'Blog'];
 
 export const Header = () => {
   return (
-    <Box as="header" bg="surface.3" boxShadow="2">
+    <Box
+      as="header"
+      position="sticky"
+      top="0px"
+      left="0px"
+      right="0px"
+      bg="surface.3"
+      boxShadow="2"
+    >
       <Box
         as="nav"
         flexContainer
