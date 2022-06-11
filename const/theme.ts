@@ -17,8 +17,7 @@ export const THEME = {
 
   // Typography
   fonts: [{ serif: 'var(--font-serif)', fancy: 'var(--font-fancy)' }],
-  fontSizes: setProp('font-size', 8),
-  fontSizeFluids: setProp('font-size-fluid', 8),
+  fontSizes: setProp('font-size', 8, { fluid: setProp('font-size-fluid', 8) }),
   letterSpacings: setProp('font-letterspacing', 7),
   lineHeights: setProp('font-lineheight', 5),
   fontWeights: setProp('font-weight', 9),
