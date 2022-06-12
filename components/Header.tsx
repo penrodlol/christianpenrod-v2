@@ -3,8 +3,6 @@ import LogoIcon from '@svg/logo.svg';
 import Route from 'next/link';
 import { Anchor } from './Anchor';
 
-const ROUTES = ['About', 'Projects', 'Blog'];
-
 export const Header = () => {
   return (
     <Box
@@ -22,7 +20,7 @@ export const Header = () => {
         alignItems="center"
         justifyContent="space-between"
         paddingY="fluid.1"
-        paddingX="fluid.3"
+        paddingX="fluid.4"
         maxWidth="xl"
         margin="0 auto"
       >
@@ -31,22 +29,22 @@ export const Header = () => {
             <LogoIcon height={40} width={50} />
           </Anchor>
         </Route>
-        <DesktopHeader />
+        <Box flexContainer gap="9">
+          <Routes />
+        </Box>
       </Box>
     </Box>
   );
 };
 
-const DesktopHeader = () => (
-  <Box flexContainer gap="9">
-    {ROUTES.map((route) => (
+const Routes = () => (
+  <>
+    {['About', 'Projects', 'Blog'].map((route) => (
       <Route key={route} href={`/`} passHref>
         <Anchor fontSize="3" aria-label={`Navigate to ${route}`}>
           {route}
         </Anchor>
       </Route>
     ))}
-  </Box>
+  </>
 );
-
-const MobileHeader = () => <Box></Box>;

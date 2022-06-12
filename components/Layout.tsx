@@ -6,7 +6,9 @@ export const Layout = ({ children }: PropsWithChildren<unknown>) => {
   return (
     <Box position="relative" zIndex="2">
       <Header />
-      <main> {children}</main>
+      <Box as="main" maxWidth="xl" marginX="auto" marginY="fluid.8">
+        {children}
+      </Box>
     </Box>
   );
 };
