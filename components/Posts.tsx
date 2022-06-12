@@ -14,7 +14,7 @@ export interface PostsProps {
 export const Posts: FC<PostsProps> = ({ posts }) => (
   <Box
     gridContainer
-    gridTemplateColumns={{ _: 'auto', lg: 'repeat(3, minmax(0, 1fr))' }}
+    gridTemplateColumns={{ lg: 'repeat(3, minmax(0, 1fr))' }}
     gap="8"
   >
     {posts.map((post) => (
