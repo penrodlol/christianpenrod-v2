@@ -40,7 +40,7 @@ export const Header = () => {
 const Routes = () => (
   <>
     {['About', 'Projects', 'Blog'].map((route) => (
-      <Route key={route} href={`/`} passHref>
+      <Route key={route} href={`/${route.toLowerCase()}`} passHref>
         <Anchor fontSize="3" aria-label={`Navigate to ${route}`}>
           {route}
         </Anchor>

@@ -1,7 +1,8 @@
 import { Box } from '@components/Box';
 import { Hero } from '@components/Hero';
 import { Layout } from '@components/Layout';
-import { RecentPosts } from '@components/RecentPosts';
+import { Posts } from '@components/Posts';
+import { Text } from '@components/Text';
 import { allPosts, Post } from 'contentlayer/generated';
 import dayjs from 'dayjs';
 import { GetStaticProps, InferGetStaticPropsType, NextPage } from 'next';
@@ -16,7 +17,12 @@ const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
           <Hero />
         </Box>
         <Box as="section" marginTop="fluid.8">
-          <RecentPosts posts={posts} />
+          <Text as="h3" fontSize="fluid.5" fontWeight="bold" color="text.2">
+            Recent Posts
+          </Text>
+          <Box marginTop="fluid.4">
+            <Posts posts={posts} />
+          </Box>
         </Box>
       </Box>
     </Layout>
