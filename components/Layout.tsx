@@ -10,7 +10,9 @@ export const Layout = ({ children }: PropsWithChildren<unknown>) => {
         as="main"
         maxWidth="xl"
         marginX="auto"
-        marginY="clamp(1rem, calc(-2.12rem + 15.61vw), 9rem)"
+        marginTop="clamp(1rem, calc(-2.12rem + 15.61vw), 9rem)"
+        marginBottom="8"
+        paddingX="fluid.5"
       >
         {children}
       </Box>
