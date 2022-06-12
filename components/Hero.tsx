@@ -5,7 +5,7 @@ import { Text } from './Text';
 
 export const Hero = () => {
   return (
-    <>
+    <Box maxWidth="max-content">
       <Text as="h1" fontSize="fluid.8">
         Hi, I&apos;m Christian.
       </Text>
@@ -13,16 +13,16 @@ export const Hero = () => {
         Front-End Web Developer
       </Text>
       <Line size="7" />
-      <Text as="p" fontSize="4" fontWeight="6">
+      <Text as="p" fontSize="fluid.3" fontWeight="6">
         Developing for the web since 2015, based in Pittsburgh PA. A few areas I
         tend to focus on include developer experience tooling, responsive web
         design, and occasionally some attempts at teaching.
       </Text>
-      <Box marginTop="9">
+      <Box marginTop="fluid.6">
         <Button variant="cta" aria-label="Open contact form.">
           Contact
         </Button>
       </Box>
-    </>
+    </Box>
   );
 };
