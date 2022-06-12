@@ -7,6 +7,8 @@ import {
   compose,
   flexbox,
   FlexboxProps,
+  grid,
+  GridProps,
   layout,
   LayoutProps,
   position,
@@ -29,11 +31,13 @@ export interface BoxProps
   extends SpaceProps,
     LayoutProps,
     FlexboxProps,
+    GridProps,
     ColorProps,
     BorderProps,
     PositionProps,
     ShadowProps {
   flexContainer?: boolean;
+  gridContainer?: boolean;
   gap?: string;
   borderRadiusBlob?: string;
   inset?: string;
@@ -42,6 +46,7 @@ export interface BoxProps
 export const Box = styled.div<BoxProps>(
   (props) => css`
     ${props.flexContainer && 'display: flex;'}
+    ${props.gridContainer && 'display: grid;'}
     ${props.gap && `gap: var(--size-${props.gap});`}
     ${props.inset && `inset: ${props.inset};`}
 
@@ -49,6 +54,7 @@ export const Box = styled.div<BoxProps>(
       space,
       layout,
       flexbox,
+      grid,
       color,
       border,
       position,
