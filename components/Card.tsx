@@ -17,20 +17,20 @@ export const Card: FC<CardProps> = (props) => {
     <Box
       flexContainer
       flexDirection="column"
-      bg="surface.3"
+      bg="surface.2"
       paddingX="6"
       paddingY="4"
       borderRadius="3"
       boxShadow="4"
     >
-      <Box flexContainer gap="3" marginBottom="2">
+      <Box flexContainer gap="2" flexWrap="wrap" marginBottom="2">
         {props.tags.map((tag) => (
           <Chip key={tag}>{tag}</Chip>
         ))}
       </Box>
-      <Text fontSize="4">{props.title}</Text>
+      <Text fontSize="3">{props.title}</Text>
       {props.subTitle && (
-        <Text color="text.2" fontSize="3">
+        <Text color="text.2" fontSize="2" fontWeight="6">
           {props.subTitle}
         </Text>
       )}
@@ -38,7 +38,13 @@ export const Card: FC<CardProps> = (props) => {
       <Text as="p" fontSize="1" lineHeight="4">
         {props.content}
       </Text>
-      <Box flexContainer alignItems="center" justifyContent="end" marginTop="4">
+      <Box
+        flexContainer
+        alignItems="center"
+        justifyContent="end"
+        paddingTop="4"
+        marginTop="auto"
+      >
         {props.actions}
       </Box>
     </Box>
