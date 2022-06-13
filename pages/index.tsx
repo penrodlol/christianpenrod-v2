@@ -12,17 +12,15 @@ const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
 }) => {
   return (
     <Layout>
-      <Box margin="0 auto" maxWidth={{ _: 'max-content', lg: 'unset' }}>
-        <Box as="section">
-          <Hero />
-        </Box>
-        <Box as="section" marginTop="fluid.8">
-          <Text as="h3" fontSize="fluid.5" fontWeight="bold" color="text.2">
-            Recent Posts
-          </Text>
-          <Box marginTop="fluid.4">
-            <Posts posts={posts} />
-          </Box>
+      <Box as="section">
+        <Hero />
+      </Box>
+      <Box as="section" marginTop="fluid.8">
+        <Text as="h3" fontSize="fluid.5" fontWeight="bold" color="text.2">
+          Recent Posts
+        </Text>
+        <Box marginTop="fluid.4">
+          <Posts posts={posts} />
         </Box>
       </Box>
     </Layout>

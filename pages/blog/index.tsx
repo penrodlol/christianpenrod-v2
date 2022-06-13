@@ -1,4 +1,3 @@
-import { Box } from '@components/Box';
 import { Layout } from '@components/Layout';
 import { Posts } from '@components/Posts';
 import { allPosts, Post } from 'contentlayer/generated';
@@ -9,10 +8,8 @@ const Blog: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
   posts,
 }) => {
   return (
-    <Layout>
-      <Box maxWidth="max-content" margin="0 auto">
-        <Posts posts={posts} />
-      </Box>
+    <Layout title="Blog" subTitle="What has Christian wrote?">
+      <Posts posts={posts} />
     </Layout>
   );
 };
