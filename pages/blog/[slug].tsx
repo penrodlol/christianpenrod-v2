@@ -18,9 +18,7 @@ const Blog: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = allPosts.map((post) => post.url);
-
-  return { paths, fallback: false };
+  return { paths: allPosts.map((post) => post.url), fallback: false };
 };
 
 export const getStaticProps: GetStaticProps<{ post: Post }> = async ({
