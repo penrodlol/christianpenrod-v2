@@ -23,9 +23,9 @@ export const THEME = {
   fontWeights: setProp('font-weight', 9),
 
   // Layout
-  sizes: setProp('size', 15, { fluid: setProp('size-fluid', 10) }),
+  sizes: setProp('size', 15, { fluid: setProp('size-fluid', 7) }),
   sizeContents: setProp('size-content', 3),
-  space: setProp('size', 15, { fluid: setProp('size-fluid', 10) }),
+  space: setProp('size', 15, { fluid: setProp('size-fluid', 7) }),
   breakpoints: BREAKPOINTS,
 
   // Misc

@@ -17,7 +17,7 @@ export const Layout = (props: PropsWithChildren<LayoutProps>) => {
         marginX="auto"
         marginTop="clamp(1.31rem, calc(-0.52rem + 9.15vw), 6.00rem)"
         marginBottom="8"
-        paddingX="fluid.5"
+        paddingX="fluid.4"
         maxWidth="xl"
       >
         <Box maxWidth="max-content" margin="0 auto">
@@ -30,7 +30,7 @@ export const Layout = (props: PropsWithChildren<LayoutProps>) => {
 };
 
 const LayoutTitle: FC<LayoutProps> = ({ title, subTitle }) => (
-  <Box marginBottom="fluid.6">
+  <Box marginBottom="fluid.5">
     <Text as="h1" fontSize="fluid.6">
       {title}
     </Text>

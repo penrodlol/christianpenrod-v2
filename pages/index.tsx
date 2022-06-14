@@ -15,11 +15,11 @@ const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
       <Box as="section">
         <Hero />
       </Box>
-      <Box as="section" marginTop="fluid.8">
+      <Box as="section" marginTop="fluid.6">
         <Text as="h3" fontSize="fluid.5" fontWeight="bold" color="text.2">
           Recent Posts
         </Text>
-        <Box marginTop="fluid.4">
+        <Box marginTop="fluid.2">
           <Posts posts={posts} />
         </Box>
       </Box>

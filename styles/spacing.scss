@@ -1,11 +1,9 @@
 :root {
-  --size-fluid-1: clamp(0.25rem, calc(0.2rem + 0.24vw), 0.38rem);
-  --size-fluid-2: clamp(0.5rem, calc(0.4rem + 0.49vw), 0.75rem);
-  --size-fluid-3: clamp(0.75rem, calc(0.6rem + 0.73vw), 1.13rem);
-  --size-fluid-4: clamp(1rem, calc(0.8rem + 0.98vw), 1.5rem);
-  --size-fluid-5: clamp(1.5rem, calc(1.21rem + 1.46vw), 2.25rem);
-  --size-fluid-6: clamp(2rem, calc(1.61rem + 1.95vw), 3rem);
-  --size-fluid-7: clamp(3rem, calc(2.41rem + 2.93vw), 4.5rem);
-  --size-fluid-8: clamp(4rem, calc(3.22rem + 3.9vw), 6rem);
-  --size-fluid-9: clamp(6rem, calc(4.83rem + 5.85vw), 9rem);
+  --size-fluid-1: clamp(0.25rem, calc(-0.09rem + 1.71vw), 1.13rem);
+  --size-fluid-2: clamp(0.5rem, calc(0.11rem + 1.95vw), 1.5rem);
+  --size-fluid-3: clamp(0.75rem, calc(0.16rem + 2.93vw), 2.25rem);
+  --size-fluid-4: clamp(1rem, calc(0.22rem + 3.9vw), 3rem);
+  --size-fluid-5: clamp(1.5rem, calc(0.33rem + 5.85vw), 4.5rem);
+  --size-fluid-6: clamp(2rem, calc(0.44rem + 7.8vw), 6rem);
+  --size-fluid-7: clamp(3rem, calc(0.66rem + 11.71vw), 9rem);
 }

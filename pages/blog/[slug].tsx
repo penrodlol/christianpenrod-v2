@@ -1,4 +1,6 @@
+import { Box } from '@components/Box';
 import { Layout } from '@components/Layout';
+import { PostHeader } from '@components/PostHeader';
 import { allPosts, Post } from 'contentlayer/generated';
 import {
   GetStaticPaths,
@@ -15,8 +17,12 @@ const Blog: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
 
   return (
     <Layout>
-      <h1>{post.title}</h1>
-      <MDXContent />
+      <Box as="section" maxWidth="md" margin="0 auto">
+        <PostHeader post={post} />
+        <Box marginY="fluid.5">
+          <MDXContent />
+        </Box>
+      </Box>
     </Layout>
   );
 };
