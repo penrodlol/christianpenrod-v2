@@ -3,14 +3,22 @@ import {
   color,
   ColorProps,
   compose,
+  system,
   typography,
   TypographyProps,
 } from 'styled-system';
 
-export type TextProps = TypographyProps | ColorProps;
+const additional = system({
+  contentWidth: {
+    property: 'maxWidth',
+    scale: 'sizeContents',
+  },
+});
+
+export interface TextProps extends TypographyProps, ColorProps {
+  contentWidth?: string;
+}
 
 export const Text = styled.span<TextProps>`
-  max-width: var(--size-content-2);
-
-  ${compose(typography, color)}
+  ${compose(typography, color, additional)}
 `;

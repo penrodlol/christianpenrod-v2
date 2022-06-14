@@ -13,7 +13,7 @@ export const Hero = () => {
         Front-End Web Developer
       </Text>
       <Line size="7" />
-      <Text as="p" fontSize="fluid.3" fontWeight="6">
+      <Text as="p" fontSize="fluid.3" fontWeight="6" contentWidth="2">
         Developing for the web since 2015, based in Pittsburgh PA. A few areas I
         tend to focus on include developer experience tooling, responsive web
         design, and occasionally some attempts at teaching.
