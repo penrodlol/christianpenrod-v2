@@ -42,7 +42,7 @@ export const PostHeader: FC<PostHeaderProps> = ({ post }) => (
         <Box flexContainer alignItems="center" gap="3" color="brand.1">
           <ClockIcon width={25} height={25} />
           <Text fontSize="2" color="text.1">
-            Minute Read
+            {post.readingTime} Minute Read
           </Text>
         </Box>
       </Box>
