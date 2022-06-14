@@ -19,7 +19,7 @@ export const PostHeader: FC<PostHeaderProps> = ({ post }) => (
     borderRadius="2"
     boxShadow="4"
   >
-    <Box padding="fluid.3" alignSelf="center">
+    <Box padding="fluid.3" alignSelf={{ md: 'center' }}>
       <Text as="h1" fontSize="fluid.5">
         {post.title}
       </Text>
