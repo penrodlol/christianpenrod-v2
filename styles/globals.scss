@@ -8,6 +8,7 @@ html {
   letter-spacing: var(--font-letterspacing-1);
   color: var(--text-1);
   background: var(--surface-3);
+  scroll-behavior: unset;
 }
 
 body::before {
