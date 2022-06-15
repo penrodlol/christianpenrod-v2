@@ -12,7 +12,7 @@ export const Hero = () => {
       <Text as="h3" color="text.2" fontSize="fluid.5">
         Front-End Web Developer
       </Text>
-      <Line size="7" />
+      <Line space="7" />
       <Text as="p" fontSize="fluid.3" fontWeight="6" contentWidth="2">
         Developing for the web since 2015, based in Pittsburgh PA. A few areas I
         tend to focus on include developer experience tooling, responsive web
