@@ -19,7 +19,7 @@ export const Hero = () => {
         design, and occasionally some attempts at teaching.
       </Text>
       <Box marginTop="fluid.6" maxWidth={{ _: '100%', md: 'max-content' }}>
-        <Button variant="cta" aria-label="Open contact form." width="100%">
+        <Button variant="cta" aria-label="Open contact form" width="100%">
           Contact
         </Button>
       </Box>
