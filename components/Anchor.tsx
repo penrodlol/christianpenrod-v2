@@ -11,7 +11,7 @@ export const Anchor = styled(Text.withComponent('a')).attrs<AnchorProps>(
     target: external ? '_blank' : undefined,
     rel: external ? 'noopener noreferrer' : undefined,
   }),
-)<AnchorProps>`
+)`
   color: var(--text-1);
   position: relative;
   text-decoration: none;
