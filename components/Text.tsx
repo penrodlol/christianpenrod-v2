@@ -3,6 +3,8 @@ import {
   color,
   ColorProps,
   compose,
+  space,
+  SpaceProps,
   system,
   typography,
   TypographyProps,
@@ -16,7 +18,7 @@ const additional = system({
   },
 });
 
-export interface TextProps extends TypographyProps, ColorProps {
+export interface TextProps extends TypographyProps, ColorProps, SpaceProps {
   contentWidth?: string;
   variant?: 'fancy';
 }
@@ -25,6 +27,7 @@ export const Text = styled.span<TextProps>`
   ${compose(
     typography,
     color,
+    space,
     additional,
     variant({
       variants: {

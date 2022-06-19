@@ -30,7 +30,7 @@ export const PostHeader: FC<PostHeaderProps> = ({ post }) => (
         flexDirection="column"
         gap="5"
         justifyContent="center"
-        padding="4"
+        padding="6"
         height="100%"
       >
         <Box flexContainer alignItems="center" gap="3" color="brand.1">

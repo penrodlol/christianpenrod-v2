@@ -1,6 +1,8 @@
 import { Box } from '@components/Box';
 import { Layout } from '@components/Layout';
 import { PostHeader } from '@components/PostHeader';
+import { PostToc } from '@components/PostToc';
+import { Text } from '@components/Text';
 import { allPosts, Post } from 'contentlayer/generated';
 import {
   GetStaticPaths,
@@ -9,6 +11,18 @@ import {
   NextPage,
 } from 'next';
 import { useMDXComponent } from 'next-contentlayer/hooks';
+import dynamic from 'next/dynamic';
+import styled from 'styled-components';
+
+// prettier-ignore
+const components = {
+  p: styled(Text).attrs({ as: 'p', lineHeight: 4 })``,
+  em: styled(Text).attrs({ variant: 'fancy' })``,
+  a: dynamic<any>(() => import('@components/Anchor').then(m => m.Anchor)),
+  h2: dynamic<any>(() => import('@components/PostSubHeader').then(m => m.PostSubHeader)),
+  Aside: dynamic<any>(() => import('@components/PostAside').then(m => m.PostAside)),
+  Code: dynamic<any>(() => import('@components/PostCode').then(m => m.PostCode)),
+};
 
 const Blog: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
   post,
@@ -17,11 +31,21 @@ const Blog: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
 
   return (
     <Layout>
-      <Box as="section" maxWidth="md" margin="0 auto">
-        <PostHeader post={post} />
-        <Box marginY="fluid.5">
-          <MDXContent />
+      <Box as="section" flexContainer gap="10" position="relative">
+        <Box as="article" maxWidth="md" margin="0 auto">
+          <PostHeader post={post} />
+          <Box
+            flexContainer
+            flexDirection="column"
+            gap="8"
+            marginY="fluid.5"
+            marginX="auto"
+            maxWidth="max-content"
+          >
+            <MDXContent components={components} />
+          </Box>
         </Box>
+        {post.toc && <PostToc post={post} />}
       </Box>
     </Layout>
   );

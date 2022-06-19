@@ -12,3 +12,33 @@ tags:
 toc: true
 github: local-state-with-ngrx-and-apollo-angular
 ---
+
+Before building out new front-end features, planning a general approach to state
+management is an essential piece of architecture I cannot stress enough. Within
+this article, I want to provide a helpful solution in Angular for managing local
+state when working with GraphQL. This involves 2 technologies: NgRx
+ComponentStore & Apollo Angular.
+
+<Aside>
+  This article will cover topics that involve a basic understanding of
+  [GraphQL][graphql], [Apollo Angular][apolloangular], and [NgRx][ngrx]. If you
+  are unfamiliar with any of these technolgies, please read up on them before
+  going futher.
+</Aside>
+
+## Setup
+
+Let's begin by installing our dependencies:
+
+<Code>
+
+```bash
+npm install @ngrx/component-store
+ng add apollo-angular
+```
+
+</Code>
+
+[graphql]: https://graphql.org/
+[apolloangular]: https://apollo-angular.com/docs/
+[ngrx]: https://ngrx.io/
