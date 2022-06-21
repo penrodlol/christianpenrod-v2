@@ -20,8 +20,8 @@ const components = {
   em: styled(Text).attrs({ variant: 'fancy' })``,
   a: dynamic<any>(() => import('@components/Anchor').then(m => m.Anchor)),
   h2: dynamic<any>(() => import('@components/PostSubHeader').then(m => m.PostSubHeader)),
+  pre: dynamic<any>(() => import('@components/PostCode').then(m => m.PostCode)),
   Aside: dynamic<any>(() => import('@components/PostAside').then(m => m.PostAside)),
-  Code: dynamic<any>(() => import('@components/PostCode').then(m => m.PostCode)),
 };
 
 const Blog: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
