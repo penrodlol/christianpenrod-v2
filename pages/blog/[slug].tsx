@@ -45,7 +45,7 @@ const Blog: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
             <MDXContent components={components} />
           </Box>
         </Box>
-        {post.toc && <PostToc post={post} />}
+        {post.headings && <PostToc post={post} />}
       </Box>
     </Layout>
   );
