@@ -32,6 +32,8 @@ export const PostSubHeader = ({
 };
 
 const Wrapper = styled(Box)`
+  scroll-margin-top: var(--size-11);
+
   &:hover ${Box} {
     animation: var(--animation-fade-in) forwards;
   }
