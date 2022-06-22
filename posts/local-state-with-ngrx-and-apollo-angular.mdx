@@ -18,12 +18,10 @@ this article, I want to provide a helpful solution in Angular for managing local
 state when working with GraphQL. This involves 2 technologies: NgRx
 ComponentStore & Apollo Angular.
 
-<Aside>
-  This article will cover topics that involve a basic understanding of
-  [GraphQL][graphql], [Apollo Angular][apolloangular], and [NgRx][ngrx]. If you
-  are unfamiliar with any of these technolgies, please read up on them before
-  going futher.
-</Aside>
+> This article will cover topics that involve a basic understanding of
+> [GraphQL][graphql], [Apollo Angular][apolloangular], and [NgRx][ngrx]. If you
+> are unfamiliar with any of these technolgies, please read up on them before
+> going futher.
 
 ## Setup
 
@@ -78,13 +76,11 @@ villagers. This is where Apollo Angular comes in to play. Apollo Angular gives
 us the ability to construct a GraphQL Query in the form of an Angular Service.
 This can be done like so:
 
-<Aside>
-  Apollo Angular provides [other ways][apolloangular-queries] of performing a
-  Query. Wrapping it within an Angular Service is only one of them. Feel free to
-  perform your Query however you find it most convenient. Whether that be within
-  the component itself or in the data store we'll later create, both of which
-  are possible via Apollo Angular.
-</Aside>
+> Apollo Angular provides [other ways][apolloangular-queries] of performing a
+> Query. Wrapping it within an Angular Service is only one of them. Feel free to
+> perform your Query however you find it most convenient. Whether that be within
+> the component itself or in the data store we'll later create, both of which
+> are possible via Apollo Angular.
 
 ```ts[title="villagers.gql.ts"]
 import { Injectable } from '@angular/core';
@@ -235,13 +231,11 @@ build another Angular Service but instead of implementing the Query class, we'll
 implement the Mutation class. For this example, we will create a Mutation for
 updating a villager's name:
 
-<Aside>
-  Apollo Angular provides [other ways][apolloangular-mutation] of performing a
-  Mutation. Wrapping it within an Angular Service is only one of them. Feel free
-  to perform your Mutation however you find it most convenient. Whether that be
-  within the component itself or in the ComponentStore, both of which are
-  possible via Apollo Angular.
-</Aside>
+> Apollo Angular provides [other ways][apolloangular-mutation] of performing a
+> Mutation. Wrapping it within an Angular Service is only one of them. Feel free
+> to perform your Mutation however you find it most convenient. Whether that be
+> within the component itself or in the ComponentStore, both of which are
+> possible via Apollo Angular.
 
 ```ts[title="villager-edit-name.gql.ts"]
 import { Injectable } from '@angular/core';

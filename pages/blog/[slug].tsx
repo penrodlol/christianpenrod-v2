@@ -21,7 +21,7 @@ const components = {
   a: dynamic<any>(() => import('@components/Anchor').then(m => m.Anchor)),
   h2: dynamic<any>(() => import('@components/PostSubHeader').then(m => m.PostSubHeader)),
   pre: dynamic<any>(() => import('@components/PostCode').then(m => m.PostCode)),
-  Aside: dynamic<any>(() => import('@components/PostAside').then(m => m.PostAside)),
+  blockquote: dynamic<any>(() => import('@components/PostNote').then(m => m.PostNote)),
 };
 
 const Blog: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({

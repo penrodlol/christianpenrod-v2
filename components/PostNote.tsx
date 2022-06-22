@@ -1,9 +1,10 @@
 import { PropsWithChildren } from 'react';
 import { Box } from './Box';
 
-export const PostAside = ({ children }: PropsWithChildren<unknown>) => (
+export const PostNote = ({ children }: PropsWithChildren<unknown>) => (
   <Box
-    as="aside"
+    as="blockquote"
+    minWidth="100%"
     flexContainer
     flexDirection="column"
     gap="5"
