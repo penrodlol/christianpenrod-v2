@@ -20,7 +20,7 @@ export const Header = () => {
         flexContainer
         alignItems="center"
         justifyContent="space-between"
-        paddingY="fluid.1"
+        paddingY="2"
         paddingX="fluid.4"
         maxWidth="xl"
         margin="0 auto"
