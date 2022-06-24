@@ -17,7 +17,7 @@ import styled from 'styled-components';
 // prettier-ignore
 const components = {
   p: styled(Text).attrs({ as: 'p', lineHeight: 4 })``,
-  em: styled(Text).attrs({ variant: 'fancy' })``,
+  em: styled(Text).attrs({ as: 'em', variant: 'fancy' })``,
   a: dynamic<any>(() => import('@components/Anchor').then(m => m.Anchor)),
   h2: dynamic<any>(() => import('@components/PostSubHeader').then(m => m.PostSubHeader)),
   pre: dynamic<any>(() => import('@components/PostCode').then(m => m.PostCode)),

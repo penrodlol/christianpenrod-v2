@@ -33,7 +33,8 @@ export const Text = styled.span<TextProps>`
       variants: {
         fancy: {
           fontFamily: 'var(--font-fancy)',
-          color: 'brand.1',
+          fontStyle: 'normal',
+          textShadow: '0 0 0.5rem black',
         },
       },
     }),
