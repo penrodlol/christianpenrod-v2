@@ -25,7 +25,7 @@ export const PostCode = ({
 
 const Wrapper = styled(Box)`
   --prism-font-family: var(--font-serif);
-  --prism-font-size: var(--font-size-2);
+  --prism-font-size: var(--font-size-1);
   --prism-background: hsl(210, 11.1%, 10.6%);
   --prism-foreground: var(--gray-3);
 `;
