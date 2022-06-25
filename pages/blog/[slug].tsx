@@ -1,5 +1,6 @@
 import { Box } from '@components/Box';
 import { Layout } from '@components/Layout';
+import { PostCodeSyntaxHighlighting } from '@components/PostCode';
 import { PostHeader } from '@components/PostHeader';
 import { PostToc } from '@components/PostToc';
 import { Text } from '@components/Text';
@@ -12,11 +13,12 @@ import {
 } from 'next';
 import { useMDXComponent } from 'next-contentlayer/hooks';
 import dynamic from 'next/dynamic';
+import 'prism-theme-vars/base.css';
 import styled from 'styled-components';
 
 // prettier-ignore
 const components = {
-  p: styled(Text).attrs({ as: 'p', lineHeight: 4 })``,
+  p: styled(Text).attrs({ as: 'p', fontSize: '3', lineHeight: 4 })``,
   em: styled(Text).attrs({ as: 'em', variant: 'fancy' })``,
   a: dynamic<any>(() => import('@components/Anchor').then(m => m.Anchor)),
   h2: dynamic<any>(() => import('@components/PostSubHeader').then(m => m.PostSubHeader)),
@@ -34,6 +36,7 @@ const Blog: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
       <Box as="section" flexContainer gap="10" position="relative">
         <Box as="article" maxWidth="md" margin="0 auto">
           <PostHeader post={post} />
+          <PostCodeSyntaxHighlighting />
           <Box
             flexContainer
             flexDirection="column"

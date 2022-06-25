@@ -9,6 +9,7 @@ export const PostNote = ({ children }: PropsWithChildren<unknown>) => (
     flexDirection="column"
     gap="5"
     bg="surface.2"
+    color="text.2"
     padding="4"
     borderRadius="2"
     boxShadow="3"
