@@ -40,15 +40,20 @@ export const PostCodeSyntaxHighlighting = createGlobalStyle`
     --prism-comment: var(--gray-5);
     --prism-interpolation: var(--accent-1);
     --prism-constant: var(--text-2);
+    --prism-inline-padding-x: var(--size-2);
+
+    .language-unknown {
+      color: var(--accent-2) !important;
+      box-decoration-break: clone;
+    }
 
     .language-ts {
       --prism-class: var(--accent-2);
       --prism-builtin: var(--accent-1);
     }
 
-    .language-graphql {
-      --prism-property: var(--gray-5);
-      --prism-variable: var(--accent-1);
+    .language-tsx {
+      --prism-builtin: var(--accent-1);
     }
 
     .language-scss {
@@ -57,8 +62,9 @@ export const PostCodeSyntaxHighlighting = createGlobalStyle`
       --prism-number: var(--brand-1);
     }
 
-    .language-tsx {
-      --prism-builtin: var(--accent-1);
+    .language-graphql {
+      --prism-property: var(--gray-5);
+      --prism-variable: var(--accent-1);
     }
   }
 `;

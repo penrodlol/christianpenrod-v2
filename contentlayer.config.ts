@@ -42,6 +42,6 @@ export default makeSource({
   documentTypes: [Post],
   mdx: {
     rehypePlugins: [rehypeExternalLinks, rehypeSlug],
-    remarkPlugins: [remarkPrism],
+    remarkPlugins: [() => remarkPrism({ transformInlineCode: true })],
   },
 });

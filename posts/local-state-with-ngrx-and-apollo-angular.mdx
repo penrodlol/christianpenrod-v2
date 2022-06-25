@@ -107,8 +107,8 @@ export class VillagersGQL extends Query<IVillagersResponse> {
 ```
 
 Let's break down what we just did here. We started by creating our expected
-response data: _IVillagersResponse_. Next, we setup our actual Angular Service
-which is simply extending Apollo Angular's _Query_ class. By passing
+response data: `IVillagersResponse`. Next, we setup our actual Angular Service
+which is simply extending Apollo Angular's `Query` class. By passing
 IVillagersResponse in to the class as such, we now gain Type-Saftey around the
 Query from wherever we use it.
 
@@ -182,10 +182,10 @@ export class VillagersStore extends ComponentStore<
 ```
 
 Within our effect, we make use of Apollo Angular's fetch() method via
-_this.query.fetch()_. This will return a single Observable emmisson and hook in
+`this.query.fetch()`. This will return a single Observable emmisson and hook in
 to the effect's pipeline with ease. On a successful response, we'll use the
-_this.addMany(villagers)_ updater to immutably update our villagers state.
-Finally, we have a selector: _villagers$_ which we'll use to async bind to our
+`this.addMany(villagers)` updater to immutably update our villagers state.
+Finally, we have a selector: `villagers$` which we'll use to async bind to our
 UI. Now let's jump back to our component and hook this all up.
 
 ```ts[title="villagers.component.ts"]
@@ -217,10 +217,10 @@ export class VillagersComponent implements OnInit {
 ```
 
 Within our Component's initialization, we are now calling
-_this.store.fetchAll()_ which is our Store's effect which in turn calls our
-_VillagersGQL_ Query. With that effect, our local state should then be updated
+`this.store.fetchAll()` which is our Store's effect which in turn calls our
+`VillagersGQL` Query. With that effect, our local state should then be updated
 and will now contain a collection of villagers. We can then async bind our
-Store's _villagers$_ to the DOM.
+Store's `villagers$` to the DOM.
 
 ## Creating GraphQL Mutation
 
@@ -268,7 +268,7 @@ export class VillagerEditNameGQL extends Mutation<
 ```
 
 Just like our Query class, a Mutation can enforce Type-Safety as well.
-_IVillagerEditNameResponse_ for the response and _IVillagerEditNameVariables_
+`IVillagerEditNameResponse` for the response and `IVillagerEditNameVariables`
 for the variables. Also like the Query class logic, _It's just GraphQL_.
 
 ## Update NgRx ComponentStore
@@ -319,9 +319,9 @@ export class VillagersStore extends ComponentStore<
 ```
 
 Just like we did for VillagersGQL, we utilize a ComponentStore effect to invoke
-_this.editNameGQL.mutate(update)_ which returns an Observable and can be hooked
+`this.editNameGQL.mutate(update)` which returns an Observable and can be hooked
 in to the pipeline. On successful response, we then call our
-_this.updateOne(res?.data?.updateVillager)_ which updates our single villager
+`this.updateOne(res?.data?.updateVillager)` which updates our single villager
 record.
 
 Finally, lets update our component to call our effect and update the local
@@ -367,7 +367,7 @@ today is only one of an infinite list.
 
 Let's break down the benefits of our approach above. Apollo Angular maintains
 the integrity of GraphQL syntax which allows us to quickly pinpoint what a
-particular Service's Query or Mutation is doing (ex: _VillagersGQL_). All while
+particular Service's Query or Mutation is doing (ex: `VillagersGQL`). All while
 maintaining _reactivity_ on our response. NgRx ComponentStore offers an
 intuitive api with minimal setup required for local state management. It also
 caters to the reactive approach which blends nicely with our Queries and
