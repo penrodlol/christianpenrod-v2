@@ -16,14 +16,15 @@ export const PostCode = ({
       bg="var(--prism-background)"
       borderRadius="2"
       boxShadow="4"
-      padding="3"
     >
       <Box position="absolute" right="2" top="2" color="text.2" opacity="0.5">
         <Button variant="icon">
           <ClipboardIcon width={30} height={30} />
         </Button>
       </Box>
-      <Box as="pre">{children}</Box>
+      <Box as="pre" overflowX="auto" padding="3">
+        {children}
+      </Box>
     </Box>
   </>
 );
@@ -41,6 +42,7 @@ export const PostCodeSyntaxHighlighting = createGlobalStyle`
     --prism-interpolation: var(--accent-1);
     --prism-constant: var(--text-2);
     --prism-inline-padding-x: var(--size-2);
+    --prism-json-property: var(--accent-2);
 
     .language-unknown {
       color: var(--accent-2) !important;
@@ -65,6 +67,10 @@ export const PostCodeSyntaxHighlighting = createGlobalStyle`
     .language-graphql {
       --prism-property: var(--gray-5);
       --prism-variable: var(--accent-1);
+    }
+
+    .language-json {
+      --prism-number: var(--brand-1);
     }
   }
 `;
