@@ -72,7 +72,7 @@ export const getStaticProps: GetStaticProps<{ post: Post }> = async ({
   params,
 }) => {
   const slug = params!.slug as string;
-  const post = allPosts.find((p) => p.slug === slug)!;
+  const post = allPosts.find((p) => p.slug.includes(slug))!;
 
   return { props: { post } };
 };
