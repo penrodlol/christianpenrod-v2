@@ -1,6 +1,7 @@
 import { Box } from '@components/Box';
 import { Layout } from '@components/Layout';
 import { PostCodeSyntaxHighlighting } from '@components/PostCode';
+import { PostGithub } from '@components/PostGithub';
 import { PostHeader } from '@components/PostHeader';
 import { PostToc } from '@components/PostToc';
 import { Text } from '@components/Text';
@@ -48,6 +49,7 @@ const Blog: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
             maxWidth="max-content"
           >
             <MDXContent components={components} />
+            {post.github && <PostGithub github={post.github} />}
           </Box>
         </Box>
         {post.headings && <PostToc post={post} />}

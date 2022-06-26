@@ -11,7 +11,9 @@ export const Anchor = styled(Text.withComponent('a'))`
   }
 
   &[target='_blank'] {
-    color: var(--brand-1);
+    &:not([color]) {
+      color: var(--brand-1);
+    }
 
     &:hover:after {
       content: '';
