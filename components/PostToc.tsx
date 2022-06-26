@@ -17,10 +17,14 @@ export const PostToc: FC<PostTocProps> = ({ post }) => (
     </Text>
     <Line />
     <Box as="nav" flexContainer flexDirection="column" gap="3">
-      {post.headings.map((heading: any, index: number) => (
-        <HashLink key={heading.hash} href={{ hash: heading.hash }} passHref>
+      {post.headings.map((heading: string, index: number) => (
+        <HashLink
+          key={heading}
+          href={{ hash: heading.toLowerCase().replace(/ /g, '-') }}
+          passHref
+        >
           <Anchor color="text.2">
-            {index + 1}. {heading.text}
+            {index + 1}. {heading}
           </Anchor>
         </HashLink>
       ))}

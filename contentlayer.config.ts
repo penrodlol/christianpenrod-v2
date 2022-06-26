@@ -3,7 +3,6 @@ import readingTime from 'reading-time';
 import rehypeExternalLinks from 'rehype-external-links';
 import rehypeSlug from 'rehype-slug';
 import remarkPrism from 'remark-prism';
-import slugify from 'slugify';
 
 export const Post = defineDocumentType(() => ({
   name: 'Post',
@@ -27,12 +26,9 @@ export const Post = defineDocumentType(() => ({
     },
     headings: {
       type: 'list',
-      of: { type: 'json' },
+      of: { type: 'string' },
       resolve: (post) =>
-        post.body.raw.match(/##.+/g)?.map((h2) => {
-          h2 = h2.replace(/##/, '').trim();
-          return { text: h2, hash: slugify(h2, { lower: true }) };
-        }),
+        post.body.raw.match(/##.+/g)?.map((h2) => h2.replace(/##/, '').trim()),
     },
   },
 }));
