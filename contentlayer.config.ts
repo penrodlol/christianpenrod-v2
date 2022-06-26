@@ -16,7 +16,7 @@ export const Post = defineDocumentType(() => ({
     github: { type: 'string' },
   },
   computedFields: {
-    url: {
+    slug: {
       type: 'string',
       resolve: (post) => `/blog/${post._raw.flattenedPath}`,
     },
