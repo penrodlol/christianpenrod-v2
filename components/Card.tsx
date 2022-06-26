@@ -34,7 +34,7 @@ export const Card: FC<CardProps> = (props) => {
           {props.subTitle}
         </Text>
       )}
-      <Line height="1" />
+      <Line />
       <Text as="p" fontSize="1" lineHeight="4">
         {props.content}
       </Text>

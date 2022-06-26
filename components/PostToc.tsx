@@ -15,7 +15,7 @@ export const PostToc: FC<PostTocProps> = ({ post }) => (
     <Text as="h3" fontSize="4">
       Table of Contents
     </Text>
-    <Line height="1" />
+    <Line />
     <Box as="nav" flexContainer flexDirection="column" gap="3">
       {post.headings.map((heading: any, index: number) => (
         <HashLink key={heading.hash} href={{ hash: heading.hash }} passHref>
