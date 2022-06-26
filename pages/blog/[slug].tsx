@@ -1,9 +1,11 @@
 import { Box } from '@components/Box';
 import { Layout } from '@components/Layout';
+import { Line } from '@components/Line';
 import { PostCodeSyntaxHighlighting } from '@components/PostCode';
 import { PostGithub } from '@components/PostGithub';
 import { PostHeader } from '@components/PostHeader';
 import { PostToc } from '@components/PostToc';
+import { PostViews } from '@components/PostViews';
 import { Text } from '@components/Text';
 import { allPosts, Post } from 'contentlayer/generated';
 import {
@@ -50,6 +52,10 @@ const Blog: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
           >
             <MDXContent components={components} />
             {post.github && <PostGithub github={post.github} />}
+            <Box alignSelf="end">
+              <PostViews />
+            </Box>
+            <Line />
           </Box>
         </Box>
         {post.headings && <PostToc post={post} />}
