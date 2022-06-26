@@ -2,7 +2,6 @@ import { defineDocumentType, makeSource } from 'contentlayer/source-files';
 import readingTime from 'reading-time';
 import rehypeExternalLinks from 'rehype-external-links';
 import rehypeSlug from 'rehype-slug';
-import remarkGfm from 'remark-gfm';
 import remarkPrism from 'remark-prism';
 import slugify from 'slugify';
 
@@ -43,9 +42,6 @@ export default makeSource({
   documentTypes: [Post],
   mdx: {
     rehypePlugins: [rehypeExternalLinks, rehypeSlug],
-    remarkPlugins: [
-      remarkGfm,
-      () => remarkPrism({ transformInlineCode: true }),
-    ],
+    remarkPlugins: [() => remarkPrism({ transformInlineCode: true })],
   },
 });
