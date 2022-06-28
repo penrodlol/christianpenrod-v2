@@ -25,7 +25,7 @@ export default class AppDocument extends Document {
       return {
         ...initialProps,
         styles: [
-          <Fragment key="38d9b3f0-6985-48b2-86b9-96fc49035b1b">
+          <Fragment key="_">
             {initialProps.styles}
             {sheet.getStyleElement()}
           </Fragment>,
