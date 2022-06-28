@@ -3,8 +3,8 @@ import { Hero } from '@components/Hero';
 import { Layout } from '@components/Layout';
 import { Posts } from '@components/Posts';
 import { Text } from '@components/Text';
-import { allPosts, Post } from 'contentlayer/generated';
-import dayjs from 'dayjs';
+import { sortedPosts } from '@utils/contentlayer';
+import { Post } from 'contentlayer/generated';
 import { GetStaticProps, InferGetStaticPropsType, NextPage } from 'next';
 
 const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
@@ -28,10 +28,7 @@ const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
 };
 
 export const getStaticProps: GetStaticProps<{ posts: Post[] }> = async () => {
-  const posts = [...allPosts]
-    .sort((a, b) => dayjs(b.published).valueOf() - dayjs(a.published).valueOf())
-    .filter((_, index) => index < 3);
-
+  const posts = sortedPosts.filter((_, index) => index < 3);
   return { props: { posts } };
 };
 

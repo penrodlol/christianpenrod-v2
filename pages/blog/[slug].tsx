@@ -4,9 +4,11 @@ import { Line } from '@components/Line';
 import { PostCodeSyntaxHighlighting } from '@components/PostCode';
 import { PostGithub } from '@components/PostGithub';
 import { PostHeader } from '@components/PostHeader';
+import { PostPagination } from '@components/PostPagination';
 import { PostToc } from '@components/PostToc';
 import { PostViews } from '@components/PostViews';
 import { Text } from '@components/Text';
+import { getPaginatedPost, sortedPosts } from '@utils/contentlayer';
 import { allPosts, Post } from 'contentlayer/generated';
 import {
   GetStaticPaths,
@@ -18,6 +20,12 @@ import { useMDXComponent } from 'next-contentlayer/hooks';
 import dynamic from 'next/dynamic';
 import 'prism-theme-vars/base.css';
 import styled from 'styled-components';
+
+interface StaticProps {
+  post: Post;
+  prev: Partial<Post> | null;
+  next: Partial<Post> | null;
+}
 
 // prettier-ignore
 const components = {
@@ -33,6 +41,8 @@ const components = {
 
 const Blog: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
   post,
+  prev,
+  next,
 }) => {
   const MDXContent = useMDXComponent(post.body.code);
 
@@ -56,6 +66,7 @@ const Blog: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
               <PostViews />
             </Box>
             <Line />
+            <PostPagination prev={prev} next={next} />
           </Box>
         </Box>
         {post.headings && <PostToc post={post} />}
@@ -68,13 +79,14 @@ export const getStaticPaths: GetStaticPaths = async () => {
   return { paths: allPosts.map((post) => post.slug), fallback: false };
 };
 
-export const getStaticProps: GetStaticProps<{ post: Post }> = async ({
+export const getStaticProps: GetStaticProps<StaticProps> = async ({
   params,
 }) => {
-  const slug = params!.slug as string;
-  const post = allPosts.find((p) => p.slug.includes(slug))!;
+  const post = sortedPosts.find((p) => p.slug.includes(String(params!.slug)))!;
+  const prev = getPaginatedPost(post, 'prev');
+  const next = getPaginatedPost(post, 'next');
 
-  return { props: { post } };
+  return { props: { post, prev, next } };
 };
 
 export default Blog;

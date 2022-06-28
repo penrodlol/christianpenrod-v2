@@ -1,7 +1,7 @@
 import { Layout } from '@components/Layout';
 import { Posts } from '@components/Posts';
-import { allPosts, Post } from 'contentlayer/generated';
-import dayjs from 'dayjs';
+import { sortedPosts } from '@utils/contentlayer';
+import { Post } from 'contentlayer/generated';
 import { GetStaticProps, InferGetStaticPropsType, NextPage } from 'next';
 
 const Blog: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
@@ -15,11 +15,7 @@ const Blog: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
 };
 
 export const getStaticProps: GetStaticProps<{ posts: Post[] }> = async () => {
-  const posts = [...allPosts].sort(
-    (a, b) => dayjs(b.published).valueOf() - dayjs(a.published).valueOf(),
-  );
-
-  return { props: { posts } };
+  return { props: { posts: sortedPosts } };
 };
 
 export default Blog;
