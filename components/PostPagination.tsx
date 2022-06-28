@@ -25,7 +25,7 @@ export const PostPagination: FC<PostPaginationProps> = ({ prev, next }) => (
                   Prev
                 </Text>
               </Box>
-              <Text fontSize="fluid.3">{prev.title}</Text>
+              <Text fontSize="4">{prev.title}</Text>
             </Box>
           </Anchor>
         </Link>
@@ -48,7 +48,7 @@ export const PostPagination: FC<PostPaginationProps> = ({ prev, next }) => (
                 </Text>
                 <ArrowRightIcon width={30} height={30} />
               </Box>
-              <Text fontSize="fluid.3" textAlign="right">
+              <Text fontSize="4" textAlign="right">
                 {next.title}
               </Text>
             </Box>
