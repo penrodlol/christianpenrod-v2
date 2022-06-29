@@ -69,7 +69,11 @@ const Blog: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
             <PostPagination prev={prev} next={next} />
           </Box>
         </Box>
-        {post.headings && <PostToc post={post} />}
+        {post.headings && (
+          <Box position="sticky" top="11" alignSelf="flex-start">
+            <PostToc post={post} />
+          </Box>
+        )}
       </Box>
     </Layout>
   );

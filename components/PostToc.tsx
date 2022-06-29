@@ -11,7 +11,7 @@ export interface PostTocProps {
 }
 
 export const PostToc: FC<PostTocProps> = ({ post }) => (
-  <Box as="aside" position="sticky" top="11">
+  <Box as="aside">
     <Text as="h3" fontSize="4">
       Table of Contents
     </Text>
