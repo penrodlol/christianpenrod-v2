@@ -15,7 +15,7 @@ export const PostTabs = ({
   <RadixTabs.Root defaultValue={values[0]} asChild>
     <Box bg="surface.1" borderRadius="2" boxShadow="3">
       <RadixTabs.TabsList asChild>
-        <Box flexContainer>
+        <Box flexContainer overflowX="auto">
           {values.map((value) => (
             <RadixTabs.Trigger key={value} value={value} asChild>
               <Trigger
@@ -23,7 +23,8 @@ export const PostTabs = ({
                 flexContainer
                 justifyContent="center"
                 flex="1"
-                padding="2"
+                paddingY="2"
+                paddingX="3"
                 color="text.2"
               >
                 <Text fontSize="2">{value}</Text>
@@ -50,6 +51,8 @@ export const PostTabs = ({
 );
 
 const Trigger = styled(Box)`
+  white-space: nowrap;
+
   &[data-state='active'],
   &:hover {
     color: var(--text-1);

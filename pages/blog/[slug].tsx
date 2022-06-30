@@ -49,7 +49,7 @@ const Blog: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
   return (
     <Layout>
       <Box as="section" flexContainer gap="10" position="relative">
-        <Box as="article" maxWidth="md" margin="0 auto">
+        <Box as="article" maxWidth="md" margin="0 auto" overflow="hidden">
           <PostHeader post={post} />
           <PostCodeSyntaxHighlighting />
           <Box
