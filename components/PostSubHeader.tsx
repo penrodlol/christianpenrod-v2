@@ -10,19 +10,14 @@ export const PostSubHeader = ({
   children,
 }: PropsWithChildren<HTMLElement>) => {
   return (
-    <Wrapper
-      id={id}
-      position="relative"
-      mt="fluid.4"
-      mb="calc(-1 * var(--size-4))"
-    >
+    <Wrapper id={id} position="relative" mt="fluid.4">
       <HashLink href={{ hash: id }} passHref>
         <Box
           as="a"
           color="brand.1"
           position="absolute"
           left="-40px"
-          top="13px"
+          top="15px"
           opacity="0"
           paddingRight="3"
         >
