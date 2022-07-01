@@ -32,7 +32,7 @@ export const PostCode = ({
 export const PostCodeSyntaxHighlighting = createGlobalStyle`  
   :root {
     --prism-font-family: var(--font-serif);
-    --prism-font-size: var(--font-size-2);
+    --prism-font-size: var(--font-size-fluid-2);
     --prism-background: hsl(210, 11.1%, 10.6%);
     --prism-foreground: var(--text-2);
     --prism-function: var(--accent-2);

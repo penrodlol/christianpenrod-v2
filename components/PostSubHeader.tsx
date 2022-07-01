@@ -24,7 +24,7 @@ export const PostSubHeader = ({
           <LinkIcon width={30} height={30} />
         </Box>
       </HashLink>
-      <Text as="h2" color="accent.2" fontSize="fluid.6">
+      <Text as="h2" color="accent.2" fontSize="fluid.7">
         {children}
       </Text>
     </Wrapper>

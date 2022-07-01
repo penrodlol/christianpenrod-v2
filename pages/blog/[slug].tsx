@@ -5,7 +5,6 @@ import { PostCodeSyntaxHighlighting } from '@components/PostCode';
 import { PostGithub } from '@components/PostGithub';
 import { PostHeader } from '@components/PostHeader';
 import { PostPagination } from '@components/PostPagination';
-import { PostToc } from '@components/PostToc';
 import { PostViews } from '@components/PostViews';
 import { Text } from '@components/Text';
 import { getPaginatedPost, sortedPosts } from '@utils/contentlayer';
@@ -29,7 +28,7 @@ interface StaticProps {
 
 // prettier-ignore
 const components = {
-  p: styled(Text).attrs({ as: 'p', fontSize: '3', lineHeight: 4 })``,
+  p: styled(Text).attrs({ as: 'p', fontSize: 'fluid.3', lineHeight: 4 })``,
   em: styled(Text).attrs({ as: 'em', variant: 'fancy' })``,
   a: dynamic<any>(() => import('@components/Anchor').then(m => m.Anchor)),
   h2: dynamic<any>(() => import('@components/PostSubHeader').then(m => m.PostSubHeader)),
@@ -48,32 +47,25 @@ const Blog: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
 
   return (
     <Layout>
-      <Box as="section" flexContainer gap="10" position="relative">
-        <Box as="article" maxWidth="md" margin="0 auto" overflow="hidden">
-          <PostHeader post={post} />
-          <PostCodeSyntaxHighlighting />
-          <Box
-            flexContainer
-            flexDirection="column"
-            gap="8"
-            marginY="fluid.5"
-            marginX="auto"
-            maxWidth="max-content"
-          >
-            <MDXContent components={components} />
-            {post.github && <PostGithub github={post.github} />}
-            <Box alignSelf="end">
-              <PostViews />
-            </Box>
-            <Line />
-            <PostPagination prev={prev} next={next} />
+      <Box as="article" maxWidth="md" margin="0 auto">
+        <PostHeader post={post} />
+        <PostCodeSyntaxHighlighting />
+        <Box
+          flexContainer
+          flexDirection="column"
+          gap="8"
+          marginY="fluid.5"
+          marginX="auto"
+          paddingX="fluid.1"
+        >
+          <MDXContent components={components} />
+          {post.github && <PostGithub github={post.github} />}
+          <Box alignSelf="end">
+            <PostViews />
           </Box>
+          <Line />
+          <PostPagination prev={prev} next={next} />
         </Box>
-        {post.headings && (
-          <Box position="sticky" top="11" alignSelf="flex-start">
-            <PostToc post={post} />
-          </Box>
-        )}
       </Box>
     </Layout>
   );
