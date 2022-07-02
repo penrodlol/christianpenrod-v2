@@ -5,6 +5,7 @@ import { PostCodeSyntaxHighlighting } from '@components/PostCode';
 import { PostGithub } from '@components/PostGithub';
 import { PostHeader } from '@components/PostHeader';
 import { PostPagination } from '@components/PostPagination';
+import { PostToc } from '@components/PostToc';
 import { PostViews } from '@components/PostViews';
 import { Text } from '@components/Text';
 import { getPaginatedPost, sortedPosts } from '@utils/contentlayer';
@@ -47,25 +48,37 @@ const Blog: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
 
   return (
     <Layout>
-      <Box as="article" maxWidth="md" margin="0 auto">
-        <PostHeader post={post} />
-        <PostCodeSyntaxHighlighting />
-        <Box
-          flexContainer
-          flexDirection="column"
-          gap="8"
-          marginY="fluid.5"
-          marginX="auto"
-          paddingX="fluid.1"
-        >
-          <MDXContent components={components} />
-          {post.github && <PostGithub github={post.github} />}
-          <Box alignSelf="end">
-            <PostViews />
+      <Box flexContainer gap="11">
+        <Box as="article" maxWidth="md" minWidth="0px" margin="0 auto">
+          <PostHeader post={post} />
+          <PostCodeSyntaxHighlighting />
+          <Box
+            flexContainer
+            flexDirection="column"
+            gap="8"
+            marginY="fluid.5"
+            marginX="auto"
+            paddingX="fluid.1"
+          >
+            <MDXContent components={components} />
+            {post.github && <PostGithub github={post.github} />}
+            <Box alignSelf="end">
+              <PostViews />
+            </Box>
+            <Line />
+            <PostPagination prev={prev} next={next} />
           </Box>
-          <Line />
-          <PostPagination prev={prev} next={next} />
         </Box>
+        {post.headings && (
+          <Box
+            display={{ _: 'none', xl: 'unset' }}
+            position="sticky"
+            top="11"
+            alignSelf="flex-start"
+          >
+            <PostToc post={post} />
+          </Box>
+        )}
       </Box>
     </Layout>
   );
