@@ -16,7 +16,7 @@ export const PostToc: FC<PostTocProps> = ({ post }) => (
       Table of Contents
     </Text>
     <Line />
-    <Box as="nav" flexContainer flexDirection="column" gap="3">
+    <Box as="nav" display="flex" flexDirection="column" gap="3">
       {post.headings.map((heading: string, index: number) => (
         <HashLink
           key={heading}

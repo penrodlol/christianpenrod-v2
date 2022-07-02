@@ -15,12 +15,12 @@ export const PostTabs = ({
   <RadixTabs.Root defaultValue={values[0]} asChild>
     <Box bg="surface.1" borderRadius="2" boxShadow="3">
       <RadixTabs.TabsList asChild>
-        <Box flexContainer overflowX="auto">
+        <Box display="flex" overflowX="auto">
           {values.map((value) => (
             <RadixTabs.Trigger key={value} value={value} asChild>
               <Trigger
                 position="relative"
-                flexContainer
+                display="flex"
                 justifyContent="center"
                 flex="1"
                 paddingY="2"

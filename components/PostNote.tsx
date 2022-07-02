@@ -5,7 +5,7 @@ export const PostNote = ({ children }: PropsWithChildren<unknown>) => (
   <Box
     as="blockquote"
     minWidth="100%"
-    flexContainer
+    display="flex"
     flexDirection="column"
     gap="5"
     bg="surface.2"

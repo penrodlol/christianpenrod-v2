@@ -17,7 +17,7 @@ export const Header = () => {
     >
       <Box
         as="nav"
-        flexContainer
+        display="flex"
         alignItems="center"
         justifyContent="space-between"
         paddingY="2"
@@ -30,7 +30,7 @@ export const Header = () => {
             <LogoIcon height={40} width={50} />
           </Anchor>
         </Route>
-        <Box flexContainer gap="9">
+        <Box display="flex" gap="9">
           <Routes />
         </Box>
       </Box>

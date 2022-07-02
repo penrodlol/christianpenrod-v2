@@ -5,7 +5,7 @@ import { Box } from './Box';
 import { Button } from './Button';
 
 export const SocialLinks = () => (
-  <Box flexContainer gap="8">
+  <Box display="flex" gap="8">
     <Button variant="icon" aria-label="Navigate to my twitter">
       <TwitterIcon width="30" height="30" />
     </Button>

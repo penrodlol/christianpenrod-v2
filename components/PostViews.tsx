@@ -4,7 +4,7 @@ import { Text } from './Text';
 
 export const PostViews = () => (
   <Box
-    flexContainer
+    display="flex"
     gap="2"
     alignItems="center"
     bg="surface.2"

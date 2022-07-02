@@ -13,7 +13,7 @@ export interface PostsProps {
 
 export const Posts: FC<PostsProps> = ({ posts }) => (
   <Box
-    gridContainer
+    display="grid"
     gridTemplateColumns={{ lg: 'repeat(3, minmax(0, 1fr))' }}
     gap="8"
   >
@@ -27,7 +27,7 @@ export const Posts: FC<PostsProps> = ({ posts }) => (
         actions={[
           <Link key={`${post._id}-action`} href={post.slug} passHref>
             <Anchor color="text.1">
-              <Box as="span" flexContainer gap="2">
+              <Box as="span" display="flex" gap="2">
                 Read More
                 <ArrowRightIcon width={25} height={25} />
               </Box>

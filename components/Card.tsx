@@ -15,7 +15,7 @@ export interface CardProps {
 export const Card: FC<CardProps> = (props) => {
   return (
     <Box
-      flexContainer
+      display="flex"
       flexDirection="column"
       bg="surface.2"
       paddingX="6"
@@ -23,7 +23,7 @@ export const Card: FC<CardProps> = (props) => {
       borderRadius="3"
       boxShadow="4"
     >
-      <Box flexContainer gap="2" flexWrap="wrap" marginBottom="2">
+      <Box display="flex" gap="2" flexWrap="wrap" marginBottom="2">
         {props.tags.map((tag) => (
           <Chip key={tag}>{tag}</Chip>
         ))}
@@ -39,7 +39,7 @@ export const Card: FC<CardProps> = (props) => {
         {props.content}
       </Text>
       <Box
-        flexContainer
+        display="flex"
         alignItems="center"
         justifyContent="end"
         paddingTop="4"

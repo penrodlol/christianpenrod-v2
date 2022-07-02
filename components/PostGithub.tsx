@@ -17,7 +17,7 @@ export const PostGithub: FC<PostGithubProps> = ({ github }) => {
 
   return (
     <Box bg="surface.2" boxShadow="3" borderRadius="2" p="4">
-      <Box flexContainer gap="3" alignItems="center" color="brand.1">
+      <Box display="flex" gap="3" alignItems="center" color="brand.1">
         <GithubBookmarkIcon width={25} height={25} />
         <Anchor
           href={result?.html_url}
@@ -32,20 +32,20 @@ export const PostGithub: FC<PostGithubProps> = ({ github }) => {
       <Text as="p" color="text.2" fontWeight="6" mt="3" mb="4">
         {result?.description}
       </Text>
-      <Box flexContainer gap="3" alignItems="center">
-        <Box flexContainer gap="2" alignItems="center" mr="3">
+      <Box display="flex" gap="3" alignItems="center">
+        <Box display="flex" gap="2" alignItems="center" mr="3">
           <Box bg="accent.2" size="3" borderRadius="50%" />
           <Text color="text.2" fontWeight="6">
             {result?.language}
           </Text>
         </Box>
-        <Box flexContainer gap="2" alignItems="center" color="brand.1">
+        <Box display="flex" gap="2" alignItems="center" color="brand.1">
           <GithubStarIcon width={20} height={20} />
           <Text color="text.2" fontWeight="6">
             {result?.stargazers_count}
           </Text>
         </Box>
-        <Box flexContainer gap="2" alignItems="center" color="brand.1">
+        <Box display="flex" gap="2" alignItems="center" color="brand.1">
           <GithubForkIcon width={20} height={20} />
           <Text color="text.2" fontWeight="6">
             {result?.forks_count}
