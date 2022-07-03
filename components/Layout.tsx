@@ -31,10 +31,10 @@ export const Layout = (props: PropsWithChildren<LayoutProps>) => {
 
 const LayoutTitle: FC<LayoutProps> = ({ title, subTitle }) => (
   <Box marginBottom="fluid.5">
-    <Text as="h1" fontSize="fluid.6">
+    <Text as="h1" fontSize="fluid.7">
       {title}
     </Text>
-    <Text as="h3" color="text.2" fontSize="fluid.5">
+    <Text as="h3" color="text.2" fontSize="fluid.6">
       {subTitle}
     </Text>
   </Box>
