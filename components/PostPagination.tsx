@@ -15,7 +15,7 @@ export interface PostPaginationProps {
 export const PostPagination: FC<PostPaginationProps> = ({ prev, next }) => (
   <Box display="flex" gap="2" justifyContent="space-between">
     {prev && (
-      <Box maxWidth="50%">
+      <Box maxWidth={next ? '50%' : '75%'}>
         <Link href={prev.slug!} passHref>
           <Anchor color="text.1">
             <Box display="flex" flexDirection="column" gap="2">
@@ -32,7 +32,7 @@ export const PostPagination: FC<PostPaginationProps> = ({ prev, next }) => (
       </Box>
     )}
     {next && (
-      <Box maxWidth="50%">
+      <Box maxWidth={prev ? '50%' : '75%'} marginLeft="auto">
         <Link href={next.slug!} passHref>
           <Anchor color="text.1">
             <Box display="flex" flexDirection="column" gap="2">
