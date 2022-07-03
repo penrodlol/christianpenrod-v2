@@ -13,6 +13,7 @@
     "@fontsource/sriracha": "^4.5.8",
     "@octokit/rest": "^18.12.0",
     "@radix-ui/react-tabs": "^0.1.5",
+    "@radix-ui/react-visually-hidden": "^0.1.4",
     "contentlayer": "^0.2.5",
     "dayjs": "^1.11.3",
     "next": "^12.2.0",

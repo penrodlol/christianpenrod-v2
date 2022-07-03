@@ -5,6 +5,7 @@ import { PostCodeSyntaxHighlighting } from '@components/PostCode';
 import { PostGithub } from '@components/PostGithub';
 import { PostHeader } from '@components/PostHeader';
 import { PostPagination } from '@components/PostPagination';
+import { PostSubHeaderIntroduction } from '@components/PostSubHeader';
 import { PostToc } from '@components/PostToc';
 import { PostViews } from '@components/PostViews';
 import { Text } from '@components/Text';
@@ -70,14 +71,17 @@ const Blog: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
           </Box>
         </Box>
         {post.headings && (
-          <Box
-            display={{ _: 'none', xl: 'unset' }}
-            position="sticky"
-            top="11"
-            alignSelf="flex-start"
-          >
-            <PostToc post={post} />
-          </Box>
+          <>
+            <PostSubHeaderIntroduction />
+            <Box
+              display={{ _: 'none', xl: 'unset' }}
+              position="sticky"
+              top="11"
+              alignSelf="flex-start"
+            >
+              <PostToc post={post} />
+            </Box>
+          </>
         )}
       </Box>
     </Layout>

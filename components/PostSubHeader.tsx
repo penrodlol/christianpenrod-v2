@@ -1,3 +1,4 @@
+import { Root as VisuallyHidden } from '@radix-ui/react-visually-hidden';
 import LinkIcon from '@svg/link.svg';
 import HashLink from 'next/link';
 import { PropsWithChildren } from 'react';
@@ -38,3 +39,11 @@ const Wrapper = styled(Box)`
     animation: var(--animation-fade-in) forwards;
   }
 `;
+
+export const PostSubHeaderIntroduction = () => (
+  <VisuallyHidden asChild>
+    <Box as="h2" id="introduction" position="absolute" top="0px">
+      Introduction
+    </Box>
+  </VisuallyHidden>
+);
