@@ -6,7 +6,7 @@ import remarkPrism from 'remark-prism';
 
 export const Post = defineDocumentType(() => ({
   name: 'Post',
-  filePathPattern: '**/*.mdx',
+  filePathPattern: 'posts/*.mdx',
   contentType: 'mdx',
   fields: {
     title: { type: 'string', required: true },
@@ -18,7 +18,8 @@ export const Post = defineDocumentType(() => ({
   computedFields: {
     slug: {
       type: 'string',
-      resolve: (post) => `/blog/${post._raw.flattenedPath}`,
+      resolve: (post) =>
+        `/blog/${post._raw.flattenedPath.replace('posts/', '')}`,
     },
     readingTime: {
       type: 'number',
@@ -33,9 +34,27 @@ export const Post = defineDocumentType(() => ({
   },
 }));
 
+export const Bio = defineDocumentType(() => ({
+  name: 'Bio',
+  filePathPattern: 'misc/bio.mdx',
+  contentType: 'mdx',
+  isSingleton: true,
+  fields: {},
+}));
+
+export const Occupation = defineDocumentType(() => ({
+  name: 'Occupation',
+  filePathPattern: 'occupations/*.mdx',
+  contentType: 'mdx',
+  fields: {
+    company: { type: 'string', required: true },
+    logo: { type: 'string', required: true },
+  },
+}));
+
 export default makeSource({
-  contentDirPath: 'posts',
-  documentTypes: [Post],
+  contentDirPath: 'content',
+  documentTypes: [Post, Bio, Occupation],
   mdx: {
     rehypePlugins: [rehypeExternalLinks, rehypeSlug],
     remarkPlugins: [() => remarkPrism({ transformInlineCode: true })],
