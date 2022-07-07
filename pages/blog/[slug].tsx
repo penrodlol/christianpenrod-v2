@@ -92,9 +92,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   return { paths: allPosts.map((post) => post.slug), fallback: false };
 };
 
-export const getStaticProps: GetStaticProps<StaticProps> = async ({
-  params,
-}) => {
+export const getStaticProps: GetStaticProps<StaticProps> = ({ params }) => {
   const post = sortedPosts.find((p) => p.slug.includes(String(params!.slug)))!;
   const prev = getPaginatedPost(post, 'prev');
   const next = getPaginatedPost(post, 'next');

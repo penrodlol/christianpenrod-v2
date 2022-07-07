@@ -14,7 +14,7 @@ const Blog: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
   );
 };
 
-export const getStaticProps: GetStaticProps<{ posts: Post[] }> = async () => {
+export const getStaticProps: GetStaticProps<{ posts: Post[] }> = () => {
   return { props: { posts: sortedPosts } };
 };
 

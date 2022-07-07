@@ -27,7 +27,7 @@ const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
   );
 };
 
-export const getStaticProps: GetStaticProps<{ posts: Post[] }> = async () => {
+export const getStaticProps: GetStaticProps<{ posts: Post[] }> = () => {
   const posts = sortedPosts.filter((_, index) => index < 3);
   return { props: { posts } };
 };
