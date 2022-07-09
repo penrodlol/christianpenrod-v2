@@ -10,7 +10,7 @@ const About: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
 }) => {
   return (
     <Layout title="About" subTitle="Who is Christian?">
-      <Box display="flex" flexDirection="column" gap="5">
+      <Box display="flex" flexDirection="column" gap="7">
         {roles.map((role) => (
           <RoleTimeline key={role._id} role={role} />
         ))}
