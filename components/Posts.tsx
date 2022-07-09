@@ -22,7 +22,7 @@ export const Posts: FC<PostsProps> = ({ posts }) => (
         key={post._id}
         tags={post.tags}
         title={post.title}
-        subTitle={dayjs(post.published).format('MMM Do, YYYY')}
+        subTitle={dayjs.utc(post.published).format('MMM Do, YYYY')}
         content={post.description}
         actions={[
           <Link key={`${post._id}-action`} href={post.slug} passHref>

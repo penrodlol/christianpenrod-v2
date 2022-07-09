@@ -34,27 +34,21 @@ export const Post = defineDocumentType(() => ({
   },
 }));
 
-export const Bio = defineDocumentType(() => ({
-  name: 'Bio',
-  filePathPattern: 'misc/bio.mdx',
-  contentType: 'mdx',
-  isSingleton: true,
-  fields: {},
-}));
-
-export const Occupation = defineDocumentType(() => ({
-  name: 'Occupation',
-  filePathPattern: 'occupations/*.mdx',
+export const Role = defineDocumentType(() => ({
+  name: 'Role',
+  filePathPattern: 'roles/*.mdx',
   contentType: 'mdx',
   fields: {
     company: { type: 'string', required: true },
     logo: { type: 'string', required: true },
+    start: { type: 'date', required: true },
+    end: { type: 'date' },
   },
 }));
 
 export default makeSource({
   contentDirPath: 'content',
-  documentTypes: [Post, Bio, Occupation],
+  documentTypes: [Post, Role],
   mdx: {
     rehypePlugins: [rehypeExternalLinks, rehypeSlug],
     remarkPlugins: [() => remarkPrism({ transformInlineCode: true })],
