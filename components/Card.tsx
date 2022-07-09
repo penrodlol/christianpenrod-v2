@@ -1,6 +1,5 @@
 import { FC, ReactNode } from 'react';
 import { Box } from './Box';
-import { Chip } from './Chip';
 import { Line } from './Line';
 import { Text } from './Text';
 
@@ -25,7 +24,17 @@ export const Card: FC<CardProps> = (props) => {
     >
       <Box display="flex" gap="2" flexWrap="wrap" marginBottom="2">
         {props.tags.map((tag) => (
-          <Chip key={tag}>{tag}</Chip>
+          <Box
+            key={tag}
+            bg="accent.2"
+            color="surface.1"
+            borderRadius="round"
+            paddingX="2"
+          >
+            <Text letterSpacing="2" fontSize="0.9rem" color="black">
+              {tag}
+            </Text>
+          </Box>
         ))}
       </Box>
       <Text fontSize="3">{props.title}</Text>
