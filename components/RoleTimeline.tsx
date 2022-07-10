@@ -42,7 +42,7 @@ export const RoleTimeline: FC<RoleTimelineProps> = ({ role }) => {
   const end = role.end ? dayjs.utc(role.end).format('MMM Do, YYYY') : 'Present';
 
   return (
-    <Box bg="surface.1" borderRadius="2" boxShadow="4" py="4" px="6">
+    <Box bg="surface.1" borderRadius="2" boxShadow="4" p="6">
       <Text as="h3" fontSize="fluid.5">
         {role.company}
       </Text>
