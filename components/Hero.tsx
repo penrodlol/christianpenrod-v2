@@ -1,28 +1,22 @@
-import { Box } from './Box';
 import { Button } from './Button';
 import { Line } from './Line';
-import { Text } from './Text';
 
 export const Hero = () => {
   return (
-    <Box maxWidth="max-content">
-      <Text as="h1" fontSize="fluid.8">
-        Hi, I&apos;m Christian.
-      </Text>
-      <Text as="h3" color="text.2" fontSize="fluid.5">
-        Front-End Web Developer
-      </Text>
-      <Line height="2" space="7" />
-      <Text as="p" fontSize="fluid.3" fontWeight="6" contentWidth="2">
+    <div className="max-w-max">
+      <h1 className="text-fluid-8">Hi, I&apos;m Christian.</h1>
+      <h3 className="text-basic-2 text-fluid-5">Front-End Web Developer</h3>
+      <Line className="h-2 my-7" />
+      <p className="text-fluid-3 font-semibold max-w-[50ch]">
         Developing for the web since 2015, based in Pittsburgh PA. A few areas I
         tend to focus on include developer experience tooling, responsive web
         design, and occasionally some attempts at teaching.
-      </Text>
-      <Box marginTop="fluid.6" maxWidth={{ _: '100%', md: 'max-content' }}>
-        <Button variant="cta" aria-label="Open contact form" width="100%">
+      </p>
+      <div className="mt-fluid-6 md:max-w-max">
+        <Button variant="cta" className="w-full" aria-label="Open contact form">
           Contact
         </Button>
-      </Box>
-    </Box>
+      </div>
+    </div>
   );
 };

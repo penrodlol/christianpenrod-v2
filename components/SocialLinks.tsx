@@ -1,11 +1,10 @@
 import GithubIcon from '@svg/github.svg';
 import LinkedinIcon from '@svg/linkedin.svg';
 import TwitterIcon from '@svg/twitter.svg';
-import { Box } from './Box';
 import { Button } from './Button';
 
 export const SocialLinks = () => (
-  <Box display="flex" gap="8">
+  <div className="flex gap-8">
     <Button variant="icon" aria-label="Navigate to my twitter">
       <TwitterIcon width="30" height="30" />
     </Button>
@@ -15,5 +14,5 @@ export const SocialLinks = () => (
     <Button variant="icon" aria-label="Navigate to my linkedin">
       <LinkedinIcon width="30" height="30" />
     </Button>
-  </Box>
+  </div>
 );

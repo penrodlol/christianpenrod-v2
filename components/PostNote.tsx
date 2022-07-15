@@ -1,20 +1,10 @@
 import { PropsWithChildren } from 'react';
-import { Box } from './Box';
 
 export const PostNote = ({ children }: PropsWithChildren<unknown>) => (
-  <Box
-    as="blockquote"
-    minWidth="100%"
-    display="flex"
-    flexDirection="column"
-    gap="5"
-    bg="surface.2"
-    color="text.2"
-    padding="4"
-    borderRadius="2"
-    boxShadow="3"
-    borderLeft="solid var(--size-2) var(--brand-1)"
+  <blockquote
+    className="max-w-full flex flex-col gap-5 bg-surface-2 text-basic-2 p-4
+               rounded-2 shadow-3 border-l-2 border-solid border-l-brand-1"
   >
     {children}
-  </Box>
+  </blockquote>
 );

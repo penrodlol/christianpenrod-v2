@@ -1,14 +1,11 @@
-import { Box } from '@components/Box';
 import { Layout } from '@components/Layout';
 import { Line } from '@components/Line';
-import { PostCodeSyntaxHighlighting } from '@components/PostCode';
 import { PostGithub } from '@components/PostGithub';
 import { PostHeader } from '@components/PostHeader';
 import { PostPagination } from '@components/PostPagination';
 import { PostSubHeaderIntroduction } from '@components/PostSubHeader';
 import { PostToc } from '@components/PostToc';
 import { PostViews } from '@components/PostViews';
-import { Text } from '@components/Text';
 import { getPaginatedPost, sortedPosts } from '@utils/contentlayer';
 import { allPosts, Post } from 'contentlayer/generated';
 import {
@@ -19,8 +16,7 @@ import {
 } from 'next';
 import { useMDXComponent } from 'next-contentlayer/hooks';
 import dynamic from 'next/dynamic';
-import 'prism-theme-vars/base.css';
-import styled from 'styled-components';
+import { PropsWithChildren } from 'react';
 
 interface StaticProps {
   post: Post;
@@ -30,8 +26,8 @@ interface StaticProps {
 
 // prettier-ignore
 const components = {
-  p: styled(Text).attrs({ as: 'p', fontSize: 'fluid.3', lineHeight: 4 })``,
-  em: styled(Text).attrs({ as: 'em', variant: 'fancy' })``,
+  p: ({children}: PropsWithChildren<{}>) => <p className='text-fluid-3 leading-4'>{children}</p>,
+  em: ({children}: PropsWithChildren<{}>) => <em className='not-italic'>{children}</em>,
   a: dynamic<any>(() => import('@components/Anchor').then(m => m.Anchor)),
   h2: dynamic<any>(() => import('@components/PostSubHeader').then(m => m.PostSubHeader)),
   pre: dynamic<any>(() => import('@components/PostCode').then(m => m.PostCode)),
@@ -49,41 +45,28 @@ const Blog: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
 
   return (
     <Layout>
-      <Box display="flex" gap="11">
-        <Box as="article" maxWidth="md" minWidth="0px" margin="0 auto">
+      <div className="flex gap-11">
+        <article className="max-w-md min-w-[0px] my-[0px]">
           <PostHeader post={post} />
-          <PostCodeSyntaxHighlighting />
-          <Box
-            display="flex"
-            flexDirection="column"
-            gap="8"
-            marginY="fluid.5"
-            marginX="auto"
-            paddingX="fluid.1"
-          >
+          <div className="flex flex-col gap-8 my-fluid-5 mx-auto px-fluid-1">
             <MDXContent components={components} />
             {post.github && <PostGithub github={post.github} />}
-            <Box alignSelf="end">
+            <div className="self-end">
               <PostViews />
-            </Box>
+            </div>
             <Line />
             <PostPagination prev={prev} next={next} />
-          </Box>
-        </Box>
+          </div>
+        </article>
         {post.headings && (
           <>
             <PostSubHeaderIntroduction />
-            <Box
-              display={{ _: 'none', xl: 'unset' }}
-              position="sticky"
-              top="11"
-              alignSelf="flex-start"
-            >
+            <div className="sticky top-11 self-start hidden xl:block">
               <PostToc post={post} />
-            </Box>
+            </div>
           </>
         )}
-      </Box>
+      </div>
     </Layout>
   );
 };

@@ -2,23 +2,19 @@ import { Post } from 'contentlayer/generated';
 import HashLink from 'next/link';
 import { FC } from 'react';
 import { Anchor } from './Anchor';
-import { Box } from './Box';
 import { Line } from './Line';
-import { Text } from './Text';
 
 export interface PostTocProps {
   post: Post;
 }
 
 export const PostToc: FC<PostTocProps> = ({ post }) => (
-  <Box as="aside">
-    <Text as="h3" fontSize="4">
-      Table of Contents
-    </Text>
+  <aside>
+    <h3 className="text-4">Table of Contents</h3>
     <Line />
-    <Box as="nav" display="flex" flexDirection="column" gap="3">
+    <nav className="flex flex-col gap-3">
       <HashLink href={{ hash: 'introduction' }} passHref>
-        <Anchor color="text.2">1. Introduction</Anchor>
+        <Anchor className="text-basic-2">1. Introduction</Anchor>
       </HashLink>
       {post.headings.map((heading: string, index: number) => (
         <HashLink
@@ -26,11 +22,11 @@ export const PostToc: FC<PostTocProps> = ({ post }) => (
           href={{ hash: heading.toLowerCase().replace(/ /g, '-') }}
           passHref
         >
-          <Anchor color="text.2">
+          <Anchor className="text-basic-2">
             {index + 2}. {heading}
           </Anchor>
         </HashLink>
       ))}
-    </Box>
-  </Box>
+    </nav>
+  </aside>
 );

@@ -1,8 +1,5 @@
 import * as RadixTabs from '@radix-ui/react-tabs';
 import { Children, PropsWithChildren } from 'react';
-import styled from 'styled-components';
-import { Box } from './Box';
-import { Text } from './Text';
 
 export interface PostTabsProps {
   values: Array<string>;
@@ -13,61 +10,33 @@ export const PostTabs = ({
   children,
 }: PropsWithChildren<PostTabsProps>) => (
   <RadixTabs.Root defaultValue={values[0]} asChild>
-    <Box bg="surface.1" borderRadius="2" boxShadow="3">
+    <div className="bg-surface-1 rounded-2 shadow-3">
       <RadixTabs.TabsList asChild>
-        <Box display="flex" overflowX="auto">
+        <div className="flex overflow-x-auto">
           {values.map((value) => (
             <RadixTabs.Trigger key={value} value={value} asChild>
-              <Trigger
-                position="relative"
-                display="flex"
-                justifyContent="center"
-                flex="1"
-                paddingY="2"
-                paddingX="3"
-                color="text.2"
+              <div
+                className="relative flex justify-center flex-1 py-2 px-3 text-basic-2
+                           hover:text-basic-1 rdx-state-active:text-basic-1
+                           rdx-state-active:after:content-[''] rdx-state-active:after:absolute
+                           rdx-state-active:after:bottom-[0px] rdx-state-active:after:left-[0px]
+                           rdx-state-active:after:right-[0px] rdx-state-active:after:z-2
+                           rdx-state-active:after:h-1 rdx-state-active:after:rounded-2
+                           rdx-state-active:after:bg-brand-1"
               >
-                <Text fontSize="2">{value}</Text>
-              </Trigger>
+                <span className="text-2 whitespace-nowrap">{value}</span>
+              </div>
             </RadixTabs.Trigger>
           ))}
-        </Box>
+        </div>
       </RadixTabs.TabsList>
       {Children.toArray(children).map((child, index) => (
         <RadixTabs.Content key={index} value={values[index]} asChild>
-          <Box
-            bg="surface.2"
-            padding="5"
-            borderBottomLeftRadius="inherit"
-            borderBottomRightRadius="inherit"
-            style={{ cursor: 'auto' }}
-          >
+          <div className="bg-surface-2 p-5 rounded-bl-2 rounded-br-2 cursor-auto">
             {child}
-          </Box>
+          </div>
         </RadixTabs.Content>
       ))}
-    </Box>
+    </div>
   </RadixTabs.Root>
 );
-
-const Trigger = styled(Box)`
-  white-space: nowrap;
-
-  &[data-state='active'],
-  &:hover {
-    color: var(--text-1);
-  }
-
-  &[data-state='active']:after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      z-index: var(--layer-2);
-      height: var(--size-1);
-      border-radius: var(--radius-2);
-      background: var(--brand-1);
-    }
-  }
-`;

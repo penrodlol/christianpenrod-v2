@@ -1,4 +1,3 @@
-import { Box } from '@components/Box';
 import { Layout } from '@components/Layout';
 import { RoleTimeline } from '@components/RoleTimeline';
 import { sortedRoles } from '@utils/contentlayer';
@@ -10,11 +9,11 @@ const About: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
 }) => {
   return (
     <Layout title="About" subTitle="Who is Christian?">
-      <Box display="flex" flexDirection="column" gap="7">
+      <section className="flex flex-col gap-7">
         {roles.map((role) => (
           <RoleTimeline key={role._id} role={role} />
         ))}
-      </Box>
+      </section>
     </Layout>
   );
 };

@@ -1,46 +1,25 @@
-import styled from 'styled-components';
-import { compose, layout, LayoutProps, variant } from 'styled-system';
+import { FC, HTMLAttributes } from 'react';
 
-export interface ButtonProps extends LayoutProps {
-  variant: 'primary' | 'cta' | 'icon';
+export interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
+  variant: keyof typeof variants;
 }
 
-export const Button = styled.button<ButtonProps>`
-  font-weight: var(--font-weight-8);
-  font-size: var(--font-size-3);
-  border-radius: var(--radius-2);
+const variants = {
+  primary: 'bg-brand-2 shadow-3 hover:bg-brand-3 hover:enabled:shadow-4',
+  cta: 'bg-accent-2 text-[black] shadow-3 hover:bg-accent-1 hover:enabled:shadow-4',
+  icon: 'p-[0px] hover:enabled:text-brand-1',
+};
 
-  ${compose(
-    layout,
-    variant({
-      variants: {
-        primary: {
-          bg: 'brand.2',
-          boxShadow: '3',
-          padding: '0.8rem var(--size-7)',
-          '&:hover:enabled': {
-            bg: 'brand.1',
-            boxShadow: '4',
-          },
-        },
-        cta: {
-          bg: 'accent.2',
-          color: 'black',
-          boxShadow: '3',
-          padding: '0.8rem var(--size-7)',
-          '&:hover:enabled': {
-            bg: 'accent.1',
-            boxShadow: '4',
-          },
-        },
-        icon: {
-          bg: 'transparent',
-          '&:hover:enabled': {
-            color: 'brand.1',
-            filter: 'drop-shadow(3px 3px 5px hsl(var(--shadow-color) / 65%))',
-          },
-        },
-      },
-    }),
-  )}
-`;
+export const Button: FC<ButtonProps> = ({
+  children,
+  className,
+  variant,
+  ...props
+}) => (
+  <button
+    {...props}
+    className={`text-3 font-extrabold rounded-2 px-7 py-[0.8rem] ${variants[variant]} ${className}`}
+  >
+    {children}
+  </button>
+);

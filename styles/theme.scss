@@ -4,6 +4,8 @@
 :root {
   --text-1: var(--gray-1);
   --text-2: var(--gray-4);
+  --basic-1: var(--gray-1);
+  --basic-2: var(--gray-4);
 
   --surface-1: var(--gray-7);
   --surface-2: var(--gray-8);
@@ -16,4 +18,6 @@
 
   --accent-1: hsl(265, 62%, 90%);
   --accent-2: hsl(266, 77%, 88%);
+
+  --link-visited: var(--text-1);
 }

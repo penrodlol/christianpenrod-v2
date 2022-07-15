@@ -1,7 +1,5 @@
 import { FC, ReactNode } from 'react';
-import { Box } from './Box';
 import { Line } from './Line';
-import { Text } from './Text';
 
 export interface CardProps {
   title: string;
@@ -13,49 +11,25 @@ export interface CardProps {
 
 export const Card: FC<CardProps> = (props) => {
   return (
-    <Box
-      display="flex"
-      flexDirection="column"
-      bg="surface.2"
-      paddingX="6"
-      paddingY="4"
-      borderRadius="3"
-      boxShadow="4"
-    >
-      <Box display="flex" gap="2" flexWrap="wrap" marginBottom="2">
+    <div className="flex flex-col bg-surface-2 px-6 py-4 rounded-3 shadow-4">
+      <div className="flex gap-2 flex-wrap mb-2">
         {props.tags.map((tag) => (
-          <Box
-            key={tag}
-            bg="accent.2"
-            color="surface.1"
-            borderRadius="round"
-            paddingX="2"
-          >
-            <Text letterSpacing="2" fontSize="0.9rem" color="black">
-              {tag}
-            </Text>
-          </Box>
+          <div key={tag} className="bg-accent-2 rounded-6 px-2">
+            <span className="text-[0.9rem] text-[black] tracking-2">{tag}</span>
+          </div>
         ))}
-      </Box>
-      <Text fontSize="3">{props.title}</Text>
+      </div>
+      <span className="text-3">{props.title}</span>
       {props.subTitle && (
-        <Text color="text.2" fontSize="2" fontWeight="6">
+        <span className="text-basic-2 text-2 font-semibold">
           {props.subTitle}
-        </Text>
+        </span>
       )}
       <Line />
-      <Text as="p" fontSize="1" lineHeight="4">
-        {props.content}
-      </Text>
-      <Box
-        display="flex"
-        alignItems="center"
-        justifyContent="end"
-        paddingTop="4"
-        marginTop="auto"
-      >
+      <p className="text-1 leading-4">{props.content}</p>
+      <div className="flex items-center justify-end pt-4 mt-auto">
         {props.actions}
-      </Box>
-    </Box>
+      </div>
+    </div>
   );
 };

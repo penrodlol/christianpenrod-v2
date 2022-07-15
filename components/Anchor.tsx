@@ -1,28 +1,24 @@
-import styled from 'styled-components';
-import { Text } from './Text';
+import { AnchorHTMLAttributes, ForwardedRef, forwardRef } from 'react';
 
-export const Anchor = styled(Text.withComponent('a'))`
-  position: relative;
-  text-decoration: none;
-  border-radius: var(--radius-2);
+export type AnchorProps = AnchorHTMLAttributes<HTMLAnchorElement>;
 
-  &:hover {
-    color: var(--brand-1);
-  }
+const external =
+  "hover:after:content-[''] hover:after:absolute hover:after:right-[0px] hover:after:left-[0px] hover:after:bottom-[2px] hover:after:border-t-[0.2rem] hover:after:border-solid hover:after:border-brand-1 hover:after:rounded-2";
 
-  &[target='_blank'] {
-    &:not([color]) {
-      color: var(--brand-1);
-    }
+const AnchorComponent = (
+  { children, className, target, ...props }: AnchorProps,
+  ref: ForwardedRef<HTMLAnchorElement>,
+) => (
+  <a
+    {...props}
+    ref={ref}
+    target={target || '_self'}
+    className={`relative no-underline rounded-2 hover:text-brand-1 ${className} ${
+      target === '_blank' && external
+    }`}
+  >
+    {children}
+  </a>
+);
 
-    &:hover:after {
-      content: '';
-      position: absolute;
-      right: 0;
-      left: 0;
-      bottom: 2px;
-      border-top: 0.2rem solid var(--brand-1);
-      border-radius: var(--radius-2);
-    }
-  }
-`;
+export const Anchor = forwardRef(AnchorComponent);

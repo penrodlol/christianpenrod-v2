@@ -2,48 +2,27 @@ import { Root as VisuallyHidden } from '@radix-ui/react-visually-hidden';
 import LinkIcon from '@svg/link.svg';
 import HashLink from 'next/link';
 import { PropsWithChildren } from 'react';
-import styled from 'styled-components';
-import { Box } from './Box';
-import { Text } from './Text';
 
 export const PostSubHeader = ({
   id,
   children,
 }: PropsWithChildren<HTMLElement>) => {
   return (
-    <Wrapper id={id} position="relative" mt="fluid.4">
+    <div id={id} className="group relative mt-fluid-4 scroll-mt-11 ">
       <HashLink href={{ hash: id }} passHref>
-        <Box
-          as="a"
-          color="brand.1"
-          position="absolute"
-          left="-40px"
-          top="15px"
-          opacity="0"
-          paddingRight="3"
-        >
+        <a className="text-brand-1 absolute left-[-40px] top-[15px] opacity-0 pr-3 group-hover:opacity-100">
           <LinkIcon width={30} height={30} />
-        </Box>
+        </a>
       </HashLink>
-      <Text as="h2" color="accent.2" fontSize="fluid.7">
-        {children}
-      </Text>
-    </Wrapper>
+      <h2 className="text-accent-2 text-fluid-7">{children}</h2>
+    </div>
   );
 };
 
-const Wrapper = styled(Box)`
-  scroll-margin-top: var(--size-11);
-
-  &:hover ${Box} {
-    animation: var(--animation-fade-in) forwards;
-  }
-`;
-
 export const PostSubHeaderIntroduction = () => (
   <VisuallyHidden asChild>
-    <Box as="h2" id="introduction" position="absolute" top="0px">
+    <h2 id="introduction" className="absolute top-[0px]">
       Introduction
-    </Box>
+    </h2>
   </VisuallyHidden>
 );

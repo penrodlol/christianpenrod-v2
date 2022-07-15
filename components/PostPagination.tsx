@@ -4,8 +4,6 @@ import { Post } from 'contentlayer/generated';
 import Link from 'next/link';
 import { FC } from 'react';
 import { Anchor } from './Anchor';
-import { Box } from './Box';
-import { Text } from './Text';
 
 export interface PostPaginationProps {
   prev: Partial<Post> | null;
@@ -13,48 +11,36 @@ export interface PostPaginationProps {
 }
 
 export const PostPagination: FC<PostPaginationProps> = ({ prev, next }) => (
-  <Box display="flex" gap="2" justifyContent="space-between">
+  <div className="flex gap-2 justify-between">
     {prev && (
-      <Box maxWidth={next ? '50%' : '75%'}>
+      <div className={next ? 'max-w-[50%]' : 'max-w-[75%]'}>
         <Link href={prev.slug!} passHref>
-          <Anchor color="text.1">
-            <Box display="flex" flexDirection="column" gap="2">
-              <Box display="flex" gap="2" alignItems="center" color="brand.1">
+          <Anchor>
+            <div className="flex flex-col gap-2">
+              <div className="flex gap-2 items-center text-brand-1">
                 <ArrowLeftIcon width={30} height={30} />
-                <Text color="accent.2" fontSize="3">
-                  Prev
-                </Text>
-              </Box>
-              <Text fontSize="fluid.3">{prev.title}</Text>
-            </Box>
+                <span className="text-accent-2 text-3">Prev</span>
+              </div>
+              <span className="text-3">{prev.title}</span>
+            </div>
           </Anchor>
         </Link>
-      </Box>
+      </div>
     )}
     {next && (
-      <Box maxWidth={prev ? '50%' : '75%'} marginLeft="auto">
+      <div className={`ml-auto ${prev ? 'max-w-[50%]' : 'max-w-[75%]'}`}>
         <Link href={next.slug!} passHref>
-          <Anchor color="text.1">
-            <Box display="flex" flexDirection="column" gap="2">
-              <Box
-                alignSelf="end"
-                display="flex"
-                gap="2"
-                alignItems="center"
-                color="brand.1"
-              >
-                <Text color="accent.2" fontSize="3">
-                  Next
-                </Text>
+          <Anchor>
+            <div className="flex flex-col gap-2">
+              <div className="self-end flex gap-2 items-center text-brand-1">
+                <span className="text-accent-2 text-3">Next</span>
                 <ArrowRightIcon width={30} height={30} />
-              </Box>
-              <Text fontSize="fluid.3" textAlign="right">
-                {next.title}
-              </Text>
-            </Box>
+              </div>
+              <span className="text-fluid-3 text-right">{next.title}</span>
+            </div>
           </Anchor>
         </Link>
-      </Box>
+      </div>
     )}
-  </Box>
+  </div>
 );

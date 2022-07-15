@@ -1,7 +1,5 @@
-import { FC, PropsWithChildren } from 'react';
-import { Box } from './Box';
+import { PropsWithChildren } from 'react';
 import { Header } from './Header';
-import { Text } from './Text';
 
 export interface LayoutProps {
   title?: string;
@@ -10,32 +8,19 @@ export interface LayoutProps {
 
 export const Layout = (props: PropsWithChildren<LayoutProps>) => {
   return (
-    <Box position="relative" zIndex="2">
+    <div className="relative z-20">
       <Header />
-      <Box
-        as="main"
-        marginX="auto"
-        marginTop="clamp(1.31rem, calc(-0.52rem + 9.15vw), 6.00rem)"
-        marginBottom="8"
-        paddingX="fluid.4"
-        maxWidth="xl"
-      >
-        <Box maxWidth="max-content" margin="0 auto">
-          {props.title && <LayoutTitle {...props} />}
+      <main className="px-fluid-4 max-w-xl mx-auto mb-8 mt-[clamp(1.31rem,calc(-0.52rem+9.15vw),6.00rem)]">
+        <div className="max-w-max my-[0px] mx-auto">
+          {props.title && (
+            <div className="mb-fluid-5">
+              <h1 className="text-fluid-7">{props.title}</h1>
+              <h3 className="text-basic-2 text-fluid-6">{props.subTitle}</h3>
+            </div>
+          )}
           {props.children}
-        </Box>
-      </Box>
-    </Box>
+        </div>
+      </main>
+    </div>
   );
 };
-
-const LayoutTitle: FC<LayoutProps> = ({ title, subTitle }) => (
-  <Box marginBottom="fluid.5">
-    <Text as="h1" fontSize="fluid.7">
-      {title}
-    </Text>
-    <Text as="h3" color="text.2" fontSize="fluid.6">
-      {subTitle}
-    </Text>
-  </Box>
-);

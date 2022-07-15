@@ -5,8 +5,6 @@ import { fetchRepo } from '@utils/octokit';
 import { FC } from 'react';
 import { useAsync } from 'react-async-hook';
 import { Anchor } from './Anchor';
-import { Box } from './Box';
-import { Text } from './Text';
 
 export interface PostGithubProps {
   github: string;
@@ -16,42 +14,39 @@ export const PostGithub: FC<PostGithubProps> = ({ github }) => {
   const { result } = useAsync(fetchRepo, [github]);
 
   return (
-    <Box bg="surface.2" boxShadow="3" borderRadius="2" p="4">
-      <Box display="flex" gap="3" alignItems="center" color="brand.1">
+    <div className="bg-surface-2 shadow-3 rounded-2 p-4">
+      <div className="flex gap-3 items-center text-brand-1">
         <GithubBookmarkIcon width={25} height={25} />
         <Anchor
           href={result?.html_url}
           target="_blank"
           rel="nofollow noreferrer"
-          color="text.1"
-          fontSize="3"
+          className="text-3"
         >
           {result?.name}
         </Anchor>
-      </Box>
-      <Text as="p" color="text.2" fontWeight="6" mt="3" mb="4">
+      </div>
+      <p className="text-basic-2 font-semibold mt-3 mb-4">
         {result?.description}
-      </Text>
-      <Box display="flex" gap="3" alignItems="center">
-        <Box display="flex" gap="2" alignItems="center" mr="3">
-          <Box bg="accent.2" size="3" borderRadius="50%" />
-          <Text color="text.2" fontWeight="6">
-            {result?.language}
-          </Text>
-        </Box>
-        <Box display="flex" gap="2" alignItems="center" color="brand.1">
+      </p>
+      <div className="flex gap-3 items-center">
+        <div className="flex gap-2 items-center mr-3">
+          <div className="bg-accent-2 w-3 h-3 rounded-[50%]" />
+          <span className="text-basic-2 font-semibold">{result?.language}</span>
+        </div>
+        <div className="flex gap-2 items-center text-brand-1">
           <GithubStarIcon width={20} height={20} />
-          <Text color="text.2" fontWeight="6">
+          <span className="text-basic-2 font-semibold">
             {result?.stargazers_count}
-          </Text>
-        </Box>
-        <Box display="flex" gap="2" alignItems="center" color="brand.1">
+          </span>
+        </div>
+        <div className="flex gap-2 items-center text-brand-1">
           <GithubForkIcon width={20} height={20} />
-          <Text color="text.2" fontWeight="6">
+          <span className="text-basic-2 font-semibold">
             {result?.forks_count}
-          </Text>
-        </Box>
-      </Box>
-    </Box>
+          </span>
+        </div>
+      </div>
+    </div>
   );
 };
