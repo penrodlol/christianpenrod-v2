@@ -10,21 +10,21 @@ export const PostTabs = ({
   children,
 }: PropsWithChildren<PostTabsProps>) => (
   <RadixTabs.Root defaultValue={values[0]} asChild>
-    <div className="bg-surface-1 rounded-2 shadow-3">
+    <div className="bg-surface-1 rounded-md shadow-3">
       <RadixTabs.TabsList asChild>
         <div className="flex overflow-x-auto">
           {values.map((value) => (
             <RadixTabs.Trigger key={value} value={value} asChild>
               <div
-                className="relative flex justify-center flex-1 py-2 px-3 text-basic-2
+                className="relative flex justify-center flex-1 py-2 px-4 text-basic-2
                            hover:text-basic-1 rdx-state-active:text-basic-1
                            rdx-state-active:after:content-[''] rdx-state-active:after:absolute
-                           rdx-state-active:after:bottom-[0px] rdx-state-active:after:left-[0px]
-                           rdx-state-active:after:right-[0px] rdx-state-active:after:z-2
-                           rdx-state-active:after:h-1 rdx-state-active:after:rounded-2
+                           rdx-state-active:after:bottom-0 rdx-state-active:after:left-0
+                           rdx-state-active:after:right-0 rdx-state-active:after:z-2
+                           rdx-state-active:after:h-1 rdx-state-active:after:rounded-md
                            rdx-state-active:after:bg-brand-1"
               >
-                <span className="text-2 whitespace-nowrap">{value}</span>
+                <span className="text-lg whitespace-nowrap">{value}</span>
               </div>
             </RadixTabs.Trigger>
           ))}
@@ -32,7 +32,7 @@ export const PostTabs = ({
       </RadixTabs.TabsList>
       {Children.toArray(children).map((child, index) => (
         <RadixTabs.Content key={index} value={values[index]} asChild>
-          <div className="bg-surface-2 p-5 rounded-bl-2 rounded-br-2 cursor-auto">
+          <div className="bg-surface-2 p-6 rounded-bl-md rounded-br-md cursor-auto">
             {child}
           </div>
         </RadixTabs.Content>

@@ -4,7 +4,7 @@ import TwitterIcon from '@svg/twitter.svg';
 import { Button } from './Button';
 
 export const SocialLinks = () => (
-  <div className="flex gap-8">
+  <div className="flex gap-12">
     <Button variant="icon" aria-label="Navigate to my twitter">
       <TwitterIcon width="30" height="30" />
     </Button>

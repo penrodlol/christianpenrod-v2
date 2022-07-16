@@ -14,24 +14,24 @@ export const PostGithub: FC<PostGithubProps> = ({ github }) => {
   const { result } = useAsync(fetchRepo, [github]);
 
   return (
-    <div className="bg-surface-2 shadow-3 rounded-2 p-4">
-      <div className="flex gap-3 items-center text-brand-1">
+    <div className="bg-surface-2 shadow-3 rounded-md p-5">
+      <div className="flex gap-4 items-center text-brand-1">
         <GithubBookmarkIcon width={25} height={25} />
         <Anchor
           href={result?.html_url}
           target="_blank"
           rel="nofollow noreferrer"
-          className="text-3"
+          className="text-xl"
         >
           {result?.name}
         </Anchor>
       </div>
-      <p className="text-basic-2 font-semibold mt-3 mb-4">
+      <p className="text-basic-2 font-semibold mt-4 mb-5">
         {result?.description}
       </p>
-      <div className="flex gap-3 items-center">
-        <div className="flex gap-2 items-center mr-3">
-          <div className="bg-accent-2 w-3 h-3 rounded-[50%]" />
+      <div className="flex gap-4 items-center">
+        <div className="flex gap-2 items-center mr-4">
+          <div className="bg-accent-2 w-4 h-4 rounded-full" />
           <span className="text-basic-2 font-semibold">{result?.language}</span>
         </div>
         <div className="flex gap-2 items-center text-brand-1">

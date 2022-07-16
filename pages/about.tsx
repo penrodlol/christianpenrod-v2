@@ -9,7 +9,7 @@ const About: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
 }) => {
   return (
     <Layout title="About" subTitle="Who is Christian?">
-      <section className="flex flex-col gap-7">
+      <section className="flex flex-col gap-8">
         {roles.map((role) => (
           <RoleTimeline key={role._id} role={role} />
         ))}

@@ -11,9 +11,9 @@ export interface RoleTimelineProps {
 const components = {
   p: ({children}: PropsWithChildren<{}>) => <p className="font-semibold mt-3">{children}</p>,
   h2: ({children}: PropsWithChildren<{}>) =>
-    <h2 className="text-fluid-3 relative mt-5 before:content-[''] before:absolute before:top-[50%]
+    <h2 className="text-fluid-3 relative mt-6 before:content-[''] before:absolute before:top-[50%]
                    before:translate-y-[-50%] before:left-[calc(-1.1*var(--size-5))] before:w-[0.85rem]
-                   before:h-[0.85rem] before:rounded-[50%] before:bg-brand-1 before:shadow-3
+                   before:h-[0.85rem] before:rounded-full before:bg-brand-1 before:shadow-3
                    last-of-type:before:border-[0.2rem] last-of-type:before:border-brand-1
                    last-of-type:before:bg-transparent">
       {children}
@@ -27,14 +27,14 @@ export const RoleTimeline: FC<RoleTimelineProps> = ({ role }) => {
   const end = role.end ? dayjs.utc(role.end).format('MMM Do, YYYY') : 'Present';
 
   return (
-    <div className="bg-surface-1 rounded-2 shadow-4 p-6">
+    <div className="bg-surface-1 rounded-md shadow-4 p-7">
       <h3 className="text-fluid-5">{role.company}</h3>
       <h4 className="text-fluid-3 text-basic-2">
         {start} - {end}
       </h4>
       <div className="relative">
-        <div className="absolute bg-brand-1 opacity-30 rounded-2 top-4 bottom-1 w-2" />
-        <div className="flex flex-col pl-5">
+        <div className="absolute bg-brand-1 opacity-30 rounded-md top-5 bottom-1 w-2" />
+        <div className="flex flex-col pl-6">
           <RoleMDX components={components} />
         </div>
       </div>

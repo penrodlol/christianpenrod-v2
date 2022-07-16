@@ -11,7 +11,7 @@ export interface PostsProps {
 }
 
 export const Posts: FC<PostsProps> = ({ posts }) => (
-  <div className="grid gap-8 lg:grid-cols-3">
+  <div className="grid gap-12 lg:grid-cols-3">
     {posts.map((post) => (
       <Card
         key={post._id}

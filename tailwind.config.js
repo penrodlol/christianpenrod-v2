@@ -15,13 +15,7 @@ module.exports = {
       accent: setProp('accent', 2),
       transparent: 'transparent',
     },
-    fontSize: setProp('font-size', 8),
-    letterSpacing: setProp('font-letterspacing', 7),
-    lineHeight: setProp('font-lineheight', 5),
-    spacing: setProp('size', 15),
-    borderRadius: setProp('radius', 6),
     boxShadow: setProp('shadow', 6),
-    borderWidth: setProp('size', 15),
     screens: {
       xxs: '240px',
       xs: '360px',

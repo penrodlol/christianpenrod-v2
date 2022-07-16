@@ -26,7 +26,7 @@ interface StaticProps {
 
 // prettier-ignore
 const components = {
-  p: ({children}: PropsWithChildren<{}>) => <p className='text-fluid-3 leading-4'>{children}</p>,
+  p: ({children}: PropsWithChildren<{}>) => <p className='text-fluid-3 leading-9'>{children}</p>,
   em: ({children}: PropsWithChildren<{}>) => <em className='not-italic'>{children}</em>,
   a: dynamic<any>(() => import('@components/Anchor').then(m => m.Anchor)),
   h2: dynamic<any>(() => import('@components/PostSubHeader').then(m => m.PostSubHeader)),
@@ -45,10 +45,10 @@ const Blog: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
 
   return (
     <Layout>
-      <div className="flex gap-11">
-        <article className="max-w-md min-w-[0px] my-[0px]">
+      <div className="flex gap-28">
+        <article className="max-w-md min-w-0 my-0">
           <PostHeader post={post} />
-          <div className="flex flex-col gap-8 my-fluid-5 mx-auto px-fluid-1">
+          <div className="flex flex-col gap-12 my-fluid-5 mx-auto px-fluid-1">
             <MDXContent components={components} />
             {post.github && <PostGithub github={post.github} />}
             <div className="self-end">
@@ -61,7 +61,7 @@ const Blog: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
         {post.headings && (
           <>
             <PostSubHeaderIntroduction />
-            <div className="sticky top-11 self-start hidden xl:block">
+            <div className="sticky top-28 self-start hidden xl:block">
               <PostToc post={post} />
             </div>
           </>

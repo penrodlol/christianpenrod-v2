@@ -11,23 +11,25 @@ export interface CardProps {
 
 export const Card: FC<CardProps> = (props) => {
   return (
-    <div className="flex flex-col bg-surface-2 px-6 py-4 rounded-3 shadow-4">
+    <div className="flex flex-col bg-surface-2 px-6 py-5 rounded-lg shadow-4">
       <div className="flex gap-2 flex-wrap mb-2">
         {props.tags.map((tag) => (
-          <div key={tag} className="bg-accent-2 rounded-6 px-2">
-            <span className="text-[0.9rem] text-[black] tracking-2">{tag}</span>
+          <div key={tag} className="bg-accent-2 rounded-full px-2">
+            <span className="text-[0.9rem] text-[black] tracking-wider">
+              {tag}
+            </span>
           </div>
         ))}
       </div>
-      <span className="text-3">{props.title}</span>
+      <span className="text-2xl">{props.title}</span>
       {props.subTitle && (
-        <span className="text-basic-2 text-2 font-semibold">
+        <span className="text-basic-2 text-lg font-semibold">
           {props.subTitle}
         </span>
       )}
       <Line />
-      <p className="text-1 leading-4">{props.content}</p>
-      <div className="flex items-center justify-end pt-4 mt-auto">
+      <p className="text-base leading-7">{props.content}</p>
+      <div className="flex items-center justify-end pt-5 mt-auto">
         {props.actions}
       </div>
     </div>
