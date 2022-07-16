@@ -26,5 +26,5 @@ module.exports = {
       content: { blank: '""' },
     },
   },
-  plugins: [],
+  plugins: [require('tailwindcss-radix')({ variantPrefix: 'rdx' })],
 };

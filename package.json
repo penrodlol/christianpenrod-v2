@@ -11,8 +11,8 @@
   "dependencies": {
     "@fontsource/nunito": "^4.5.9",
     "@fontsource/sriracha": "^4.5.8",
-    "@headlessui/react": "^1.6.6",
     "@octokit/rest": "^18.12.0",
+    "@radix-ui/react-tabs": "^0.1.5",
     "contentlayer": "^0.2.5",
     "dayjs": "^1.11.3",
     "next": "^12.2.0",
@@ -20,7 +20,8 @@
     "prism-theme-vars": "^0.2.3",
     "react": "18.1.0",
     "react-async-hook": "^4.0.0",
-    "react-dom": "18.1.0"
+    "react-dom": "18.1.0",
+    "tailwindcss-radix": "^2.3.1"
   },
   "devDependencies": {
     "@svgr/webpack": "^6.2.1",
