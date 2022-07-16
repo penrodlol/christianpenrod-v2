@@ -23,12 +23,12 @@ export const Card: FC<CardProps> = (props) => {
       </div>
       <span className="text-2xl">{props.title}</span>
       {props.subTitle && (
-        <span className="text-basic-2 text-lg font-semibold">
+        <span className="text-gray-2 text-lg font-semibold">
           {props.subTitle}
         </span>
       )}
       <Line />
-      <p className="text-base leading-7">{props.content}</p>
+      <p className="text-lg leading-8">{props.content}</p>
       <div className="flex items-center justify-end pt-5 mt-auto">
         {props.actions}
       </div>

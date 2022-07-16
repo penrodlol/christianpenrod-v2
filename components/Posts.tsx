@@ -11,7 +11,7 @@ export interface PostsProps {
 }
 
 export const Posts: FC<PostsProps> = ({ posts }) => (
-  <div className="grid gap-12 lg:grid-cols-3">
+  <div className="grid gap-12 xl:grid-cols-3">
     {posts.map((post) => (
       <Card
         key={post._id}
@@ -21,7 +21,7 @@ export const Posts: FC<PostsProps> = ({ posts }) => (
         content={post.description}
         actions={[
           <Link key={`${post._id}-action`} href={post.slug} passHref>
-            <Anchor className="text-basic-1">
+            <Anchor className="text-gray-1">
               <span className="flex gap-2">
                 Read More
                 <ArrowRightIcon width={25} height={25} />

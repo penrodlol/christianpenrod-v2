@@ -8,23 +8,16 @@
 @import 'prism';
 
 html {
-  font-family: var(--font-serif);
-  font-weight: var(--font-weight-8);
-  letter-spacing: var(--font-letterspacing-1);
-  color: var(--text-1);
-  background: var(--surface-3);
-  scroll-behavior: unset;
+  @apply font-serif font-extrabold tracking-wide
+         text-gray-1 bg-surface-3;
 }
 
 body::before {
-  --horizontal: linear-gradient(var(--brand-1) 2px, transparent 0);
-  --vertical: linear-gradient(90deg, var(--brand-1) 2px, transparent 0);
+  @apply content-blank fixed -inset-8 z-10
+         opacity-[0.075] bg-[length:5rem_5rem]
+         bg-[linear-gradient(var(--brand-1)_2px,_transparent_0),linear-gradient(90deg,_var(--brand-1)_2px,_transparent_0)];
+}
 
-  content: '';
-  position: fixed;
-  inset: -2rem;
-  z-index: var(--layer-1);
-  opacity: 0.075;
-  background-image: var(--horizontal), var(--vertical);
-  background-size: var(--size-10) var(--size-10);
+p {
+  @apply max-w-prose;
 }

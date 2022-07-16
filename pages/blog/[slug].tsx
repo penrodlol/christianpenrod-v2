@@ -46,7 +46,7 @@ const Blog: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
   return (
     <Layout>
       <div className="flex gap-28">
-        <article className="max-w-md min-w-0 my-0">
+        <article className="max-w-screen-md min-w-0 my-0">
           <PostHeader post={post} />
           <div className="flex flex-col gap-12 my-fluid-5 mx-auto px-fluid-1">
             <MDXContent components={components} />
