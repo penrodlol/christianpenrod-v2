@@ -19,6 +19,7 @@ module.exports = {
       brand: fromVars('brand', 3),
       accent: fromVars('accent', 3),
     },
+    boxShadow: fromVars('shadow', 3),
     extend: {
       fontSize: fromVars('font-size-fluid', 8, 'fluid'),
       spacing: fromVars('size-fluid', 7, 'fluid'),

@@ -14,7 +14,7 @@ export const PostGithub: FC<PostGithubProps> = ({ github }) => {
   const { result } = useAsync(fetchRepo, [github]);
 
   return (
-    <div className="bg-surface-2 shadow-3 rounded-md p-5">
+    <div className="bg-surface-2 shadow-2 rounded-md p-5">
       <div className="flex gap-4 items-center text-brand-1">
         <GithubBookmarkIcon width={25} height={25} />
         <Anchor

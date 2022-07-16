@@ -8,7 +8,7 @@ export const PostCode = ({
 }: PropsWithChildren<HTMLPreElement>) => (
   <>
     <span className="text-lg">{title}</span>
-    <div className="relative bg-[hsl(210,11.1%,10.6%)] rounded-md shadow-4">
+    <div className="relative bg-[hsl(210,11.1%,10.6%)] rounded-md shadow-3">
       <div className="absolute right-2 top-2 text-base-2 opacity-50">
         <Button variant="icon">
           <ClipboardIcon width={30} height={30} />

@@ -10,7 +10,7 @@ export const PostTabs = ({
   children,
 }: PropsWithChildren<PostTabsProps>) => (
   <RadixTabs.Root defaultValue={values[0]} asChild>
-    <div className="bg-surface-1 rounded-md shadow-3">
+    <div className="bg-surface-1 rounded-md shadow-2">
       <RadixTabs.TabsList asChild>
         <div className="flex overflow-x-auto">
           {values.map((value) => (

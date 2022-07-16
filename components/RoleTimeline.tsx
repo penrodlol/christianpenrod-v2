@@ -13,7 +13,7 @@ const components = {
   h2: ({children}: PropsWithChildren<{}>) =>
     <h2 className="text-fluid-3 relative mt-6 before:content-blank before:absolute before:top-[50%]
                    before:translate-y-[-50%] before:-left-6 before:translate-x-[-0.215rem] before:w-[0.95rem]
-                   before:h-[0.95rem] before:rounded-full before:bg-brand-1 before:shadow-3
+                   before:h-[0.95rem] before:rounded-full before:bg-brand-1 before:shadow-2
                    last-of-type:before:border-[0.2rem] last-of-type:before:border-brand-1
                    last-of-type:before:bg-transparent">
       {children}
@@ -27,7 +27,7 @@ export const RoleTimeline: FC<RoleTimelineProps> = ({ role }) => {
   const end = role.end ? dayjs.utc(role.end).format('MMM Do, YYYY') : 'Present';
 
   return (
-    <div className="bg-surface-1 rounded-md shadow-4 p-7">
+    <div className="bg-surface-1 rounded-md shadow-3 p-7">
       <h3 className="text-fluid-5">{role.company}</h3>
       <h4 className="text-fluid-3 text-base-2">
         {start} - {end}

@@ -5,8 +5,8 @@ export interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
 }
 
 const variants = {
-  primary: 'bg-brand-2 shadow-3 hover:bg-brand-3 hover:enabled:shadow-4',
-  cta: 'bg-accent-2 text-[black] shadow-3 hover:bg-accent-1 hover:enabled:shadow-4',
+  primary: 'bg-brand-2 shadow-2 hover:bg-brand-3 hover:enabled:shadow-3',
+  cta: 'bg-accent-2 text-[black] shadow-2 hover:bg-accent-1 hover:enabled:shadow-3',
   icon: 'p-0 hover:enabled:text-brand-1',
 };
 

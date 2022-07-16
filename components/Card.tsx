@@ -11,7 +11,7 @@ export interface CardProps {
 
 export const Card: FC<CardProps> = (props) => {
   return (
-    <div className="flex flex-col bg-surface-2 px-6 py-5 rounded-lg shadow-4">
+    <div className="flex flex-col bg-surface-2 px-6 py-5 rounded-lg shadow-3">
       <div className="flex gap-2 flex-wrap mb-2">
         {props.tags.map((tag) => (
           <div key={tag} className="bg-accent-2 rounded-full px-2">
