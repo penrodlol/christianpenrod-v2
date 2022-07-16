@@ -13,9 +13,12 @@ html {
 }
 
 body::before {
+  --horizontal: linear-gradient(var(--brand-1) 2px, transparent 0);
+  --vertical: linear-gradient(90deg, var(--brand-1) 2px, transparent 0);
+  background-image: var(--horizontal), var(--vertical);
+
   @apply content-blank fixed -inset-8 z-10
-         opacity-[0.075] bg-[length:5rem_5rem]
-         bg-[linear-gradient(var(--brand-1)_2px,_transparent_0),linear-gradient(90deg,_var(--brand-1)_2px,_transparent_0)];
+         opacity-[0.075] bg-[length:5rem_5rem];
 }
 
 p {
