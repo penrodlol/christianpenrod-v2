@@ -1,4 +1,3 @@
-import { Root as VisuallyHidden } from '@radix-ui/react-visually-hidden';
 import LinkIcon from '@svg/link.svg';
 import HashLink from 'next/link';
 import { PropsWithChildren } from 'react';
@@ -20,9 +19,7 @@ export const PostSubHeader = ({
 };
 
 export const PostSubHeaderIntroduction = () => (
-  <VisuallyHidden asChild>
-    <h2 id="introduction" className="absolute top-0">
-      Introduction
-    </h2>
-  </VisuallyHidden>
+  <h2 id="introduction" className="sr-only top-0">
+    Introduction
+  </h2>
 );
