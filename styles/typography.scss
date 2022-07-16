@@ -4,9 +4,6 @@
 @import '@fontsource/sriracha';
 
 :root {
-  --font-serif: 'Nunito', sans-serif;
-  --font-fancy: 'Sriracha', sans-serif;
-
   --font-size-fluid-1: clamp(0.74rem, calc(0.7rem + 0.2vw), 0.84rem);
   --font-size-fluid-2: clamp(0.89rem, calc(0.82rem + 0.32vw), 1.05rem);
   --font-size-fluid-3: clamp(1.06rem, calc(0.96rem + 0.49vw), 1.31rem);

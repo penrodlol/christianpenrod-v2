@@ -1,45 +1,45 @@
 @import 'prism-theme-vars/base.css';
 
 :root {
-  --prism-font-family: var(--font-serif);
-  --prism-font-size: var(--font-size-fluid-2);
+  --prism-font-family: theme('fontFamily.serif');
+  --prism-font-size: theme('fontSize.fluid-2');
   --prism-background: hsl(210, 11.1%, 10.6%);
-  --prism-foreground: var(--text-2);
-  --prism-function: var(--accent-2);
-  --prism-keyword: var(--brand-1);
-  --prism-string: var(--gray-5);
-  --prism-comment: var(--gray-5);
-  --prism-interpolation: var(--accent-1);
-  --prism-constant: var(--text-2);
-  --prism-inline-padding-x: var(--size-2);
-  --prism-json-property: var(--accent-2);
+  --prism-foreground: theme('colors.base.2');
+  --prism-function: theme('colors.accent.2');
+  --prism-keyword: theme('colors.brand.1');
+  --prism-string: theme('colors.base.3');
+  --prism-comment: theme('colors.base.3');
+  --prism-interpolation: theme('colors.accent.1');
+  --prism-constant: theme('colors.base.2');
+  --prism-inline-padding-x: theme('spacing.2');
+  --prism-json-property: theme('colors.accent.2');
 
   .language-unknown {
-    color: var(--accent-2) !important;
+    color: theme('colors.accent.2') !important;
     box-decoration-break: clone;
   }
 
   .language-ts {
-    --prism-class: var(--accent-2);
-    --prism-builtin: var(--accent-1);
+    --prism-class: theme('colors.accent.2');
+    --prism-builtin: theme('colors.accent.1');
   }
 
   .language-tsx {
-    --prism-builtin: var(--accent-1);
+    --prism-builtin: theme('colors.accent.1');
   }
 
   .language-scss {
-    --prism-property: var(--text-2);
-    --prism-punctuation: var(--text-2);
-    --prism-number: var(--brand-1);
+    --prism-property: theme('colors.base.2');
+    --prism-punctuation: theme('colors.base.2');
+    --prism-number: theme('colors.brand.1');
   }
 
   .language-graphql {
-    --prism-property: var(--gray-5);
-    --prism-variable: var(--accent-1);
+    --prism-property: theme('colors.base.3');
+    --prism-variable: theme('colors.accent.1');
   }
 
   .language-json {
-    --prism-number: var(--brand-1);
+    --prism-number: theme('colors.brand.1');
   }
 }

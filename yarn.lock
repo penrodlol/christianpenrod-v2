@@ -4994,11 +4994,6 @@ oo-ascii-tree@^1.58.0:
   resolved "https://registry.yarnpkg.com/oo-ascii-tree/-/oo-ascii-tree-1.62.0.tgz#6e1944a409885c0af1d6e7b8245be8d432c40e4f"
   integrity sha512-i0TzJUeAZmo9Hqv5rgfXiMkvqNbugaCz7y8jofgApb3p8oMe5+D8aaHKY45vG+NMI97nk69vOm9z3dZZ9i1Fqg==
 
-open-props@^1.3.16:
-  version "1.4.3"
-  resolved "https://registry.yarnpkg.com/open-props/-/open-props-1.4.3.tgz#040f4c29d0672dc933d37ffc0fcf4f8c09088764"
-  integrity sha512-JlsU1aKkhbX+SMV8npuCzfqKiQn4wlJ4lGP/J1Eoum0et+H9s0Oho1G5kHgSkPCgP35ENEPrHVbT8HcUgxkU8Q==
-
 optionator@^0.8.1:
   version "0.8.3"
   resolved "https://registry.yarnpkg.com/optionator/-/optionator-0.8.3.tgz#84fa1d036fe9d3c7e21d99884b601167ec8fb495"
