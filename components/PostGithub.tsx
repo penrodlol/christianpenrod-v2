@@ -21,7 +21,7 @@ export const PostGithub: FC<PostGithubProps> = ({ github }) => {
           href={result?.html_url}
           target="_blank"
           rel="nofollow noreferrer"
-          className="text-xl"
+          className="text-xl text-base-1"
         >
           {result?.name}
         </Anchor>
