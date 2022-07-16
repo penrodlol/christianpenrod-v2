@@ -16,8 +16,8 @@ export const PostTabs = ({
           {values.map((value) => (
             <RadixTabs.Trigger key={value} value={value} asChild>
               <div
-                className="relative flex justify-center flex-1 py-2 px-4 text-gray-2
-                           hover:text-gray-1 rdx-state-active:text-gray-1
+                className="relative flex justify-center flex-1 py-2 px-4 text-base-2
+                           hover:text-base-1 rdx-state-active:text-base-1
                            rdx-state-active:after:content-blank rdx-state-active:after:absolute
                            rdx-state-active:after:bottom-0 rdx-state-active:after:left-0
                            rdx-state-active:after:right-0 rdx-state-active:after:z-2

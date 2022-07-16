@@ -29,7 +29,7 @@ export const RoleTimeline: FC<RoleTimelineProps> = ({ role }) => {
   return (
     <div className="bg-surface-1 rounded-md shadow-4 p-7">
       <h3 className="text-fluid-5">{role.company}</h3>
-      <h4 className="text-fluid-3 text-gray-2">
+      <h4 className="text-fluid-3 text-base-2">
         {start} - {end}
       </h4>
       <div className="relative">

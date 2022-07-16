@@ -21,7 +21,7 @@ export const Posts: FC<PostsProps> = ({ posts }) => (
         content={post.description}
         actions={[
           <Link key={`${post._id}-action`} href={post.slug} passHref>
-            <Anchor className="text-gray-1">
+            <Anchor className="text-base-1">
               <span className="flex gap-2">
                 Read More
                 <ArrowRightIcon width={25} height={25} />

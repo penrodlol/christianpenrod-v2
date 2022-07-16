@@ -23,7 +23,7 @@ export const Card: FC<CardProps> = (props) => {
       </div>
       <span className="text-2xl">{props.title}</span>
       {props.subTitle && (
-        <span className="text-gray-2 text-lg font-semibold">
+        <span className="text-base-2 text-lg font-semibold">
           {props.subTitle}
         </span>
       )}

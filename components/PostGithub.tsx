@@ -26,23 +26,23 @@ export const PostGithub: FC<PostGithubProps> = ({ github }) => {
           {result?.name}
         </Anchor>
       </div>
-      <p className="text-gray-2 font-semibold mt-4 mb-5">
+      <p className="text-base-2 font-semibold mt-4 mb-5">
         {result?.description}
       </p>
       <div className="flex gap-4 items-center">
         <div className="flex gap-2 items-center mr-4">
           <div className="bg-accent-2 w-4 h-4 rounded-full" />
-          <span className="text-gray-2 font-semibold">{result?.language}</span>
+          <span className="text-base-2 font-semibold">{result?.language}</span>
         </div>
         <div className="flex gap-2 items-center text-brand-1">
           <GithubStarIcon width={20} height={20} />
-          <span className="text-gray-2 font-semibold">
+          <span className="text-base-2 font-semibold">
             {result?.stargazers_count}
           </span>
         </div>
         <div className="flex gap-2 items-center text-brand-1">
           <GithubForkIcon width={20} height={20} />
-          <span className="text-gray-2 font-semibold">
+          <span className="text-base-2 font-semibold">
             {result?.forks_count}
           </span>
         </div>

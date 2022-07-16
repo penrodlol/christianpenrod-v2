@@ -15,7 +15,7 @@ const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
           <Hero />
         </section>
         <section className="flex flex-col gap-fluid-2">
-          <h3 className="text-fluid-5 text-gray-2">Recent Posts</h3>
+          <h3 className="text-fluid-5 text-base-2">Recent Posts</h3>
           <Posts posts={posts} />
         </section>
       </div>
