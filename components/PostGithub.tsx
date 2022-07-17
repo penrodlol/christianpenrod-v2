@@ -1,49 +1,51 @@
 import GithubBookmarkIcon from '@svg/github-bookmark.svg';
 import GithubForkIcon from '@svg/github-fork.svg';
 import GithubStarIcon from '@svg/github-star.svg';
-import { fetchRepo } from '@utils/octokit';
+import { owner, repos } from '@utils/octokit';
 import { FC } from 'react';
 import { useAsync } from 'react-async-hook';
 import { Anchor } from './Anchor';
 
 export interface PostGithubProps {
-  github: string;
+  repo: string;
 }
 
-export const PostGithub: FC<PostGithubProps> = ({ github }) => {
-  const { result } = useAsync(fetchRepo, [github]);
+export const PostGithub: FC<PostGithubProps> = ({ repo }) => {
+  const { result } = useAsync(() => repos.get({ owner, repo }), [owner, repo]);
 
   return (
     <div className="bg-surface-2 shadow-2 rounded-md p-5">
       <div className="flex gap-4 items-center text-brand-1">
         <GithubBookmarkIcon width={25} height={25} />
         <Anchor
-          href={result?.html_url}
+          href={result?.data?.html_url}
           target="_blank"
           rel="nofollow noreferrer"
           className="text-xl text-base-1"
         >
-          {result?.name}
+          {result?.data?.name}
         </Anchor>
       </div>
       <p className="text-base-2 font-semibold mt-4 mb-5">
-        {result?.description}
+        {result?.data?.description}
       </p>
       <div className="flex gap-4 items-center">
         <div className="flex gap-2 items-center mr-4">
           <div className="bg-accent-2 w-4 h-4 rounded-full" />
-          <span className="text-base-2 font-semibold">{result?.language}</span>
+          <span className="text-base-2 font-semibold">
+            {result?.data?.language}
+          </span>
         </div>
         <div className="flex gap-2 items-center text-brand-1">
           <GithubStarIcon width={20} height={20} />
           <span className="text-base-2 font-semibold">
-            {result?.stargazers_count}
+            {result?.data?.stargazers_count}
           </span>
         </div>
         <div className="flex gap-2 items-center text-brand-1">
           <GithubForkIcon width={20} height={20} />
           <span className="text-base-2 font-semibold">
-            {result?.forks_count}
+            {result?.data?.forks_count}
           </span>
         </div>
       </div>

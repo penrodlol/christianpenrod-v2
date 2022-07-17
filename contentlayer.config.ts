@@ -13,7 +13,7 @@ export const Post = defineDocumentType(() => ({
     published: { type: 'date', required: true },
     description: { type: 'string', required: true },
     tags: { type: 'list', of: { type: 'string' }, required: true },
-    github: { type: 'string' },
+    repo: { type: 'string' },
   },
   computedFields: {
     slug: {

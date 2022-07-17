@@ -50,7 +50,7 @@ const Blog: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
           <PostHeader post={post} />
           <div className="flex flex-col gap-12 my-fluid-5 mx-auto px-fluid-1">
             <MDXContent components={components} />
-            {post.github && <PostGithub github={post.github} />}
+            {post.repo && <PostGithub repo={post.repo} />}
             <div className="self-end">
               <PostViews />
             </div>

@@ -1,10 +1,8 @@
 import { Octokit } from '@octokit/rest';
 
-const client = new Octokit();
+export const username = String(process.env.NEXT_PUBLIC_GITHUB_USER_NAME)!;
+export const owner = String(process.env.NEXT_PUBLIC_GITHUB_USER_NAME)!;
 
-export async function fetchRepo(repo: string) {
-  const owner = String(process.env.NEXT_PUBLIC_GITHUB_USER_NAME);
-  const { data } = await client.rest.repos.get({ owner, repo });
+export const client = new Octokit();
 
-  return data;
-}
+export const { repos } = client;
