@@ -1,9 +1,8 @@
 import GithubBookmarkIcon from '@svg/github-bookmark.svg';
 import GithubForkIcon from '@svg/github-fork.svg';
 import GithubStarIcon from '@svg/github-star.svg';
-import { owner, repos } from '@utils/octokit';
 import { FC } from 'react';
-import { useAsync } from 'react-async-hook';
+import useSWR from 'swr';
 import { Anchor } from './Anchor';
 
 export interface PostGithubProps {
@@ -11,7 +10,9 @@ export interface PostGithubProps {
 }
 
 export const PostGithub: FC<PostGithubProps> = ({ repo }) => {
-  const { result } = useAsync(() => repos.get({ owner, repo }), [owner, repo]);
+  const result = useSWR(`/api/repo-meta/${repo}`, (url) =>
+    fetch(url).then((res) => res.json()),
+  );
 
   return (
     <div className="bg-surface-2 shadow-2 rounded-md p-5">

@@ -52,7 +52,7 @@ const Blog: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
             <MDXContent components={components} />
             {post.repo && <PostGithub repo={post.repo} />}
             <div className="self-end">
-              <PostViews />
+              <PostViews slug={post.slug} />
             </div>
             <Line />
             <PostPagination prev={prev} next={next} />
@@ -72,7 +72,7 @@ const Blog: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  return { paths: allPosts.map((post) => post.slug), fallback: false };
+  return { paths: allPosts.map((p) => `/blog/${p.slug}`), fallback: false };
 };
 
 export const getStaticProps: GetStaticProps<StaticProps> = ({ params }) => {

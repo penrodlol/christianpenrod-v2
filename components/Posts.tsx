@@ -20,7 +20,7 @@ export const Posts: FC<PostsProps> = ({ posts }) => (
         subTitle={dayjs.utc(post.published).format('MMM Do, YYYY')}
         content={post.description}
         actions={[
-          <Link key={`${post._id}-action`} href={post.slug} passHref>
+          <Link key={`${post._id}-action`} href={`/blog/${post.slug}`} passHref>
             <Anchor className="text-base-1">
               <span className="flex gap-2">
                 Read More
