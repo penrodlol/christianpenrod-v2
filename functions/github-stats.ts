@@ -28,7 +28,7 @@ export const handler = schedule('@monthly', async () => {
       }),
   );
 
-  supabase.from('github_stats').insert(
+  const payload = await supabase.from('github_stats').insert(
     enriched.reduce((acc, { commits, langs, topics }) => {
       acc.commits = (acc.commits || 0) + commits.data.length;
       acc.languages = Array.from(new Set((acc.languages || []).concat(langs)));
@@ -37,5 +37,5 @@ export const handler = schedule('@monthly', async () => {
     }, {} as any),
   );
 
-  return { statusCode: 200 };
+  return { statusCode: payload.error ? 500 : 200 };
 });
