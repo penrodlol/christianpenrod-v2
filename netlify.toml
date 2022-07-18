@@ -1,0 +1,11 @@
+[build]
+  command = "yarn build"
+  functions = "functions"
+  publish = ".next"
+
+[functions."github-stats"]
+  schedule = "@monthly"
+
+[dev]
+  port = 3001
+  autoLaunch = false
