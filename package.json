@@ -5,19 +5,18 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "start": "next start"
   },
   "dependencies": {
     "@fontsource/nunito": "^4.5.9",
     "@fontsource/sriracha": "^4.5.8",
     "@octokit/rest": "^18.12.0",
+    "@prisma/client": "^4.1.0",
     "@radix-ui/react-tabs": "^0.1.5",
-    "@supabase/supabase-js": "^1.35.4",
-    "contentlayer": "^0.2.5",
+    "contentlayer": "^0.2.6",
     "dayjs": "^1.11.3",
     "next": "^12.2.0",
-    "next-contentlayer": "^0.2.5",
+    "next-contentlayer": "^0.2.6",
     "prism-theme-vars": "^0.2.3",
     "react": "18.1.0",
     "react-dom": "18.1.0",
@@ -34,6 +33,7 @@
     "eslint-config-next": "12.1.6",
     "postcss": "^8.4.14",
     "prettier": "^2.6.2",
+    "prisma": "^4.1.0",
     "reading-time": "^1.5.0",
     "rehype-external-links": "^1.0.1",
     "rehype-slug": "^5.0.1",

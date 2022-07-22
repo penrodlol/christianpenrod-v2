@@ -6,7 +6,7 @@ function fromVars(name, size, pre) {
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./pages/**/*.tsx', './components/**/*.tsx'],
+  content: ['./src/pages/**/*.tsx', './src/components/**/*.tsx'],
   theme: {
     fontFamily: {
       serif: ["'Nunito', sans-serif"],

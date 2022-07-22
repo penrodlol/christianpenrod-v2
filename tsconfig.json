@@ -16,12 +16,10 @@
     "incremental": true,
     "baseUrl": ".",
     "paths": {
-      "@components/*": ["components/*"],
-      "@const/*": ["const/*"],
-      "@hooks/*": ["hooks/*"],
-      "@models/*": ["models/*"],
+      "@components/*": ["src/components/*"],
+      "@const/*": ["src/const/*"],
       "@svg/*": ["public/svg/*"],
-      "@utils/*": ["utils/*"],
+      "@utils/*": ["src/utils/*"],
       "contentlayer/generated": ["./.contentlayer/generated"]
     }
   },
