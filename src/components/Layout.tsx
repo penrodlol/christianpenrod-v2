@@ -1,4 +1,5 @@
 import { PropsWithChildren } from 'react';
+import { Footer } from './Footer';
 import { Header } from './Header';
 
 export interface LayoutProps {
@@ -10,7 +11,7 @@ export const Layout = (props: PropsWithChildren<LayoutProps>) => {
   return (
     <div className="relative z-20">
       <Header />
-      <main className="px-fluid-4 max-w-screen-2xl mx-auto mb-12 mt-[clamp(1.31rem,calc(-0.52rem+9.15vw),6.00rem)]">
+      <main className="px-fluid-4 max-w-screen-2xl mx-auto my-[clamp(1.31rem,calc(-0.52rem+9.15vw),6.00rem)]">
         <div className="max-w-max my-0 mx-auto">
           {props.title && (
             <div className="mb-fluid-5">
@@ -21,6 +22,7 @@ export const Layout = (props: PropsWithChildren<LayoutProps>) => {
           {props.children}
         </div>
       </main>
+      <Footer />
     </div>
   );
 };

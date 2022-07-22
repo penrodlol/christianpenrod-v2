@@ -2,12 +2,12 @@
   --shadow-color: 220 40% 2%;
   --shadow-strength: 25%;
 
-  // prettier-ignore
+  /* prettier-ignore */
   --shadow-1: 
     0 3px 5px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 3%)),
     0 7px 14px -5px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 5%));
 
-  // prettier-ignore
+  /* prettier-ignore */
   --shadow-2: 
     0 -1px 3px 0 hsl(var(--shadow-color) / calc(var(--shadow-strength) + 2%)),
     0 1px 2px -5px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 2%)),
@@ -15,7 +15,7 @@
     0 4px 12px -5px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 5%)),
     0 12px 15px -5px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 7%));
 
-  // prettier-ignore
+  /* prettier-ignore */
   --shadow-2: 
     0 -2px 5px 0 hsl(var(--shadow-color) / calc(var(--shadow-strength) + 2%)),
     0 1px 1px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 3%)),
