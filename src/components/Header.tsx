@@ -1,6 +1,7 @@
 import LogoIcon from '@svg/logo.svg';
 import Route from 'next/link';
 import { Anchor } from './Anchor';
+import { Hamburger } from './Hamburger';
 
 export const Header = () => {
   return (
@@ -11,8 +12,13 @@ export const Header = () => {
             <LogoIcon height={40} width={50} />
           </Anchor>
         </Route>
-        <div className="flex gap-16">
+        <div className="hidden sm:flex gap-16 items-center text-xl">
           <Routes />
+        </div>
+        <div className="block sm:hidden">
+          <Hamburger>
+            <Routes />
+          </Hamburger>
         </div>
       </nav>
     </header>
@@ -22,9 +28,11 @@ export const Header = () => {
 const Routes = () => (
   <>
     {['About', 'Blog'].map((route) => (
-      <Route key={route} href={`/${route.toLowerCase()}`} passHref>
-        <Anchor className="text-xl">{route}</Anchor>
-      </Route>
+      <li key={route} className="list-none">
+        <Route href={`/${route.toLowerCase()}`} passHref>
+          <Anchor>{route}</Anchor>
+        </Route>
+      </li>
     ))}
   </>
 );
