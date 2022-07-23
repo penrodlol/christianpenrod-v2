@@ -21,7 +21,7 @@ export const Header = () => {
 
 const Routes = () => (
   <>
-    {['About', 'Projects', 'Blog'].map((route) => (
+    {['About', 'Blog'].map((route) => (
       <Route key={route} href={`/${route.toLowerCase()}`} passHref>
         <Anchor className="text-xl">{route}</Anchor>
       </Route>
