@@ -9,7 +9,10 @@ export const PostSubHeader = ({
   return (
     <div id={id} className="group relative mt-fluid-4 scroll-mt-28 ">
       <HashLink href={{ hash: id }} passHref>
-        <a className="text-brand-1 absolute left-[-40px] top-[15px] opacity-0 pr-4 group-hover:opacity-100">
+        <a
+          className="text-brand-1 absolute left-[-40px] top-1/2 -translate-y-1/2 opacity-0 pr-4
+                     group-hover:opacity-100 hidden lg:block"
+        >
           <LinkIcon width={30} height={30} />
         </a>
       </HashLink>
