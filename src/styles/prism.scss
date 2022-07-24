@@ -13,33 +13,33 @@
   --prism-constant: theme('colors.base.2');
   --prism-inline-padding-x: theme('spacing.2');
   --prism-json-property: theme('colors.accent.2');
+}
 
-  .language-unknown {
-    color: theme('colors.accent.2') !important;
-    box-decoration-break: clone;
-  }
+.language-unknown {
+  --prism-foreground: theme('colors.accent.2');
+  box-decoration-break: clone;
+}
 
-  .language-ts {
-    --prism-class: theme('colors.accent.2');
-    --prism-builtin: theme('colors.accent.1');
-  }
+.language-ts {
+  --prism-class: theme('colors.accent.2');
+  --prism-builtin: theme('colors.accent.1');
+}
 
-  .language-tsx {
-    --prism-builtin: theme('colors.accent.1');
-  }
+.language-tsx {
+  --prism-builtin: theme('colors.accent.2');
+}
 
-  .language-scss {
-    --prism-property: theme('colors.base.2');
-    --prism-punctuation: theme('colors.base.2');
-    --prism-number: theme('colors.brand.1');
-  }
+.language-scss {
+  --prism-property: theme('colors.base.2');
+  --prism-punctuation: theme('colors.base.2');
+  --prism-number: theme('colors.brand.1');
+}
 
-  .language-graphql {
-    --prism-property: theme('colors.base.3');
-    --prism-variable: theme('colors.accent.1');
-  }
+.language-graphql {
+  --prism-property: theme('colors.base.3');
+  --prism-variable: theme('colors.accent.1');
+}
 
-  .language-json {
-    --prism-number: theme('colors.brand.1');
-  }
+.language-json {
+  --prism-number: theme('colors.brand.2');
 }
