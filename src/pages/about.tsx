@@ -18,11 +18,12 @@ interface ServerProps {
   roles: Array<Role>;
   summary: CommitSummary;
   squares: Array<CommitSquare>;
+  contributions: number;
 }
 
 const About: NextPage<
   InferGetServerSidePropsType<typeof getServerSideProps>
-> = ({ roles, summary, squares }) => {
+> = ({ roles, summary, squares, contributions }) => {
   return (
     <Layout title="About" subTitle="Who is Christian?">
       <div className="flex flex-col gap-fluid-6">
@@ -46,9 +47,9 @@ const About: NextPage<
               </h3>
             </div>
           </div>
-          <div>
+          <div className="flex flex-col gap-fluid-6">
             <GithubStats summary={summary} />
-            <GithubSquares squares={squares} />
+            <GithubSquares squares={squares} contributions={contributions} />
           </div>
         </section>
         <section className="flex flex-col gap-8 max-w-max mx-auto">
@@ -77,6 +78,7 @@ export const getServerSideProps: GetServerSideProps<ServerProps> = async () => {
       roles: sortedRoles,
       summary: JSON.parse(JSON.stringify(batch[0]))!,
       squares: JSON.parse(JSON.stringify(batch[1]))!,
+      contributions: batch[1].reduce((acc, cur) => acc + cur.count, 0),
     },
   };
 };
