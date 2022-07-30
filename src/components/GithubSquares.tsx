@@ -29,20 +29,19 @@ export const GithubSquares: FC<GithubSquaresProps> = ({
   return (
     <div className="bg-surface-2 rounded-md shadow-2 p-5">
       <svg
-        width="584"
-        height="90"
-        viewBox="0 0 584 90"
+        width="744"
+        height="120"
+        viewBox="0 0 744 120"
         className="block max-w-full h-auto"
       >
         {chunks.map((chunk, i) => (
-          <g key={i} transform={`translate(${i === 0 ? i : i * 11}, 0)`}>
+          <g key={i} transform={`translate(${i === 0 ? i : i * 14}, 0)`}>
             {chunk.map((square, j) => (
               <rect
-                key={i + j}
-                width="7"
-                height="7"
+                key={square.id}
+                className="w-3 h-3"
                 x={0}
-                y={j === 0 ? j : j * 11}
+                y={j === 0 ? j : j * 14}
                 fill={COLORS.get(square.color)}
                 rx="2"
                 ry="2"
@@ -53,7 +52,8 @@ export const GithubSquares: FC<GithubSquaresProps> = ({
       </svg>
       <div className="flex items-center justify-between font-semibold">
         <p>
-          <span className="font-bold">{contributions}</span> contributions
+          <span className="font-bold text-brand-1">{contributions}</span>{' '}
+          contributions
         </p>
         <div className="flex gap-1 items-center">
           <span className="mr-2">Less</span>

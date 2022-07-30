@@ -4,12 +4,12 @@ import { FC } from 'react';
 import { Chip } from './Chip';
 import { Line } from './Line';
 
-export interface GithubStatsProps {
+export interface GithubSummaryProps {
   summary: CommitSummary;
 }
 
-export const GithubStats: FC<GithubStatsProps> = ({ summary }) => (
-  <div className="bg-surface-2 rounded-md shadow-2 p-5 max-w-md mx-auto flex flex-col gap-fluid-1">
+export const GithubSummary: FC<GithubSummaryProps> = ({ summary }) => (
+  <div className="bg-surface-2 rounded-md shadow-2 p-5 mx-auto flex flex-col gap-fluid-1">
     <div className="max-w-max mx-auto">
       <h2 className="flex gap-3 items-center text-fluid-4">
         Monthly Github Statistics

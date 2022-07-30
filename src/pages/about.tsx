@@ -1,5 +1,5 @@
 import { GithubSquares } from '@components/GithubSquares';
-import { GithubStats } from '@components/GithubStats';
+import { GithubSummary } from '@components/GithubSummary';
 import { Layout } from '@components/Layout';
 import { RoleTimeline } from '@components/RoleTimeline';
 import { CommitSquare, CommitSummary } from '@prisma/client';
@@ -27,8 +27,8 @@ const About: NextPage<
   return (
     <Layout title="About" subTitle="Who is Christian?">
       <div className="flex flex-col gap-fluid-6">
-        <section className="flex flex-col md:flex-row gap-12">
-          <div className="flex flex-col gap-7 items-center">
+        <section className="flex flex-col sm:flex-row gap-10">
+          <div className="flex flex-col gap-8 items-center">
             <div className="relative p-2 pb-0 bg-surface-2 rounded-md shadow-2 max-w-[300px]">
               <Image
                 src="/img/selfie.webp"
@@ -47,10 +47,12 @@ const About: NextPage<
               </h3>
             </div>
           </div>
-          <div className="flex flex-col gap-fluid-6">
-            <GithubStats summary={summary} />
-            <GithubSquares squares={squares} contributions={contributions} />
+          <div className="flex flex-col gap-6">
+            <GithubSummary summary={summary} />
           </div>
+        </section>
+        <section>
+          <GithubSquares squares={squares} contributions={contributions} />
         </section>
         <section className="flex flex-col gap-8 max-w-max mx-auto">
           {roles.map((role) => (
@@ -63,7 +65,7 @@ const About: NextPage<
 };
 
 export const getServerSideProps: GetServerSideProps<ServerProps> = async () => {
-  const min = dayjs().subtract(1, 'M').startOf('M').subtract(1, 'y').toDate();
+  const min = dayjs().startOf('M').subtract(1, 'M').subtract(1, 'y').toDate();
 
   const batch = await prisma.$transaction([
     prisma.commitSummary.findFirst({ orderBy: { createdAt: 'desc' } }),
