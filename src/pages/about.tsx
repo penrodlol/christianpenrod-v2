@@ -1,14 +1,28 @@
+import { GithubSquares } from '@components/GithubSquares';
 import { GithubStats } from '@components/GithubStats';
 import { Layout } from '@components/Layout';
 import { RoleTimeline } from '@components/RoleTimeline';
+import { CommitSquare, CommitSummary } from '@prisma/client';
 import { sortedRoles } from '@utils/contentlayer';
+import { prisma } from '@utils/prisma';
 import { Role } from 'contentlayer/generated';
-import { GetStaticProps, InferGetStaticPropsType, NextPage } from 'next';
+import dayjs from 'dayjs';
+import {
+  GetServerSideProps,
+  InferGetServerSidePropsType,
+  NextPage,
+} from 'next';
 import Image from 'next/image';
 
-const About: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
-  roles,
-}) => {
+interface ServerProps {
+  roles: Array<Role>;
+  summary: CommitSummary;
+  squares: Array<CommitSquare>;
+}
+
+const About: NextPage<
+  InferGetServerSidePropsType<typeof getServerSideProps>
+> = ({ roles, summary, squares }) => {
   return (
     <Layout title="About" subTitle="Who is Christian?">
       <div className="flex flex-col gap-fluid-6">
@@ -33,7 +47,8 @@ const About: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
             </div>
           </div>
           <div>
-            <GithubStats />
+            <GithubStats summary={summary} />
+            <GithubSquares squares={squares} />
           </div>
         </section>
         <section className="flex flex-col gap-8 max-w-max mx-auto">
@@ -46,8 +61,24 @@ const About: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
   );
 };
 
-export const getStaticProps: GetStaticProps<{ roles: Role[] }> = () => {
-  return { props: { roles: sortedRoles } };
+export const getServerSideProps: GetServerSideProps<ServerProps> = async () => {
+  const min = dayjs().subtract(1, 'M').startOf('M').subtract(1, 'y').toDate();
+
+  const batch = await prisma.$transaction([
+    prisma.commitSummary.findFirst({ orderBy: { createdAt: 'desc' } }),
+    prisma.commitSquare.findMany({
+      where: { date: { gte: min } },
+      orderBy: { date: 'asc' },
+    }),
+  ]);
+
+  return {
+    props: {
+      roles: sortedRoles,
+      summary: JSON.parse(JSON.stringify(batch[0]))!,
+      squares: JSON.parse(JSON.stringify(batch[1]))!,
+    },
+  };
 };
 
 export default About;
