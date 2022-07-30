@@ -12,3 +12,11 @@ model PostView {
   post  String @unique @db.VarChar(255)
   views Int    @default(0)
 }
+
+model CommitSummary {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  commits   Int      @default(0)
+  language  String   @db.VarChar(255)
+  topics    String   @db.VarChar(255)
+}
