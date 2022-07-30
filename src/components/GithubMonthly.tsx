@@ -4,11 +4,11 @@ import { FC } from 'react';
 import { Chip } from './Chip';
 import { Line } from './Line';
 
-export interface GithubSummaryProps {
+export interface GithubMonthlyProps {
   summary: CommitSummary;
 }
 
-export const GithubSummary: FC<GithubSummaryProps> = ({ summary }) => (
+export const GithubMonthly: FC<GithubMonthlyProps> = ({ summary }) => (
   <div className="bg-surface-2 rounded-md shadow-2 p-5 mx-auto flex flex-col gap-fluid-1">
     <div className="max-w-max mx-auto">
       <h2 className="flex gap-3 items-center text-fluid-4">

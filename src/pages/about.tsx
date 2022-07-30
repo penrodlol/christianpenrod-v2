@@ -1,6 +1,7 @@
+import { GithubMonthly } from '@components/GithubMonthly';
 import { GithubSquares } from '@components/GithubSquares';
-import { GithubSummary } from '@components/GithubSummary';
 import { Layout } from '@components/Layout';
+import { Profile } from '@components/Profile';
 import { RoleTimeline } from '@components/RoleTimeline';
 import { CommitSquare, CommitSummary } from '@prisma/client';
 import { sortedRoles } from '@utils/contentlayer';
@@ -12,7 +13,6 @@ import {
   InferGetServerSidePropsType,
   NextPage,
 } from 'next';
-import Image from 'next/image';
 
 interface ServerProps {
   roles: Array<Role>;
@@ -28,27 +28,9 @@ const About: NextPage<
     <Layout title="About" subTitle="Who is Christian?">
       <div className="flex flex-col gap-fluid-6">
         <section className="flex flex-col sm:flex-row gap-10">
-          <div className="flex flex-col gap-8 items-center">
-            <div className="relative p-2 pb-0 bg-surface-2 rounded-md shadow-2 max-w-[300px]">
-              <Image
-                src="/img/selfie.webp"
-                alt="Picture of me"
-                className="rounded-md"
-                priority={true}
-                height={400}
-                width={300}
-                quality={100}
-              />
-            </div>
-            <div className="text-center">
-              <h2 className="text-fluid-6">Christian Penrod</h2>
-              <h3 className="text-fluid-4 text-base-2">
-                Front-End Web Developer
-              </h3>
-            </div>
-          </div>
+          <Profile />
           <div className="flex flex-col gap-6">
-            <GithubSummary summary={summary} />
+            <GithubMonthly summary={summary} />
           </div>
         </section>
         <section>
