@@ -8,9 +8,8 @@ export const handler = schedule('@monthly', async () => {
 
   const from = dayjs().subtract(1, 'M').startOf('M').toISOString();
   const to = dayjs().subtract(1, 'M').endOf('M').toISOString();
-  const {
-    user: { contributionsCollection },
-  } = await graphql(`
+  // prettier-ignore
+  const { user: { contributionsCollection } } = await graphql(`
     query {
       user(login: "${process.env.GITHUB_USERNAME}") {
         contributionsCollection(from: "${from}", to: "${to}") {

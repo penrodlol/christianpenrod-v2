@@ -6,5 +6,8 @@
 [functions."commit-summary"]
   schedule = "@monthly"
 
+[functions."commit-squares"]
+  schedule = "@monthly"
+
 [dev]
   autoLaunch = false

@@ -20,3 +20,11 @@ model CommitSummary {
   language  String   @db.VarChar(255)
   topics    String   @db.VarChar(255)
 }
+
+model CommitSquare {
+  id       Int      @id @default(autoincrement())
+  date     DateTime
+  color    String   @db.VarChar(255)
+  count    Int      @default(0)
+  position Int      @default(1)
+}
