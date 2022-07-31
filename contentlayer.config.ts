@@ -33,6 +33,14 @@ export const Post = defineDocumentType(() => ({
   },
 }));
 
+export const Bio = defineDocumentType(() => ({
+  name: 'Bio',
+  filePathPattern: 'misc/bio.mdx',
+  contentType: 'mdx',
+  isSingleton: true,
+  fields: {},
+}));
+
 export const Role = defineDocumentType(() => ({
   name: 'Role',
   filePathPattern: 'roles/*.mdx',
@@ -47,7 +55,7 @@ export const Role = defineDocumentType(() => ({
 
 export default makeSource({
   contentDirPath: 'content',
-  documentTypes: [Post, Role],
+  documentTypes: [Post, Bio, Role],
   mdx: {
     rehypePlugins: [rehypeExternalLinks, rehypeSlug],
     remarkPlugins: [() => remarkPrism({ transformInlineCode: true })],

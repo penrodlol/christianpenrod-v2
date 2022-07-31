@@ -27,7 +27,7 @@ export const GithubSquares: FC<GithubSquaresProps> = ({
   );
 
   return (
-    <div className="bg-surface-2 rounded-md shadow-2 p-5">
+    <div className="bg-surface-2 rounded-md shadow-2 p-5 max-w-3xl mx-auto">
       <svg
         width="744"
         height="120"

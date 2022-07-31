@@ -9,7 +9,7 @@ export interface GithubMonthlyProps {
 }
 
 export const GithubMonthly: FC<GithubMonthlyProps> = ({ summary }) => (
-  <div className="bg-surface-2 rounded-md shadow-2 p-5 mx-auto flex flex-col gap-fluid-1">
+  <div className="bg-surface-2 rounded-md shadow-2 p-5 flex flex-col gap-fluid-1">
     <div className="max-w-max mx-auto">
       <h2 className="flex gap-3 items-center text-fluid-4">
         Monthly Github Statistics
