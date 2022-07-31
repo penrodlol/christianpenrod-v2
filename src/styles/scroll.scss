@@ -1,0 +1,12 @@
+html {
+  scrollbar-color: theme('colors.base.3') transparent;
+}
+
+html::-webkit-scrollbar {
+  width: theme('width.1');
+}
+
+html::-webkit-scrollbar-thumb {
+  background-color: theme('colors.base.3');
+  border-radius: theme('borderRadius.md');
+}
