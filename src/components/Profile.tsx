@@ -5,8 +5,7 @@ export const Profile = () => (
     <div
       className="relative p-2 pb-0 bg-surface-2 rounded-md shadow-2 max-w-[260px]
                  after:absolute after:content-blank after:inset-2 after:bg-brand-2
-                 after:rounded-[inherit] after:opacity-30
-    "
+                 after:rounded-[inherit] after:opacity-30"
     >
       <Image
         src="/img/selfie.webp"
