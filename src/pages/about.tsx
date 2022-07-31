@@ -83,8 +83,8 @@ export const getServerSideProps: GetServerSideProps<ServerProps> = async () => {
     props: {
       bio,
       roles: sortedRoles,
-      summary: JSON.parse(JSON.stringify(batch[0]))!,
-      squares: JSON.parse(JSON.stringify(batch[1]))!,
+      summary: JSON.parse(JSON.stringify(batch[0])),
+      squares: JSON.parse(JSON.stringify(batch[1])),
       contributions: batch[1].reduce((acc, cur) => acc + cur.count, 0),
     },
   };
