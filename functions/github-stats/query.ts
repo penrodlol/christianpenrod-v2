@@ -1,5 +1,5 @@
 export const QUERY = `
-  query github-stats($from: DateTime!, $to: DateTime!) {
+  query github_stats($from: DateTime!, $to: DateTime!) {
     user(login: "${process.env.GITHUB_USERNAME}") {
       contributionsCollection(from: $from, to: $to) {
         totalCommitContributions
