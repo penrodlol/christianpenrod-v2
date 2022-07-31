@@ -1,4 +1,5 @@
 import { CommitSquare } from '@prisma/client';
+import dayjs from 'dayjs';
 import { FC, useMemo } from 'react';
 
 const COLORS = new Map<string, string>()
@@ -45,7 +46,14 @@ export const GithubSquares: FC<GithubSquaresProps> = ({
                 fill={COLORS.get(square.color)}
                 rx="2"
                 ry="2"
-              />
+              >
+                <title>
+                  <>
+                    {square.count} contribution(s) on{' '}
+                    {dayjs(square.date).format('MMM Do, YYYY')}
+                  </>
+                </title>
+              </rect>
             ))}
           </g>
         ))}
