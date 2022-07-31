@@ -46,10 +46,10 @@ const About: NextPage<
   return (
     <Layout title="About" subTitle="Who is Christian?">
       <div className="flex flex-col gap-fluid-6">
-        <section className="flex flex-col sm:flex-row gap-10">
+        <section className="flex flex-col sm:flex-row gap-fluid-6">
           <Profile />
           <div className="flex flex-col gap-6 justify-between">
-            <div className="bg-surface-2 rounded-md shadow-2 p-5 max-w-lg mx-auto">
+            <div className="bg-surface-2 rounded-md shadow-2 p-5 max-w-lg mx-auto text-fluid-2">
               <BioMDX components={components} />
             </div>
             <GithubMonthly summary={summary} />
