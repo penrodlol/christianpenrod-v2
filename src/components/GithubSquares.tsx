@@ -58,10 +58,10 @@ export const GithubSquares: FC<GithubSquaresProps> = ({
           </g>
         ))}
       </svg>
-      <div className="flex items-center justify-between font-semibold">
+      <div className="flex gap-1 items-center justify-between font-semibold">
         <p>
           <span className="font-bold text-brand-1">{contributions}</span>{' '}
-          contributions
+          contributions in the last year
         </p>
         <div className="flex gap-1 items-center">
           <span className="mr-2">Less</span>
