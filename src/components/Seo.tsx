@@ -25,13 +25,13 @@ export const SEO: FC<SeoProps> = ({ title, description }) => {
 
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:creator" content={`@${TWITTER}`} />
-      <meta name="twitter:title" content={title || TITLE} />
-      <meta name="twitter:description" content={description || DESC} />
+      <meta name="twitter:title" content={title ?? TITLE} />
+      <meta name="twitter:description" content={description ?? DESC} />
       {/* <meta name="twitter:image" content={``} /> */}
 
       <meta name="og:type" content="website" />
-      <meta name="og:title" content={title || TITLE} />
-      <meta name="og:description" content={description || DESC} />
+      <meta name="og:title" content={title ?? TITLE} />
+      <meta name="og:description" content={description ?? DESC} />
       {/* <meta name="og:image" content={``} /> */}
       <meta name="og:image:alt" content={`Banner for ${DOMAIN}`} />
       <meta name="og:image:width" content="1280" />
