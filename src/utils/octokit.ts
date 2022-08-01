@@ -1,7 +1,7 @@
 import { Octokit } from '@octokit/rest';
 import { GetResponseDataTypeFromEndpointMethod as ResponseDataType } from '@octokit/types';
 
-export const client = new Octokit();
+export const client = new Octokit({ auth: process.env.GITHUB_TOKEN });
 
 export const { repos } = client;
 
