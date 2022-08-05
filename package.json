@@ -13,6 +13,7 @@
     "@netlify/functions": "^1.0.0",
     "@octokit/rest": "^18.12.0",
     "@prisma/client": "^4.1.1",
+    "@radix-ui/react-dialog": "^1.0.0",
     "@radix-ui/react-tabs": "^1.0.0",
     "contentlayer": "^0.2.6",
     "dayjs": "^1.11.3",
