@@ -25,7 +25,7 @@ export const Header = () => {
 
 const Routes = () => (
   <>
-    {['About', 'Blog'].map((route) => (
+    {['Career', 'Blog'].map((route) => (
       <li key={route} className="list-none">
         <Route href={`/${route.toLowerCase()}`} passHref>
           <Anchor>{route}</Anchor>

@@ -1,5 +1,4 @@
 import { FC, ReactNode } from 'react';
-import { Chip } from './Chip';
 import { Line } from './Line';
 
 export interface CardProps {
@@ -15,7 +14,11 @@ export const Card: FC<CardProps> = (props) => {
     <div className="flex flex-col bg-surface-2 px-6 py-5 rounded-lg shadow-2">
       <div className="flex gap-2 flex-wrap mb-2">
         {props.tags.map((tag) => (
-          <Chip key={tag}>{tag}</Chip>
+          <div key={tag} className="bg-accent-2 rounded-full px-2 max-w-max">
+            <span className="text-[0.9rem] text-[black] tracking-wider">
+              {tag}
+            </span>
+          </div>
         ))}
       </div>
       <span className="text-2xl">{props.title}</span>

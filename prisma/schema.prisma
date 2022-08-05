@@ -13,18 +13,10 @@ model PostView {
   views Int    @default(0)
 }
 
-model CommitSummary {
-  id        Int      @id @default(autoincrement())
-  createdAt DateTime @default(now())
-  commits   Int      @default(0)
-  language  String   @db.VarChar(255)
-  topics    String   @db.VarChar(255)
-}
-
-model CommitSquare {
-  id       Int      @id @default(autoincrement())
-  date     DateTime
-  color    String   @db.VarChar(255)
-  count    Int      @default(0)
-  position Int      @default(1)
+model OpenSource {
+  id            Int      @id @default(autoincrement())
+  createdAt     DateTime
+  tools         String   @db.VarChar(255)
+  contributions String   @db.VarChar(255)
+  commits       Int      @default(0)
 }

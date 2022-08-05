@@ -1,5 +1,8 @@
+import GithubIcon from '@svg/github.svg';
+import LinkedinIcon from '@svg/linkedin.svg';
+import TwitterIcon from '@svg/twitter.svg';
 import dayjs from 'dayjs';
-import { SocialLinks } from './SocialLinks';
+import { Button } from './Button';
 
 export const Footer = () => (
   <footer
@@ -8,7 +11,15 @@ export const Footer = () => (
   >
     <div className="relative flex flex-col gap-2 items-center z-20">
       <div className="flex gap-2 max-w-max">
-        <SocialLinks />
+        <Button variant="icon" aria-label="Navigate to my twitter">
+          <TwitterIcon width="30" height="30" />
+        </Button>
+        <Button variant="icon" aria-label="Navigate to my github">
+          <GithubIcon width="30" height="30" />
+        </Button>
+        <Button variant="icon" aria-label="Navigate to my linkedin">
+          <LinkedinIcon width="30" height="30" />
+        </Button>
       </div>
       <div className="flex gap-2 text-xl">
         <span className="font-semibold">Christian Penrod</span>
