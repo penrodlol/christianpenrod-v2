@@ -1,23 +1,13 @@
-import { FC, HTMLAttributes } from 'react';
+import { ButtonHTMLAttributes, FC } from 'react';
 
-export interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
-  variant: keyof typeof variants;
-}
+export type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement>;
 
-const variants = {
-  primary: 'bg-brand-2 shadow-2 hover:bg-brand-3',
-  cta: 'bg-accent-2 text-[black] shadow-2 hover:bg-accent-1',
-};
-
-export const Button: FC<ButtonProps> = ({
-  children,
-  className,
-  variant,
-  ...props
-}) => (
+export const Button: FC<ButtonProps> = ({ children, className, ...props }) => (
   <button
     {...props}
-    className={`text-xl font-extrabold rounded-md px-8 py-[0.8rem] ${variants[variant]} ${className}`}
+    className={`
+      bg-accent-2 text-[black] shadow-2 hover:bg-accent-1 text-xl font-extrabold
+      rounded-md px-8 py-[0.8rem]  ${className}`}
   >
     {children}
   </button>
