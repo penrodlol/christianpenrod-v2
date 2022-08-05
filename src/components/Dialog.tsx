@@ -21,11 +21,13 @@ export const Header = ({ children, ...props }: Radix.DialogTitleProps) => (
 export const Content = ({ children, ...props }: Radix.DialogPortalProps) => (
   <Radix.Portal {...props}>
     <Radix.Overlay className="fixed z-40 inset-0 backdrop-blur-md" />
-    <div
-      className="fixed z-50 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
-                 max-w-2xl bg-surface-2 rounded-md shadow-2"
-    >
-      <div className="px-fluid-1 pb-4 pt-1">{children}</div>
-    </div>
+    <Radix.Content asChild>
+      <div
+        className="fixed z-50 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
+                   max-w-2xl bg-surface-2 rounded-md shadow-2"
+      >
+        <div className="px-fluid-1 pb-4 pt-1">{children}</div>
+      </div>
+    </Radix.Content>
   </Radix.Portal>
 );
