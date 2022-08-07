@@ -2,6 +2,7 @@
 *::before,
 *::after {
   scrollbar-color: theme('colors.base.3') transparent;
+  scrollbar-width: thin;
 }
 
 ::-webkit-scrollbar {
