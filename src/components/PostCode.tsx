@@ -15,7 +15,7 @@ export const PostCode = ({
         </div>
       )}
       <div className="relative bg-[hsl(210,11.1%,10.6%)] rounded-md shadow-2">
-        <div className="absolute right-2 top-2 text-base-2 opacity-50">
+        <div className="absolute right-2 top-2 text-base-2 opacity-50 hover:text-base-1">
           <button
             aria-label="Copy to clipboard"
             onClick={() =>
