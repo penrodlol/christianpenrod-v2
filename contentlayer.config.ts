@@ -47,7 +47,6 @@ export const Role = defineDocumentType(() => ({
   contentType: 'mdx',
   fields: {
     company: { type: 'string', required: true },
-    logo: { type: 'string', required: true },
     start: { type: 'date', required: true },
     end: { type: 'date' },
   },
