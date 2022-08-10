@@ -1,4 +1,3 @@
-import { Chat } from '@components/Chat';
 import { Contact } from '@components/Contact';
 import { Layout } from '@components/Layout';
 import { Line } from '@components/Line';
@@ -53,9 +52,7 @@ const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
               <Contact />
             </div>
           </div>
-          <div className="mx-auto">
-            <Chat openSource={openSource} />
-          </div>
+          <div className="mx-auto"></div>
         </section>
         <section className="flex flex-col gap-fluid-2">
           <h3 className="text-fluid-5 text-base-2">Recent Posts</h3>
