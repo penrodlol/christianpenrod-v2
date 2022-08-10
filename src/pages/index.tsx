@@ -2,10 +2,8 @@ import { Contact } from '@components/Contact';
 import { Layout } from '@components/Layout';
 import { Line } from '@components/Line';
 import { Posts } from '@components/Posts';
-import { OpenSource } from '@prisma/client';
 import ArrowRightIcon from '@svg/arrow-right.svg';
 import { sortedPosts } from '@utils/contentlayer';
-import { prisma } from '@utils/prisma';
 import { bio, Bio, Post } from 'contentlayer/generated';
 import { GetStaticProps, InferGetStaticPropsType, NextPage } from 'next';
 import { useMDXComponent } from 'next-contentlayer/hooks';
@@ -15,7 +13,6 @@ import { PropsWithChildren } from 'react';
 interface StaticProps {
   bio: Bio;
   posts: Array<Post>;
-  openSource: Partial<OpenSource> | null;
 }
 
 // prettier-ignore
@@ -33,7 +30,6 @@ const components = {
 const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
   bio,
   posts,
-  openSource,
 }) => {
   const BioMDX = useMDXComponent(bio.body.code);
 
@@ -65,12 +61,8 @@ const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
 
 export const getStaticProps: GetStaticProps<StaticProps> = async () => {
   const posts = sortedPosts.filter((_, index) => index < 3);
-  const openSource = await prisma.openSource.findFirst({
-    select: { tools: true, contributions: true, commits: true },
-    orderBy: { createdAt: 'desc' },
-  });
 
-  return { props: { bio, posts, openSource } };
+  return { props: { bio, posts } };
 };
 
 export default Home;

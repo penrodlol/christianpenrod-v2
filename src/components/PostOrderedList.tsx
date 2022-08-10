@@ -5,7 +5,7 @@ import {
   ReactElement,
 } from 'react';
 
-export const PostOrderedList = ({ children }: PropsWithChildren<unknown>) => (
+export const PostOrderedList = ({ children }: PropsWithChildren) => (
   <ol className="flex flex-col gap-2 p-0">
     {Children.toArray(children)
       .filter(isValidElement)
