@@ -8,9 +8,9 @@ export const Trigger = Radix.Trigger;
 export const Header = ({ children, ...props }: Radix.DialogTitleProps) => (
   <Radix.Title {...props} asChild>
     <div className="text-fluid-6 flex items-center justify-between mb-5">
-      <h3>{children}</h3>
+      <span>{children}</span>
       <Radix.DialogClose asChild>
-        <button aria-label="Close dialog">
+        <button role="button" aria-label="Close dialog">
           <CloseIcon className="w-8 h-8 fill-brand-1 hover:fill-brand-2" />
         </button>
       </Radix.DialogClose>

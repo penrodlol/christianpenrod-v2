@@ -21,10 +21,13 @@ export const Posts: FC<PostsProps> = ({ posts }) => (
         content={post.description}
         actions={[
           <Link key={`${post._id}-action`} href={`/blog/${post.slug}`} passHref>
-            <Anchor className="text-base-1">
+            <Anchor
+              className="text-base-1"
+              aria-label={`Go to post: ${post.title}`}
+            >
               <span className="flex gap-2">
                 Read More
-                <ArrowRightIcon width={25} height={25} />
+                <ArrowRightIcon width={25} height={25} aria-hidden />
               </span>
             </Anchor>
           </Link>,

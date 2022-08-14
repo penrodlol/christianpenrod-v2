@@ -27,9 +27,9 @@ const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
         <div className="flex flex-col xl:flex-row gap-fluid-6 justify-between">
           <section>
             <h1 className="text-fluid-8">Hi, I&apos;m Christian.</h1>
-            <h3 className="text-base-2 text-fluid-5">
+            <h2 className="text-base-2 text-fluid-5">
               Front-End Web Developer
-            </h3>
+            </h2>
             <Line className="h-2 my-8" />
             <BioMDX bio={bio} />
             <div className="mt-fluid-5 sm:max-w-max">

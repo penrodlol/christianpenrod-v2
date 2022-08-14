@@ -9,9 +9,9 @@ const GITHUB = process.env.NEXT_PUBLIC_GITHUB!;
 const LINKEDIN = process.env.NEXT_PUBLIC_LINKEDIN!;
 
 const SOCIALS: Array<{ name: string; url: string; icon: ReactElement }> = [
-  { name: 'twitter', url: TWITTER, icon: <TwitterIcon /> },
-  { name: 'github', url: GITHUB, icon: <GithubIcon /> },
-  { name: 'linkedin', url: LINKEDIN, icon: <LinkedinIcon /> },
+  { name: 'twitter', url: TWITTER, icon: <TwitterIcon aria-hidden /> },
+  { name: 'github', url: GITHUB, icon: <GithubIcon aria-hidden /> },
+  { name: 'linkedin', url: LINKEDIN, icon: <LinkedinIcon aria-hidden /> },
 ];
 
 export const Footer = () => (
@@ -25,10 +25,10 @@ export const Footer = () => (
           <a
             key={name}
             href={url}
-            aria-label={`Go to my ${name}`}
-            className="w-7 h-7 cursor-pointer hover:text-brand-1"
             target="_blank"
             rel="noopener noreferrer"
+            className="w-7 h-7 cursor-pointer hover:text-brand-1"
+            aria-label={`Go to my ${name}`}
           >
             {icon}
           </a>

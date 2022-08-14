@@ -19,6 +19,7 @@ export const ContributionCard: FC<ContributionCardProps> = ({
           target="_blank"
           rel="nofollow noopener noreferrer"
           className="text-base-1"
+          aria-label={`Go to github repo for ${contribution.name}`}
         >
           {contribution.name}
         </Anchor>
