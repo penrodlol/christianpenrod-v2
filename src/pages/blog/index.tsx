@@ -9,7 +9,9 @@ const Blog: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
 }) => {
   return (
     <Layout title="Blog" subTitle="What has Christian wrote?">
-      <Posts posts={posts} />
+      <section className="grid gap-fluid-4 xl:grid-cols-3">
+        <Posts posts={posts} />
+      </section>
     </Layout>
   );
 };
