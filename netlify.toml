@@ -3,8 +3,8 @@
   functions = "functions"
   publish = ".next"
 
-[functions."open-source"]
-  schedule = "@monthly"
+[functions."contributions"]
+  schedule = "@daily"
 
 [dev]
   autoLaunch = false

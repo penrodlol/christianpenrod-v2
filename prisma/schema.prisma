@@ -12,3 +12,12 @@ model PostView {
   post  String @unique @db.VarChar(255)
   views Int    @default(1)
 }
+
+model Contribution {
+  id          Int      @id @default(autoincrement())
+  externalId  String   @unique @db.VarChar(255)
+  updatedOn   DateTime @updatedAt
+  name        String   @db.VarChar(255)
+  description String   @db.VarChar(255)
+  url         String   @db.VarChar(255)
+}

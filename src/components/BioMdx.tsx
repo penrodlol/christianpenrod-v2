@@ -1,11 +1,11 @@
 import ArrowRightIcon from '@svg/arrow-right.svg';
-import type { Bio as _Bio } from 'contentlayer/generated';
+import type { Bio } from 'contentlayer/generated';
 import { useMDXComponent } from 'next-contentlayer/hooks';
 import dynamic from 'next/dynamic';
 import { FC, PropsWithChildren } from 'react';
 
-export interface BioProps {
-  bio: _Bio;
+export interface BioMdxProps {
+  bio: Bio;
 }
 
 // prettier-ignore
@@ -20,7 +20,7 @@ const components = {
   ),
 };
 
-export const Bio: FC<BioProps> = ({ bio }) => {
+export const BioMDX: FC<BioMdxProps> = ({ bio }) => {
   const MDX = useMDXComponent(bio.body.code);
   return <MDX components={components} />;
 };

@@ -11,7 +11,7 @@ export interface PostsProps {
 }
 
 export const Posts: FC<PostsProps> = ({ posts }) => (
-  <div className="grid gap-12 xl:grid-cols-3">
+  <>
     {posts.map((post) => (
       <Card
         key={post._id}
@@ -31,5 +31,5 @@ export const Posts: FC<PostsProps> = ({ posts }) => (
         ]}
       />
     ))}
-  </div>
+  </>
 );
