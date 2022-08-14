@@ -11,8 +11,10 @@ export interface PostGithubProps {
 }
 
 export const PostGithub: FC<PostGithubProps> = ({ repo }) => {
-  const { data } = useSWR<ReposGet>(`/api/repo-meta/${repo}`, (url) =>
-    fetch(url).then((res) => res.json()),
+  const { data } = useSWR<Partial<ReposGet>>(
+    `/api/github/${repo}`,
+    (url) => fetch(url).then((res) => res.json()),
+    { revalidateOnFocus: false },
   );
 
   return (
