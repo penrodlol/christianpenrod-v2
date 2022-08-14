@@ -26,7 +26,7 @@ export const Content = ({ children, ...props }: Radix.DialogPortalProps) => (
         className="fixed z-50 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
                    w-11/12 max-w-2xl bg-surface-2 rounded-md shadow-2"
       >
-        <div className="px-fluid-2 py-4">{children}</div>
+        <div className="px-fluid-2 pt-4 pb-6">{children}</div>
       </div>
     </Radix.Content>
   </Radix.Portal>
