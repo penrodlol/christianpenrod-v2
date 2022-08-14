@@ -10,5 +10,5 @@ datasource db {
 model PostView {
   id    Int    @id @default(autoincrement())
   post  String @unique @db.VarChar(255)
-  views Int    @default(0)
+  views Int    @default(1)
 }
