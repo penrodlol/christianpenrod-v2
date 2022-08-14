@@ -11,8 +11,8 @@ export const Contact = () => {
       <Dialog.Content>
         <Dialog.Header>Contact Me</Dialog.Header>
         <form name="contact" method="POST" data-netlify="true">
-          <div className="px-3 flex flex-col gap-fluid-2 text-lg">
-            <div className="flex gap-fluid-2">
+          <div className="flex flex-col gap-5 px-3 text-lg">
+            <div className="flex flex-col sm:flex-row gap-5">
               <Input name="name" type="text" placeholder="Name" required />
               <Input name="email" type="email" placeholder="Email" required />
             </div>
