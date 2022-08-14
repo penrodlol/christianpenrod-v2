@@ -12,11 +12,3 @@ model PostView {
   post  String @unique @db.VarChar(255)
   views Int    @default(0)
 }
-
-model OpenSource {
-  id            Int      @id @default(autoincrement())
-  createdAt     DateTime
-  tools         String   @db.VarChar(255)
-  contributions String   @db.VarChar(255)
-  commits       Int      @default(0)
-}
