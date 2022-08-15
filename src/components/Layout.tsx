@@ -21,7 +21,7 @@ export const Layout = (props: PropsWithChildren<LayoutProps>) => {
             {!props.tabOnly && props.title && (
               <div className="mb-fluid-5">
                 <h1 className="text-fluid-7">{props.title}</h1>
-                <h3 className="text-base-2 text-fluid-6">{props.subTitle}</h3>
+                <h2 className="text-base-2 text-fluid-6">{props.subTitle}</h2>
               </div>
             )}
             {props.children}
