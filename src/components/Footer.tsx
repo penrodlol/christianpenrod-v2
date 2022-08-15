@@ -26,8 +26,9 @@ export const Footer = () => (
             key={name}
             href={url}
             target="_blank"
-            rel="noopener noreferrer"
-            className="w-7 h-7 cursor-pointer hover:text-brand-1"
+            rel="nofollow noopener noreferrer"
+            className="w-7 h-7 cursor-pointer rounded-sm
+                       hover:text-brand-1 focus-visible:text-brand-1"
             aria-label={`Go to my ${name}`}
           >
             {icon}

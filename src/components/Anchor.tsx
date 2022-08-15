@@ -14,8 +14,9 @@ export const Anchor = forwardRef<HTMLAnchorElement, AnchorProps>(
       {...props}
       ref={ref}
       target={target || '_self'}
-      className={`inline-flex gap-1 items-center relative no-underline rounded-md hover:text-brand-1
-                  ${className} ${target === '_blank' && external}`}
+      className={`inline-flex gap-1 items-center relative no-underline rounded-sm
+                  hover:text-brand-1 focus-visible:text-brand-1
+                  ${className ?? ''} ${target === '_blank' ? external : ''}`}
     >
       <span>{children}</span>
       {target === '_blank' && <ExternalIcon className="h-5 w-5" aria-hidden />}

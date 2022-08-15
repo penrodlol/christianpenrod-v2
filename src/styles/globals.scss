@@ -26,3 +26,13 @@ body::before {
 p {
   @apply max-w-prose;
 }
+
+a,
+button,
+input,
+textarea {
+  @apply focus-visible:outline
+         focus-visible:outline-2
+         focus-visible:outline-surface-1
+         focus-visible:outline-offset-4;
+}

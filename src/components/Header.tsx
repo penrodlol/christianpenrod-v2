@@ -9,12 +9,12 @@ export const Header = () => {
       <nav className="flex items-center justify-between py-2 px-fluid-4 max-w-screen-2xl mx-auto my-0">
         <Route href="/" passHref>
           <Anchor aria-label="Navigate to Home page">
-            <LogoIcon height={40} width={50} tabIndex={0} aria-hidden />
+            <LogoIcon height={40} width={50} />
           </Anchor>
         </Route>
-        <div className="hidden sm:flex gap-16 items-center text-xl">
+        <ul className="hidden sm:flex gap-16 items-center text-xl">
           <Routes />
-        </div>
+        </ul>
         <div className="block sm:hidden">
           <RoutesMenu />
         </div>
@@ -28,7 +28,7 @@ const Routes = () => (
     {['Career', 'Blog'].map((route) => (
       <li key={route} className="list-none">
         <Route href={`/${route.toLowerCase()}`} passHref>
-          <Anchor aria-label={`Navigate to ${route} page`}>{route}</Anchor>
+          <Anchor aria-label={`Go to ${route} page`}>{route}</Anchor>
         </Route>
       </li>
     ))}

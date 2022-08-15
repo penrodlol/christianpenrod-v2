@@ -10,7 +10,7 @@ export const Header = ({ children, ...props }: Radix.DialogTitleProps) => (
     <div className="text-fluid-6 flex items-center justify-between mb-5">
       <span>{children}</span>
       <Radix.DialogClose asChild>
-        <button role="button" aria-label="Close dialog">
+        <button className="rounded-md" role="button" aria-label="Close dialog">
           <CloseIcon className="w-8 h-8 fill-brand-1 hover:fill-brand-2" />
         </button>
       </Radix.DialogClose>
