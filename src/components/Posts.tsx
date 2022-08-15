@@ -21,11 +21,10 @@ export const Posts: FC<PostsProps> = ({ posts }) => (
             {post.tags.map((tag) => (
               <div
                 key={tag}
-                className="bg-accent-2 rounded-full px-2 max-w-max"
+                className="bg-accent-2 rounded-full px-2 max-w-max
+                           text-[0.9rem] text-[black] tracking-wider"
               >
-                <span className="text-[0.9rem] text-[black] tracking-wider">
-                  {tag}
-                </span>
+                {tag}
               </div>
             ))}
           </div>
