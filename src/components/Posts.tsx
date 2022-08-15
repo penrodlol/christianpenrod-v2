@@ -13,7 +13,7 @@ export const Posts: FC<PostsProps> = ({ posts }) => (
     {posts.map((post) => (
       <Link key={post._id} href={`/blog/${post.slug}`} passHref>
         <a
-          className="relative flex flex-col bg-surface-2 px-6 py-5 rounded-lg shadow-2
+          className="group relative flex flex-col bg-surface-2 px-6 py-5 rounded-lg shadow-2
                      hover:outline hover:outline-2 hover:outline-surface-1 hover:outline-offset-4"
           aria-label={post.title}
         >
@@ -29,7 +29,9 @@ export const Posts: FC<PostsProps> = ({ posts }) => (
               </div>
             ))}
           </div>
-          <span className="text-2xl">{post.title}</span>
+          <span className="text-2xl group-hover:text-brand-1">
+            {post.title}
+          </span>
           <span className="text-base-2 text-lg font-semibold">
             {dayjs.utc(post.published).format('MMM Do, YYYY')}
           </span>
