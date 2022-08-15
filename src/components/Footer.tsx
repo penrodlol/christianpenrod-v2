@@ -1,5 +1,5 @@
 import GithubIcon from '@svg/github.svg';
-import LinkedinIcon from '@svg/linkedin.svg';
+import LinkedInIcon from '@svg/linkedin.svg';
 import TwitterIcon from '@svg/twitter.svg';
 import dayjs from 'dayjs';
 import { ReactElement } from 'react';
@@ -8,10 +8,11 @@ const TWITTER = process.env.NEXT_PUBLIC_TWITTER!;
 const GITHUB = process.env.NEXT_PUBLIC_GITHUB!;
 const LINKEDIN = process.env.NEXT_PUBLIC_LINKEDIN!;
 
+// prettier-ignore
 const SOCIALS: Array<{ name: string; url: string; icon: ReactElement }> = [
-  { name: 'twitter', url: TWITTER, icon: <TwitterIcon aria-hidden /> },
-  { name: 'github', url: GITHUB, icon: <GithubIcon aria-hidden /> },
-  { name: 'linkedin', url: LINKEDIN, icon: <LinkedinIcon aria-hidden /> },
+  { name: 'Twitter', url: TWITTER, icon: <TwitterIcon aria-hidden focusable="false" /> },
+  { name: 'Github', url: GITHUB, icon: <GithubIcon aria-hidden focusable="false" /> },
+  { name: 'LinkedIn', url: LINKEDIN, icon: <LinkedInIcon aria-hidden focusable="false" /> },
 ];
 
 export const Footer = () => (
@@ -27,11 +28,13 @@ export const Footer = () => (
             href={url}
             target="_blank"
             rel="nofollow noopener noreferrer"
+            title={name}
+            aria-label={`Go to my ${name}`}
             className="w-7 h-7 cursor-pointer rounded-sm
                        hover:text-brand-1 focus-visible:text-brand-1"
-            aria-label={`Go to my ${name}`}
           >
             {icon}
+            <span className="sr-only">{name}</span>
           </a>
         ))}
       </div>
