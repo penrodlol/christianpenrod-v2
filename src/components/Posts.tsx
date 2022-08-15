@@ -29,7 +29,7 @@ export const Posts: FC<PostsProps> = ({ posts }) => (
               </div>
             ))}
           </div>
-          <span className="text-2xl group-hover:text-brand-1">
+          <span className="text-2xl group-hover:text-brand-1 group-focus-visible:text-brand-1">
             {post.title}
           </span>
           <span className="text-base-2 text-lg font-semibold">
