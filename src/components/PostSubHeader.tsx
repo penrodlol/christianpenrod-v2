@@ -12,6 +12,7 @@ export const PostSubHeader = ({
         <a
           className="text-brand-1 absolute left-[-40px] top-1/2 -translate-y-1/2 opacity-0 pr-4
                      group-hover:opacity-100 hidden lg:block"
+          aria-label={children.toString()}
         >
           <LinkIcon width={30} height={30} />
         </a>
