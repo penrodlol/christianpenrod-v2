@@ -29,7 +29,6 @@ export const Footer = () => (
             target="_blank"
             rel="nofollow noopener noreferrer"
             title={name}
-            aria-label={`Go to my ${name}`}
             className="w-7 h-7 cursor-pointer rounded-sm
                        hover:text-brand-1 focus-visible:text-brand-1"
           >
