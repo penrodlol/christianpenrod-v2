@@ -10,7 +10,7 @@ export default async function handler(req: Req, res: Res<Partial<ReposGet>>) {
     id: data.id,
     name: data.name,
     description: data.description,
-    url: data.html_url,
+    html_url: data.html_url,
     stargazers_count: data.stargazers_count,
     forks_count: data.forks_count,
     language: data.language,
