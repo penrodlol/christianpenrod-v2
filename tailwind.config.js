@@ -9,8 +9,8 @@ module.exports = {
   content: ['./src/pages/**/*.tsx', './src/components/**/*.tsx'],
   theme: {
     fontFamily: {
-      serif: ["'Nunito', sans-serif"],
-      fancy: ["'Sriracha', sans-serif"],
+      serif: ["'Nunito', system-ui"],
+      fancy: ["'Sriracha', system-ui"],
     },
     colors: {
       transparent: 'transparent',
