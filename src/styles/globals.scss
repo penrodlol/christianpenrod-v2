@@ -9,8 +9,8 @@
 @import 'scroll';
 @import 'prism';
 
-html {
-  @apply font-serif font-extrabold tracking-wide
+body {
+  @apply font-serif antialiased font-extrabold tracking-wide
          text-base-1 bg-surface-3;
 }
 
