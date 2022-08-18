@@ -30,7 +30,7 @@ const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
             <h2 className="text-base-2 text-fluid-5">
               Front-End Web Developer
             </h2>
-            <Line className="h-2 my-8" />
+            <Line className="h-2 my-8 max-w-lg" />
             <BioMDX bio={bio} />
             <div className="mt-fluid-5 sm:max-w-max">
               <Contact />
