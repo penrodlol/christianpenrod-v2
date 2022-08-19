@@ -38,21 +38,18 @@ const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
           </section>
           <section className="flex flex-col gap-fluid-2">
             <h3 className="text-fluid-5 text-base-2">Latest Contributions</h3>
-            <div className="flex flex-col gap-4">
+            <ul className="flex flex-col gap-4">
               {contributions.map((contribution) => (
-                <ContributionCard
-                  key={contribution.id}
-                  contribution={contribution}
-                />
+                <li key={contribution.id}>
+                  <ContributionCard contribution={contribution} />
+                </li>
               ))}
-            </div>
+            </ul>
           </section>
         </div>
         <section className="flex flex-col gap-fluid-2">
           <h3 className="text-fluid-5 text-base-2">Recent Posts</h3>
-          <div className="grid gap-fluid-4 xl:grid-cols-3">
-            <Posts posts={posts} />
-          </div>
+          <Posts posts={posts} />
         </section>
       </div>
     </Layout>
