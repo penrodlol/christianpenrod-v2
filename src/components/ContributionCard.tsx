@@ -16,7 +16,7 @@ export const ContributionCard: FC<ContributionCardProps> = ({
                  hover:outline hover:outline-2 hover:outline-surface-1 hover:outline-offset-4"
       target="_blank"
       rel="nofollow noopener noreferrer"
-      aria-label={`Go to github repo for ${contribution.name}`}
+      aria-label={`${contribution.name}. ${contribution.description}`}
     >
       <div className="flex justify-between">
         <div className="flex gap-2 items-center text-lg">

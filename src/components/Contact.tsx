@@ -6,7 +6,7 @@ export const Contact = () => {
   return (
     <Dialog.Root>
       <Dialog.Trigger asChild>
-        <Button className="w-full" aria-label="Open contact form">
+        <Button className="w-full" aria-label="Contact me">
           Contact
         </Button>
       </Dialog.Trigger>
@@ -17,34 +17,33 @@ export const Contact = () => {
             <div className="flex flex-col sm:flex-row gap-5">
               <Input
                 name="name"
-                type="text"
                 placeholder="Name"
-                required
                 aria-label="Name"
+                required
+                autoFocus
               />
               <Input
                 name="email"
                 type="email"
                 placeholder="Email"
-                required
                 aria-label="Email"
+                required
               />
             </div>
             <Input
               name="subject"
-              type="text"
               placeholder="Subject"
-              required
               aria-label="Subject"
+              required
             />
             <Textarea
               name="message"
               placeholder="Message"
+              aria-label="Message"
               rows={7}
               required
-              aria-label="Input your message"
             />
-            <Button className="mt-5" type="submit" aria-label="Send message">
+            <Button className="mt-5" type="submit">
               Send Message
             </Button>
           </div>

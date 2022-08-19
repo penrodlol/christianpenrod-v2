@@ -15,7 +15,7 @@ export const Posts: FC<PostsProps> = ({ posts }) => (
         <a
           className="group relative flex flex-col bg-surface-2 px-6 py-5 rounded-lg shadow-2
                      hover:outline hover:outline-2 hover:outline-surface-1 hover:outline-offset-4"
-          aria-label={post.title}
+          aria-label={`${post.title}. ${post.description}`}
         >
           <div className="flex gap-2 flex-wrap mb-2">
             {post.tags.map((tag) => (
