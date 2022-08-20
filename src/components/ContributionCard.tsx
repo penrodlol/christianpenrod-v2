@@ -19,12 +19,12 @@ export const ContributionCard: FC<ContributionCardProps> = ({
       aria-label={`${contribution.name}. ${contribution.description}`}
     >
       <div className="flex justify-between">
-        <div className="flex gap-2 items-center text-lg">
+        <div className="flex gap-2 items-center text-xl">
           <GithubBookmarkIcon className="h-5 w-5 fill-brand-1" />
           <span className="group-hover:text-brand-1">{contribution.name}</span>
         </div>
       </div>
-      <p className="text-base-2">{contribution.description}</p>
+      <p className="text-base-2 text-lg">{contribution.description}</p>
     </a>
   </Link>
 );
