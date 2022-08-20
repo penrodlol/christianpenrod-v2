@@ -17,7 +17,7 @@ export const Footer = () => (
     className="relative bg-surface-3 pt-6 pb-4 px-4 before:content-blank before:absolute
                before:inset-0 before:shadow-1 before:rotate-180 before:z-10"
   >
-    <div className="relative flex flex-col gap-6 font-semibold text-2 text-base-2 z-20">
+    <div className="relative flex flex-col gap-6 font-semibold text-lg text-base-2 z-20">
       <div className="flex gap-20 justify-center">
         {SOCIALS.map(({ name, url, icon }) => (
           <a
