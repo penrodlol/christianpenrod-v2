@@ -4,8 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "start": "next start",
     "build": "next build",
-    "start": "next start"
+    "postbuild": "next-sitemap"
   },
   "dependencies": {
     "@fontsource/nunito": "^4.5.9",
@@ -15,10 +16,10 @@
     "@prisma/client": "^4.2.1",
     "@radix-ui/react-dialog": "^1.0.0",
     "@radix-ui/react-tabs": "^1.0.0",
-    "contentlayer": "^0.2.6",
+    "contentlayer": "^0.2.7",
     "dayjs": "^1.11.3",
     "next": "^12.2.0",
-    "next-contentlayer": "^0.2.6",
+    "next-contentlayer": "^0.2.7",
     "prism-theme-vars": "^0.2.3",
     "react": "18.1.0",
     "react-dom": "18.1.0",
@@ -33,6 +34,7 @@
     "autoprefixer": "^10.4.7",
     "eslint": "8.15.0",
     "eslint-config-next": "12.1.6",
+    "next-sitemap": "^3.1.20",
     "postcss": "^8.4.14",
     "prettier": "^2.6.2",
     "prisma": "^4.2.1",

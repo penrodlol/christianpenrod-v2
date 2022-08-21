@@ -9,7 +9,8 @@ const nextConfig = withContentlayer({
   reactStrictMode: true,
   swcMinify: true,
   env: {
-    DOMAIN: 'https://christianpenrod.com',
+    DOMAIN: process.env.DOMAIN,
+    EMAIL: 'christian@penrod.contact',
     TWITTER: 'https://twitter.com/penrodlol',
     GITHUB: 'https://github.com/penrodlol',
     LINKEDIN: 'https://linkedin.com/in/christian-penrod-07618314b/',
