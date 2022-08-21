@@ -6,7 +6,9 @@
     "dev": "next dev",
     "start": "next start",
     "build": "next build",
-    "postbuild": "next-sitemap"
+    "postbuild": "yarn sitemap && yarn rss",
+    "rss": "npx node --experimental-json-modules ./scripts/rss.mjs",
+    "sitemap": "npx node --experimental-json-modules ./scripts/sitemap.mjs"
   },
   "dependencies": {
     "@fontsource/nunito": "^4.5.9",
@@ -34,7 +36,7 @@
     "autoprefixer": "^10.4.7",
     "eslint": "8.15.0",
     "eslint-config-next": "12.1.6",
-    "next-sitemap": "^3.1.20",
+    "feed": "^4.2.2",
     "postcss": "^8.4.14",
     "prettier": "^2.6.2",
     "prisma": "^4.2.1",

@@ -7,9 +7,9 @@ import { Anchor } from './Anchor';
 
 // prettier-ignore
 const SOCIALS: Array<{ name: string; url: string; icon: ReactElement }> = [
-  { name: 'Twitter', url: process.env.TWITTER!, icon: <TwitterIcon aria-hidden focusable="false" /> },
-  { name: 'Github', url: process.env.GITHUB!, icon: <GithubIcon aria-hidden focusable="false" /> },
-  { name: 'LinkedIn', url: process.env.LINKEDIN!, icon: <LinkedInIcon aria-hidden focusable="false" /> },
+  { name: 'Twitter', url: process.env.NEXT_PUBLIC_TWITTER!, icon: <TwitterIcon aria-hidden focusable="false" /> },
+  { name: 'Github', url: process.env.NEXT_PUBLIC_GITHUB!, icon: <GithubIcon aria-hidden focusable="false" /> },
+  { name: 'LinkedIn', url: process.env.NEXT_PUBLIC_LINKEDIN!, icon: <LinkedInIcon aria-hidden focusable="false" /> },
 ];
 
 export const Footer = () => (

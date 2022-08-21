@@ -9,11 +9,6 @@ const nextConfig = withContentlayer({
   reactStrictMode: true,
   swcMinify: true,
   env: {
-    DOMAIN: process.env.DOMAIN,
-    EMAIL: 'christian@penrod.contact',
-    TWITTER: 'https://twitter.com/penrodlol',
-    GITHUB: 'https://github.com/penrodlol',
-    LINKEDIN: 'https://linkedin.com/in/christian-penrod-07618314b/',
     COPYRIGHT_YEAR: String(dayjs().year()),
     LAST_UPDATE: String(dayjs().format('MMM Do, YYYY h:mm A')),
   },
