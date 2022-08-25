@@ -20,6 +20,7 @@
 *.pem
 rss.xml
 sitemap.xml
+robots.txt
 
 # debug
 npm-debug.log*
