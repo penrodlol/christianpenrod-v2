@@ -57,7 +57,7 @@ const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
 
 export const getStaticProps: GetStaticProps<StaticProps> = async () => {
   const ssg = await createSSG();
-  const posts = (await ssg.fetchQuery('post.get-all')).slice(0, 3);
+  const posts = await ssg.fetchQuery('post.get-all', { limit: 3 });
   const contributions = await ssg.fetchQuery('github.get-contributions');
 
   return {

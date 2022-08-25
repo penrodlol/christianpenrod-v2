@@ -6,11 +6,14 @@ import { createRouter } from '../create-router';
 
 export const postRouter = createRouter()
   .query('get-all', {
-    resolve: ({ ctx }) => {
-      return sortPosts(ctx.posts).map((post) => ({
+    input: z.object({ limit: z.number() }).nullish(),
+    resolve: ({ ctx, input }) => {
+      const posts = sortPosts(ctx.posts).map((post) => ({
         ...pick(post, ['title', 'description', 'slug', 'tags']),
         published: dayjs(post.published).format('MMM Do, YYYY'),
       }));
+
+      return input ? posts.slice(0, input.limit) : posts;
     },
   })
   .query('get', {
