@@ -1,14 +1,14 @@
-import { Post } from 'contentlayer/generated';
+import { Query } from '@utils/trpc';
 import HashLink from 'next/link';
 import { FC } from 'react';
 import { Anchor } from './Anchor';
 import { Line } from './Line';
 
 export interface PostTocProps {
-  post: Post;
+  headings: Query<'post.get'>['headings'];
 }
 
-export const PostToc: FC<PostTocProps> = ({ post }) => (
+export const PostToc: FC<PostTocProps> = ({ headings }) => (
   <aside>
     <h3 className="text-xl">Table of Contents</h3>
     <Line />
@@ -16,7 +16,7 @@ export const PostToc: FC<PostTocProps> = ({ post }) => (
       <HashLink href={{ hash: 'introduction' }} passHref>
         <Anchor className="text-base-2">1. Introduction</Anchor>
       </HashLink>
-      {post.headings.map((heading: string, index: number) => (
+      {headings.map((heading: string, index: number) => (
         <HashLink
           key={heading}
           href={{ hash: heading.toLowerCase().replace(/ /g, '-') }}

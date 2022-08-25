@@ -1,29 +1,30 @@
 import { Layout } from '@components/Layout';
 import { RoleTimeline } from '@components/RoleTimeline';
-import { sortedRoles } from '@utils/contentlayer';
-import { Role } from 'contentlayer/generated';
+import { createSSG } from '@server/create-ssg';
+import { Query } from '@utils/trpc';
 import { GetStaticProps, InferGetStaticPropsType, NextPage } from 'next';
 
 interface StaticProps {
-  roles: Array<Role>;
+  roles: Query<'role.get-all'>;
 }
 
 const Career: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
   roles,
-}) => {
-  return (
-    <Layout title="Career" subTitle="What has Christian done?">
-      <section className="flex flex-col gap-8 max-w-max mx-auto">
-        {roles.map((role) => (
-          <RoleTimeline key={role._id} role={role} />
-        ))}
-      </section>
-    </Layout>
-  );
-};
+}) => (
+  <Layout title="Career" subTitle="What has Christian done?">
+    <section className="flex flex-col gap-8 max-w-max mx-auto">
+      {roles.map((role) => (
+        <RoleTimeline key={role._id} role={role} />
+      ))}
+    </section>
+  </Layout>
+);
 
-export const getStaticProps: GetStaticProps<{ roles: Role[] }> = () => {
-  return { props: { roles: sortedRoles } };
+export const getStaticProps: GetStaticProps<StaticProps> = async () => {
+  const ssg = await createSSG();
+  const roles = await ssg.fetchQuery('role.get-all');
+
+  return { props: { trpcState: ssg.dehydrate(), roles } };
 };
 
 export default Career;

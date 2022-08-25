@@ -1,10 +1,9 @@
-import { Role } from 'contentlayer/generated';
-import dayjs from 'dayjs';
+import { Query } from '@utils/trpc';
 import { useMDXComponent } from 'next-contentlayer/hooks';
 import { FC, PropsWithChildren } from 'react';
 
 export interface RoleTimelineProps {
-  role: Role;
+  role: Query<'role.get-all'>[0];
 }
 
 // prettier-ignore
@@ -21,16 +20,13 @@ const components = {
 };
 
 export const RoleTimeline: FC<RoleTimelineProps> = ({ role }) => {
-  const RoleMDX = useMDXComponent(role.body.code);
-
-  const start = dayjs.utc(role.start).format('MMM Do, YYYY');
-  const end = role.end ? dayjs.utc(role.end).format('MMM Do, YYYY') : 'Present';
+  const RoleMDX = useMDXComponent(role.content);
 
   return (
     <div className="bg-surface-2 rounded-md shadow-2 p-7">
       <h3 className="text-fluid-5">{role.company}</h3>
       <h4 className="text-fluid-3 text-base-2">
-        {start} - {end}
+        {role.start} - {role.end}
       </h4>
       <div className="relative">
         <div className="absolute bg-brand-1 opacity-30 rounded-md top-5 bottom-1 w-2" />

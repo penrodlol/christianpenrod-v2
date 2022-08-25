@@ -19,6 +19,7 @@
     "paths": {
       "@components/*": ["src/components/*"],
       "@const/*": ["src/const/*"],
+      "@server/*": ["src/server/*"],
       "@svg/*": ["public/svg/*"],
       "@utils/*": ["src/utils/*"],
       "contentlayer/generated": ["./.contentlayer/generated"]

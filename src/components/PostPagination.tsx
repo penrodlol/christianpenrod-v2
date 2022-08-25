@@ -1,20 +1,20 @@
 import ArrowLeftIcon from '@svg/arrow-left.svg';
 import ArrowRightIcon from '@svg/arrow-right.svg';
-import { Post } from 'contentlayer/generated';
+import { Query } from '@utils/trpc';
 import Link from 'next/link';
 import { FC } from 'react';
 import { Anchor } from './Anchor';
 
 export interface PostPaginationProps {
-  prev: Partial<Post> | null;
-  next: Partial<Post> | null;
+  prev: Query<'post.get'>['prev'];
+  next: Query<'post.get'>['next'];
 }
 
 export const PostPagination: FC<PostPaginationProps> = ({ prev, next }) => (
   <div className="flex gap-2 justify-between">
     {prev && (
       <div className={next ? 'max-w-[50%]' : 'max-w-[75%]'}>
-        <Link href={prev.slug!} passHref>
+        <Link href={prev.slug} passHref>
           <Anchor aria-label={`Previous post: ${prev.title}`}>
             <div className="flex flex-col gap-2">
               <div className="flex gap-2 items-center text-brand-1">
@@ -29,7 +29,7 @@ export const PostPagination: FC<PostPaginationProps> = ({ prev, next }) => (
     )}
     {next && (
       <div className={`ml-auto ${prev ? 'max-w-[50%]' : 'max-w-[75%]'}`}>
-        <Link href={next.slug!} passHref>
+        <Link href={next.slug} passHref>
           <Anchor aria-label={`Next post: ${next.title}`}>
             <div className="flex flex-col gap-2">
               <div className="self-end flex gap-2 items-center text-brand-1">

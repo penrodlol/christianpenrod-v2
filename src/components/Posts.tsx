@@ -1,17 +1,16 @@
-import { Post } from 'contentlayer/generated';
-import dayjs from 'dayjs';
+import { Query } from '@utils/trpc';
 import Link from 'next/link';
 import { FC } from 'react';
 import { Line } from './Line';
 
 export interface PostsProps {
-  posts: Array<Post>;
+  posts: Query<'post.get-all'>;
 }
 
 export const Posts: FC<PostsProps> = ({ posts }) => (
   <ul className="grid gap-fluid-4 xl:grid-cols-3">
     {posts.map((post) => (
-      <li key={post._id}>
+      <li key={post.title}>
         <Link href={`/blog/${post.slug}`} passHref>
           <a
             aria-label={`${post.title}. ${post.description}`}
@@ -33,7 +32,7 @@ export const Posts: FC<PostsProps> = ({ posts }) => (
               {post.title}
             </span>
             <span className="text-base-2 text-lg font-semibold">
-              {dayjs.utc(post.published).format('MMM Do, YYYY')}
+              {post.published}
             </span>
             <Line />
             <p className="text-lg leading-8">{post.description}</p>

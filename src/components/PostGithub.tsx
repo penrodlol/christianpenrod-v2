@@ -1,21 +1,16 @@
 import GithubBookmarkIcon from '@svg/github-bookmark.svg';
 import GithubForkIcon from '@svg/github-fork.svg';
 import GithubStarIcon from '@svg/github-star.svg';
-import { ReposGet } from '@utils/octokit';
+import { Query, trpc } from '@utils/trpc';
 import Link from 'next/link';
 import { FC } from 'react';
-import useSWR from 'swr';
 
 export interface PostGithubProps {
-  name: string;
+  name: NonNullable<Query<'post.get'>['repo']>;
 }
 
 export const PostGithub: FC<PostGithubProps> = ({ name }) => {
-  const { data: repo } = useSWR<Partial<ReposGet>>(
-    `/api/github/${name}`,
-    (url) => fetch(url).then((res) => res.json()),
-    { revalidateOnFocus: false },
-  );
+  const { data: repo } = trpc.useQuery(['github.get-repo', name]);
 
   return (
     <Link href={repo?.html_url || ''} passHref>

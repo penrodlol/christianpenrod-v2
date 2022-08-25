@@ -6,8 +6,9 @@ import { PostPagination } from '@components/PostPagination';
 import { PostSubHeaderIntroduction } from '@components/PostSubHeader';
 import { PostToc } from '@components/PostToc';
 import { PostViews } from '@components/PostViews';
-import { getPaginatedPost, sortedPosts } from '@utils/contentlayer';
-import { allPosts, Post } from 'contentlayer/generated';
+import { createSSG } from '@server/create-ssg';
+import { Query } from '@utils/trpc';
+import { allPosts } from 'contentlayer/generated';
 import {
   GetStaticPaths,
   GetStaticProps,
@@ -19,9 +20,7 @@ import dynamic from 'next/dynamic';
 import { PropsWithChildren } from 'react';
 
 interface StaticProps {
-  post: Post;
-  prev: Partial<Post> | null;
-  next: Partial<Post> | null;
+  post: Query<'post.get'>;
 }
 
 // prettier-ignore
@@ -38,10 +37,8 @@ const components = {
 
 const Blog: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
   post,
-  prev,
-  next,
 }) => {
-  const MDXContent = useMDXComponent(post.body.code);
+  const MDXContent = useMDXComponent(post.content);
 
   return (
     <Layout title={post.title} description={post.description} tabOnly>
@@ -55,14 +52,14 @@ const Blog: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
               <PostViews slug={post.slug} />
             </div>
             <Line />
-            <PostPagination prev={prev} next={next} />
+            <PostPagination prev={post.prev} next={post.next} />
           </div>
         </article>
         {post.headings && (
           <>
             <PostSubHeaderIntroduction />
             <div className="sticky top-28 self-start hidden xl:block">
-              <PostToc post={post} />
+              <PostToc headings={post.headings} />
             </div>
           </>
         )}
@@ -75,12 +72,14 @@ export const getStaticPaths: GetStaticPaths = async () => {
   return { paths: allPosts.map((p) => `/blog/${p.slug}`), fallback: false };
 };
 
-export const getStaticProps: GetStaticProps<StaticProps> = ({ params }) => {
-  const post = sortedPosts.find((p) => p.slug.includes(String(params!.slug)))!;
-  const prev = getPaginatedPost(post, 'prev');
-  const next = getPaginatedPost(post, 'next');
+export const getStaticProps: GetStaticProps<StaticProps> = async ({
+  params,
+}) => {
+  const ssg = await createSSG();
+  const slug = String(params!.slug);
+  const post = await ssg.fetchQuery('post.get', slug);
 
-  return { props: { post, prev, next } };
+  return { props: { trpcState: ssg.dehydrate(), post } };
 };
 
 export default Blog;

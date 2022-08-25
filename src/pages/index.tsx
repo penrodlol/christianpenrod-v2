@@ -4,16 +4,15 @@ import { ContributionCard } from '@components/ContributionCard';
 import { Layout } from '@components/Layout';
 import { Line } from '@components/Line';
 import { Posts } from '@components/Posts';
-import { Contribution } from '@prisma/client';
-import { sortedPosts } from '@utils/contentlayer';
-import { prisma } from '@utils/prisma';
-import { bio, Bio, Post } from 'contentlayer/generated';
+import { createSSG } from '@server/create-ssg';
+import { Query } from '@utils/trpc';
+import { Bio, bio } from 'contentlayer/generated';
 import { GetStaticProps, InferGetStaticPropsType, NextPage } from 'next';
 
 interface StaticProps {
   bio: Bio;
-  posts: Array<Post>;
-  contributions: Array<Partial<Contribution>>;
+  posts: Query<'post.get-all'>;
+  contributions: Query<'github.get-contributions'>;
 }
 
 const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
@@ -40,7 +39,7 @@ const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
             <h3 className="text-fluid-5 text-base-2">Latest Contributions</h3>
             <ul className="flex flex-col gap-4">
               {contributions.map((contribution) => (
-                <li key={contribution.id}>
+                <li key={contribution.name}>
                   <ContributionCard contribution={contribution} />
                 </li>
               ))}
@@ -57,15 +56,12 @@ const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
 };
 
 export const getStaticProps: GetStaticProps<StaticProps> = async () => {
-  const posts = sortedPosts.filter((_, index) => index < 3);
-  const contributions = await prisma.contribution.findMany({
-    select: { id: true, name: true, description: true, url: true },
-    orderBy: { updatedOn: 'desc' },
-    take: 3,
-  });
+  const ssg = await createSSG();
+  const posts = (await ssg.fetchQuery('post.get-all')).slice(0, 3);
+  const contributions = await ssg.fetchQuery('github.get-contributions');
 
   return {
-    props: { bio, posts, contributions },
+    props: { trpcState: ssg.dehydrate(), bio, posts, contributions },
     revalidate: 86400,
   };
 };

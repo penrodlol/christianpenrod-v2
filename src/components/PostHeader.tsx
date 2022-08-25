@@ -1,11 +1,10 @@
 import CalendarIcon from '@svg/calendar.svg';
 import ClockIcon from '@svg/clock.svg';
-import { Post } from 'contentlayer/generated';
-import dayjs from 'dayjs';
+import { Query } from '@utils/trpc';
 import { FC } from 'react';
 
 export interface PostHeaderProps {
-  post: Post;
+  post: Query<'post.get'>;
 }
 
 export const PostHeader: FC<PostHeaderProps> = ({ post }) => (
@@ -17,9 +16,7 @@ export const PostHeader: FC<PostHeaderProps> = ({ post }) => (
       <div className="flex flex-col gap-6 justify-center p-fluid-3 h-full">
         <div className="flex items-center gap-4 text-brand-1">
           <CalendarIcon width={25} height={25} />
-          <span className="text-lg text-base-1">
-            {dayjs(post.published).format('MMM Do, YYYY')}
-          </span>
+          <span className="text-lg text-base-1">{post.published}</span>
         </div>
         <div className="flex items-center gap-4 text-brand-1">
           <ClockIcon width={25} height={25} />

@@ -1,16 +1,16 @@
-import { Contribution } from '@prisma/client';
 import GithubBookmarkIcon from '@svg/github-bookmark.svg';
+import { Query } from '@utils/trpc';
 import Link from 'next/link';
 import { FC } from 'react';
 
 export interface ContributionCardProps {
-  contribution: Partial<Contribution>;
+  contribution: Query<'github.get-contributions'>[0];
 }
 
 export const ContributionCard: FC<ContributionCardProps> = ({
   contribution,
 }) => (
-  <Link href={contribution.url!} passHref>
+  <Link href={contribution.url} passHref>
     <a
       className="group flex flex-col gap-1 bg-surface-2 shadow-2 rounded-md py-3 px-5
                  hover:outline hover:outline-2 hover:outline-surface-1 hover:outline-offset-4"
