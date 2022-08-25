@@ -5,7 +5,7 @@ export const githubRouter = createRouter()
   .query('get-repo', {
     input: z.string(),
     resolve: async ({ ctx, input: repo }) => {
-      const owner = 'penrodlol';
+      const owner = process.env.GITHUB_USERNAME!;
       const { data } = await ctx.octokit.repos.get({ repo, owner });
 
       return {
