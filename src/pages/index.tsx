@@ -49,13 +49,11 @@ const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
             <div className="flex flex-col gap-1">
               <h3 className="text-fluid-5 text-base-2">Recent Contributions</h3>
               <ul className="flex flex-col gap-4">
-                <ul className="flex flex-col gap-4">
-                  {portfolio.contributions.map((contribution) => (
-                    <li key={contribution.name}>
-                      <Github repo={contribution} />
-                    </li>
-                  ))}
-                </ul>
+                {portfolio.contributions.map((contribution) => (
+                  <li key={contribution.name}>
+                    <Github repo={contribution} />
+                  </li>
+                ))}
               </ul>
             </div>
           </section>
