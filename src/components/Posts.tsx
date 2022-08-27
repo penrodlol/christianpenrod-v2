@@ -1,6 +1,7 @@
 import { Query } from '@utils/trpc';
 import Link from 'next/link';
 import { FC } from 'react';
+import { Chip } from './Chip';
 import { Line } from './Line';
 
 export interface PostsProps {
@@ -19,16 +20,10 @@ export const Posts: FC<PostsProps> = ({ posts }) => (
           >
             <div className="flex gap-2 flex-wrap mb-2">
               {post.tags.map((tag) => (
-                <div
-                  key={tag}
-                  className="bg-accent-2 rounded-full px-2 max-w-max
-                             text-[0.9rem] text-[black] tracking-wider"
-                >
-                  {tag}
-                </div>
+                <Chip key={tag}>{tag}</Chip>
               ))}
             </div>
-            <span className="text-2xl group-hover:text-brand-1 group-focus-visible:text-brand-1">
+            <span className="text-2xl group-hover:text-brand-2 group-focus-visible:text-brand-2">
               {post.title}
             </span>
             <span className="text-base-2 text-lg font-semibold">

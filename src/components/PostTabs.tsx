@@ -22,7 +22,7 @@ export const PostTabs = ({
                            rdx-state-active:after:bottom-0 rdx-state-active:after:left-0
                            rdx-state-active:after:right-0 rdx-state-active:after:z-2
                            rdx-state-active:after:h-1 rdx-state-active:after:rounded-md
-                           rdx-state-active:after:bg-brand-1"
+                           rdx-state-active:after:bg-brand-2"
               >
                 <span className="text-lg whitespace-nowrap">{value}</span>
               </div>

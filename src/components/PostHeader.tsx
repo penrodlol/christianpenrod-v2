@@ -14,11 +14,11 @@ export const PostHeader: FC<PostHeaderProps> = ({ post }) => (
     </div>
     <div className="bg-surface-3 rounded-md m-1 shrink-0">
       <div className="flex flex-col gap-6 justify-center p-fluid-3 h-full">
-        <div className="flex items-center gap-4 text-brand-1">
+        <div className="flex items-center gap-4 text-brand-2">
           <CalendarIcon width={25} height={25} />
           <span className="text-lg text-base-1">{post.published}</span>
         </div>
-        <div className="flex items-center gap-4 text-brand-1">
+        <div className="flex items-center gap-4 text-brand-2">
           <ClockIcon width={25} height={25} />
           <span className="text-lg text-base-1">
             {post.readingTime} Minute Read

@@ -6,7 +6,7 @@
   --prism-background: hsl(210, 11.1%, 10.6%);
   --prism-foreground: theme('colors.base.2');
   --prism-function: theme('colors.accent.2');
-  --prism-keyword: theme('colors.brand.1');
+  --prism-keyword: theme('colors.brand.2');
   --prism-builtin: theme('colors.accent.2');
   --prism-string: theme('colors.base.3');
   --prism-comment: theme('colors.base.3');
@@ -33,7 +33,7 @@
 .language-scss {
   --prism-property: theme('colors.base.2');
   --prism-punctuation: theme('colors.base.2');
-  --prism-number: theme('colors.brand.1');
+  --prism-number: theme('colors.brand.2');
 }
 
 .language-graphql {
@@ -42,5 +42,5 @@
 }
 
 .language-json {
-  --prism-number: theme('colors.brand.2');
+  --prism-number: theme('colors.brand.3');
 }

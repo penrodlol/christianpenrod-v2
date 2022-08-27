@@ -52,11 +52,11 @@ const RoutesMenu = () => {
         onChange={() => toggleOverflow()}
       />
       <span
-        className="absolute z-10 top-0 w-full h-[0.45rem] rounded-md bg-brand-1
+        className="absolute z-10 top-0 w-full h-[0.45rem] rounded-md bg-brand-2
                    peer-checked:top-1/2 peer-checked:-translate-y-1/2 peer-checked:rotate-45"
       />
       <span
-        className="absolute z-10 bottom-0 w-full h-[0.45rem] rounded-md bg-brand-2
+        className="absolute z-10 bottom-0 w-full h-[0.45rem] rounded-md bg-brand-3
                    peer-checked:top-1/2 peer-checked:-translate-y-1/2 peer-checked:-rotate-45"
       />
       <menu

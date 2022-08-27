@@ -12,8 +12,8 @@ const components = {
   h5: ({children}: PropsWithChildren) =>
     <h5 className="text-fluid-3 relative mt-6 before:content-blank before:absolute before:top-[50%]
                    before:translate-y-[-50%] before:-left-6 before:translate-x-[-0.215rem] before:w-[0.95rem]
-                   before:h-[0.95rem] before:rounded-full before:bg-brand-1 before:shadow-2
-                   last-of-type:before:border-[0.2rem] last-of-type:before:border-brand-1
+                   before:h-[0.95rem] before:rounded-full before:bg-brand-2 before:shadow-2
+                   last-of-type:before:border-[0.2rem] last-of-type:before:border-brand-2
                    last-of-type:before:bg-transparent">
       {children}
     </h5>,
@@ -29,7 +29,7 @@ export const RoleTimeline: FC<RoleTimelineProps> = ({ role }) => {
         {role.start} - {role.end}
       </h4>
       <div className="relative">
-        <div className="absolute bg-brand-1 opacity-30 rounded-md top-5 bottom-1 w-2" />
+        <div className="absolute bg-brand-2 opacity-30 rounded-md top-5 bottom-1 w-2" />
         <div className="flex flex-col pl-6">
           <RoleMDX components={components} />
         </div>

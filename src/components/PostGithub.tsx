@@ -21,9 +21,9 @@ export const PostGithub: FC<PostGithubProps> = ({ name }) => {
         rel="nofollow noopener noreferrer"
         aria-label={`Check out the github repo: ${repo?.name}. ${repo?.description}`}
       >
-        <div className="flex gap-4 items-center text-brand-1">
+        <div className="flex gap-4 items-center text-brand-2">
           <GithubBookmarkIcon width={25} height={25} />
-          <span className="text-xl text-base-1 group-hover:text-brand-1">
+          <span className="text-xl text-base-1 group-hover:text-brand-2">
             {repo?.name}
           </span>
         </div>
@@ -37,13 +37,13 @@ export const PostGithub: FC<PostGithubProps> = ({ name }) => {
               {repo?.language || '--'}
             </span>
           </div>
-          <div className="flex gap-2 items-center text-brand-1">
+          <div className="flex gap-2 items-center text-brand-2">
             <GithubStarIcon width={20} height={20} />
             <span className="text-base-2 font-semibold">
               {repo?.stargazers_count || 0}
             </span>
           </div>
-          <div className="flex gap-2 items-center text-brand-1">
+          <div className="flex gap-2 items-center text-brand-2">
             <GithubForkIcon width={20} height={20} />
             <span className="text-base-2 font-semibold">
               {repo?.forks_count || 0}

@@ -28,7 +28,7 @@ export const Footer = () => (
             rel="nofollow noopener noreferrer"
             target="_blank"
             className="text-base-1 w-7 h-7 cursor-pointer rounded-sm
-                       hover:text-brand-1 focus-visible:text-brand-1"
+                       hover:text-brand-2 focus-visible:text-brand-2"
           >
             {icon}
           </a>
