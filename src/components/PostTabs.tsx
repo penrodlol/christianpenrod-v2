@@ -1,42 +1,97 @@
-import * as RadixTabs from '@radix-ui/react-tabs';
-import { Children, PropsWithChildren } from 'react';
+import {
+  Children,
+  KeyboardEvent,
+  PropsWithChildren,
+  useCallback,
+  useId,
+  useMemo,
+  useState,
+} from 'react';
 
-export interface PostTabsProps {
+const active =
+  'text-base-1 after:content-blank after:absolute after:bottom-0 ' +
+  'after:left-0 after:right-0 after:z-2 after:h-1 after:rounded-md ' +
+  'after:bg-brand-2';
+
+export interface PostTabsProps extends PropsWithChildren {
   values: Array<string>;
 }
 
-export const PostTabs = ({
-  values,
-  children,
-}: PropsWithChildren<PostTabsProps>) => (
-  <RadixTabs.Root defaultValue={values[0]} asChild>
+export const PostTabs = ({ values, children }: PostTabsProps) => {
+  const uid = useId();
+
+  const [activeTab, setActiveTab] = useState(values[0]);
+
+  const panels = useMemo(
+    () =>
+      Children.toArray(children).map((child, index) => {
+        const value = values[index];
+        return { value, child };
+      }),
+    [values, children],
+  );
+
+  const focusTab = useCallback(
+    (e: KeyboardEvent<HTMLButtonElement>) => {
+      if (!/ArrowLeft|ArrowRight|Home|End/.test(e.code)) return;
+      if (/Home|End/.test(e.code)) e.preventDefault();
+
+      const index = values.indexOf(activeTab);
+
+      switch (e.code) {
+        case 'ArrowLeft':
+          return setActiveTab(values[index - 1] ?? values[values.length - 1]);
+        case 'ArrowRight':
+          return setActiveTab(values[index + 1] ?? values[0]);
+        case 'Home':
+          return setActiveTab(values[0]);
+        case 'End':
+          return setActiveTab(values[values.length - 1]);
+      }
+    },
+    [values, activeTab],
+  );
+
+  return (
     <div className="bg-surface-1 rounded-md shadow-2">
-      <RadixTabs.TabsList asChild>
-        <div className="flex overflow-x-auto">
-          {values.map((value) => (
-            <RadixTabs.Trigger key={value} value={value} asChild>
-              <div
-                className="relative flex justify-center flex-1 py-2 px-4 text-base-2
-                           cursor-pointer hover:text-base-1 rdx-state-active:text-base-1
-                           rdx-state-active:after:content-blank rdx-state-active:after:absolute
-                           rdx-state-active:after:bottom-0 rdx-state-active:after:left-0
-                           rdx-state-active:after:right-0 rdx-state-active:after:z-2
-                           rdx-state-active:after:h-1 rdx-state-active:after:rounded-md
-                           rdx-state-active:after:bg-brand-2"
-              >
-                <span className="text-lg whitespace-nowrap">{value}</span>
-              </div>
-            </RadixTabs.Trigger>
-          ))}
+      <div
+        className="flex justify-between overflow-auto max-w-full"
+        role="tablist"
+        aria-labelledby="tabs"
+      >
+        {values.map((value) => (
+          <button
+            key={value}
+            type="button"
+            role="tab"
+            id={`${uid}-trigger-${value}`}
+            aria-controls={`${uid}-content-${value}`}
+            aria-selected={value === activeTab}
+            tabIndex={value === activeTab ? undefined : -1}
+            className={`relative text-base-2 text-lg whitespace-nowrap w-full py-2 px-4
+                        hover:text-base-1 ${activeTab === value ? active : ''}`}
+            onClick={() => setActiveTab(value)}
+            onKeyDown={(e) => focusTab(e)}
+          >
+            {value}
+          </button>
+        ))}
+      </div>
+      {panels.map(({ value, child }) => (
+        <div
+          key={value}
+          role="tabpanel"
+          id={`${uid}-content-${value}`}
+          aria-labelledby={`${uid}-trigger-${value}`}
+          tabIndex={0}
+          className={`
+            bg-surface-2 p-6 rounded-bl-md rounded-br-md
+            ${activeTab === value ? 'block' : 'hidden'}
+          `}
+        >
+          {child}
         </div>
-      </RadixTabs.TabsList>
-      {Children.toArray(children).map((child, index) => (
-        <RadixTabs.Content key={index} value={values[index]} asChild>
-          <div className="bg-surface-2 p-6 rounded-bl-md rounded-br-md cursor-auto">
-            {child}
-          </div>
-        </RadixTabs.Content>
       ))}
     </div>
-  </RadixTabs.Root>
-);
+  );
+};

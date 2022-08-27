@@ -30,7 +30,8 @@ p {
 a,
 button,
 input,
-textarea {
+textarea,
+[tabindex='0'] {
   @apply focus-visible:outline
          focus-visible:outline-2
          focus-visible:outline-surface-1
