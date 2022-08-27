@@ -18,7 +18,7 @@ export const Footer = () => (
                before:inset-0 before:shadow-1 before:rotate-180 before:z-10"
   >
     <div className="relative flex flex-col gap-6 font-semibold text-lg text-base-2 z-20">
-      <div className="flex gap-fluid-5 justify-center">
+      <div className="flex gap-20 justify-center">
         {SOCIALS.map(({ name, url, icon }) => (
           <a
             key={name}
