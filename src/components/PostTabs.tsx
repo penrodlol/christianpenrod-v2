@@ -55,7 +55,7 @@ export const PostTabs = ({ values, children }: PostTabsProps) => {
   return (
     <div className="bg-surface-1 rounded-md shadow-2">
       <div
-        className="flex justify-between overflow-auto max-w-full"
+        className="flex justify-between overflow-auto"
         role="tablist"
         aria-labelledby="tabs"
       >
