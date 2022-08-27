@@ -1,11 +1,15 @@
 import ClipboardIcon from '@svg/clipboard.svg';
-import { PropsWithChildren, useRef } from 'react';
+import { PropsWithChildren, useCallback, useRef } from 'react';
 
 export const PostCode = ({
   title,
   children,
 }: PropsWithChildren<HTMLPreElement>) => {
   const preRef = useRef<HTMLPreElement>(null);
+  const copy = useCallback(
+    () => navigator.clipboard.writeText(preRef.current!.innerText),
+    [preRef],
+  );
 
   return (
     <>
@@ -16,12 +20,7 @@ export const PostCode = ({
       )}
       <div className="relative bg-[hsl(210,11.1%,10.6%)] rounded-md shadow-2">
         <div className="absolute right-2 top-2 text-base-2 opacity-50 hover:text-base-1">
-          <button
-            aria-label="Copy to clipboard"
-            onClick={() =>
-              navigator.clipboard.writeText(preRef.current!.innerText)
-            }
-          >
+          <button aria-label="Copy to clipboard" onClick={copy}>
             <ClipboardIcon className="w-7 h-7" />
           </button>
         </div>
