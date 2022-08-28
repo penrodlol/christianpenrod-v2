@@ -22,11 +22,13 @@ export const Github: FC<GithubProps> = ({ repo }) => (
       <div className="flex flex-col-reverse sm:flex-row sm:items-center justify-between gap-2">
         <div className="flex gap-2 items-center text-xl">
           <GithubBookmarkIcon className="h-5 w-5 fill-brand-2" />
-          <span className="group-hover:text-brand-2">{repo.name}</span>
+          <span className="text-fluid-3 group-hover:text-brand-2">
+            {repo.name}
+          </span>
         </div>
         <Chip className="capitalize">{repo.topic}</Chip>
       </div>
-      <p className="text-base-2 text-lg">{repo.description}</p>
+      <p className="text-base-2 text-fluid-2">{repo.description}</p>
     </a>
   </Link>
 );

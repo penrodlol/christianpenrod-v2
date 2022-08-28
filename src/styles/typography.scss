@@ -4,12 +4,12 @@
 @import '@fontsource/sriracha';
 
 :root {
-  --font-size-fluid-1: clamp(0.74rem, calc(0.7rem + 0.2vw), 0.84rem);
-  --font-size-fluid-2: clamp(0.89rem, calc(0.82rem + 0.32vw), 1.05rem);
-  --font-size-fluid-3: clamp(1.06rem, calc(0.96rem + 0.49vw), 1.31rem);
-  --font-size-fluid-4: clamp(1.28rem, calc(1.13rem + 0.71vw), 1.64rem);
-  --font-size-fluid-5: clamp(1.53rem, calc(1.33rem + 1.02vw), 2.05rem);
-  --font-size-fluid-6: clamp(1.84rem, calc(1.55rem + 1.42vw), 2.56rem);
-  --font-size-fluid-7: clamp(2.2rem, calc(1.81rem + 1.95vw), 3.2rem);
-  --font-size-fluid-8: clamp(2.8rem, calc(1.7rem + 3.05vw), 4.01rem);
+  --font-size-fluid-1: clamp(0.84rem, calc(0.7rem + 0.2vw), 0.84rem);
+  --font-size-fluid-2: clamp(0.99rem, calc(0.82rem + 0.32vw), 1.05rem);
+  --font-size-fluid-3: clamp(1.16rem, calc(0.96rem + 0.49vw), 1.31rem);
+  --font-size-fluid-4: clamp(1.38rem, calc(1.13rem + 0.71vw), 1.64rem);
+  --font-size-fluid-5: clamp(1.63rem, calc(1.33rem + 1.02vw), 2.05rem);
+  --font-size-fluid-6: clamp(1.94rem, calc(1.55rem + 1.42vw), 2.56rem);
+  --font-size-fluid-7: clamp(2.3rem, calc(1.81rem + 1.95vw), 3.2rem);
+  --font-size-fluid-8: clamp(2.6rem, calc(1.7rem + 3.05vw), 4.01rem);
 }
