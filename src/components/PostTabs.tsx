@@ -4,7 +4,6 @@ import {
   PropsWithChildren,
   useCallback,
   useId,
-  useMemo,
   useState,
 } from 'react';
 
@@ -21,15 +20,6 @@ export const PostTabs = ({ values, children }: PostTabsProps) => {
   const uid = useId();
 
   const [activeTab, setActiveTab] = useState(values[0]);
-
-  const panels = useMemo(
-    () =>
-      Children.toArray(children).map((child, index) => {
-        const value = values[index];
-        return { value, child };
-      }),
-    [values, children],
-  );
 
   const focusTab = useCallback(
     (e: KeyboardEvent<HTMLButtonElement>) => {
@@ -77,21 +67,22 @@ export const PostTabs = ({ values, children }: PostTabsProps) => {
           </button>
         ))}
       </div>
-      {panels.map(({ value, child }) => (
-        <div
-          key={value}
-          role="tabpanel"
-          id={`${uid}-content-${value}`}
-          aria-labelledby={`${uid}-trigger-${value}`}
-          tabIndex={0}
-          className={`
-            bg-surface-2 p-6 rounded-bl-md rounded-br-md
-            ${activeTab === value ? 'block' : 'hidden'}
-          `}
-        >
-          {child}
-        </div>
-      ))}
+      {Children.map(children, (child, index) => {
+        const value = values[index];
+        return (
+          <div
+            key={value}
+            role="tabpanel"
+            id={`${uid}-content-${value}`}
+            aria-labelledby={`${uid}-trigger-${value}`}
+            tabIndex={0}
+            className={`bg-surface-2 p-6 rounded-bl-md rounded-br-md
+                      ${activeTab === value ? 'block' : 'hidden'}`}
+          >
+            {child}
+          </div>
+        );
+      })}
     </div>
   );
 };
