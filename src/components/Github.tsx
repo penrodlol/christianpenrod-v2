@@ -20,7 +20,7 @@ export const Github: FC<GithubProps> = ({ repo }) => (
       aria-label={`${repo.name}. ${repo.description}`}
     >
       <div className="flex flex-col-reverse sm:flex-row sm:items-center justify-between gap-2">
-        <div className="flex gap-2 items-center text-xl">
+        <div className="flex gap-2 items-center">
           <GithubBookmarkIcon className="h-5 w-5 fill-brand-2" />
           <span className="text-fluid-3 group-hover:text-brand-2">
             {repo.name}
