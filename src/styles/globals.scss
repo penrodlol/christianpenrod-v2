@@ -18,8 +18,8 @@ body::before {
   @apply content-blank fixed -inset-8 z-10
          opacity-[0.075] bg-[length:5rem_5rem];
 
-  --h: linear-gradient(theme('colors.brand.1') 2px, transparent 0);
-  --v: linear-gradient(90deg, theme('colors.brand.1') 2px, transparent 0);
+  --h: linear-gradient(theme('colors.brand.2') 2px, transparent 0);
+  --v: linear-gradient(90deg, theme('colors.brand.2') 2px, transparent 0);
   background-image: var(--h), var(--v);
 }
 
