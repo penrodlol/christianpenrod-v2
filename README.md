@@ -8,4 +8,4 @@
 
 <br />
 
-![A screenshot of a blog post on christianpenrod.com](https://user-images.githubusercontent.com/53282218/187102320-f191eab7-3c71-4c87-8d6a-a50f62abcea2.png)
+![A screenshot of a blog post on christianpenrod.com](https://user-images.githubusercontent.com/53282218/187102614-c7ccf3ba-6e9e-4223-adba-6a52c71cb5fd.png)
