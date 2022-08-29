@@ -29,6 +29,7 @@ export const Contact = () => {
             </button>
           </div>
           <form ref={form} name="contact" method="POST" data-netlify="true">
+            <input type="hidden" name="form-name" value="contact" />
             <div className="flex flex-col gap-5 px-3 text-lg">
               <div className="flex flex-col sm:flex-row gap-5">
                 <Input
