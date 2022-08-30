@@ -74,10 +74,7 @@ export const getStaticProps: GetStaticProps<StaticProps> = async () => {
     ssg.prefetchQuery('github.get-porfolio'),
   ]);
 
-  return {
-    props: { trpcState: ssg.dehydrate(), bio },
-    // revalidate: 86400,
-  };
+  return { props: { trpcState: ssg.dehydrate(), bio } };
 };
 
 export default Home;
