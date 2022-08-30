@@ -38,7 +38,7 @@ const components = {
 const Blog: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
   slug,
 }) => {
-  const { data: post } = trpc.useQuery(['post.get', slug])!;
+  const { data: post } = trpc.useQuery(['post.get', slug]);
   const MDXContent = useMDXComponent(post!.content);
 
   return (
