@@ -5,7 +5,7 @@ dayjs.extend(require('dayjs/plugin/advancedFormat'));
 dayjs.extend(require('dayjs/plugin/utc'));
 
 /** @type {import('next').NextConfig} */
-const nextConfig = withContentlayer({
+module.exports = withContentlayer({
   reactStrictMode: true,
   swcMinify: true,
   env: {
@@ -27,5 +27,3 @@ const nextConfig = withContentlayer({
     return config;
   },
 });
-
-module.exports = nextConfig;

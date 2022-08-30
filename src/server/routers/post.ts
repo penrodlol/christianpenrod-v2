@@ -1,4 +1,3 @@
-import { Context } from '@server/create-context';
 import { pick } from 'contentlayer/client';
 import dayjs from 'dayjs';
 import { z } from 'zod';
@@ -8,7 +7,7 @@ export const postRouter = createRouter()
   .query('get-all', {
     input: z.object({ limit: z.number() }).nullish(),
     resolve: ({ ctx, input }) => {
-      const posts = sortPosts(ctx.posts).map((post) => ({
+      const posts = ctx.posts.map((post) => ({
         ...pick(post, ['title', 'description', 'slug', 'tags']),
         published: dayjs(post.published).format('MMM Do, YYYY'),
       }));
@@ -19,10 +18,9 @@ export const postRouter = createRouter()
   .query('get', {
     input: z.string(),
     resolve: ({ ctx, input: slug }) => {
-      const posts = sortPosts(ctx.posts);
-      const post = posts.find((post) => post.slug.includes(slug))!;
-      const prev = posts[posts.indexOf(post) + 1];
-      const next = posts[posts.indexOf(post) - 1];
+      const post = ctx.posts.find((post) => post.slug.includes(slug))!;
+      const prev = ctx.posts[ctx.posts.indexOf(post) + 1];
+      const next = ctx.posts[ctx.posts.indexOf(post) - 1];
 
       return {
         ...pick(post, ['title', 'description', 'slug', 'tags', 'readingTime']),
@@ -44,11 +42,4 @@ export const postRouter = createRouter()
         where: { post },
         select: { views: true },
       }),
-  });
-
-const sortPosts = (posts: Context['posts']) =>
-  [...posts].sort((a, b) => {
-    const aDate = dayjs(a.published);
-    const bDate = dayjs(b.published);
-    return aDate.isAfter(bDate) ? -1 : 1;
   });

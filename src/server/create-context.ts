@@ -1,6 +1,7 @@
 import * as trpc from '@trpc/server';
 import * as trpcNext from '@trpc/server/adapters/next';
 import { allPosts, allRoles } from 'contentlayer/generated';
+import dayjs from 'dayjs';
 import { octokit } from './db/octokit';
 import { prisma } from './db/prisma';
 
@@ -12,6 +13,10 @@ export const createContext = async (opts?: ContextOpts) => ({
   res: opts?.res,
   prisma,
   octokit,
-  posts: allPosts,
-  roles: allRoles,
+  posts: [...allPosts].sort((a, b) =>
+    dayjs(a.published).isAfter(dayjs(b.published)) ? -1 : 1,
+  ),
+  roles: [...allRoles].sort((a, b) =>
+    dayjs(a.start).isAfter(dayjs(b.start)) ? -1 : 1,
+  ),
 });
