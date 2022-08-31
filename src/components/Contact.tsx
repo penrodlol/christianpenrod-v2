@@ -6,9 +6,18 @@ import { Input, Textarea } from './Input';
 export const Contact = () => {
   const dialog = useRef<HTMLDialogElement>(null);
   const form = useRef<HTMLFormElement>(null);
-  const open = useCallback(() => dialog.current?.showModal(), [dialog]);
-  const close = useCallback(() => dialog.current?.close(), [dialog]);
+
   const reset = useCallback(() => form.current?.reset(), [form]);
+
+  const open = useCallback(() => {
+    dialog.current?.showModal();
+    document.body.classList.add('overflow-hidden');
+  }, [dialog]);
+
+  const close = useCallback(() => {
+    dialog.current?.close();
+    document.body.classList.remove('overflow-hidden');
+  }, [dialog]);
 
   return (
     <>

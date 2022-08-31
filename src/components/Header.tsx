@@ -49,7 +49,7 @@ const RoutesMenu = () => {
         className="peer absolute z-20 inset-0 w-full h-full cursor-pointer opacity-0"
         type="checkbox"
         aria-label="Toggle menu to see routes"
-        onChange={() => toggleOverflow()}
+        onChange={toggleOverflow}
       />
       <span
         className="absolute z-10 top-0 w-full h-[0.45rem] rounded-md bg-brand-2
