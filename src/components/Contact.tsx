@@ -37,7 +37,13 @@ export const Contact = () => {
               <CloseIcon className="w-10 h-10 fill-brand-2 hover:fill-brand-2" />
             </button>
           </div>
-          <form ref={form} name="contact" method="POST" data-netlify="true">
+          <form
+            ref={form}
+            name="contact"
+            method="POST"
+            data-netlify="true"
+            action="/"
+          >
             <input type="hidden" name="form-name" value="contact" />
             <div className="flex flex-col gap-5 px-3 text-lg">
               <div className="flex flex-col sm:flex-row gap-5">
