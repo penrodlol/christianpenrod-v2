@@ -42,9 +42,14 @@ export const Contact = () => {
             name="contact"
             method="POST"
             data-netlify="true"
-            action="/"
+            netlify-honeypot="bot-field"
           >
             <input type="hidden" name="form-name" value="contact" />
+            <p className="hidden">
+              <label>
+                <input name="bot-field" />
+              </label>
+            </p>
             <div className="flex flex-col gap-5 px-3 text-lg">
               <div className="flex flex-col sm:flex-row gap-5">
                 <Input
