@@ -4,7 +4,7 @@ import { z } from 'zod';
 import { createRouter } from '../create-router';
 
 export const postRouter = createRouter()
-  .query('get-all', {
+  .query('get-many', {
     input: z.object({ limit: z.number() }).nullish(),
     resolve: ({ ctx, input }) => {
       const posts = ctx.posts.map((post) => ({

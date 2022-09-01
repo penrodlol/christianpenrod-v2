@@ -5,7 +5,7 @@ import { trpc } from '@utils/trpc';
 import { GetStaticProps, NextPage } from 'next';
 
 const Blog: NextPage = () => {
-  const { data: posts } = trpc.useQuery(['post.get-all']);
+  const { data: posts } = trpc.useQuery(['post.get-many']);
 
   return (
     <Layout title="Blog" subTitle="What has Christian wrote?">
@@ -19,7 +19,7 @@ const Blog: NextPage = () => {
 export const getStaticProps: GetStaticProps = async () => {
   const ssg = await createSSG();
 
-  await ssg.prefetchQuery('post.get-all');
+  await ssg.prefetchQuery('post.get-many');
 
   return { props: { trpcState: ssg.dehydrate() } };
 };

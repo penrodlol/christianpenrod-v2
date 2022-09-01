@@ -5,7 +5,7 @@ import { Chip } from './Chip';
 import { Line } from './Line';
 
 export interface PostsProps {
-  posts: Query<'post.get-all'>;
+  posts: Query<'post.get-many'>;
 }
 
 export const Posts: FC<PostsProps> = ({ posts }) => (

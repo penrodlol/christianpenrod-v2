@@ -16,7 +16,7 @@ interface StaticProps {
 const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
   bio,
 }) => {
-  const { data: posts } = trpc.useQuery(['post.get-all', { limit: 3 }]);
+  const { data: posts } = trpc.useQuery(['post.get-many', { limit: 3 }]);
   const { data: portfolio } = trpc.useQuery(['github.get-porfolio']);
 
   return (
@@ -70,7 +70,7 @@ export const getStaticProps: GetStaticProps<StaticProps> = async () => {
   const ssg = await createSSG();
 
   await Promise.all([
-    ssg.prefetchQuery('post.get-all', { limit: 3 }),
+    ssg.prefetchQuery('post.get-many', { limit: 3 }),
     ssg.prefetchQuery('github.get-porfolio'),
   ]);
 
