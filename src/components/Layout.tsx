@@ -20,7 +20,7 @@ export const Layout = (props: LayoutProps) => {
           {!props.tabOnly && props.title && (
             <div className="mb-fluid-5">
               <h1 className="text-fluid-7">{props.title}</h1>
-              <h2 className="text-base-2 text-fluid-6">{props.subTitle}</h2>
+              <h2 className="text-2 text-fluid-6">{props.subTitle}</h2>
             </div>
           )}
           <div className="max-w-[calc(100vw-var(--size-fluid-6))]">

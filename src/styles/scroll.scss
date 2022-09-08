@@ -1,7 +1,7 @@
 *,
 *::before,
 *::after {
-  scrollbar-color: theme('colors.base.3') transparent;
+  scrollbar-color: theme('textColor.3') transparent;
 }
 
 ::-webkit-scrollbar {
@@ -10,6 +10,6 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: theme('colors.base.3');
+  background-color: theme('textColor.3');
   border-radius: theme('borderRadius.md');
 }

@@ -4,14 +4,13 @@
 
 @import 'typography';
 @import 'spacing';
-@import 'colors';
 @import 'shadow';
 @import 'scroll';
 @import 'prism';
 
 body {
-  @apply font-serif antialiased font-extrabold tracking-wide
-         text-base-1 bg-surface-3;
+  @apply font-serif antialiased font-extrabold
+         tracking-wide text-1 bg-3;
 }
 
 body::before {
@@ -34,6 +33,5 @@ textarea,
 [tabindex='0'] {
   @apply focus-visible:outline
          focus-visible:outline-2
-         focus-visible:outline-surface-1
          focus-visible:outline-offset-4;
 }

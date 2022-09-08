@@ -13,8 +13,8 @@ export interface GithubProps {
 export const Github: FC<GithubProps> = ({ repo }) => (
   <Link href={repo.url} passHref>
     <a
-      className="group flex flex-col gap-1 bg-surface-2 shadow-2 rounded-md py-3 px-5
-                 hover:outline hover:outline-2 hover:outline-surface-1 hover:outline-offset-4"
+      className="group flex flex-col gap-1 bg-2 shadow-2 rounded-md py-3 px-5
+                 hover:outline hover:outline-2 hover:outline-offset-4"
       target="_blank"
       rel="nofollow noopener noreferrer"
       aria-label={`${repo.name}. ${repo.description}`}
@@ -28,7 +28,7 @@ export const Github: FC<GithubProps> = ({ repo }) => (
         </div>
         <Chip className="capitalize">{repo.topic}</Chip>
       </div>
-      <p className="text-base-2 text-fluid-2">{repo.description}</p>
+      <p className="text-2 text-fluid-2">{repo.description}</p>
     </a>
   </Link>
 );

@@ -16,9 +16,7 @@ const Custom404 = () => {
               className="w-8 h-8 fill-accent-2 group-hover:fill-accent-1"
               aria-hidden
             />
-            <span className="text-base-2 group-hover:text-base-1">
-              Go to Home
-            </span>
+            <span className="text-2 group-hover:text-1">Go to Home</span>
           </a>
         </Link>
       </section>

@@ -23,9 +23,9 @@ export const RoleTimeline: FC<RoleTimelineProps> = ({ role }) => {
   const RoleMDX = useMDXComponent(role.content);
 
   return (
-    <div className="bg-surface-2 rounded-md shadow-2 p-7">
+    <div className="bg-2 rounded-md shadow-2 p-7">
       <h3 className="text-fluid-5">{role.company}</h3>
-      <h4 className="text-fluid-3 text-base-2">
+      <h4 className="text-fluid-3 text-2">
         {role.start} - {role.end}
       </h4>
       <div className="relative">

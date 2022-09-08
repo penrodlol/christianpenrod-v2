@@ -14,7 +14,7 @@ export const PostToc: FC<PostTocProps> = ({ headings }) => (
     <Line />
     <nav className="flex flex-col gap-4">
       <HashLink href={{ hash: 'introduction' }} passHref>
-        <Anchor className="text-base-2">1. Introduction</Anchor>
+        <Anchor className="text-2">1. Introduction</Anchor>
       </HashLink>
       {headings.map((heading: string, index: number) => (
         <HashLink
@@ -22,7 +22,7 @@ export const PostToc: FC<PostTocProps> = ({ headings }) => (
           href={{ hash: heading.toLowerCase().replace(/ /g, '-') }}
           passHref
         >
-          <Anchor className="text-base-2">
+          <Anchor className="text-2">
             {index + 2}. {heading}
           </Anchor>
         </HashLink>

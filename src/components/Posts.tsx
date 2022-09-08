@@ -15,8 +15,8 @@ export const Posts: FC<PostsProps> = ({ posts }) => (
         <Link href={`/blog/${post.slug}`} passHref>
           <a
             aria-label={`${post.title}. ${post.description}`}
-            className="group h-full relative flex flex-col bg-surface-2 px-6 py-5 rounded-lg shadow-2
-                       hover:outline hover:outline-2 hover:outline-surface-1 hover:outline-offset-4"
+            className="group h-full relative flex flex-col bg-2 px-6 py-5 rounded-lg shadow-2
+                       hover:outline hover:outline-2 hover:outline-offset-4"
           >
             <div className="flex gap-2 flex-wrap mb-2">
               {post.tags.map((tag) => (
@@ -26,7 +26,7 @@ export const Posts: FC<PostsProps> = ({ posts }) => (
             <span className="text-fluid-4 group-hover:text-brand-2 group-focus-visible:text-brand-2">
               {post.title}
             </span>
-            <span className="text-base-2 text-lg font-semibold">
+            <span className="text-2 text-lg font-semibold">
               {post.published}
             </span>
             <Line />

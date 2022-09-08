@@ -14,10 +14,10 @@ const SOCIALS: Array<{ name: string; url: string; icon: ReactElement }> = [
 
 export const Footer = () => (
   <footer
-    className="relative bg-surface-3 pt-6 pb-4 px-4 before:content-blank before:absolute
+    className="relative bg-3 pt-6 pb-4 px-4 before:content-blank before:absolute
                before:inset-0 before:shadow-1 before:rotate-180 before:z-10"
   >
-    <div className="relative flex flex-col gap-6 font-semibold text-fluid-2 text-base-2 z-20">
+    <div className="relative flex flex-col gap-6 font-semibold text-fluid-2 text-2 z-20">
       <div className="flex gap-20 justify-center">
         {SOCIALS.map(({ name, url, icon }) => (
           <a
@@ -27,7 +27,7 @@ export const Footer = () => (
             aria-label={name}
             rel="nofollow noopener noreferrer"
             target="_blank"
-            className="text-base-1 w-7 h-7 cursor-pointer rounded-sm
+            className="text-1 w-7 h-7 cursor-pointer rounded-sm
                        hover:text-brand-2 focus-visible:text-brand-2"
           >
             {icon}
@@ -37,13 +37,13 @@ export const Footer = () => (
       <div className="flex flex-col gap-2 items-center">
         <div className="flex gap-2">
           <span>Created by: Christian Penrod</span>
-          <strong className="text-base-1">©{process.env.COPYRIGHT_YEAR}</strong>
+          <strong className="text-1">©{process.env.COPYRIGHT_YEAR}</strong>
         </div>
         <div>
           <span className="mr-2">Built with:</span>
           <Link href="https://nextjs.org" passHref>
             <Anchor
-              className="text-base-1 font-bold"
+              className="text-1 font-bold"
               rel="nofollow noopener noreferrer"
               target="_blank"
             >
@@ -53,7 +53,7 @@ export const Footer = () => (
           <span className="mx-2">on</span>
           <Link href="https://www.netlify.com/" passHref>
             <Anchor
-              className="text-base-1 font-bold"
+              className="text-1 font-bold"
               rel="nofollow noopener noreferrer"
               target="_blank"
             >
@@ -63,7 +63,7 @@ export const Footer = () => (
         </div>
         <div>
           <span className="mr-2">Updated on:</span>
-          <strong className="text-base-1 font-bold">
+          <strong className="text-1 font-bold">
             {process.env.LAST_UPDATE}
           </strong>
         </div>

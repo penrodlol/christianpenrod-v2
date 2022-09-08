@@ -4,14 +4,14 @@
   --prism-font-family: theme('fontFamily.serif');
   --prism-font-size: theme('fontSize.fluid-2');
   --prism-background: hsl(210, 11.1%, 10.6%);
-  --prism-foreground: theme('colors.base.2');
+  --prism-foreground: theme('textColor.2');
   --prism-function: theme('colors.accent.2');
   --prism-keyword: theme('colors.brand.2');
   --prism-builtin: theme('colors.accent.2');
-  --prism-string: theme('colors.base.3');
-  --prism-comment: theme('colors.base.3');
+  --prism-string: theme('textColor.3');
+  --prism-comment: theme('textColor.3');
   --prism-interpolation: theme('colors.accent.1');
-  --prism-constant: theme('colors.base.2');
+  --prism-constant: theme('textColor.2');
   --prism-inline-padding-x: theme('spacing.2');
   --prism-json-property: theme('colors.accent.2');
 }
@@ -31,13 +31,13 @@
 }
 
 .language-scss {
-  --prism-property: theme('colors.base.2');
-  --prism-punctuation: theme('colors.base.2');
+  --prism-property: theme('textColor.2');
+  --prism-punctuation: theme('textColor.2');
   --prism-number: theme('colors.brand.2');
 }
 
 .language-graphql {
-  --prism-property: theme('colors.base.3');
+  --prism-property: theme('textColor.3');
   --prism-variable: theme('colors.accent.1');
 }
 

@@ -5,7 +5,7 @@ export type ChipProps = HTMLAttributes<HTMLSpanElement>;
 export const Chip: FC<ChipProps> = ({ className, children }) => (
   <span
     className={`bg-brand-1 rounded-full px-2 h-max max-w-max text-[0.9rem]
-              text-[black] tracking-wider ${className}`}
+              text-black tracking-wider ${className}`}
   >
     {children}
   </span>
