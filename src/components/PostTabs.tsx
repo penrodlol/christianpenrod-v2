@@ -8,7 +8,7 @@ import {
 } from 'react';
 
 const active =
-  'text-1 after:content-blank after:absolute after:bottom-0 ' +
+  'text-1 after:content-[""] after:absolute after:bottom-0 ' +
   'after:left-0 after:right-0 after:z-2 after:h-1 after:rounded-md ' +
   'after:bg-brand-2';
 
