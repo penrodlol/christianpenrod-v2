@@ -1,6 +1,6 @@
 import { BioMDX } from '@components/BioMdx';
 import { Contact } from '@components/Contact';
-import { Github } from '@components/Github';
+import { GithubProject } from '@components/GithubProject';
 import { Layout } from '@components/Layout';
 import { Line } from '@components/Line';
 import { Posts } from '@components/Posts';
@@ -17,7 +17,7 @@ const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
   bio,
 }) => {
   const { data: posts } = trpc.useQuery(['post.get-many', { limit: 3 }]);
-  const { data: portfolio } = trpc.useQuery(['github.get-porfolio']);
+  const { data: projects } = trpc.useQuery(['github.get-projects']);
 
   return (
     <Layout>
@@ -34,21 +34,11 @@ const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
           </section>
           <section className="flex flex-col gap-fluid-5">
             <div className="flex flex-col gap-1">
-              <h3 className="text-fluid-5 text-2">Recent Projects</h3>
+              <h3 className="text-fluid-5 text-2">Projects</h3>
               <ul className="flex flex-col gap-4">
-                {portfolio!.projects.map((project) => (
+                {projects?.map((project) => (
                   <li key={project.name}>
-                    <Github repo={project} />
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="flex flex-col gap-1">
-              <h3 className="text-fluid-5 text-2">Recent Contributions</h3>
-              <ul className="flex flex-col gap-4">
-                {portfolio!.contributions.map((contribution) => (
-                  <li key={contribution.name}>
-                    <Github repo={contribution} />
+                    <GithubProject project={project} />
                   </li>
                 ))}
               </ul>
@@ -69,7 +59,7 @@ export const getStaticProps: GetStaticProps<StaticProps> = async () => {
 
   await Promise.all([
     ssg.prefetchQuery('post.get-many', { limit: 3 }),
-    ssg.prefetchQuery('github.get-porfolio'),
+    ssg.prefetchQuery('github.get-projects'),
   ]);
 
   return { props: { trpcState: ssg.dehydrate(), bio } };
