@@ -2,8 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@import 'typography';
-@import 'spacing';
 @import 'shadow';
 @import 'scroll';
 @import 'prism';
@@ -14,7 +12,7 @@ body {
 }
 
 body::before {
-  @apply content-blank fixed -inset-8 z-10
+  @apply content-[''] fixed -inset-8 z-10
          opacity-[0.075] bg-[length:5rem_5rem];
 
   --h: linear-gradient(theme('colors.brand.2') 2px, transparent 0);
