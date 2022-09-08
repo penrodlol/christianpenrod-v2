@@ -2,9 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-@import 'shadow';
-@import 'scroll';
+@import 'colors';
 @import 'prism';
+@import 'scroll';
+@import 'shadow';
+@import 'spacing';
+@import 'typography';
 
 body {
   @apply font-serif antialiased font-extrabold
