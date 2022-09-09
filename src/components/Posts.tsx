@@ -9,7 +9,7 @@ export interface PostsProps {
 }
 
 export const Posts: FC<PostsProps> = ({ posts }) => (
-  <ul className="grid gap-fluid-4 xl:grid-cols-3">
+  <ul className="grid gap-fluid-4 lg:grid-cols-3">
     {posts.map((post) => (
       <li key={post.title}>
         <Link href={`/blog/${post.slug}`} passHref>
