@@ -11,7 +11,7 @@ export interface GithubProjectProps {
 export const GithubProject: FC<GithubProjectProps> = ({ project }) => (
   <Link href={project.url} passHref>
     <a
-      className="group flex flex-col gap-2 bg-2 shadow-2 rounded-md py-3 px-8
+      className="group flex flex-col gap-2 bg-2 shadow-2 rounded-md py-3 px-5
                  hover:outline hover:outline-2 hover:outline-offset-4"
       target="_blank"
       rel="nofollow noopener noreferrer"
