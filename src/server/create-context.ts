@@ -1,8 +1,8 @@
+import { graphql } from '@octokit/graphql';
 import * as trpc from '@trpc/server';
 import * as trpcNext from '@trpc/server/adapters/next';
 import { allPosts, allRoles } from 'contentlayer/generated';
 import dayjs from 'dayjs';
-import { octokit } from './db/octokit';
 import { prisma } from './db/prisma';
 
 export type ContextOpts = trpcNext.CreateNextContextOptions;
@@ -12,7 +12,9 @@ export const createContext = async (opts?: ContextOpts) => ({
   req: opts?.req,
   res: opts?.res,
   prisma,
-  octokit,
+  octokit: graphql.defaults({
+    headers: { authorization: `token ${process.env.GITHUB_TOKEN}` },
+  }),
   posts: [...allPosts].sort((a, b) =>
     dayjs(a.published).isAfter(dayjs(b.published)) ? -1 : 1,
   ),

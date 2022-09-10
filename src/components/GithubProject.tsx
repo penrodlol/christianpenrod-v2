@@ -5,7 +5,7 @@ import { FC } from 'react';
 import { Chip } from './Chip';
 
 export interface GithubProjectProps {
-  project: Query<'github.get-projects'>[number];
+  project: NonNullable<Query<'github.get-profile'>['projects']>[number];
 }
 
 export const GithubProject: FC<GithubProjectProps> = ({ project }) => (

@@ -13,7 +13,7 @@ export const PostGithub: FC<PostGithubProps> = ({ name }) => {
   const { data: repo } = trpc.useQuery(['github.get-repo', name]);
 
   return (
-    <Link href={repo?.html_url || ''} passHref>
+    <Link href={repo?.url || ''} passHref>
       <a
         className="group bg-2 shadow-2 rounded-md p-5 hover:outline
                    hover:outline-2 hover:outline-offset-4"
@@ -39,15 +39,11 @@ export const PostGithub: FC<PostGithubProps> = ({ name }) => {
           </div>
           <div className="flex gap-2 items-center text-brand-2">
             <GithubStarIcon width={20} height={20} />
-            <span className="text-2 font-semibold">
-              {repo?.stargazers_count || 0}
-            </span>
+            <span className="text-2 font-semibold">{repo?.stars || 0}</span>
           </div>
           <div className="flex gap-2 items-center text-brand-2">
             <GithubForkIcon width={20} height={20} />
-            <span className="text-2 font-semibold">
-              {repo?.forks_count || 0}
-            </span>
+            <span className="text-2 font-semibold">{repo?.forks || 0}</span>
           </div>
         </div>
       </a>

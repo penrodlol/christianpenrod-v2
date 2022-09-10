@@ -18,8 +18,7 @@ const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
   bio,
 }) => {
   const { data: posts } = trpc.useQuery(['post.get-many', { limit: 3 }]);
-  const { data: projects } = trpc.useQuery(['github.get-projects']);
-  const { data: stats } = trpc.useQuery(['github.get-stats']);
+  const { data: profile } = trpc.useQuery(['github.get-profile']);
 
   return (
     <Layout>
@@ -38,7 +37,7 @@ const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
             <div className="flex flex-col gap-1">
               <h3 className="text-fluid-5 text-2">Projects</h3>
               <ul className="flex flex-col gap-4">
-                {projects?.map((project) => (
+                {profile?.projects?.map((project) => (
                   <li key={project.name}>
                     <GithubProject project={project} />
                   </li>
@@ -47,7 +46,7 @@ const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
             </div>
             <div className="flex flex-col gap-1">
               <h3 className="text-fluid-5 text-2">Contributions</h3>
-              <GithubStats stats={stats!} />
+              <GithubStats user={profile?.user!} />
             </div>
           </section>
         </div>
@@ -65,8 +64,7 @@ export const getStaticProps: GetStaticProps<StaticProps> = async () => {
 
   await Promise.all([
     ssg.prefetchQuery('post.get-many', { limit: 3 }),
-    ssg.prefetchQuery('github.get-projects'),
-    ssg.prefetchQuery('github.get-stats'),
+    ssg.prefetchQuery('github.get-profile'),
   ]);
 
   return { props: { trpcState: ssg.dehydrate(), bio } };
