@@ -49,13 +49,15 @@ export const githubRouter = createRouter()
           projects: PinnableItemConnection;
           contributions: ContributionsCollection;
           reposForStars: RepositoryConnection;
-          issues: IssueConnection;
           pullRequests: PullRequestConnection;
+          issues: IssueConnection;
+          contributedTo: RepositoryConnection;
+          reposForLanguage: RepositoryConnection;
         };
       }>(`
         query {
           user(login: "${process.env.GITHUB_USERNAME}") {
-            projects: pinnedItems(first: 2, types: [REPOSITORY]) {
+            projects: pinnedItems(first: 2 types: [REPOSITORY]) {
               nodes { ... on Repository {
                 name: nameWithOwner description url
                 repositoryTopics(first: 1) { nodes { topic { name } } }
@@ -66,10 +68,16 @@ export const githubRouter = createRouter()
               restrictedContributionsCount
             }
             reposForStars: repositories(
-              first: 100, ownerAffiliations: OWNER, orderBy: {direction: DESC, field: STARGAZERS}
+              ownerAffiliations: OWNER last: 100 orderBy: {direction: DESC, field: STARGAZERS}
             ) { nodes { stargazers { totalCount } } }
             pullRequests(first: 1) { totalCount }
             issues { totalCount }
+            contributedTo: repositoriesContributedTo(
+              first: 1 contributionTypes: [COMMIT, ISSUE, PULL_REQUEST, REPOSITORY]
+            ) { totalCount }
+            reposForLanguage: repositories(isFork: false last: 30) {
+              nodes { primaryLanguage { name } }
+            }
           }
         }
       `);
@@ -85,6 +93,16 @@ export const githubRouter = createRouter()
               .reduce((acc, n) => acc + n, 0) ?? 0,
           issues: user.issues.totalCount,
           pullRequests: user.pullRequests.totalCount,
+          contributedTo: user.contributedTo.totalCount,
+          language: Object.entries(
+            user.reposForLanguage.nodes
+              ?.filter((n) => n?.primaryLanguage?.name)
+              .map((n) => n?.primaryLanguage?.name)
+              .reduce((acc, n) => {
+                acc[n!] = (acc[n!] ?? 0) + 1;
+                return acc;
+              }, {} as Record<string, number>)!,
+          ).sort((a, b) => b[1] - a[1])[0][0],
         },
         projects: user.projects.nodes?.map((n) => ({
           name: n?.name!,

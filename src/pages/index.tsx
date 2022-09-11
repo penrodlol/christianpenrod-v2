@@ -33,8 +33,8 @@ const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
               <Contact />
             </div>
           </section>
-          <section className="flex flex-col gap-fluid-4 lg:w-2/5">
-            <div className="flex flex-col gap-1">
+          <div className="flex flex-col gap-fluid-4 lg:w-2/5">
+            <section className="flex flex-col gap-1">
               <h3 className="text-fluid-5 text-2">Projects</h3>
               <ul className="flex flex-col gap-4">
                 {profile?.projects?.map((project) => (
@@ -43,12 +43,12 @@ const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
                   </li>
                 ))}
               </ul>
-            </div>
-            <div className="flex flex-col gap-1">
-              <h3 className="text-fluid-5 text-2">Contributions</h3>
+            </section>
+            <section className="flex flex-col gap-1">
+              <h3 className="text-fluid-5 text-2">Open Source</h3>
               <GithubStats user={profile?.user!} />
-            </div>
-          </section>
+            </section>
+          </div>
         </div>
         <section className="flex flex-col gap-fluid-2">
           <h3 className="text-fluid-5 text-2">Recent Posts</h3>
