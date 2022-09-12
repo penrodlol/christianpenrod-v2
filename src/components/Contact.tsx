@@ -28,7 +28,7 @@ export const Contact = () => {
         aria-modal="true"
         onClick={(e) => (e.target as any).tagName === 'DIALOG' && close()}
         onKeyDown={(e) => e.key === 'Escape' && close()}
-        // onClose={reset}
+        onClose={reset}
       >
         <div className="px-fluid-2 pt-4 pb-6">
           <div className="text-fluid-6 flex items-center justify-between mb-5">
@@ -43,7 +43,7 @@ export const Contact = () => {
             method="POST"
             action="/"
             data-netlify="true"
-            // netlify-honeypot="bot-field"
+            netlify-honeypot="bot-field"
           >
             <input type="hidden" name="form-name" value="contact" />
             <p className="hidden">
