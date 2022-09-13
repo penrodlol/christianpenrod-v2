@@ -1,13 +1,11 @@
 import { graphql } from '@octokit/graphql';
 
-declare global {
-  var octokit: typeof graphql | undefined;
-}
+const octokitGlobal = global as typeof global & { octokit?: typeof graphql };
 
 export const octokit =
-  global.octokit ||
+  octokitGlobal.octokit ||
   graphql.defaults({
     headers: { authorization: `token ${process.env.GITHUB_TOKEN}` },
   });
 
-if (process.env.NODE_ENV !== 'production') global.octokit = octokit;
+if (process.env.NODE_ENV !== 'production') octokitGlobal.octokit = octokit;
