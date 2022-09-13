@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unknown-property */
 import CloseIcon from '@svg/close.svg';
 import { useCallback, useRef } from 'react';
 import { Button } from './Button';
