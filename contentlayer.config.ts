@@ -56,7 +56,14 @@ export default makeSource({
   contentDirPath: 'content',
   documentTypes: [Post, Bio, Role],
   mdx: {
-    rehypePlugins: [rehypeExternalLinks, rehypeSlug],
+    rehypePlugins: [
+      rehypeSlug,
+      () =>
+        rehypeExternalLinks({
+          target: '_blank',
+          rel: ['nofollow', 'noopener', 'noreferrer'],
+        }),
+    ],
     remarkPlugins: [() => remarkPrism({ transformInlineCode: true })],
   },
 });
