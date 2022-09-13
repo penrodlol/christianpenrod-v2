@@ -5,7 +5,7 @@
   "author": "penrodlol",
   "private": true,
   "scripts": {
-    "postinstall": "npx prisma generate",
+    "postinstall": "npx prisma generate && rm -rf .contentlayer",
     "dev": "next dev",
     "start": "next start",
     "build": "next build",
