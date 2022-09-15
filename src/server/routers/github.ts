@@ -13,11 +13,15 @@ import { createRouter } from '../create-router';
 export const githubRouter = createRouter()
   .query('get-repo', {
     input: z.string(),
-    resolve: async ({ ctx, input: repo }) => {
+    resolve: async ({ ctx, input: slug }) => {
+      const post = ctx.posts.find((p) => p?.slug === slug);
+
+      if (!post?.repo) return null;
+
       const { user } = await ctx.octokit<{ user: { repo: Repository } }>(`
         query {
           user(login: "${process.env.GITHUB_USERNAME}") {
-            repo: repository(name: "${repo}") {
+            repo: repository(name: "${post.repo}") {
               id
               name
               description
