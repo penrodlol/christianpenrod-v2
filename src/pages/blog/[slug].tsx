@@ -25,18 +25,17 @@ const Blog: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
   slug,
 }) => {
   const { data: post } = trpc.useQuery(['post.get', slug]);
-  const { data: repo } = trpc.useQuery(['github.get-repo', slug]);
 
   return (
     <>
       {post && (
-        <Layout title={post?.title} description={post?.description} tabOnly>
+        <Layout title={post.title} description={post.description} tabOnly>
           <div className="flex gap-28">
             <article className="max-w-screen-md min-w-0 my-0">
               <PostHeader post={post} />
               <div className="flex flex-col gap-12 mt-fluid-5 mx-auto px-fluid-1">
                 <PostMDX content={post.content} />
-                {repo && <PostGithub repo={repo} />}
+                {post.repo && <PostGithub name={post.repo} />}
                 <div className="self-end">
                   <PostViews slug={post.slug} />
                 </div>
@@ -69,10 +68,7 @@ export const getStaticProps: GetStaticProps<StaticProps> = async ({
   const ssg = await createSSG();
   const slug = String(params?.slug);
 
-  await Promise.all([
-    ssg.prefetchQuery('post.get', slug),
-    ssg.prefetchQuery('github.get-repo', slug),
-  ]);
+  await ssg.prefetchQuery('post.get', slug);
 
   return { props: { trpcState: ssg.dehydrate(), slug } };
 };
