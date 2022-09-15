@@ -63,7 +63,7 @@ const RoutesMenu = () => {
         className="hidden fixed inset-0 backdrop-blur-md peer-checked:flex flex-col
                    gap-8 px-8 pt-16 text-4xl"
         onClick={() => {
-          hamburger.current!.checked = false;
+          if (hamburger.current) hamburger.current.checked = false;
           toggleOverflow();
         }}
       >

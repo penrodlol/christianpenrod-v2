@@ -6,10 +6,10 @@ import { ReactElement } from 'react';
 import { Anchor } from './Anchor';
 
 // prettier-ignore
-const SOCIALS: Array<{ name: string; url: string; icon: ReactElement }> = [
-  { name: 'Twitter', url: process.env.TWITTER!, icon: <TwitterIcon aria-hidden focusable="false" /> },
-  { name: 'Github', url: process.env.GITHUB!, icon: <GithubIcon aria-hidden focusable="false" /> },
-  { name: 'LinkedIn', url: process.env.LINKEDIN!, icon: <LinkedInIcon aria-hidden focusable="false" /> },
+const SOCIALS: Array<{ name: string; url?: string; icon: ReactElement }> = [
+  { name: 'Twitter', url: process.env.TWITTER, icon: <TwitterIcon aria-hidden focusable="false" /> },
+  { name: 'Github', url: process.env.GITHUB, icon: <GithubIcon aria-hidden focusable="false" /> },
+  { name: 'LinkedIn', url: process.env.LINKEDIN, icon: <LinkedInIcon aria-hidden focusable="false" /> },
 ];
 
 export const Footer = () => (

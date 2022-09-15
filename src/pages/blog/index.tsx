@@ -9,9 +9,7 @@ const Blog: NextPage = () => {
 
   return (
     <Layout title="Blog" subTitle="What has Christian wrote?">
-      <section>
-        <Posts posts={posts!} />
-      </section>
+      <section>{posts && <Posts posts={posts} />}</section>
     </Layout>
   );
 };

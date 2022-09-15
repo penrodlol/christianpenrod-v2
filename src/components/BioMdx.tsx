@@ -10,7 +10,7 @@ export interface BioMdxProps {
 
 // prettier-ignore
 const components = {
-  a: dynamic<any>(() => import('@components/Anchor').then((m) => m.Anchor)),
+  a: dynamic(() => import('@components/Anchor').then((m) => m.Anchor)),
   ul: ({ children }: PropsWithChildren) => (<ul className="flex flex-col gap-1">{children}</ul>),
   li: ({ children }: PropsWithChildren) => (
     <li className="flex gap-2 items-center text-fluid-3">

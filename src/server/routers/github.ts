@@ -99,16 +99,16 @@ export const githubRouter = createRouter()
               ?.filter((n) => n?.primaryLanguage?.name)
               .map((n) => n?.primaryLanguage?.name)
               .reduce((acc, n) => {
-                acc[n!] = (acc[n!] ?? 0) + 1;
+                acc[n as string] = (acc[n as string] ?? 0) + 1;
                 return acc;
-              }, {} as Record<string, number>)!,
-          ).sort((a, b) => b[1] - a[1])[0][0],
+              }, {} as Record<string, number>) ?? {},
+          ).sort((a, b) => b[1] - a[1])[0]?.[0],
         },
         projects: user.projects.nodes?.map((n) => ({
-          name: n?.name!,
-          description: n?.description!,
-          url: n?.url as string,
-          topic: (n as Repository).repositoryTopics.nodes?.[0]?.topic.name!,
+          name: n?.name,
+          description: n?.description as string | undefined,
+          url: n?.url as string | undefined,
+          topic: (n as Repository).repositoryTopics.nodes?.[0]?.topic.name,
         })),
       };
     },

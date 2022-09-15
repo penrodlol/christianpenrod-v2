@@ -46,13 +46,13 @@ const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
             </section>
             <section className="flex flex-col gap-1">
               <h3 className="text-fluid-5 text-2">Open Source</h3>
-              <GithubStats user={profile?.user!} />
+              {profile?.user && <GithubStats user={profile.user} />}
             </section>
           </div>
         </div>
         <section className="flex flex-col gap-fluid-2">
           <h3 className="text-fluid-5 text-2">Recent Posts</h3>
-          <Posts posts={posts!} />
+          {posts && <Posts posts={posts} />}
         </section>
       </div>
     </Layout>

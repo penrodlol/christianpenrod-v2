@@ -10,7 +10,7 @@ const Career: NextPage = () => {
   return (
     <Layout title="Career" subTitle="What has Christian done?">
       <section className="flex flex-col gap-8 max-w-max mx-auto">
-        {roles!.map((role) => (
+        {roles?.map((role) => (
           <RoleTimeline key={role._id} role={role} />
         ))}
       </section>

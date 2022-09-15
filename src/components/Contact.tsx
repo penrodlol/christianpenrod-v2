@@ -27,7 +27,7 @@ export const Contact = () => {
         className="bg-2 text-1 rounded-md shadow-2 p-0 w-[90%] max-w-screen-sm
                    backdrop:backdrop-blur-md"
         aria-modal="true"
-        onClick={(e) => (e.target as any).tagName === 'DIALOG' && close()}
+        onClick={(e) => (e.target as Element).tagName === 'DIALOG' && close()}
         onKeyDown={(e) => e.key === 'Escape' && close()}
         onClose={reset}
       >

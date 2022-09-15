@@ -7,7 +7,7 @@ export const PostCode = ({
 }: PropsWithChildren<HTMLPreElement>) => {
   const preRef = useRef<HTMLPreElement>(null);
   const copy = useCallback(
-    () => navigator.clipboard.writeText(preRef.current!.innerText),
+    () => navigator.clipboard.writeText(preRef.current?.innerText ?? ''),
     [preRef],
   );
 
