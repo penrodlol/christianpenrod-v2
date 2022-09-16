@@ -1,3 +1,4 @@
+import env from '@env/client';
 import GithubIcon from '@svg/github.svg';
 import LinkedInIcon from '@svg/linkedin.svg';
 import TwitterIcon from '@svg/twitter.svg';
@@ -7,9 +8,9 @@ import { Anchor } from './Anchor';
 
 // prettier-ignore
 const SOCIALS: Array<{ name: string; url?: string; icon: ReactElement }> = [
-  { name: 'Twitter', url: process.env.TWITTER, icon: <TwitterIcon aria-hidden focusable="false" /> },
-  { name: 'Github', url: process.env.GITHUB, icon: <GithubIcon aria-hidden focusable="false" /> },
-  { name: 'LinkedIn', url: process.env.LINKEDIN, icon: <LinkedInIcon aria-hidden focusable="false" /> },
+  { name: 'Twitter', url: env.TWITTER, icon: <TwitterIcon aria-hidden focusable="false" /> },
+  { name: 'Github', url: env.GITHUB, icon: <GithubIcon aria-hidden focusable="false" /> },
+  { name: 'LinkedIn', url: env.LINKEDIN, icon: <LinkedInIcon aria-hidden focusable="false" /> },
 ];
 
 export const Footer = () => (
@@ -37,7 +38,7 @@ export const Footer = () => (
       <div className="flex flex-col gap-2 items-center">
         <div className="flex gap-2">
           <span>Created by: Christian Penrod</span>
-          <strong className="text-1">©{process.env.COPYRIGHT_YEAR}</strong>
+          <strong className="text-1">©2022</strong>
         </div>
         <div>
           <span className="mr-2">Built with:</span>
@@ -60,12 +61,6 @@ export const Footer = () => (
               Netlify
             </Anchor>
           </Link>
-        </div>
-        <div>
-          <span className="mr-2">Updated on:</span>
-          <strong className="text-1 font-bold">
-            {process.env.LAST_UPDATE}
-          </strong>
         </div>
       </div>
     </div>

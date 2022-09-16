@@ -1,3 +1,4 @@
+import env from '@env/server';
 import {
   ContributionsCollection,
   IssueConnection,
@@ -16,7 +17,7 @@ export const githubRouter = createRouter()
     resolve: async ({ ctx, input: name }) => {
       const { user } = await ctx.octokit<{ user: { repo: Repository } }>(`
         query {
-          user(login: "${process.env.GITHUB_USERNAME}") {
+          user(login: "${env.GITHUB_USERNAME}") {
             repo: repository(name: "${name}") {
               id
               name
@@ -56,7 +57,7 @@ export const githubRouter = createRouter()
         };
       }>(`
         query {
-          user(login: "${process.env.GITHUB_USERNAME}") {
+          user(login: "${env.GITHUB_USERNAME}") {
             projects: pinnedItems(first: 2 types: [REPOSITORY]) {
               nodes { ... on Repository {
                 name: nameWithOwner description url
