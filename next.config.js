@@ -1,8 +1,4 @@
 const { withContentlayer } = require('next-contentlayer');
-const dayjs = require('dayjs');
-
-dayjs.extend(require('dayjs/plugin/advancedFormat'));
-dayjs.extend(require('dayjs/plugin/utc'));
 
 /** @type {import('next').NextConfig} */
 module.exports = withContentlayer({
