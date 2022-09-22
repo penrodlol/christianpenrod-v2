@@ -19,9 +19,9 @@ module.exports = {
       colors: { brand: fromVars('brand', 3), accent: fromVars('accent', 2) },
       fontSize: fromVars('font-size-fluid', 8, 'fluid'),
       spacing: fromVars('size-fluid', 7, 'fluid'),
-      outlineColor: ({ theme }) => ({ DEFAULT: theme('backgroundColor.1') }),
       maxWidth: { prose: '60ch' },
+      outlineColor: ({ theme }) => ({ DEFAULT: theme('backgroundColor.1') }),
     },
   },
-  plugins: [],
+  plugins: [require('tailwind-scrollbar')({ nocompatible: true })],
 };
