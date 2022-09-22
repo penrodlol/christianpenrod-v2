@@ -4,23 +4,27 @@
 
 @import 'colors';
 @import 'prism';
-@import 'scroll';
 @import 'shadow';
 @import 'spacing';
 @import 'typography';
 
-body {
-  @apply font-serif antialiased font-extrabold
-         tracking-wide text-1 bg-3;
+*,
+*::before,
+*::after {
+  @apply font-serif antialiased font-extrabold tracking-wide
+         scrollbar-thin scrollbar-track-transparent scrollbar-thumb-rounded-md;
 }
 
-body::before {
-  @apply content-[''] fixed -inset-8 z-10
-         opacity-[0.075] bg-[length:5rem_5rem];
+body {
+  @apply text-1 bg-3;
 
-  --h: linear-gradient(theme('colors.brand.2') 2px, transparent 0);
-  --v: linear-gradient(90deg, theme('colors.brand.2') 2px, transparent 0);
-  background-image: var(--h), var(--v);
+  &::before {
+    --h: linear-gradient(theme('colors.brand.2') 2px, transparent 0);
+    --v: linear-gradient(90deg, theme('colors.brand.2') 2px, transparent 0);
+
+    @apply content-[''] fixed -inset-8 z-10 opacity-[0.075]
+           bg-[length:5rem_5rem] bg-[image:var(--h),var(--v)];
+  }
 }
 
 p {
