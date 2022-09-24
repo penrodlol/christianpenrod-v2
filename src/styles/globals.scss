@@ -9,15 +9,8 @@
 @import 'typography';
 @import 'scroll';
 
-*,
-*::before,
-*::after {
-  @apply font-serif antialiased font-extrabold tracking-wide
-         scrollbar-thin scrollbar-track-transparent scrollbar-thumb-rounded-md;
-}
-
 body {
-  @apply text-1 bg-3;
+  @apply font-serif antialiased font-extrabold tracking-wide text-1 bg-3;
 
   &::before {
     --h: linear-gradient(theme('colors.brand.2') 2px, transparent 0);

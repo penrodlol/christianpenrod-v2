@@ -23,5 +23,5 @@ module.exports = {
       outlineColor: ({ theme }) => ({ DEFAULT: theme('backgroundColor.1') }),
     },
   },
-  plugins: [require('tailwind-scrollbar')({ nocompatible: true })],
+  plugins: [],
 };
