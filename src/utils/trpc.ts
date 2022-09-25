@@ -1,4 +1,3 @@
-import env from '@env/client';
 import { AppRouter } from '@server/routers/_app';
 import { httpBatchLink } from '@trpc/client';
 import { createTRPCNext } from '@trpc/next';
@@ -12,14 +11,7 @@ export type QPost<K extends keyof AppRouter['post']> = Output<PostRouter[K]>;
 export type QRole<K extends keyof RoleRouter> = Output<RoleRouter[K]>;
 export type QGithub<K extends keyof GithubRouter> = Output<GithubRouter[K]>;
 
-const baseUrl = () => {
-  if (typeof window !== 'undefined') return '';
-  if (env.CONTEXT === 'production') return env.URL;
-
-  return `http://localhost:${env.PORT ?? 3000}`;
-};
-
 export const trpc = createTRPCNext<AppRouter>({
   ssr: false,
-  config: () => ({ links: [httpBatchLink({ url: `${baseUrl()}/api/trpc` })] }),
+  config: () => ({ links: [httpBatchLink({ url: '/api/trpc' })] }),
 });
