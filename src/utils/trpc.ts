@@ -11,7 +11,15 @@ export type QPost<K extends keyof AppRouter['post']> = Output<PostRouter[K]>;
 export type QRole<K extends keyof RoleRouter> = Output<RoleRouter[K]>;
 export type QGithub<K extends keyof GithubRouter> = Output<GithubRouter[K]>;
 
+const baseUrl = () => {
+  if (typeof window !== 'undefined') return '';
+
+  return process.env.VERCEL_ENV !== 'development'
+    ? `https://${process.env.VERCEL_URL}`
+    : `http://localhost:${process.env.PORT ?? 3000}`;
+};
+
 export const trpc = createTRPCNext<AppRouter>({
   ssr: false,
-  config: () => ({ links: [httpBatchLink({ url: '/api/trpc' })] }),
+  config: () => ({ links: [httpBatchLink({ url: `${baseUrl()}/api/trpc` })] }),
 });
