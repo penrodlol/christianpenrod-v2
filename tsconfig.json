@@ -18,7 +18,6 @@
     "baseUrl": ".",
     "paths": {
       "@components/*": ["src/components/*"],
-      "@const/*": ["src/const/*"],
       "@env/*": ["src/env/*"],
       "@server/*": ["src/server/*"],
       "@svg/*": ["public/svg/*"],
