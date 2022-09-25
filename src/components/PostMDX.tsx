@@ -1,10 +1,10 @@
-import { Query } from '@utils/trpc';
+import { QPost } from '@utils/trpc';
 import { useMDXComponent } from 'next-contentlayer/hooks';
 import dynamic from 'next/dynamic';
 import { FC, PropsWithChildren } from 'react';
 
 export interface PostMDXProps {
-  content: Query<'post.get'>['content'];
+  content: QPost<'get'>['content'];
 }
 
 // prettier-ignore

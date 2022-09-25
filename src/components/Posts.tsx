@@ -1,11 +1,11 @@
-import { Query } from '@utils/trpc';
+import { QPost } from '@utils/trpc';
 import Link from 'next/link';
 import { FC } from 'react';
 import { Chip } from './Chip';
 import { Line } from './Line';
 
 export interface PostsProps {
-  posts: Query<'post.get-many'>;
+  posts: QPost<'getMany'>;
 }
 
 export const Posts: FC<PostsProps> = ({ posts }) => (

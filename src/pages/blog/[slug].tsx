@@ -7,7 +7,9 @@ import { PostPagination } from '@components/PostPagination';
 import { PostSubHeaderIntroduction } from '@components/PostSubHeader';
 import { PostToc } from '@components/PostToc';
 import { PostViews } from '@components/PostViews';
-import { createSSG } from '@server/create-ssg';
+import { ctx } from '@server/context';
+import { router } from '@server/routers/_app';
+import { createProxySSGHelpers } from '@trpc/react/ssg';
 import { trpc } from '@utils/trpc';
 import { allPosts } from 'contentlayer/generated';
 import {
@@ -24,7 +26,7 @@ interface StaticProps {
 const Blog: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
   slug,
 }) => {
-  const { data: post } = trpc.useQuery(['post.get', slug]);
+  const { data: post } = trpc.post.get.useQuery(slug);
 
   return (
     <>
@@ -65,10 +67,10 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps<StaticProps> = async ({
   params,
 }) => {
-  const ssg = await createSSG();
+  const ssg = createProxySSGHelpers({ router, ctx: await ctx() });
   const slug = String(params?.slug);
 
-  await ssg.prefetchQuery('post.get', slug);
+  await ssg.post.get.prefetch(slug);
 
   return { props: { trpcState: ssg.dehydrate(), slug } };
 };

@@ -1,11 +1,11 @@
 import GithubBookmarkIcon from '@svg/github-bookmark.svg';
-import { Query } from '@utils/trpc';
+import { QGithub } from '@utils/trpc';
 import Link from 'next/link';
 import { FC } from 'react';
 import { Chip } from './Chip';
 
 export interface GithubProjectProps {
-  project: NonNullable<Query<'github.get-profile'>['projects']>[number];
+  project: NonNullable<QGithub<'getProfile'>['projects']>[number];
 }
 
 export const GithubProject: FC<GithubProjectProps> = ({ project }) => (

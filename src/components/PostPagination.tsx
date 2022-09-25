@@ -1,13 +1,13 @@
 import ArrowLeftIcon from '@svg/arrow-left.svg';
 import ArrowRightIcon from '@svg/arrow-right.svg';
-import { Query } from '@utils/trpc';
+import { QPost } from '@utils/trpc';
 import Link from 'next/link';
 import { FC } from 'react';
 import { Anchor } from './Anchor';
 
 export interface PostPaginationProps {
-  prev: Query<'post.get'>['prev'];
-  next: Query<'post.get'>['next'];
+  prev: QPost<'get'>['prev'];
+  next: QPost<'get'>['next'];
 }
 
 export const PostPagination: FC<PostPaginationProps> = ({ prev, next }) => (

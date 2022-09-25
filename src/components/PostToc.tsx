@@ -1,11 +1,11 @@
-import { Query } from '@utils/trpc';
+import { QPost } from '@utils/trpc';
 import HashLink from 'next/link';
 import { FC } from 'react';
 import { Anchor } from './Anchor';
 import { Line } from './Line';
 
 export interface PostTocProps {
-  headings: Query<'post.get'>['headings'];
+  headings: QPost<'get'>['headings'];
 }
 
 export const PostToc: FC<PostTocProps> = ({ headings }) => (

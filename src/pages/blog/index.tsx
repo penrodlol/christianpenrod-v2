@@ -1,11 +1,13 @@
 import { Layout } from '@components/Layout';
 import { Posts } from '@components/Posts';
-import { createSSG } from '@server/create-ssg';
+import { ctx } from '@server/context';
+import { router } from '@server/routers/_app';
+import { createProxySSGHelpers } from '@trpc/react/ssg';
 import { trpc } from '@utils/trpc';
 import { GetStaticProps, NextPage } from 'next';
 
 const Blog: NextPage = () => {
-  const { data: posts } = trpc.useQuery(['post.get-many']);
+  const { data: posts } = trpc.post.getMany.useQuery();
 
   return (
     <Layout title="Blog" subTitle="What has Christian wrote?">
@@ -15,9 +17,9 @@ const Blog: NextPage = () => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const ssg = await createSSG();
+  const ssg = createProxySSGHelpers({ router, ctx: await ctx() });
 
-  await ssg.prefetchQuery('post.get-many');
+  await ssg.post.getMany.prefetch();
 
   return { props: { trpcState: ssg.dehydrate() } };
 };

@@ -1,9 +1,9 @@
-import { Query } from '@utils/trpc';
+import { QRole } from '@utils/trpc';
 import { useMDXComponent } from 'next-contentlayer/hooks';
 import { FC, PropsWithChildren } from 'react';
 
 export interface RoleTimelineProps {
-  role: Query<'role.get-all'>[0];
+  role: QRole<'getAll'>[number];
 }
 
 // prettier-ignore

@@ -6,9 +6,9 @@ import { octokit } from './db/octokit';
 import { prisma } from './db/prisma';
 
 export type ContextOpts = trpcNext.CreateNextContextOptions;
-export type Context = trpc.inferAsyncReturnType<typeof createContext>;
+export type Context = trpc.inferAsyncReturnType<typeof ctx>;
 
-export const createContext = async (opts?: ContextOpts) => ({
+export const ctx = async (opts?: ContextOpts) => ({
   req: opts?.req,
   res: opts?.res,
   prisma,

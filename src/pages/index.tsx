@@ -5,7 +5,9 @@ import { GithubStats } from '@components/GithubStats';
 import { Layout } from '@components/Layout';
 import { Line } from '@components/Line';
 import { Posts } from '@components/Posts';
-import { createSSG } from '@server/create-ssg';
+import { ctx } from '@server/context';
+import { router } from '@server/routers/_app';
+import { createProxySSGHelpers } from '@trpc/react/ssg';
 import { trpc } from '@utils/trpc';
 import { Bio, bio } from 'contentlayer/generated';
 import { GetStaticProps, InferGetStaticPropsType, NextPage } from 'next';
@@ -17,8 +19,8 @@ interface StaticProps {
 const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
   bio,
 }) => {
-  const { data: posts } = trpc.useQuery(['post.get-many', { limit: 3 }]);
-  const { data: profile } = trpc.useQuery(['github.get-profile']);
+  const { data: posts } = trpc.post.getMany.useQuery({ limit: 3 });
+  const { data: profile } = trpc.github.getProfile.useQuery();
 
   return (
     <Layout>
@@ -60,11 +62,11 @@ const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
 };
 
 export const getStaticProps: GetStaticProps<StaticProps> = async () => {
-  const ssg = await createSSG();
+  const ssg = createProxySSGHelpers({ router, ctx: await ctx() });
 
   await Promise.all([
-    ssg.prefetchQuery('post.get-many', { limit: 3 }),
-    ssg.prefetchQuery('github.get-profile'),
+    ssg.post.getMany.prefetch({ limit: 3 }),
+    ssg.github.getProfile.prefetch(),
   ]);
 
   return { props: { trpcState: ssg.dehydrate(), bio } };

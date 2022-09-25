@@ -1,11 +1,13 @@
 import { Layout } from '@components/Layout';
 import { RoleTimeline } from '@components/RoleTimeline';
-import { createSSG } from '@server/create-ssg';
+import { ctx } from '@server/context';
+import { router } from '@server/routers/_app';
+import { createProxySSGHelpers } from '@trpc/react/ssg';
 import { trpc } from '@utils/trpc';
 import { GetStaticProps, NextPage } from 'next';
 
 const Career: NextPage = () => {
-  const { data: roles } = trpc.useQuery(['role.get-all']);
+  const { data: roles } = trpc.role.getAll.useQuery();
 
   return (
     <Layout title="Career" subTitle="What has Christian done?">
@@ -19,9 +21,9 @@ const Career: NextPage = () => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const ssg = await createSSG();
+  const ssg = createProxySSGHelpers({ router, ctx: await ctx() });
 
-  await ssg.prefetchQuery('role.get-all');
+  await ssg.role.getAll.prefetch();
 
   return { props: { trpcState: ssg.dehydrate() } };
 };

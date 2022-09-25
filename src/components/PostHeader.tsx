@@ -1,10 +1,10 @@
 import CalendarIcon from '@svg/calendar.svg';
 import ClockIcon from '@svg/clock.svg';
-import { Query } from '@utils/trpc';
+import { QPost } from '@utils/trpc';
 import { FC } from 'react';
 
 export interface PostHeaderProps {
-  post: Query<'post.get'>;
+  post: QPost<'get'>;
 }
 
 export const PostHeader: FC<PostHeaderProps> = ({ post }) => (

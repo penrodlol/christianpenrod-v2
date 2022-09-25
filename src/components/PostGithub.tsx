@@ -1,16 +1,16 @@
 import GithubBookmarkIcon from '@svg/github-bookmark.svg';
 import GithubForkIcon from '@svg/github-fork.svg';
 import GithubStarIcon from '@svg/github-star.svg';
-import { Query, trpc } from '@utils/trpc';
+import { QGithub, trpc } from '@utils/trpc';
 import Link from 'next/link';
 import { FC } from 'react';
 
 export interface PostGithubProps {
-  name: NonNullable<Query<'post.get'>['slug']>;
+  name: NonNullable<QGithub<'getRepo'>>['name'];
 }
 
 export const PostGithub: FC<PostGithubProps> = ({ name }) => {
-  const { data: repo } = trpc.useQuery(['github.get-repo', name]);
+  const { data: repo } = trpc.github.getRepo.useQuery(name);
 
   return (
     <Link href={repo?.url || ''} passHref>

@@ -4,11 +4,11 @@ import ExclamationIcon from '@svg/exclamation.svg';
 import GithubPrIcon from '@svg/github-pr.svg';
 import StarIcon from '@svg/star.svg';
 import UserGroupIcon from '@svg/user-group.svg';
-import { Query } from '@utils/trpc';
+import { QGithub } from '@utils/trpc';
 import { FC } from 'react';
 
 export interface GithubStatsProps {
-  user: NonNullable<Query<'github.get-profile'>['user']>;
+  user: NonNullable<QGithub<'getProfile'>['user']>;
 }
 
 export const GithubStats: FC<GithubStatsProps> = ({ user }) => (
