@@ -34,10 +34,5 @@ yarn-error.log*
 # vercel
 .vercel
 
-
 # Contentlayer
 .contentlayer
-
-
-# Netlify
-.netlify
