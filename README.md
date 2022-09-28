@@ -1,9 +1,9 @@
 # christianpenrod.com
 
-![Vercel Status](https://img.shields.io/github/deployments/penrodlol/christianpenrod/production?color=%23d8ccf1&label=vercel&logo=vercel&logoColor=white&style=for-the-badge)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/fe167fcf-b790-4f9a-8ac1-fe05a6276286/deploy-status)](https://app.netlify.com/sites/christianpenrod/deploys)
 
 - ➩ Built with [Next.js](https://nextjs.org/docs).
-- ➩ Hosted with [Vercel](https://vercel.com/docs).
+- ➩ Hosted with [Netlify](https://netlify.com/docs).
 - ➩ Styled with [Tailwind CSS](https://tailwindcss.com/).
 
 <br />

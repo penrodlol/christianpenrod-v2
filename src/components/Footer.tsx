@@ -52,13 +52,13 @@ export const Footer = () => (
             </Anchor>
           </Link>
           <span className="mx-2">on</span>
-          <Link href="https://vercel.com/docs" passHref>
+          <Link href="https://netlify.com/docs" passHref>
             <Anchor
               className="text-1 font-bold"
               rel="nofollow noopener noreferrer"
               target="_blank"
             >
-              Vercel
+              Netlify
             </Anchor>
           </Link>
         </div>
