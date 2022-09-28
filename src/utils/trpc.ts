@@ -14,8 +14,8 @@ export type QGithub<K extends keyof GithubRouter> = Output<GithubRouter[K]>;
 const baseUrl = () => {
   if (typeof window !== 'undefined') return '';
 
-  return process.env.VERCEL_ENV !== 'development'
-    ? `https://${process.env.VERCEL_URL}`
+  return process.env.CONTEXT !== 'dev'
+    ? `https://${process.env.URL}`
     : `http://localhost:${process.env.PORT ?? 3000}`;
 };
 
