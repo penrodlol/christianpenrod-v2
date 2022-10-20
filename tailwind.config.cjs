@@ -14,9 +14,12 @@ module.exports = {
     },
     boxShadow: fromVars('shadow', 3),
     extend: {
-      textColor: fromVars('fg', 3),
-      backgroundColor: fromVars('bg', 3),
-      colors: { brand: fromVars('brand', 3), accent: fromVars('accent', 2) },
+      textColor: { 1: '#cdd6f4', 2: '#bac2de', 3: '#a6adc8' },
+      backgroundColor: { 1: '#363a4f', 2: '#232634', 3: '#181926' },
+      colors: {
+        brand: { 1: '#b4befe', 2: '#b7bdf8', 3: '#babbf1' },
+        accent: { 1: '#e3d6f5', 2: '#ddc9f8' },
+      },
       fontSize: fromVars('font-size-fluid', 8, 'fluid'),
       spacing: fromVars('size-fluid', 7, 'fluid'),
       maxWidth: { prose: '60ch' },
