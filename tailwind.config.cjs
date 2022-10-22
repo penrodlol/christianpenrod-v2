@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 function fromVars(name, size, pre) {
   return [...Array(size + 1)]
     .map((_, i) => `var(--${name}-${i})`)
@@ -12,7 +13,6 @@ module.exports = {
       serif: ["'Nunito', system-ui"],
       fancy: ["'Sriracha', system-ui"],
     },
-    boxShadow: fromVars('shadow', 3),
     extend: {
       textColor: { 1: '#cdd6f4', 2: '#bac2de', 3: '#a6adc8' },
       backgroundColor: { 1: '#363a4f', 2: '#232634', 3: '#181926' },
@@ -25,5 +25,8 @@ module.exports = {
       outlineColor: ({ theme }) => ({ DEFAULT: theme('backgroundColor.1') }),
     },
   },
-  plugins: [require('tailwindcss-fluid-type')],
+  plugins: [
+    require('tailwindcss-fluid-type'),
+    require('tailwindcss-elevation')(['responsive']),
+  ],
 };

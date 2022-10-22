@@ -8,7 +8,7 @@ export interface PostHeaderProps {
 }
 
 export const PostHeader: FC<PostHeaderProps> = ({ post }) => (
-  <div className="flex flex-col sm:flex-row justify-between bg-2 rounded-md shadow-2">
+  <div className="flex flex-col sm:flex-row justify-between bg-2 rounded-md elevation-10">
     <div className="p-fluid-3 sm:self-center">
       <h1 className="text-2xl">{post.title}</h1>
     </div>

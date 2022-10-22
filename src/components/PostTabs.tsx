@@ -43,7 +43,7 @@ export const PostTabs = ({ values, children }: PostTabsProps) => {
   );
 
   return (
-    <div className="bg-1 rounded-md shadow-2">
+    <div className="bg-1 rounded-md elevation-10">
       <div
         className="flex justify-between overflow-auto"
         role="tablist"
