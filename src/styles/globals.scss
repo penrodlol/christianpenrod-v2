@@ -10,29 +10,3 @@
 @import 'prism';
 @import 'spacing';
 @import 'scroll';
-
-body {
-  @apply font-serif antialiased font-extrabold tracking-wide text-1 bg-3;
-
-  &::before {
-    --h: linear-gradient(theme('colors.brand.2') 2px, transparent 0);
-    --v: linear-gradient(90deg, theme('colors.brand.2') 2px, transparent 0);
-
-    @apply content-[''] fixed -inset-8 z-10 opacity-[0.075]
-           bg-[length:5rem_5rem] bg-[image:var(--h),var(--v)];
-  }
-}
-
-p {
-  @apply max-w-prose;
-}
-
-a,
-button,
-input,
-textarea,
-[tabindex='0'] {
-  @apply focus-visible:outline
-         focus-visible:outline-2
-         focus-visible:outline-offset-4;
-}

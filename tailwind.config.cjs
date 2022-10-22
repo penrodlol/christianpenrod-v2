@@ -21,12 +21,34 @@ module.exports = {
         accent: { 1: '#e3d6f5', 2: '#ddc9f8' },
       },
       spacing: fromVars('size-fluid', 7, 'fluid'),
-      maxWidth: { prose: '60ch' },
       outlineColor: ({ theme }) => ({ DEFAULT: theme('backgroundColor.1') }),
+      backgroundImage: ({ theme }) => ({
+        'hero-pattern': `
+          linear-gradient(${theme('colors.brand.2')} 2px, transparent 0),
+          linear-gradient(90deg, ${theme('colors.brand.2')} 2px, transparent 0)
+        `,
+      }),
     },
   },
   plugins: [
     require('tailwindcss-fluid-type'),
     require('tailwindcss-elevation')(['responsive']),
+    ({ addBase, theme }) =>
+      addBase({
+        body: {
+          fontFamily: theme('fontFamily.serif'),
+          fontWeight: theme('fontWeight.extrabold'),
+          letterSpacing: theme('letterSpacing.wide'),
+          color: theme('textColor.1'),
+          backgroundColor: theme('backgroundColor.3'),
+        },
+        'a, button, input, textarea, [tabindex="0"]': {
+          '&:focus-visible': {
+            outline: `2px solid ${theme('outlineColor.DEFAULT')}`,
+            outlineWidth: theme('outlineWidth.2'),
+            outlineOffset: theme('outlineOffset.4'),
+          },
+        },
+      }),
   ],
 };
