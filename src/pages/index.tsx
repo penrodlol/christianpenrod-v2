@@ -62,8 +62,6 @@ export const getStaticProps: GetStaticProps<StaticProps> = async () => {
   const posts = getSortedPosts(3);
   const profile = await getProfile();
 
-  console.log(profile);
-
   return { props: { bio, posts, profile } };
 };
 
