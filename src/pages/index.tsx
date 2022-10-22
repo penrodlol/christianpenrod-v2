@@ -59,7 +59,7 @@ const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
 );
 
 export const getStaticProps: GetStaticProps<StaticProps> = async () => {
-  const posts = getSortedPosts();
+  const posts = getSortedPosts(3);
   const profile = await getProfile();
 
   console.log(profile);
