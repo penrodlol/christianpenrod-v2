@@ -3,10 +3,8 @@ import { httpBatchLink } from '@trpc/client';
 import { createTRPCNext } from '@trpc/next';
 import type { inferProcedureOutput as Output } from '@trpc/server';
 
-type RoleRouter = AppRouter['role'];
 type GithubRouter = AppRouter['github'];
 
-export type QRole<K extends keyof RoleRouter> = Output<RoleRouter[K]>;
 export type QGithub<K extends keyof GithubRouter> = Output<GithubRouter[K]>;
 
 const baseUrl = () => {

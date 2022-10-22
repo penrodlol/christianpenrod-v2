@@ -1,14 +1,14 @@
-import { QRole } from '@utils/trpc';
+import { GetSortedRoles } from '@utils/contentlayer';
 import { useMDXComponent } from 'next-contentlayer/hooks';
 import { FC, PropsWithChildren } from 'react';
 
 export interface RoleTimelineProps {
-  role: QRole<'getAll'>[number];
+  role: GetSortedRoles[number];
 }
 
 // prettier-ignore
 const components = {
-  p: ({children}: PropsWithChildren) => <p className="text-base font-semibold mt-3">{children}</p>,
+  p: ({children}: PropsWithChildren) => <p className="text-base font-semibold mt-3 max-w-[60ch]">{children}</p>,
   h5: ({children}: PropsWithChildren) =>
     <h5 className="text-lg relative mt-6 before:content-[''] before:absolute before:top-[50%]
                    before:translate-y-[-50%] before:-left-6 before:translate-x-[-0.215rem] before:w-[0.95rem]
@@ -20,7 +20,7 @@ const components = {
 };
 
 export const RoleTimeline: FC<RoleTimelineProps> = ({ role }) => {
-  const RoleMDX = useMDXComponent(role.content);
+  const RoleMDX = useMDXComponent(role.body.code);
 
   return (
     <div className="bg-2 rounded-md elevation-10 p-7">
