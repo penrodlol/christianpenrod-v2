@@ -32,7 +32,7 @@ export const Contact = () => {
         onClose={reset}
       >
         <div className="px-fluid-2 pt-4 pb-6">
-          <div className="text-fluid-6 flex items-center justify-between mb-5">
+          <div className="text-3xl flex items-center justify-between mb-5">
             <span>Contact Me</span>
             <button className="rounded-md" aria-label="Close" onClick={close}>
               <CloseIcon className="w-10 h-10 fill-brand-2 hover:fill-brand-2" />

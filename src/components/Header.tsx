@@ -12,7 +12,7 @@ export const Header = () => {
             <LogoIcon height={40} width={50} />
           </Anchor>
         </Route>
-        <ul className="hidden sm:flex gap-16 items-center text-xl">
+        <ul className="hidden sm:flex gap-16 items-center text-base">
           <Routes />
         </ul>
         <div className="block sm:hidden">

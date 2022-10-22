@@ -19,8 +19,8 @@ export const Layout = (props: LayoutProps) => {
         <main className="flex-1 px-fluid-4 max-w-screen-2xl mx-auto my-[clamp(1.31rem,calc(-0.52rem+9.15vw),6.00rem)]">
           {!props.tabOnly && props.title && (
             <div className="mb-fluid-5">
-              <h1 className="text-fluid-7">{props.title}</h1>
-              <h2 className="text-2 text-fluid-6">{props.subTitle}</h2>
+              <h1 className="text-4xl !leading-relaxed">{props.title}</h1>
+              <h2 className="text-2 text-3xl">{props.subTitle}</h2>
             </div>
           )}
           <div className="max-w-[calc(100vw-var(--size-fluid-6))]">

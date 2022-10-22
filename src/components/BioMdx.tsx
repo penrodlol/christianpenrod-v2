@@ -13,7 +13,7 @@ const components = {
   a: dynamic(() => import('@components/Anchor').then((m) => m.Anchor)),
   ul: ({ children }: PropsWithChildren) => (<ul className="flex flex-col gap-1">{children}</ul>),
   li: ({ children }: PropsWithChildren) => (
-    <li className="flex gap-2 items-center text-fluid-3">
+    <li className="flex gap-2 items-center text-lg">
       <ArrowRightIcon className="w-7 h-7 fill-accent-2 min-w-[20px]" />
       <p>{children}</p>
     </li>

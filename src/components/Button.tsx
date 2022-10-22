@@ -9,7 +9,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       ref={ref}
       role={role ?? 'button'}
       className={`
-        bg-accent-2 text-black shadow-2 hover:bg-accent-1 text-xl font-extrabold
+        bg-accent-2 text-black shadow-2 hover:bg-accent-1 text-lg font-extrabold
         rounded-md px-10 py-[0.9rem] ${className}`}
     >
       {children}

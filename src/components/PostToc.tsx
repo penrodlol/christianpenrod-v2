@@ -10,7 +10,7 @@ export interface PostTocProps {
 
 export const PostToc: FC<PostTocProps> = ({ headings }) => (
   <aside>
-    <h3 className="text-xl">Table of Contents</h3>
+    <h3 className="text-lg">Table of Contents</h3>
     <Line />
     <nav className="flex flex-col gap-4">
       <HashLink href={{ hash: 'introduction' }} passHref>

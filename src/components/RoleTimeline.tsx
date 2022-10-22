@@ -8,9 +8,9 @@ export interface RoleTimelineProps {
 
 // prettier-ignore
 const components = {
-  p: ({children}: PropsWithChildren) => <p className="text-lg font-semibold mt-3">{children}</p>,
+  p: ({children}: PropsWithChildren) => <p className="text-base font-semibold mt-3">{children}</p>,
   h5: ({children}: PropsWithChildren) =>
-    <h5 className="text-fluid-3 relative mt-6 before:content-[''] before:absolute before:top-[50%]
+    <h5 className="text-lg relative mt-6 before:content-[''] before:absolute before:top-[50%]
                    before:translate-y-[-50%] before:-left-6 before:translate-x-[-0.215rem] before:w-[0.95rem]
                    before:h-[0.95rem] before:rounded-full before:bg-brand-2 before:shadow-2
                    last-of-type:before:border-[0.2rem] last-of-type:before:border-brand-2
@@ -24,8 +24,8 @@ export const RoleTimeline: FC<RoleTimelineProps> = ({ role }) => {
 
   return (
     <div className="bg-2 rounded-md shadow-2 p-7">
-      <h3 className="text-fluid-5">{role.company}</h3>
-      <h4 className="text-fluid-3 text-2">
+      <h3 className="text-2xl">{role.company}</h3>
+      <h4 className="text-lg text-2">
         {role.start} - {role.end}
       </h4>
       <div className="relative">

@@ -20,11 +20,10 @@ module.exports = {
         brand: { 1: '#b4befe', 2: '#b7bdf8', 3: '#babbf1' },
         accent: { 1: '#e3d6f5', 2: '#ddc9f8' },
       },
-      fontSize: fromVars('font-size-fluid', 8, 'fluid'),
       spacing: fromVars('size-fluid', 7, 'fluid'),
       maxWidth: { prose: '60ch' },
       outlineColor: ({ theme }) => ({ DEFAULT: theme('backgroundColor.1') }),
     },
   },
-  plugins: [],
+  plugins: [require('tailwindcss-fluid-type')],
 };

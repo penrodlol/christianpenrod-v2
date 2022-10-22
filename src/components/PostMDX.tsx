@@ -9,7 +9,7 @@ export interface PostMDXProps {
 
 // prettier-ignore
 const components = {
-  p: ({children}: PropsWithChildren) => <p className='text-fluid-3 leading-9'>{children}</p>,
+  p: ({children}: PropsWithChildren) => <p className='text-base !leading-9'>{children}</p>,
   em: ({children}: PropsWithChildren) => <em className='not-italic font-fancy'>{children}</em>,
   a: dynamic(() => import('@components/Anchor').then(m => m.Anchor)),
   h2: dynamic(() => import('@components/PostSubHeader').then(m => m.PostSubHeader)),

@@ -23,14 +23,14 @@ export const Posts: FC<PostsProps> = ({ posts }) => (
                 <Chip key={tag}>{tag}</Chip>
               ))}
             </div>
-            <span className="text-fluid-4 group-hover:text-brand-2 group-focus-visible:text-brand-2">
+            <span className="text-lg group-hover:text-brand-2 group-focus-visible:text-brand-2">
               {post.title}
             </span>
-            <span className="text-2 text-lg font-semibold">
+            <span className="text-2 text-base font-semibold">
               {post.published}
             </span>
             <Line />
-            <p className="text-fluid-2 sm:leading-8 leading-7">
+            <p className="text-sm sm:leading-8 leading-relaxed text-2">
               {post.description}
             </p>
           </a>

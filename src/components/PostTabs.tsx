@@ -58,7 +58,7 @@ export const PostTabs = ({ values, children }: PostTabsProps) => {
             aria-controls={`${uid}-content-${value}`}
             aria-selected={value === activeTab}
             tabIndex={value === activeTab ? undefined : -1}
-            className={`relative text-2 text-lg whitespace-nowrap w-full py-2 px-4
+            className={`relative text-2 text-base whitespace-nowrap w-full py-2 px-4
                         hover:text-1 ${activeTab === value ? active : ''}`}
             onClick={() => setActiveTab(value)}
             onKeyDown={(e) => focusTab(e)}

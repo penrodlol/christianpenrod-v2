@@ -19,9 +19,9 @@ export const PostPagination: FC<PostPaginationProps> = ({ prev, next }) => (
             <div className="flex flex-col gap-2">
               <div className="flex gap-2 items-center text-brand-2">
                 <ArrowLeftIcon width={30} height={30} />
-                <span className="text-accent-2 text-xl">Prev</span>
+                <span className="text-accent-2 text-lg">Prev</span>
               </div>
-              <span className="text-fluid-3">{prev.title}</span>
+              <span className="text-lg">{prev.title}</span>
             </div>
           </Anchor>
         </Link>
@@ -33,10 +33,10 @@ export const PostPagination: FC<PostPaginationProps> = ({ prev, next }) => (
           <Anchor aria-label={`Next post: ${next.title}`}>
             <div className="flex flex-col gap-2">
               <div className="self-end flex gap-2 items-center text-brand-2">
-                <span className="text-accent-2 text-xl">Next</span>
+                <span className="text-accent-2 text-lg">Next</span>
                 <ArrowRightIcon width={30} height={30} />
               </div>
-              <span className="text-fluid-3 text-right">{next.title}</span>
+              <span className="text-lg text-right">{next.title}</span>
             </div>
           </Anchor>
         </Link>

@@ -23,11 +23,11 @@ export const PostGithub: FC<PostGithubProps> = ({ name }) => {
       >
         <div className="flex gap-4 items-center text-brand-2">
           <GithubBookmarkIcon width={25} height={25} />
-          <span className="text-xl text-1 group-hover:text-brand-2">
+          <span className="text-base text-1 group-hover:text-brand-2">
             {repo?.name}
           </span>
         </div>
-        <p className="text-2 font-semibold mt-4 mb-5">
+        <p className="text-2 font-semibold mt-4 mb-5 text-sm">
           {repo?.description || '--'}
         </p>
         <div className="flex gap-4 items-center">
