@@ -1,11 +1,11 @@
-import { QPost } from '@utils/trpc';
+import { GetSortedPosts } from '@utils/contentlayer';
 import Link from 'next/link';
 import { FC } from 'react';
 import { Chip } from './Chip';
 import { Line } from './Line';
 
 export interface PostsProps {
-  posts: QPost<'getMany'>;
+  posts: GetSortedPosts;
 }
 
 export const Posts: FC<PostsProps> = ({ posts }) => (

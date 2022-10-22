@@ -8,18 +8,20 @@ import { Posts } from '@components/Posts';
 import { ctx } from '@server/context';
 import { router } from '@server/routers/_app';
 import { createProxySSGHelpers } from '@trpc/react/ssg';
+import { GetSortedPosts, getSortedPosts } from '@utils/contentlayer';
 import { trpc } from '@utils/trpc';
 import { Bio, bio } from 'contentlayer/generated';
 import { GetStaticProps, InferGetStaticPropsType, NextPage } from 'next';
 
 interface StaticProps {
   bio: Bio;
+  posts: GetSortedPosts;
 }
 
 const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
   bio,
+  posts,
 }) => {
-  const { data: posts } = trpc.post.getMany.useQuery({ limit: 3 });
   const { data: profile } = trpc.github.getProfile.useQuery();
 
   return (
@@ -54,7 +56,7 @@ const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
         </div>
         <section className="flex flex-col gap-fluid-2">
           <h3 className="text-xl text-2">Recent Posts</h3>
-          {posts && <Posts posts={posts} />}
+          <Posts posts={posts} />
         </section>
       </div>
     </Layout>
@@ -62,14 +64,12 @@ const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
 };
 
 export const getStaticProps: GetStaticProps<StaticProps> = async () => {
+  const posts = getSortedPosts(3);
+
   const ssg = createProxySSGHelpers({ router, ctx: await ctx() });
+  await ssg.github.getProfile.prefetch();
 
-  await Promise.all([
-    ssg.post.getMany.prefetch({ limit: 3 }),
-    ssg.github.getProfile.prefetch(),
-  ]);
-
-  return { props: { trpcState: ssg.dehydrate(), bio } };
+  return { props: { trpcState: ssg.dehydrate(), bio, posts } };
 };
 
 export default Home;
