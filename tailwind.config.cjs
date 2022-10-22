@@ -49,13 +49,6 @@ module.exports = {
             borderRadius: theme('borderRadius.md'),
           },
         },
-        body: {
-          fontFamily: theme('fontFamily.serif'),
-          fontWeight: theme('fontWeight.extrabold'),
-          letterSpacing: theme('letterSpacing.wide'),
-          color: theme('textColor.1'),
-          backgroundColor: theme('backgroundColor.3'),
-        },
         'a, button, input, textarea, [tabindex="0"]': {
           '&:focus-visible': {
             outline: `2px solid ${theme('outlineColor.DEFAULT')}`,
