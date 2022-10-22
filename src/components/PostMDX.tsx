@@ -1,4 +1,4 @@
-import { GetPost } from '@utils/contentlayer';
+import { GetPost } from '@utils/contentlayer/posts';
 import { useMDXComponent } from 'next-contentlayer/hooks';
 import dynamic from 'next/dynamic';
 import { FC, PropsWithChildren } from 'react';

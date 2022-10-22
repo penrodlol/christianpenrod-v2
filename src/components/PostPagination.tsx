@@ -1,6 +1,6 @@
 import ArrowLeftIcon from '@svg/arrow-left.svg';
 import ArrowRightIcon from '@svg/arrow-right.svg';
-import { GetPost } from '@utils/contentlayer';
+import { GetPost } from '@utils/contentlayer/posts';
 import Link from 'next/link';
 import { FC } from 'react';
 import { Anchor } from './Anchor';

@@ -1,4 +1,4 @@
-import { GetPost } from '@utils/contentlayer';
+import { GetPost } from '@utils/contentlayer/posts';
 import HashLink from 'next/link';
 import { FC } from 'react';
 import { Anchor } from './Anchor';

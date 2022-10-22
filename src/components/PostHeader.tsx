@@ -1,6 +1,6 @@
 import CalendarIcon from '@svg/calendar.svg';
 import ClockIcon from '@svg/clock.svg';
-import { GetPost } from '@utils/contentlayer';
+import { GetPost } from '@utils/contentlayer/posts';
 import { FC } from 'react';
 
 export interface PostHeaderProps {

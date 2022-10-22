@@ -1,15 +1,15 @@
 import GithubBookmarkIcon from '@svg/github-bookmark.svg';
-import { QGithub } from '@utils/trpc';
+import { GetProfile } from '@utils/octokit/profile';
 import Link from 'next/link';
 import { FC } from 'react';
 import { Chip } from './Chip';
 
 export interface GithubProjectProps {
-  project: NonNullable<QGithub<'getProfile'>['projects']>[number];
+  project: GetProfile['projects'][number];
 }
 
 export const GithubProject: FC<GithubProjectProps> = ({ project }) => (
-  <Link href={project.url ?? ''} passHref>
+  <Link href={project.url} passHref>
     <a
       className="group flex flex-col gap-2 bg-2 elevation-10 rounded-md py-3 px-5
                  hover:outline hover:outline-2 hover:outline-offset-4"

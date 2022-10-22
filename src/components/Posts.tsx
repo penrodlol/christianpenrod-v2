@@ -1,4 +1,4 @@
-import { GetSortedPosts } from '@utils/contentlayer';
+import { GetSortedPosts } from '@utils/contentlayer/posts';
 import Link from 'next/link';
 import { FC } from 'react';
 import { Chip } from './Chip';

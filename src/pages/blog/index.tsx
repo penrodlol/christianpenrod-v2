@@ -1,6 +1,6 @@
 import { Layout } from '@components/Layout';
 import { Posts } from '@components/Posts';
-import { GetSortedPosts, getSortedPosts } from '@utils/contentlayer';
+import { GetSortedPosts, getSortedPosts } from '@utils/contentlayer/posts';
 import { GetStaticProps, InferGetStaticPropsType, NextPage } from 'next';
 
 interface StaticProps {

@@ -2,7 +2,6 @@ import '@fontsource/nunito';
 import '@fontsource/nunito/600.css';
 import '@fontsource/nunito/800.css';
 import '@fontsource/sriracha';
-import { trpc } from '@utils/trpc';
 import dayjs from 'dayjs';
 import advancedFormatPlugin from 'dayjs/plugin/advancedFormat';
 import utcPlugin from 'dayjs/plugin/utc';
@@ -17,4 +16,4 @@ const MyApp: AppType = ({ Component, pageProps }) => (
   <Component {...pageProps} />
 );
 
-export default trpc.withTRPC(MyApp);
+export default MyApp;

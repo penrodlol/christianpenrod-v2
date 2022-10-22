@@ -1,4 +1,4 @@
-import { GetSortedRoles } from '@utils/contentlayer';
+import { GetSortedRoles } from '@utils/contentlayer/roles';
 import { useMDXComponent } from 'next-contentlayer/hooks';
 import { FC, PropsWithChildren } from 'react';
 

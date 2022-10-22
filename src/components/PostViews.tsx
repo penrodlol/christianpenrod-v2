@@ -1,5 +1,5 @@
 import EyeIcon from '@svg/eye.svg';
-import { GetPost } from '@utils/contentlayer';
+import { GetPost } from '@utils/contentlayer/posts';
 import { FC } from 'react';
 import useSWR from 'swr';
 

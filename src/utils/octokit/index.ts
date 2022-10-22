@@ -5,8 +5,6 @@ const octokitGlobal = global as typeof global & { octokit?: typeof graphql };
 
 export const octokit =
   octokitGlobal.octokit ||
-  graphql.defaults({
-    headers: { authorization: `token ${env.GITHUB_TOKEN}` },
-  });
+  graphql.defaults({ headers: { authorization: `token ${env.GITHUB_TOKEN}` } });
 
 if (env.NODE_ENV !== 'production') octokitGlobal.octokit = octokit;

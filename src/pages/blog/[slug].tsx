@@ -7,7 +7,8 @@ import { PostPagination } from '@components/PostPagination';
 import { PostSubHeaderIntroduction } from '@components/PostSubHeader';
 import { PostToc } from '@components/PostToc';
 import { PostViews } from '@components/PostViews';
-import { GetPost, getPost } from '@utils/contentlayer';
+import { GetPost, getPost } from '@utils/contentlayer/posts';
+import { GetRepo, getRepo } from '@utils/octokit/repo';
 import { allPosts } from 'contentlayer/generated';
 import {
   GetStaticPaths,
@@ -18,10 +19,12 @@ import {
 
 interface StaticProps {
   post: GetPost;
+  repo: GetRepo | null;
 }
 
 const Blog: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
   post,
+  repo,
 }) => (
   <Layout title={post.title} description={post.description} tabOnly>
     <div className="flex gap-28">
@@ -29,7 +32,7 @@ const Blog: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
         <PostHeader post={post} />
         <div className="flex flex-col gap-12 mt-fluid-5 mx-auto px-fluid-1">
           <PostMDX content={post.body.code} />
-          {post.repo && <PostGithub name={post.repo} />}
+          {repo && <PostGithub repo={repo} />}
           <div className="self-end">
             <PostViews slug={post.slug} />
           </div>
@@ -53,8 +56,13 @@ export const getStaticPaths: GetStaticPaths = () => {
   return { paths: allPosts.map((p) => `/blog/${p.slug}`), fallback: false };
 };
 
-export const getStaticProps: GetStaticProps<StaticProps> = ({ params }) => {
-  return { props: { post: getPost(String(params?.slug)) } };
+export const getStaticProps: GetStaticProps<StaticProps> = async ({
+  params,
+}) => {
+  const post = getPost(String(params?.slug));
+  const repo = post.repo ? await getRepo(post.repo) : null;
+
+  return { props: { post, repo } };
 };
 
 export default Blog;

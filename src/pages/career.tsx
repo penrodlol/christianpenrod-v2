@@ -1,6 +1,6 @@
 import { Layout } from '@components/Layout';
 import { RoleTimeline } from '@components/RoleTimeline';
-import { getSortedRoles } from '@utils/contentlayer';
+import { getSortedRoles } from '@utils/contentlayer/roles';
 import { GetStaticProps, InferGetStaticPropsType, NextPage } from 'next';
 
 interface StaticProps {
