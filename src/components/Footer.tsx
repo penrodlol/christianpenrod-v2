@@ -67,8 +67,6 @@ const SocialAnchor: FC<{
     className="text-1 cursor-pointer rounded-sm
                hover:text-brand-2 focus-visible:text-brand-2"
   >
-    {cloneElement(children, {
-      className: 'stroke-current fill-current h-6 w-6',
-    })}
+    {cloneElement(children, { className: 'stroke-current h-6 w-6' })}
   </a>
 );
