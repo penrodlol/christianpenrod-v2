@@ -1,6 +1,6 @@
 import dayjs from '@utils/dayjs';
+import { pick } from 'contentlayer/client';
 import { allPosts, Post } from 'contentlayer/generated';
-import { pick } from 'radash';
 
 export type GetSortedPosts = ReturnType<typeof getSortedPosts>;
 export type GetPost = ReturnType<typeof getPost>;

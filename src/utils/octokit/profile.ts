@@ -8,7 +8,6 @@ import {
   RepositoryConnection,
 } from '@octokit/graphql-schema';
 import dayjs from '@utils/dayjs';
-import { counting, max, sift, sum } from 'radash';
 import { octokit } from '.';
 
 interface User {
@@ -38,19 +37,20 @@ export const getProfile = async () => {
       commits:
         user.contributions.totalCommitContributions +
         user.contributions.restrictedContributionsCount,
-      stars: sum(stars.map((n) => n.stargazers.totalCount)),
+      stars: stars.reduce((acc, n) => acc + n.stargazers.totalCount, 0),
       issues: user.issues.totalCount,
       pullRequests: user.pullRequests.totalCount,
       contributedTo: user.contributedTo.totalCount,
-      language: max(
-        Object.entries(
-          counting(
-            sift(languages.map((language) => language.primaryLanguage)),
-            (language) => language.name,
-          ),
-        ),
-        ([, count]) => count,
-      ).shift(),
+      language: languages
+        .sort((a, b) => {
+          const aName = a.primaryLanguage?.name;
+          const bName = b.primaryLanguage?.name;
+          const _a = languages.filter((l) => l.primaryLanguage?.name === aName);
+          const _b = languages.filter((l) => l.primaryLanguage?.name === bName);
+
+          return _a.length - _b.length;
+        })
+        .pop()?.primaryLanguage?.name,
     },
     projects: projects.map((project) => ({
       name: project.name,
