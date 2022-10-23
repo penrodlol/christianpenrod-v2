@@ -1,8 +1,8 @@
 import type { Bio } from 'contentlayer/generated';
+import { ArrowRight } from 'lucide-react';
 import { useMDXComponent } from 'next-contentlayer/hooks';
 import dynamic from 'next/dynamic';
 import { FC, PropsWithChildren } from 'react';
-import { HiArrowRight } from 'react-icons/hi';
 
 export interface BioMdxProps {
   bio: Bio;
@@ -14,7 +14,7 @@ const components = {
   ul: ({ children }: PropsWithChildren) => (<ul className="flex flex-col gap-1">{children}</ul>),
   li: ({ children }: PropsWithChildren) => (
     <li className="flex gap-2 items-center text-lg">
-      <HiArrowRight className="w-7 h-7 fill-accent-2 min-w-[20px]" />
+      <ArrowRight className="w-7 h-7 stroke-accent-2 min-w-[20px]" strokeWidth="3" />
       <p>{children}</p>
     </li>
   ),

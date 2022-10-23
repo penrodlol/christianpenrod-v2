@@ -1,5 +1,5 @@
+import { ExternalLink } from 'lucide-react';
 import { AnchorHTMLAttributes, forwardRef } from 'react';
-import { HiExternalLink } from 'react-icons/hi';
 
 export type AnchorProps = AnchorHTMLAttributes<HTMLAnchorElement>;
 
@@ -20,7 +20,7 @@ export const Anchor = forwardRef<HTMLAnchorElement, AnchorProps>(
     >
       <span>{children}</span>
       {target === '_blank' && (
-        <HiExternalLink className="h-5 w-5" aria-hidden />
+        <ExternalLink className="h-5 w-5" aria-hidden strokeWidth="3" />
       )}
     </a>
   ),

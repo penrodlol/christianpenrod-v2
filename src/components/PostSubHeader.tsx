@@ -1,6 +1,6 @@
+import { Link } from 'lucide-react';
 import HashLink from 'next/link';
 import { PropsWithChildren } from 'react';
-import { HiLink } from 'react-icons/hi';
 
 export const PostSubHeader = ({
   id,
@@ -14,7 +14,7 @@ export const PostSubHeader = ({
                      group-hover:opacity-100 hidden lg:block"
           aria-label={children.toString()}
         >
-          <HiLink className="w-8 h-8" />
+          <Link className="w-7 h-7" strokeWidth="3" />
         </a>
       </HashLink>
       <h2 className="text-accent-2 text-4xl">{children}</h2>

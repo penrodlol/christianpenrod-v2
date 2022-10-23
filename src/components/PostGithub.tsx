@@ -1,9 +1,7 @@
 import { GetRepo } from '@utils/octokit/repo';
+import { Book, GitFork, Star } from 'lucide-react';
 import Link from 'next/link';
 import { FC } from 'react';
-import { BiGitRepoForked } from 'react-icons/bi';
-import { GoRepo } from 'react-icons/go';
-import { HiOutlineStar } from 'react-icons/hi';
 
 export interface PostGithubProps {
   repo: NonNullable<GetRepo>;
@@ -19,7 +17,7 @@ export const PostGithub: FC<PostGithubProps> = ({ repo }) => (
       aria-label={`Check out the github repo: ${repo.name}. ${repo.description}`}
     >
       <div className="flex gap-4 items-center text-brand-2">
-        <GoRepo className="w-6 h-6" />
+        <Book className="w-5 h-5 stroke-brand-2" strokeWidth="3" />
         <span className="text-base text-1 group-hover:text-brand-2">
           {repo.name}
         </span>
@@ -33,11 +31,11 @@ export const PostGithub: FC<PostGithubProps> = ({ repo }) => (
           <span className="text-2 font-semibold">{repo.language}</span>
         </div>
         <div className="flex gap-2 items-center text-brand-2">
-          <HiOutlineStar className="w-5 h-5" />
+          <Star className="w-5 h-5" strokeWidth="3" />
           <span className="text-2 font-semibold">{repo.stars ?? 0}</span>
         </div>
         <div className="flex gap-2 items-center text-brand-2">
-          <BiGitRepoForked className="w-5 h-5" />
+          <GitFork className="w-5 h-5" strokeWidth="3" />
           <span className="text-2 font-semibold">{repo.forks ?? 0}</span>
         </div>
       </div>

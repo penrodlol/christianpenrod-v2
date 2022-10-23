@@ -1,5 +1,5 @@
+import { Clipboard } from 'lucide-react';
 import { PropsWithChildren, useCallback, useRef } from 'react';
-import { HiOutlineClipboard } from 'react-icons/hi';
 
 export const PostCode = ({
   title,
@@ -21,7 +21,7 @@ export const PostCode = ({
       <div className="relative bg-[hsl(231.4,20%,6.9%)] rounded-md elevation-10">
         <div className="absolute right-2 top-2 text-2 opacity-50 hover:text-1">
           <button aria-label="Copy to clipboard" onClick={copy}>
-            <HiOutlineClipboard className="w-7 h-7" />
+            <Clipboard className="w-7 h-7" />
           </button>
         </div>
         <pre ref={preRef} className="overflow-x-auto p-4">

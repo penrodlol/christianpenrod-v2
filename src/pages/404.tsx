@@ -1,6 +1,6 @@
 import { Layout } from '@components/Layout';
+import { ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
-import { HiArrowLeft } from 'react-icons/hi';
 
 const Custom404 = () => {
   return (
@@ -12,9 +12,10 @@ const Custom404 = () => {
         <h2 className="text-3xl">Page Not Found</h2>
         <Link href="/" passHref>
           <a className="group text-xl flex items-center gap-5 justify-center mt-fluid-5">
-            <HiArrowLeft
-              className="w-8 h-8 fill-accent-2 group-hover:fill-accent-1"
+            <ArrowLeft
+              className="w-8 h-8 stroke-accent-2 group-hover:stroke-accent-1"
               aria-hidden
+              strokeWidth="3"
             />
             <span className="text-2 group-hover:text-1">Go to Home</span>
           </a>

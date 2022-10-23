@@ -1,7 +1,7 @@
 import { GetPost } from '@utils/contentlayer/posts';
+import { ArrowLeft, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import { FC } from 'react';
-import { HiArrowNarrowLeft, HiArrowNarrowRight } from 'react-icons/hi';
 import { Anchor } from './Anchor';
 
 export interface PostPaginationProps {
@@ -17,7 +17,7 @@ export const PostPagination: FC<PostPaginationProps> = ({ prev, next }) => (
           <Anchor aria-label={`Previous post: ${prev.title}`}>
             <div className="flex flex-col gap-2">
               <div className="flex gap-2 items-center text-brand-2">
-                <HiArrowNarrowLeft className="w-7 h-7" />
+                <ArrowLeft className="w-7 h-7" strokeWidth="3" />
                 <span className="text-accent-2 text-lg">Prev</span>
               </div>
               <span className="text-lg">{prev.title}</span>
@@ -33,7 +33,7 @@ export const PostPagination: FC<PostPaginationProps> = ({ prev, next }) => (
             <div className="flex flex-col gap-2">
               <div className="self-end flex gap-2 items-center text-brand-2">
                 <span className="text-accent-2 text-lg">Next</span>
-                <HiArrowNarrowRight className="w-7 h-7" />
+                <ArrowRight className="w-7 h-7" strokeWidth="3" />
               </div>
               <span className="text-lg text-right">{next.title}</span>
             </div>

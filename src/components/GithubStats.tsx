@@ -1,13 +1,6 @@
 import { GetProfile } from '@utils/octokit/profile';
+import { Bug, Clock, Code2, GitPullRequest, Star, Users } from 'lucide-react';
 import { FC } from 'react';
-import { BiGitPullRequest } from 'react-icons/bi';
-import {
-  HiClock,
-  HiExclamationCircle,
-  HiOutlineCode,
-  HiStar,
-  HiUserGroup,
-} from 'react-icons/hi';
 
 export interface GithubStatsProps {
   user: GetProfile['user'];
@@ -21,21 +14,21 @@ export const GithubStats: FC<GithubStatsProps> = ({ user }) => (
     <div className="flex flex-col gap-1">
       <div className="flex gap-2">
         <div className="flex items-center gap-2">
-          <HiClock className="w-5 h-5 fill-brand-2" />
+          <Clock className="w-5 h-5 stroke-brand-2" strokeWidth="3" />
           <span>Total Commits:</span>
         </div>
         <span className="text-brand-1">{user.commits}</span>
       </div>
       <div className="flex gap-2">
         <div className="flex items-center gap-2">
-          <HiStar className="w-5 h-5 fill-brand-2" />
+          <Star className="w-5 h-5 stroke-brand-2" strokeWidth="3" />
           <span>Total Stars:</span>
         </div>
         <span className="text-brand-1">{user.stars}</span>
       </div>
       <div className="flex gap-2">
         <div className="flex items-center gap-2">
-          <HiExclamationCircle className="w-5 h-5 fill-brand-2" />
+          <Bug className="w-5 h-5 stroke-brand-2" strokeWidth="3" />
           <span>Total Issues:</span>
         </div>
         <span className="text-brand-1">{user.issues}</span>
@@ -44,21 +37,21 @@ export const GithubStats: FC<GithubStatsProps> = ({ user }) => (
     <div className="flex flex-col gap-1">
       <div className="flex gap-2">
         <div className="flex items-center gap-2">
-          <BiGitPullRequest className="w-5 h-5 fill-brand-2" />
+          <GitPullRequest className="w-5 h-5 stroke-brand-2" strokeWidth="3" />
           <span>Total PRs:</span>
         </div>
         <span className="text-brand-1">{user.pullRequests}</span>
       </div>
       <div className="flex gap-2">
         <div className="flex items-center gap-2">
-          <HiUserGroup className="w-5 h-5 fill-brand-2" />
+          <Users className="w-5 h-5 stroke-brand-2" strokeWidth="3" />
           <span>Contributed To:</span>
         </div>
         <span className="text-brand-1">{user.contributedTo}</span>
       </div>
       <div className="flex gap-2">
         <div className="flex items-center gap-2">
-          <HiOutlineCode className="w-5 h-5 stroke-brand-2" />
+          <Code2 className="w-5 h-5 stroke-brand-2" strokeWidth="3" />
           <span>Top Language:</span>
         </div>
         <span className="text-brand-1">{user.language}</span>
