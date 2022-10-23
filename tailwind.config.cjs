@@ -1,4 +1,8 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
+const fluidTypePlugin = require('tailwindcss-fluid-type');
+const elevationPlugin = require('tailwindcss-elevation')(['responsive']);
+const internalPlugin = require('./tailwind.plugins.cjs');
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ['./src/pages/**/*.tsx', './src/components/**/*.tsx'],
@@ -33,29 +37,10 @@ module.exports = {
     },
   },
   plugins: [
-    require('tailwindcss-fluid-type'),
-    require('tailwindcss-elevation')(['responsive']),
-    ({ addBase, theme }) =>
-      addBase({
-        '*, *::before, *::after': {
-          scrollbarWidth: 'thin',
-          scrollbarColor: `${theme('textColor.3')} transparent`,
-          '&::-webkit-scrollbar': {
-            width: theme('width.1'),
-            height: theme('height.1'),
-          },
-          '&::-webkit-scrollbar-thumb': {
-            backgroundColor: theme('textColor.3'),
-            borderRadius: theme('borderRadius.md'),
-          },
-        },
-        'a, button, input, textarea, [tabindex="0"]': {
-          '&:focus-visible': {
-            outline: `2px solid ${theme('outlineColor.DEFAULT')}`,
-            outlineWidth: theme('outlineWidth.2'),
-            outlineOffset: theme('outlineOffset.4'),
-          },
-        },
-      }),
+    fluidTypePlugin,
+    elevationPlugin,
+    internalPlugin.scollbar,
+    internalPlugin.focusVisible,
+    internalPlugin.prism,
   ],
 };
