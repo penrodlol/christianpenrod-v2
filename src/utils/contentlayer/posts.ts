@@ -6,20 +6,19 @@ export type GetSortedPosts = ReturnType<typeof getSortedPosts>;
 export type GetPost = ReturnType<typeof getPost>;
 
 export const getSortedPosts = (limit?: number) => {
-  const _sortedPosts = allPosts
-    .sort((a, b) => (a.published > b.published ? -1 : 1))
-    .map((post) => ({
-      ...pick(post, ['title', 'description', 'slug', 'tags']),
-      published: dayjs(post.published).format('MMM Do, YYYY'),
-    }));
+  const _sortedPosts = sortPosts().map((post) => ({
+    ...pick(post, ['title', 'description', 'slug', 'tags']),
+    published: dayjs(post.published).format('MMM Do, YYYY'),
+  }));
 
   return limit ? _sortedPosts.slice(0, limit) : _sortedPosts;
 };
 
 export const getPost = (slug: string) => {
-  const post = allPosts.find((post) => post.slug === slug) as NonNullable<Post>;
-  const prev = allPosts[allPosts.indexOf(post) + 1];
-  const next = allPosts[allPosts.indexOf(post) - 1];
+  const posts = sortPosts();
+  const post = posts.find((post) => post.slug === slug) as NonNullable<Post>;
+  const prev = posts[posts.indexOf(post) + 1];
+  const next = posts[posts.indexOf(post) - 1];
 
   return {
     ...post,
@@ -29,3 +28,10 @@ export const getPost = (slug: string) => {
     next: next ? pick(next, ['slug', 'title']) : null,
   };
 };
+
+const sortPosts = () =>
+  allPosts.sort((a, b) => {
+    const aPublished = dayjs(a.published).unix();
+    const bPublished = dayjs(b.published).unix();
+    return bPublished - aPublished;
+  });

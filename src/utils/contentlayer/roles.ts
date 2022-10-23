@@ -5,7 +5,7 @@ export type GetSortedRoles = ReturnType<typeof getSortedRoles>;
 
 export const getSortedRoles = () =>
   allRoles
-    .sort((a, b) => (b.start > a.start ? 1 : -1))
+    .sort((a, b) => dayjs(b.start).unix() - dayjs(a.start).unix())
     .map((role) => ({
       ...role,
       start: dayjs.utc(role.start).format('MMM Do, YYYY'),
