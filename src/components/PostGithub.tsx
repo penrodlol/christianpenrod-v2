@@ -1,9 +1,9 @@
-import GithubBookmarkIcon from '@svg/github-bookmark.svg';
-import GithubForkIcon from '@svg/github-fork.svg';
-import GithubStarIcon from '@svg/github-star.svg';
 import { GetRepo } from '@utils/octokit/repo';
 import Link from 'next/link';
 import { FC } from 'react';
+import { BiGitRepoForked } from 'react-icons/bi';
+import { GoRepo } from 'react-icons/go';
+import { HiOutlineStar } from 'react-icons/hi';
 
 export interface PostGithubProps {
   repo: NonNullable<GetRepo>;
@@ -19,7 +19,7 @@ export const PostGithub: FC<PostGithubProps> = ({ repo }) => (
       aria-label={`Check out the github repo: ${repo.name}. ${repo.description}`}
     >
       <div className="flex gap-4 items-center text-brand-2">
-        <GithubBookmarkIcon width={25} height={25} />
+        <GoRepo className="w-6 h-6" />
         <span className="text-base text-1 group-hover:text-brand-2">
           {repo.name}
         </span>
@@ -33,11 +33,11 @@ export const PostGithub: FC<PostGithubProps> = ({ repo }) => (
           <span className="text-2 font-semibold">{repo.language}</span>
         </div>
         <div className="flex gap-2 items-center text-brand-2">
-          <GithubStarIcon width={20} height={20} />
+          <HiOutlineStar className="w-5 h-5" />
           <span className="text-2 font-semibold">{repo.stars ?? 0}</span>
         </div>
         <div className="flex gap-2 items-center text-brand-2">
-          <GithubForkIcon width={20} height={20} />
+          <BiGitRepoForked className="w-5 h-5" />
           <span className="text-2 font-semibold">{repo.forks ?? 0}</span>
         </div>
       </div>

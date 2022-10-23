@@ -1,5 +1,5 @@
+import dayjs from '@utils/dayjs';
 import { allRoles } from 'contentlayer/generated';
-import dayjs from 'dayjs';
 
 export type GetSortedRoles = ReturnType<typeof getSortedRoles>;
 

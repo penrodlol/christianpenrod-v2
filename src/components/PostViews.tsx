@@ -1,6 +1,6 @@
-import EyeIcon from '@svg/eye.svg';
 import { GetPost } from '@utils/contentlayer/posts';
 import { FC } from 'react';
+import { HiEye } from 'react-icons/hi';
 import useSWR from 'swr';
 
 export interface PostViewsProps {
@@ -16,7 +16,7 @@ export const PostViews: FC<PostViewsProps> = ({ slug }) => {
 
   return (
     <div className="flex gap-2 items-center bg-2 rounded-md elevation-10 text-brand-2 py-3 px-5">
-      <EyeIcon width={25} height={25} />
+      <HiEye className="w-6 h-6" />
       <span className="text-1 text-base tracking-widest">
         {String(views ?? 0).padStart(6, '0')}
       </span>

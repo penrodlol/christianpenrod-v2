@@ -1,6 +1,6 @@
-import LinkIcon from '@svg/link.svg';
 import HashLink from 'next/link';
 import { PropsWithChildren } from 'react';
+import { HiLink } from 'react-icons/hi';
 
 export const PostSubHeader = ({
   id,
@@ -14,7 +14,7 @@ export const PostSubHeader = ({
                      group-hover:opacity-100 hidden lg:block"
           aria-label={children.toString()}
         >
-          <LinkIcon width={30} height={30} />
+          <HiLink className="w-8 h-8" />
         </a>
       </HashLink>
       <h2 className="text-accent-2 text-4xl">{children}</h2>

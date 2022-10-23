@@ -1,16 +1,14 @@
 import env from '@env/client';
-import GithubIcon from '@svg/github.svg';
-import LinkedInIcon from '@svg/linkedin.svg';
-import TwitterIcon from '@svg/twitter.svg';
 import Link from 'next/link';
 import { ReactElement } from 'react';
+import { SiGithub, SiLinkedin, SiTwitter } from 'react-icons/si';
 import { Anchor } from './Anchor';
 
 // prettier-ignore
 const SOCIALS: Array<{ name: string; url?: string; icon: ReactElement }> = [
-  { name: 'Twitter', url: env.TWITTER, icon: <TwitterIcon aria-hidden focusable="false" /> },
-  { name: 'Github', url: env.GITHUB, icon: <GithubIcon aria-hidden focusable="false" /> },
-  { name: 'LinkedIn', url: env.LINKEDIN, icon: <LinkedInIcon aria-hidden focusable="false" /> },
+  { name: 'Twitter', url: env.TWITTER, icon: <SiTwitter aria-hidden focusable="false" className='w-7 h-7' /> },
+  { name: 'Github', url: env.GITHUB, icon: <SiGithub aria-hidden focusable="false" className='w-7 h-7' /> },
+  { name: 'LinkedIn', url: env.LINKEDIN, icon: <SiLinkedin aria-hidden focusable="false" className='w-7 h-7' /> },
 ];
 
 export const Footer = () => (
@@ -28,7 +26,7 @@ export const Footer = () => (
             aria-label={name}
             rel="nofollow noopener noreferrer"
             target="_blank"
-            className="text-1 w-7 h-7 cursor-pointer rounded-sm
+            className="text-1 cursor-pointer rounded-sm
                        hover:text-brand-2 focus-visible:text-brand-2"
           >
             {icon}

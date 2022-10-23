@@ -1,7 +1,7 @@
-import GithubBookmarkIcon from '@svg/github-bookmark.svg';
 import { GetProfile } from '@utils/octokit/profile';
 import Link from 'next/link';
 import { FC } from 'react';
+import { GoRepo } from 'react-icons/go';
 import { Chip } from './Chip';
 
 export interface GithubProjectProps {
@@ -19,7 +19,7 @@ export const GithubProject: FC<GithubProjectProps> = ({ project }) => (
     >
       <div className="flex flex-col-reverse xl:flex-row xl:items-center justify-between gap-2">
         <div className="flex items-center gap-2">
-          <GithubBookmarkIcon className="h-5 w-5 fill-brand-2 translate-y-0.5" />
+          <GoRepo className="h-5 w-5 fill-brand-2 translate-y-0.5" />
           <span className="text-base group-hover:text-brand-2">
             {project.name}
           </span>

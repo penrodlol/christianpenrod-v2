@@ -1,6 +1,6 @@
 import { Layout } from '@components/Layout';
-import ArrowLeftIcon from '@svg/arrow-left.svg';
 import Link from 'next/link';
+import { HiArrowLeft } from 'react-icons/hi';
 
 const Custom404 = () => {
   return (
@@ -12,7 +12,7 @@ const Custom404 = () => {
         <h2 className="text-3xl">Page Not Found</h2>
         <Link href="/" passHref>
           <a className="group text-xl flex items-center gap-5 justify-center mt-fluid-5">
-            <ArrowLeftIcon
+            <HiArrowLeft
               className="w-8 h-8 fill-accent-2 group-hover:fill-accent-1"
               aria-hidden
             />

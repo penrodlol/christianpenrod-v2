@@ -1,8 +1,7 @@
-import ArrowLeftIcon from '@svg/arrow-left.svg';
-import ArrowRightIcon from '@svg/arrow-right.svg';
 import { GetPost } from '@utils/contentlayer/posts';
 import Link from 'next/link';
 import { FC } from 'react';
+import { HiArrowNarrowLeft, HiArrowNarrowRight } from 'react-icons/hi';
 import { Anchor } from './Anchor';
 
 export interface PostPaginationProps {
@@ -18,7 +17,7 @@ export const PostPagination: FC<PostPaginationProps> = ({ prev, next }) => (
           <Anchor aria-label={`Previous post: ${prev.title}`}>
             <div className="flex flex-col gap-2">
               <div className="flex gap-2 items-center text-brand-2">
-                <ArrowLeftIcon width={30} height={30} />
+                <HiArrowNarrowLeft className="w-7 h-7" />
                 <span className="text-accent-2 text-lg">Prev</span>
               </div>
               <span className="text-lg">{prev.title}</span>
@@ -34,7 +33,7 @@ export const PostPagination: FC<PostPaginationProps> = ({ prev, next }) => (
             <div className="flex flex-col gap-2">
               <div className="self-end flex gap-2 items-center text-brand-2">
                 <span className="text-accent-2 text-lg">Next</span>
-                <ArrowRightIcon width={30} height={30} />
+                <HiArrowNarrowRight className="w-7 h-7" />
               </div>
               <span className="text-lg text-right">{next.title}</span>
             </div>

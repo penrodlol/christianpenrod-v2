@@ -7,7 +7,7 @@ import {
   Repository,
   RepositoryConnection,
 } from '@octokit/graphql-schema';
-import dayjs from 'dayjs';
+import dayjs from '@utils/dayjs';
 import { counting, max, sift, sum } from 'radash';
 import { octokit } from '.';
 

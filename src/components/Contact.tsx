@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unknown-property */
-import CloseIcon from '@svg/close.svg';
 import { useCallback, useRef } from 'react';
+import { HiX } from 'react-icons/hi';
 import { Button } from './Button';
 import { Input, Textarea } from './Input';
 
@@ -35,7 +35,7 @@ export const Contact = () => {
           <div className="text-3xl flex items-center justify-between mb-5">
             <span>Contact Me</span>
             <button className="rounded-md" aria-label="Close" onClick={close}>
-              <CloseIcon className="w-10 h-10 fill-brand-2 hover:fill-brand-2" />
+              <HiX className="w-10 h-10 fill-brand-2 hover:fill-brand-2" />
             </button>
           </div>
           <form

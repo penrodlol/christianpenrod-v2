@@ -1,5 +1,5 @@
-import ExternalIcon from '@svg/external.svg';
 import { AnchorHTMLAttributes, forwardRef } from 'react';
+import { HiExternalLink } from 'react-icons/hi';
 
 export type AnchorProps = AnchorHTMLAttributes<HTMLAnchorElement>;
 
@@ -19,7 +19,9 @@ export const Anchor = forwardRef<HTMLAnchorElement, AnchorProps>(
                   ${className ?? ''} ${target === '_blank' ? external : ''}`}
     >
       <span>{children}</span>
-      {target === '_blank' && <ExternalIcon className="h-5 w-5" aria-hidden />}
+      {target === '_blank' && (
+        <HiExternalLink className="h-5 w-5" aria-hidden />
+      )}
     </a>
   ),
 );

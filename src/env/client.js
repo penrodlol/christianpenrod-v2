@@ -1,4 +1,3 @@
-// @ts-check
 const env = {
   URL: process.env.NEXT_PUBLIC_URL,
   TWITTER: process.env.NEXT_PUBLIC_TWITTER,
