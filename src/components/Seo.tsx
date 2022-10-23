@@ -35,7 +35,7 @@ export const SEO: FC<SeoProps> = ({ title, description }) => {
       <meta name="og:image:width" content="1280" />
       <meta name="og:image:height" content="675" />
 
-      <link rel="icon" type="image/svg+xml" href="/svg/favicon.svg" />
+      <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
       <link href={`${env.URL}${asPath}`} rel="canonical" />
     </Head>
