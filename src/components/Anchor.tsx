@@ -20,7 +20,11 @@ export const Anchor = forwardRef<HTMLAnchorElement, AnchorProps>(
     >
       <span>{children}</span>
       {target === '_blank' && (
-        <ExternalLink className="h-5 w-5" aria-hidden strokeWidth="3" />
+        <ExternalLink
+          className="h-5 w-5 -translate-y-[1px]"
+          aria-hidden
+          strokeWidth="3"
+        />
       )}
     </a>
   ),
