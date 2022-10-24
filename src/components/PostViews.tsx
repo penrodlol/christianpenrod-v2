@@ -15,10 +15,7 @@ export const PostViews: FC<PostViewsProps> = ({ slug }) => {
   );
 
   return (
-    <div
-      className="flex gap-2 items-center bg-2 rounded-md elevation-10 text-brand-2 py-3 px-5"
-      onClick={async () => fetch(`/api/post/like/${slug}`, { method: 'POST' })}
-    >
+    <div className="flex gap-2 items-center bg-2 rounded-md elevation-10 text-brand-2 py-3 px-5">
       <Eye className="w-6 h-6 stroke-brand-2" strokeWidth="3" />
       <span className="text-1 text-base tracking-widest">
         {String(views ?? 0).padStart(6, '0')}
