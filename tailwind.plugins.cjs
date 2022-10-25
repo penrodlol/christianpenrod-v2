@@ -7,14 +7,14 @@ module.exports = {
       '*, *::before, *::after': {
         scrollbarWidth: 'thin',
         scrollbarColor: `${theme('textColor.3')} transparent`,
-        '&::-webkit-scrollbar': {
-          width: theme('width.1'),
-          height: theme('height.1'),
-        },
-        '&::-webkit-scrollbar-thumb': {
-          backgroundColor: theme('textColor.3'),
-          borderRadius: theme('borderRadius.md'),
-        },
+      },
+      '::-webkit-scrollbar': {
+        width: theme('width.1'),
+        height: theme('height.1'),
+      },
+      '::-webkit-scrollbar-thumb': {
+        backgroundColor: theme('textColor.3'),
+        borderRadius: theme('borderRadius.md'),
       },
     }),
   ),
