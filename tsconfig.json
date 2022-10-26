@@ -17,11 +17,12 @@
     "downlevelIteration": true,
     "baseUrl": ".",
     "paths": {
-      "@components/*": ["src/components/*"],
-      "@env/*": ["src/env/*"],
-      "@utils/*": ["src/utils/*"],
+      "@components/*": ["components/*"],
+      "@env/*": ["env/*"],
+      "@utils/*": ["utils/*"],
       "contentlayer/generated": ["./.contentlayer/generated"]
-    }
+    },
+    "plugins": [{ "name": "next" }]
   },
   "include": [
     "next-env.d.ts",
@@ -29,7 +30,9 @@
     "**/*.tsx",
     "**/*.mjs",
     "**/*.cjs",
-    ".contentlayer/generated"
+    ".contentlayer/generated",
+    ".next/types/**/*.ts",
+    "tailwind.plugins.js"
   ],
   "exclude": ["node_modules"]
 }
