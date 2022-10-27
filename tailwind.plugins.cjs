@@ -22,7 +22,7 @@ module.exports = {
     addBase({
       'a, button, input, textarea, [tabindex="0"]': {
         '&:focus-visible': {
-          outline: `2px solid ${theme('outlineColor.DEFAULT')}`,
+          outline: `solid ${theme('outlineColor.DEFAULT')}`,
           outlineWidth: theme('outlineWidth.2'),
           outlineOffset: theme('outlineOffset.4'),
         },
@@ -50,6 +50,17 @@ module.exports = {
         '--prism-variable': theme('colors.brand.2'),
         '--prism-json-property': theme('colors.accent.2'),
         '--prism-selection-background': theme('backgroundColor.1'),
+      },
+    }),
+  ),
+  hoverCard: plugin(({ theme, addUtilities }) =>
+    addUtilities({
+      '.hover-card': {
+        '&:hover': {
+          outline: `solid ${theme('outlineColor.DEFAULT')}`,
+          outlineWidth: theme('outlineWidth.2'),
+          outlineOffset: theme('outlineOffset.4'),
+        },
       },
     }),
   ),
