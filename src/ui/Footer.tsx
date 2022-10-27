@@ -3,6 +3,7 @@
 import env from '@env/client.mjs';
 import { Github, Linkedin, Twitter } from 'lucide-react';
 import { cloneElement, FC, ReactElement } from 'react';
+import { Anchor } from './Anchor';
 
 export const Footer = () => (
   <footer
@@ -25,6 +26,26 @@ export const Footer = () => (
         <div className="flex gap-2">
           <span>Created by: Christian Penrod</span>
           <strong className="text-1">©2022</strong>
+        </div>
+        <div>
+          <span className="mr-2">Built with:</span>
+          <Anchor
+            href="https://nextjs.org"
+            className="font-bold text-1"
+            rel="nofollow noopener noreferrer"
+            target="_blank"
+          >
+            Next.js
+          </Anchor>
+          <span className="mx-2">on</span>
+          <Anchor
+            href="https://netlify.com/docs"
+            className="font-bold text-1"
+            rel="nofollow noopener noreferrer"
+            target="_blank"
+          >
+            Netlify
+          </Anchor>
         </div>
       </div>
     </div>
