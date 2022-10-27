@@ -1,14 +1,14 @@
-import { RolesTimeline } from '@ui/RoleMDX';
+import { RolesTimeline } from '@ui/RolesTimeline';
 import { Title } from '@ui/Title';
 
-const CareerPage = async () => {
+const CareerPage = () => {
   return (
-    <div>
+    <>
       <Title title="Career" subtitle="What has Christian done?" />
       <section>
         <RolesTimeline />
       </section>
-    </div>
+    </>
   );
 };
 

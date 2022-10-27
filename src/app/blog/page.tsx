@@ -1,10 +1,10 @@
 import { Title } from '@ui/Title';
 
-const BlogPage = async () => {
+const BlogPage = () => {
   return (
-    <div>
+    <>
       <Title title="Blog" subtitle="What has Christian wrote?" />
-    </div>
+    </>
   );
 };
 
