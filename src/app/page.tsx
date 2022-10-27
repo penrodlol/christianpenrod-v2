@@ -40,7 +40,7 @@ const HomePage = async () => {
       </div>
       <section className="flex flex-col gap-fluid-2">
         <h3 className="text-2 text-xl">Recent Posts</h3>
-        <Posts />
+        <Posts limit={3} />
       </section>
     </div>
   );

@@ -2,12 +2,16 @@
 
 import { getSortedPosts } from '@utils/contentlayer/posts';
 import Link from 'next/link';
-import { useMemo } from 'react';
+import { FC, useMemo } from 'react';
 import { Chip } from './Chip';
 import { Line } from './Line';
 
-export const Posts = () => {
-  const posts = useMemo(() => getSortedPosts(3), []);
+export interface PostsProps {
+  limit?: Parameters<typeof getSortedPosts>[0];
+}
+
+export const Posts: FC<PostsProps> = ({ limit }) => {
+  const posts = useMemo(() => getSortedPosts(limit), [limit]);
 
   return (
     <ul className="grid gap-fluid-4 lg:grid-cols-3">
