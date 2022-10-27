@@ -17,9 +17,10 @@
     "downlevelIteration": true,
     "baseUrl": ".",
     "paths": {
-      "@components/*": ["components/*"],
-      "@env/*": ["env/*"],
-      "@utils/*": ["utils/*"],
+      "@components/*": ["src/components/*"],
+      "@env/*": ["src/env/*"],
+      "@ui/*": ["src/ui/*"],
+      "@utils/*": ["src/utils/*"],
       "contentlayer/generated": ["./.contentlayer/generated"]
     },
     "plugins": [{ "name": "next" }]
@@ -31,8 +32,7 @@
     "**/*.mjs",
     "**/*.cjs",
     ".contentlayer/generated",
-    ".next/types/**/*.ts",
-    "tailwind.plugins.js"
+    ".next/types/**/*.ts"
   ],
   "exclude": ["node_modules"]
 }

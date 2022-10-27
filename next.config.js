@@ -1,11 +1,10 @@
+const { withContentlayer } = require('next-contentlayer');
+
 /** @type {import('next').NextConfig} */
-const nextConfig = {
+const nextConfig = withContentlayer({
   reactStrictMode: true,
   swcMinify: true,
-  experimental: {
-    appDir: true,
-    serverComponentsExternalPackages: ['prisma'],
-  },
-};
+  experimental: { appDir: true },
+});
 
 module.exports = nextConfig;

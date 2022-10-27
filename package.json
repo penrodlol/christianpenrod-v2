@@ -10,6 +10,8 @@
     "build": "next build"
   },
   "dependencies": {
+    "@fontsource/nunito": "^4.5.11",
+    "@fontsource/sriracha": "^4.5.9",
     "@next/font": "^13.0.0",
     "@octokit/graphql": "^5.0.1",
     "@octokit/graphql-schema": "^12.4.1",
@@ -31,11 +33,13 @@
     "@typescript-eslint/eslint-plugin": "^5.37.0",
     "@typescript-eslint/parser": "^5.37.0",
     "autoprefixer": "^10.4.12",
+    "concurrently": "^7.5.0",
     "eslint": "8.15.0",
     "eslint-config-next": "^13.0.0",
     "next-sitemap": "^3.1.22",
     "postcss": "^8.4.18",
     "prettier": "^2.6.2",
+    "prettier-plugin-tailwindcss": "^0.1.13",
     "prisma": "^4.5.0",
     "reading-time": "^1.5.0",
     "rehype-external-links": "^2.0.1",
