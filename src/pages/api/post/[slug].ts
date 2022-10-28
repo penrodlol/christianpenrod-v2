@@ -11,12 +11,20 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 
   const post = payload.data;
   const user = getUser(req);
+  const transaction = await prisma.$transaction([
+    prisma.postView.upsert({
+      update: { views: { increment: 1 } },
+      create: { post },
+      where: { post },
+      select: { views: true },
+    }),
+    prisma.postLike.aggregate({ _count: { post: true }, where: { post } }),
+    prisma.postLike.findUnique({ where: { post_user: { post, user } } }),
+  ]);
 
-  await prisma.postLike.upsert({
-    update: {},
-    create: { post, user },
-    where: { post_user: { post, user } },
+  res.status(200).json({
+    views: transaction[0].views ?? 0,
+    likes: transaction[1]._count.post ?? 0,
+    liked: !!transaction[2],
   });
-
-  res.status(200).json({ post });
 };
