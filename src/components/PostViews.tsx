@@ -15,10 +15,10 @@ export const PostViews: FC<PostViewsProps> = ({ slug }) => {
   );
 
   return (
-    <div className="flex gap-3 items-center rounded-md elevation-10 bg-2 py-3 px-5">
-      <Eye className="w-6 h-6 stroke-brand-2" strokeWidth="3" aria-hidden />
-      <span className="text-1 text-base tracking-widest">
-        {String(views).padStart(6, '0')}
+    <div className="flex items-center gap-3 rounded-md bg-2 py-3 px-5 elevation-10">
+      <Eye className="h-6 w-6 stroke-brand-2" strokeWidth="3" aria-hidden />
+      <span className="tracking-widest text-1 text-base">
+        {String(views ?? 0).padStart(6, '0')}
       </span>
     </div>
   );
