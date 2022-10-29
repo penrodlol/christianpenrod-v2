@@ -22,11 +22,7 @@ export const Anchor = forwardRef<HTMLAnchorElement, AnchorProps>(
                   hover:after:border-solid hover:after:border-brand-2 hover:after:content-[""]`}
     >
       <span>{children}</span>
-      <ExternalLink
-        className="h-5 w-5 -translate-y-[1px]"
-        aria-hidden
-        strokeWidth="3"
-      />
+      <ExternalLink className="h-5 w-5 -translate-y-[1px]" aria-hidden />
     </a>
   ),
 );

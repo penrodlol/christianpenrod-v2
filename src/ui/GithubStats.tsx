@@ -16,21 +16,21 @@ export const GithubStats: FC<GithubStatsProps> = ({ user }) => (
     <div className="flex flex-col gap-1">
       <div className="flex gap-2">
         <div className="flex items-center gap-2">
-          <Clock className="h-5 w-5 stroke-brand-2" strokeWidth="3" />
+          <Clock className="h-5 w-5 stroke-brand-2" />
           <span>Total Commits:</span>
         </div>
         <span className="text-brand-1">{user.commits}</span>
       </div>
       <div className="flex gap-2">
         <div className="flex items-center gap-2">
-          <Star className="h-5 w-5 stroke-brand-2" strokeWidth="3" />
+          <Star className="h-5 w-5 stroke-brand-2" />
           <span>Total Stars:</span>
         </div>
         <span className="text-brand-1">{user.stars}</span>
       </div>
       <div className="flex gap-2">
         <div className="flex items-center gap-2">
-          <Bug className="h-5 w-5 stroke-brand-2" strokeWidth="3" />
+          <Bug className="h-5 w-5 stroke-brand-2" />
           <span>Total Issues:</span>
         </div>
         <span className="text-brand-1">{user.issues}</span>
@@ -39,21 +39,21 @@ export const GithubStats: FC<GithubStatsProps> = ({ user }) => (
     <div className="flex flex-col gap-1">
       <div className="flex gap-2">
         <div className="flex items-center gap-2">
-          <GitPullRequest className="h-5 w-5 stroke-brand-2" strokeWidth="3" />
+          <GitPullRequest className="h-5 w-5 stroke-brand-2" />
           <span>Total PRs:</span>
         </div>
         <span className="text-brand-1">{user.pullRequests}</span>
       </div>
       <div className="flex gap-2">
         <div className="flex items-center gap-2">
-          <Users className="h-5 w-5 stroke-brand-2" strokeWidth="3" />
+          <Users className="h-5 w-5 stroke-brand-2" />
           <span>Contributed To:</span>
         </div>
         <span className="text-brand-1">{user.contributedTo}</span>
       </div>
       <div className="flex gap-2">
         <div className="flex items-center gap-2">
-          <Code2 className="h-5 w-5 stroke-brand-2" strokeWidth="3" />
+          <Code2 className="h-5 w-5 stroke-brand-2" />
           <span>Top Language:</span>
         </div>
         <span className="text-brand-1">{user.language}</span>

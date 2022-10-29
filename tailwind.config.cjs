@@ -43,5 +43,6 @@ module.exports = {
     internalPlugin.focusVisible,
     internalPlugin.prism,
     internalPlugin.hoverCard,
+    internalPlugin.svg,
   ],
 };

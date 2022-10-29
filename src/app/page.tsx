@@ -20,15 +20,15 @@ const HomePage = async () => {
           <Line className="my-8 h-2 max-w-lg" />
           <ul className="flex flex-col gap-1">
             <li className="flex items-center gap-2 text-lg">
-              <ArrowRight className="h-7 w-7 stroke-accent-2" strokeWidth="3" />
+              <ArrowRight className="h-7 w-7 min-w-[20px] stroke-accent-2" />
               Web Developer <Anchor href={env.MCKESSON}>@McKesson</Anchor>
             </li>
             <li className="flex items-center gap-2 text-lg">
-              <ArrowRight className="h-7 w-7 stroke-accent-2" strokeWidth="3" />
+              <ArrowRight className="h-7 w-7 min-w-[20px] stroke-accent-2" />
               CS Bachelors <Anchor href={env.LAROCHE}>@LaRoche</Anchor>
             </li>
             <li className="flex items-center gap-2 text-lg">
-              <ArrowRight className="h-7 w-7 stroke-accent-2" strokeWidth="3" />
+              <ArrowRight className="h-7 w-7 min-w-[20px] stroke-accent-2" />
               Pittsburgh, PA, USA
             </li>
           </ul>

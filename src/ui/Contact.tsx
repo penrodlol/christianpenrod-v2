@@ -37,10 +37,7 @@ export const Contact = () => {
           <div className="mb-5 flex items-center justify-between text-3xl">
             <span>Contact Me</span>
             <button className="rounded-md" aria-label="Close" onClick={close}>
-              <X
-                className="h-10 w-10 stroke-brand-2 hover:stroke-brand-2"
-                strokeWidth="3"
-              />
+              <X className="h-10 w-10 stroke-brand-2 hover:stroke-brand-2" />
             </button>
           </div>
           <form

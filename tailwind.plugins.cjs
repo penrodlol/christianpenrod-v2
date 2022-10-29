@@ -64,4 +64,5 @@ module.exports = {
       },
     }),
   ),
+  svg: plugin(({ addBase }) => addBase({ svg: { strokeWidth: '3px' } })),
 };
