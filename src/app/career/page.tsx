@@ -1,5 +1,5 @@
-import { RolesTimeline } from '@ui/RolesTimeline';
 import { Title } from '@ui/Title';
+import { RolesTimeline } from './RolesTimeline';
 
 const CareerPage = () => {
   return (

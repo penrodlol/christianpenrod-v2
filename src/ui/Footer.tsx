@@ -29,21 +29,11 @@ export const Footer = () => (
         </div>
         <div>
           <span className="mr-2">Built with:</span>
-          <Anchor
-            href="https://nextjs.org"
-            className="font-bold text-1"
-            rel="nofollow noopener noreferrer"
-            target="_blank"
-          >
+          <Anchor href="https://nextjs.org" className="font-bold text-1">
             Next.js
           </Anchor>
           <span className="mx-2">on</span>
-          <Anchor
-            href="https://netlify.com/docs"
-            className="font-bold text-1"
-            rel="nofollow noopener noreferrer"
-            target="_blank"
-          >
+          <Anchor href="https://netlify.com/docs" className="font-bold text-1">
             Netlify
           </Anchor>
         </div>

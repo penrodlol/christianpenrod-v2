@@ -1,10 +1,12 @@
-import { BioMDX } from '@ui/BioMDX';
+import env from '@env/client.mjs';
+import { Anchor } from '@ui/Anchor';
 import { Contact } from '@ui/Contact';
 import { GithubProject } from '@ui/GithubProject';
 import { GithubStats } from '@ui/GithubStats';
 import { Line } from '@ui/Line';
 import { Posts } from '@ui/Posts';
 import { getProfile } from '@utils/octokit/profile';
+import { ArrowRight } from 'lucide-react';
 
 const HomePage = async () => {
   const profile = await getProfile();
@@ -16,7 +18,20 @@ const HomePage = async () => {
           <h1 className="text-6xl">Hi, I&apos;m Christian</h1>
           <h2 className="text-2 text-2xl">Front-End Web Developer</h2>
           <Line className="my-8 h-2 max-w-lg" />
-          <BioMDX />
+          <ul className="flex flex-col gap-1">
+            <li className="flex items-center gap-2 text-lg">
+              <ArrowRight className="h-7 w-7 stroke-accent-2" strokeWidth="3" />
+              Web Developer <Anchor href={env.MCKESSON}>@McKesson</Anchor>
+            </li>
+            <li className="flex items-center gap-2 text-lg">
+              <ArrowRight className="h-7 w-7 stroke-accent-2" strokeWidth="3" />
+              CS Bachelors <Anchor href={env.LAROCHE}>@LaRoche</Anchor>
+            </li>
+            <li className="flex items-center gap-2 text-lg">
+              <ArrowRight className="h-7 w-7 stroke-accent-2" strokeWidth="3" />
+              Pittsburgh, PA, USA
+            </li>
+          </ul>
           <div className="mt-fluid-5 sm:max-w-max">
             <Contact />
           </div>
