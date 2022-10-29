@@ -1,5 +1,4 @@
 import { prisma } from '@utils/prisma';
-import { getUser } from '@utils/user';
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { z } from 'zod';
 
@@ -10,13 +9,12 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
   if (!payload.success) return res.status(400).json({ error: 'Invalid post' });
 
   const post = payload.data;
-  const user = getUser(req);
-
-  await prisma.postLike.upsert({
-    update: {},
-    create: { post, user },
-    where: { post_user: { post, user } },
+  const { views } = await prisma.postView.upsert({
+    update: { views: { increment: 1 } },
+    create: { post },
+    where: { post },
+    select: { views: true },
   });
 
-  res.status(200).json({ post });
+  res.status(200).json(views);
 };

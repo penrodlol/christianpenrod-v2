@@ -4,9 +4,9 @@ import { PostGithub } from '@components/PostGithub';
 import { PostHeader } from '@components/PostHeader';
 import { PostMDX } from '@components/PostMDX';
 import { PostPagination } from '@components/PostPagination';
-import { PostStats } from '@components/PostStats';
 import { PostSubHeaderIntroduction } from '@components/PostSubHeader';
 import { PostToc } from '@components/PostToc';
+import { PostViews } from '@components/PostViews';
 import { GetPost, getPost } from '@utils/contentlayer/posts';
 import { GetRepo, getRepo } from '@utils/octokit/repo';
 import { allPosts } from 'contentlayer/generated';
@@ -33,7 +33,9 @@ const Blog: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
         <div className="flex flex-col gap-12 mt-fluid-5 mx-auto px-fluid-1">
           <PostMDX content={post.body.code} />
           {repo && <PostGithub repo={repo} />}
-          <PostStats slug={post.slug} />
+          <div className="self-end">
+            <PostViews slug={post.slug} />
+          </div>
           <Line />
           <PostPagination prev={post.prev} next={post.next} />
         </div>
