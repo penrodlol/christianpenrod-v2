@@ -64,5 +64,12 @@ module.exports = {
       },
     }),
   ),
-  svg: plugin(({ addBase }) => addBase({ svg: { strokeWidth: '3px' } })),
+  svg: plugin(({ theme, addBase }) =>
+    addBase({
+      svg: {
+        stroke: theme('colors.brand.2'),
+        strokeWidth: '3px',
+      },
+    }),
+  ),
 };

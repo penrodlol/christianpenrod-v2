@@ -20,7 +20,7 @@ export const GithubProject: FC<GithubProjectProps> = ({ project }) => (
   >
     <div className="flex flex-col-reverse justify-between gap-2 xl:flex-row xl:items-center">
       <div className="flex items-center gap-2">
-        <Book className="h-5 w-5 translate-y-0.5 stroke-brand-2" />
+        <Book className="h-5 w-5 translate-y-0.5" />
         <span className="text-base group-hover:text-brand-2">
           {project.name}
         </span>
