@@ -12,11 +12,3 @@ model PostView {
   post  String @unique @db.VarChar(255)
   views Int    @default(1)
 }
-
-model PostLike {
-  id   Int    @id @default(autoincrement())
-  post String @db.VarChar(255)
-  user String @db.VarChar(255)
-
-  @@unique([post, user])
-}
