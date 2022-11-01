@@ -2,6 +2,8 @@ import { prisma } from '@utils/prisma';
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { z } from 'zod';
 
+export const config = { runtime: 'experimental-edge' };
+
 // eslint-disable-next-line import/no-anonymous-default-export
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   const payload = z.string().safeParse(req.query.slug);
