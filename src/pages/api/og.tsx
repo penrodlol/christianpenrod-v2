@@ -26,11 +26,11 @@ const handler = () =>
             <ul tw="flex flex-col text-xl">
               <li tw="mb-1">
                 Web Developer
-                <strong tw="text-[#b7bdf8} ml-1">@McKesson</strong>
+                <strong tw="text-[#b7bdf8] ml-1">@McKesson</strong>
               </li>
               <li tw="mb-1">
                 CS Bachelors
-                <strong tw="text-[#b7bdf8} ml-1">@LaRoche</strong>
+                <strong tw="text-[#b7bdf8] ml-1">@LaRoche</strong>
               </li>
               <li>Pittsburgh, PA, USA</li>
             </ul>
