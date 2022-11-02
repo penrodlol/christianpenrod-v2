@@ -5,6 +5,7 @@ import { FC } from 'react';
 
 const TITLE = 'Christian Penrod | Front-End Web Developer';
 const DESC = 'Developing for the web since 2015, based in Pittsburgh PA.';
+const OG = `${env.URL}/api/og`;
 
 export interface SeoProps {
   title?: string;
@@ -30,7 +31,7 @@ export const SEO: FC<SeoProps> = ({ title, description }) => {
       <meta name="og:type" content="website" />
       <meta name="og:title" content={title ?? TITLE} />
       <meta name="og:description" content={description ?? DESC} />
-      {/* <meta name="og:image" content={``} /> */}
+      <meta name="og:image" content={OG} />
       <meta name="og:image:alt" content={`Banner for ${env.URL}`} />
       <meta name="og:image:width" content="1280" />
       <meta name="og:image:height" content="675" />
