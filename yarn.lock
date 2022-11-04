@@ -170,16 +170,6 @@
   resolved "https://registry.yarnpkg.com/@fal-works/esbuild-plugin-global-externals/-/esbuild-plugin-global-externals-2.1.2.tgz#c05ed35ad82df8e6ac616c68b92c2282bd083ba4"
   integrity sha512-cEee/Z+I12mZcFJshKcCqC8tuX5hG3s+d+9nZ3LabqKF1vKdF41B92pJVCBggjAGORAeOzyyDDKrZwIkLffeOQ==
 
-"@fontsource/nunito@^4.5.11":
-  version "4.5.11"
-  resolved "https://registry.yarnpkg.com/@fontsource/nunito/-/nunito-4.5.11.tgz#0992075ddc3f3ed8e3e83bf5944b1b0efd4c24dd"
-  integrity sha512-j2WIvzsI+6wjbJ/gQjyHJL/SYZxyg1qomvRswMZAWj2lvv+eX4kzJOSbr9YhZLYywoMspYb0643EO4cHRy6zpQ==
-
-"@fontsource/sriracha@^4.5.9":
-  version "4.5.9"
-  resolved "https://registry.yarnpkg.com/@fontsource/sriracha/-/sriracha-4.5.9.tgz#50aac63926e5f2e5e8902170b12802caa8a409f4"
-  integrity sha512-BgpfmFyqHDSy3f4YeAD+/sywUrsTxXp1oiZLVpUnR5/W2UihlBcFL681+Ugtg7zYyW05+AL7wqGUc6fO9l3vwg==
-
 "@grpc/grpc-js@^1.5.9":
   version "1.7.3"
   resolved "https://registry.yarnpkg.com/@grpc/grpc-js/-/grpc-js-1.7.3.tgz#f2ea79f65e31622d7f86d4b4c9ae38f13ccab99a"
