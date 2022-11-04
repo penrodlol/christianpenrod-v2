@@ -1,15 +1,15 @@
-import '@fontsource/nunito';
-import '@fontsource/nunito/600.css';
-import '@fontsource/nunito/800.css';
-import '@fontsource/sriracha';
+import { Nunito, Sriracha } from '@next/font/google';
 import { Footer } from '@ui/Footer';
 import { Header } from '@ui/Header';
 import 'prism-theme-vars/base.css';
 import { PropsWithChildren } from 'react';
 import 'tailwindcss/tailwind.css';
 
+const serif = Nunito({ weight: ['600', '800'], variable: '--font-serif' });
+const fancy = Sriracha({ weight: '400', variable: '--font-fancy' });
+
 const RootLayout = ({ children }: PropsWithChildren) => (
-  <html lang="en">
+  <html lang="en" className={`${serif.variable} ${fancy.variable}`}>
     <head />
     <body
       className="bg-3 font-serif font-extrabold tracking-wide text-1 selection:bg-1

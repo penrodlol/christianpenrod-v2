@@ -8,8 +8,8 @@ module.exports = {
   content: ['./src/app/**/*.tsx', './src/ui/**/*.tsx'],
   theme: {
     fontFamily: {
-      serif: ["'Nunito', system-ui"],
-      fancy: ["'Sriracha', system-ui"],
+      serif: ['var(--font-serif), system-ui'],
+      fancy: ['var(--font-fancy), system-ui'],
     },
     extend: {
       textColor: { 1: '#cdd6f4', 2: '#bac2de', 3: '#a6adc8' },
