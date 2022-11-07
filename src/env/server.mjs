@@ -1,9 +1,15 @@
-const env = {
-  NODE_ENV: process.env.NODE_ENV,
-  DATABASE_URL: process.env.DATABASE_URL,
-  GITHUB_USERNAME: process.env.GITHUB_USERNAME,
-  GITHUB_TOKEN: process.env.GITHUB_TOKEN,
-  SHA_256: process.env.SHA_256,
-};
+// @ts-check
+import { z } from 'zod';
 
-export default env;
+const schema = z.object({
+  NODE_ENV: z.enum(['development', 'production']),
+  DATABASE_URL: z.string().url(),
+  GITHUB_USERNAME: z.string(),
+  GITHUB_TOKEN: z.string(),
+});
+
+const env = schema.safeParse(process.env);
+
+if (!env.success) throw new Error('Invalid environment variables');
+
+export default env.data;

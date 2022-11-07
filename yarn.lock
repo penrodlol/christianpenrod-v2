@@ -3368,7 +3368,7 @@ next-sitemap@^3.1.22:
     "@corex/deepmerge" "^4.0.29"
     minimist "^1.2.6"
 
-next@^13.0.0:
+next@^13.0.2:
   version "13.0.2"
   resolved "https://registry.yarnpkg.com/next/-/next-13.0.2.tgz#b8c8642c70f736ed91105645391d335fc51c8f62"
   integrity sha512-uQ5z5e4D9mOe8+upy6bQdYYjo/kk1v3jMW87kTy2TgAyAsEO+CkwRnMgyZ4JoHEnhPZLHwh7dk0XymRNLe1gFw==
