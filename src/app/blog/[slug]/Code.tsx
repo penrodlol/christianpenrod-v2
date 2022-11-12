@@ -1,12 +1,11 @@
 'use client';
 
 import { Clipboard } from 'lucide-react';
-import { PropsWithChildren, useCallback, useRef } from 'react';
+import { FC, HTMLAttributes, useCallback, useRef } from 'react';
 
-export const Code = ({
-  title,
-  children,
-}: PropsWithChildren<HTMLPreElement>) => {
+export type CodeProps = HTMLAttributes<HTMLPreElement>;
+
+export const Code: FC<CodeProps> = ({ title, children }) => {
   const preRef = useRef<HTMLPreElement>(null);
   const copy = useCallback(
     () => navigator.clipboard.writeText(preRef.current?.innerText ?? ''),

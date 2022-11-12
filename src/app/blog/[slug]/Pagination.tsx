@@ -1,8 +1,8 @@
 'use client';
 
+import { NextAnchor } from '@ui/Anchor';
 import { GetPost } from '@utils/contentlayer/posts';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
-import Link from 'next/link';
 import { FC } from 'react';
 
 export interface PaginationProps {
@@ -14,7 +14,7 @@ export const Pagination: FC<PaginationProps> = ({ prev, next }) => (
   <div className="flex justify-between gap-2">
     {prev && (
       <div className={next ? 'max-w-[50%]' : 'max-w-[75%]'}>
-        <Link
+        <NextAnchor
           href={`blog/${prev.slug}`}
           aria-label={`Previous post: ${prev.title}`}
         >
@@ -25,12 +25,12 @@ export const Pagination: FC<PaginationProps> = ({ prev, next }) => (
             </div>
             <span className="text-lg">{prev.title}</span>
           </div>
-        </Link>
+        </NextAnchor>
       </div>
     )}
     {next && (
       <div className={`ml-auto ${prev ? 'max-w-[50%]' : 'max-w-[75%]'}`}>
-        <Link
+        <NextAnchor
           href={`blog/${next.slug}`}
           aria-label={`Next post: ${next.title}`}
         >
@@ -41,7 +41,7 @@ export const Pagination: FC<PaginationProps> = ({ prev, next }) => (
             </div>
             <span className="text-right text-lg">{next.title}</span>
           </div>
-        </Link>
+        </NextAnchor>
       </div>
     )}
   </div>

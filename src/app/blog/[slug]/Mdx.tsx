@@ -1,27 +1,33 @@
 'use client';
 
+import { Anchor, AnchorProps } from '@ui/Anchor';
 import { GetPost } from '@utils/contentlayer/posts';
-import { MDXComponents } from 'mdx/types';
 import { useMDXComponent } from 'next-contentlayer/hooks';
-import { FC, PropsWithChildren } from 'react';
+import { FC } from 'react';
+import { Code, CodeProps } from './Code';
+import { Note, NoteProps } from './Note';
+import { OrderedList, OrderedListProps } from './OrderedList';
+import { SubHeader, SubHeaderProps } from './SubHeader';
+import { Tabs, TabsProps } from './Tabs';
 
-export interface PostMDXProps {
+export interface MDXProps {
   content: GetPost['body']['code'];
 }
 
-// prettier-ignore
-const components: MDXComponents = {
-  p: ({children}: PropsWithChildren) => <p className='text-base !leading-9'>{children}</p>,
-  em: ({children}: PropsWithChildren) => <em className='not-italic font-fancy'>{children}</em>,
-  // a: dynamic(() => import('@ui/Anchor').then(m => m.Anchor)),
-  // h2: dynamic(() => import('./SubHeader').then(m => m.SubHeader)),
-  // pre: dynamic(() => import('./Code').then(m => m.Code)),
-  // blockquote: dynamic(() => import('./Note').then(m => m.Note)),
-  // ol: dynamic(() => import('./OrderedList').then(m => m.OrderedList)),
-  // Tabs: dynamic(() => import('./Tabs').then(m => m.Tabs)),
-};
-
-export const MDX: FC<PostMDXProps> = ({ content }) => {
+export const MDX: FC<MDXProps> = ({ content }) => {
   const MDX = useMDXComponent(content);
-  return <MDX components={components} />;
+  return (
+    <MDX
+      components={{
+        p: ({ children }) => <p className="!leading-9 text-base">{children}</p>,
+        em: ({ children }) => <em className="font-fancy">{children}</em>,
+        a: (props: AnchorProps) => <Anchor {...props} />,
+        h2: (props: SubHeaderProps) => <SubHeader {...props} />,
+        pre: (props: CodeProps) => <Code {...props} />,
+        blockquote: (props: NoteProps) => <Note {...props} />,
+        ol: (props: OrderedListProps) => <OrderedList {...props} />,
+        Tabs: (props: TabsProps) => <Tabs {...props} />,
+      }}
+    />
+  );
 };

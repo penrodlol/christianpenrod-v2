@@ -2,12 +2,15 @@
 
 import {
   Children,
+  FC,
+  HTMLAttributes,
   isValidElement,
-  PropsWithChildren,
   ReactElement,
 } from 'react';
 
-export const OrderedList = ({ children }: PropsWithChildren) => (
+export type OrderedListProps = HTMLAttributes<HTMLOListElement>;
+
+export const OrderedList: FC<OrderedListProps> = ({ children }) => (
   <ol className="flex flex-col gap-2 p-0">
     {Children.toArray(children)
       .filter(isValidElement)

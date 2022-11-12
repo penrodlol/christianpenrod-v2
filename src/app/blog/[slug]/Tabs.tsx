@@ -2,8 +2,9 @@
 
 import {
   Children,
+  FC,
+  HTMLAttributes,
   KeyboardEvent,
-  PropsWithChildren,
   useCallback,
   useId,
   useState,
@@ -14,11 +15,11 @@ const active =
   'after:left-0 after:right-0 after:z-2 after:h-1 after:rounded-md ' +
   'after:bg-brand-2';
 
-export interface TabsProps extends PropsWithChildren {
+export interface TabsProps extends HTMLAttributes<HTMLDivElement> {
   values: Array<string>;
 }
 
-export const Tabs = ({ values, children }: TabsProps) => {
+export const Tabs: FC<TabsProps> = ({ values, children }) => {
   const uid = useId();
 
   const [activeTab, setActiveTab] = useState(values[0]);
