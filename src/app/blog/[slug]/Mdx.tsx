@@ -20,7 +20,7 @@ export const MDX: FC<MDXProps> = ({ content }) => {
     <MDX
       components={{
         p: ({ children }) => <p className="!leading-9 text-base">{children}</p>,
-        em: ({ children }) => <em className="font-fancy">{children}</em>,
+        em: ({ children }) => <em className="tracking-wider">{children}</em>,
         a: (props: AnchorProps) => <Anchor {...props} />,
         h2: (props: SubHeaderProps) => <SubHeader {...props} />,
         pre: (props: CodeProps) => <Code {...props} />,
