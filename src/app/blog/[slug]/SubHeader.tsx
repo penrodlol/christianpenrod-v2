@@ -2,7 +2,7 @@
 
 import { Link } from 'lucide-react';
 import HashLink from 'next/link';
-import { FC, HTMLAttributes } from 'react';
+import { Children, FC, HTMLAttributes } from 'react';
 
 export type SubHeaderProps = HTMLAttributes<HTMLHeadingElement>;
 
@@ -12,9 +12,9 @@ export const SubHeader: FC<SubHeaderProps> = ({ id, children }) => (
       href={{ hash: id }}
       className="absolute left-[-40px] top-1/2 hidden -translate-y-1/2 pr-4 text-brand-2
                  opacity-0 group-hover:opacity-100 lg:block"
-      // aria-label={Children.only(children)?.toString()}
+      aria-label={Children.toArray(children)[0].toString()}
     >
-      <Link className="h-7 w-7" strokeWidth="3" />
+      <Link className="h-7 w-7" strokeWidth="3" aria-hidden />
     </HashLink>
     <h2 className="text-accent-2 text-4xl">{children}</h2>
   </div>
