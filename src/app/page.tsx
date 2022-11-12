@@ -5,11 +5,13 @@ import { GithubProject } from '@ui/GithubProject';
 import { GithubStats } from '@ui/GithubStats';
 import { Line } from '@ui/Line';
 import { Posts } from '@ui/Posts';
+import { getSortedPosts } from '@utils/contentlayer/posts';
 import { getProfile } from '@utils/octokit/profile';
 import { ArrowRight } from 'lucide-react';
 
 const HomePage = async () => {
   const profile = await getProfile();
+  const posts = getSortedPosts(3);
 
   return (
     <div className="flex flex-col gap-fluid-6">
@@ -55,7 +57,7 @@ const HomePage = async () => {
       </div>
       <section className="flex flex-col gap-fluid-2">
         <h3 className="text-2 text-xl">Recent Posts</h3>
-        <Posts limit={3} />
+        <Posts posts={posts} />
       </section>
     </div>
   );

@@ -1,37 +1,43 @@
 import { Line } from '@ui/Line';
-import { readdirSync } from 'fs';
-import path from 'path';
+import { getPost } from '@utils/contentlayer/posts';
+import { allPosts } from 'contentlayer/generated';
+import { Header } from './Header';
+import { Pagination } from './Pagination';
+import { Repo } from './Repo';
+import { SubHeaderIntroduction } from './SubHeader';
+import { Toc } from './Toc';
 import { Views } from './Views';
 
-export const generateStaticParams = async () => {
-  const posts = readdirSync(path.join(process.cwd(), 'content', 'posts'));
-  return posts.map((post) => ({ slug: post.replace(/\.mdx$/, '') }));
-};
+export const generateStaticParams = () =>
+  allPosts.map((post) => ({ slug: post.slug }));
 
 const BlogSlugPage = async ({ params }: { params: { slug: string } }) => {
+  const post = getPost(params.slug);
+
   return (
     <div className="flex gap-28">
       <article className="my-0 min-w-0 max-w-screen-md">
-        {/* <Header post={post} /> */}
+        <Header post={post} />
         <div className="mx-auto mt-fluid-5 flex flex-col gap-12 px-fluid-1">
           {/* <MDX content={post.body.code} /> */}
-          {/* {repo && <Repo repo={repo} />} */}
+          {/* @ts-expect-error Server Component */}
+          {post.repo && <Repo name={post.repo} />}
           <div className="self-end">
             {/* @ts-expect-error Server Component */}
             <Views slug={params.slug} />
           </div>
           <Line />
-          {/* <Pagination prev={post.prev} next={post.next} /> */}
+          <Pagination prev={post.prev} next={post.next} />
         </div>
       </article>
-      {/* {post.headings && (
+      {post.headings && (
         <>
           <SubHeaderIntroduction />
           <div className="sticky top-28 hidden self-start xl:block">
             <Toc headings={post.headings} />
           </div>
         </>
-      )} */}
+      )}
     </div>
   );
 };
