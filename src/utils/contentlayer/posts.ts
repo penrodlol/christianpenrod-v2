@@ -23,7 +23,7 @@ export const getPost = (slug: string) => {
   return {
     ...post,
     published: dayjs(post.published).format('MMM Do, YYYY'),
-    headings: post.headings as Array<string> | undefined,
+    headings: post.headings as Array<string>,
     prev: prev ? pick(prev, ['slug', 'title']) : null,
     next: next ? pick(next, ['slug', 'title']) : null,
   };

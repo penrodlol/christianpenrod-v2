@@ -31,14 +31,12 @@ const BlogSlugPage = async ({ params }: { params: { slug: string } }) => {
           <Pagination prev={post.prev} next={post.next} />
         </div>
       </article>
-      {post.headings && (
-        <>
-          <SubHeaderIntroduction />
-          <div className="sticky top-28 hidden self-start xl:block">
-            <Toc headings={post.headings} />
-          </div>
-        </>
-      )}
+      <div>
+        <SubHeaderIntroduction />
+        <div className="sticky top-28 hidden self-start xl:block">
+          <Toc headings={post.headings} />
+        </div>
+      </div>
     </div>
   );
 };
