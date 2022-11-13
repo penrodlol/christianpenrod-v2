@@ -1,6 +1,5 @@
 import { defineDocumentType, makeSource } from 'contentlayer/source-files';
 import readingTime from 'reading-time';
-import rehypeExternalLinks from 'rehype-external-links';
 import rehypeSlug from 'rehype-slug';
 import remarkPrism from 'remark-prism';
 
@@ -48,14 +47,7 @@ export default makeSource({
   contentDirPath: 'content',
   documentTypes: [Post, Role],
   mdx: {
-    rehypePlugins: [
-      rehypeSlug,
-      () =>
-        rehypeExternalLinks({
-          target: '_blank',
-          rel: ['nofollow', 'noopener', 'noreferrer'],
-        }),
-    ],
+    rehypePlugins: [rehypeSlug],
     remarkPlugins: [() => remarkPrism({ transformInlineCode: true })],
   },
 });
