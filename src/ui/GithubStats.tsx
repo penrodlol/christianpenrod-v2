@@ -1,6 +1,6 @@
 'use client';
 
-import { GetProfile } from '@utils/octokit/profile';
+import { GetProfile } from '@lib/octokit/profile';
 import { Bug, Clock, Code2, GitPullRequest, Star, Users } from 'lucide-react';
 import { FC } from 'react';
 

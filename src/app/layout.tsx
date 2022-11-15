@@ -5,7 +5,11 @@ import 'prism-theme-vars/base.css';
 import { PropsWithChildren } from 'react';
 import 'tailwindcss/tailwind.css';
 
-const serif = Nunito({ weight: ['600', '800'], variable: '--font-serif' });
+const serif = Nunito({
+  weight: ['600', '800'],
+  subsets: ['cyrillic'],
+  variable: '--font-serif',
+});
 
 const RootLayout = ({ children }: PropsWithChildren) => (
   <html lang="en" className={serif.variable}>

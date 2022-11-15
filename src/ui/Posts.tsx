@@ -1,13 +1,13 @@
 'use client';
 
-import { GetSortedPosts } from '@utils/contentlayer/posts';
+import { GetPosts } from '@lib/contentlayer/posts';
 import Link from 'next/link';
 import { FC } from 'react';
 import { Chip } from './Chip';
 import { Line } from './Line';
 
 export interface PostsProps {
-  posts: GetSortedPosts;
+  posts: GetPosts;
 }
 
 export const Posts: FC<PostsProps> = ({ posts }) => (

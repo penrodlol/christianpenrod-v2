@@ -1,6 +1,6 @@
 ---
 title: Tailwind CSS Responsive Design Without Breakpoints
-published: 2022-09-17
+published: Sep 17th, 2022
 description:
   Is your Tailwind CSS bloated with too many breakpoints? Let's solve this by
   implementing a fluid responsive design system via the power of CSS Clamp!
@@ -13,8 +13,8 @@ repo: tailwindcss-fluid-responsive-design
 Let's begin by looking at a common responsive design pattern in Tailwind CSS:
 
 ```html
-<div class="p-2 m-3 md:p-4 md:m-4 xl:p-6 xl:m-6">
-  <h1 class="text-base md:text-xl xl:text-2xl mb-2 md:mb-4 xl:mb-6">Title</h1>
+<div class="m-3 p-2 md:m-4 md:p-4 xl:m-6 xl:p-6">
+  <h1 class="mb-2 text-base md:mb-4 md:text-xl xl:mb-6 xl:text-2xl">Title</h1>
   <p class="text-sm md:text-lg xl:text-2xl">Lorem ipsum dolor sit amet.</p>
 </div>
 ```
@@ -91,7 +91,7 @@ With our fluid responsive design configured, lets jump back to our original HTML
 to remove those breakpoints:
 
 ```html
-<div class="p-fluid-1 m-fluid-2">
+<div class="m-fluid-2 p-fluid-1">
   <h1 class="text-fluid-2 mb-fluid-2">Title</h1>
   <p class="text-fluid-1">Lorem ipsum dolor sit amet.</p>
 </div>

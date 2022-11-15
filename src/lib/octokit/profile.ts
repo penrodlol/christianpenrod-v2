@@ -7,7 +7,6 @@ import {
   Repository,
   RepositoryConnection,
 } from '@octokit/graphql-schema';
-import dayjs from '@utils/dayjs';
 import { octokit } from '.';
 
 interface User {
@@ -25,7 +24,8 @@ interface User {
 export type GetProfile = Awaited<ReturnType<typeof getProfile>>;
 
 export const getProfile = async () => {
-  const from = dayjs().subtract(1, 'year').toISOString();
+  const lastYear = new Date().setFullYear(new Date().getFullYear() - 1);
+  const from = new Date(lastYear).toISOString();
   const { user } = await octokit<User>(QUERY, { from });
 
   const stars = user.reposForStars.nodes as Array<Repository>;

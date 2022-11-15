@@ -1,4 +1,4 @@
-import { prisma } from '@utils/prisma';
+import { prisma } from '@lib/prisma';
 import { Eye } from 'lucide-react';
 
 export const Views = async ({ slug: post }: { slug: string }) => {

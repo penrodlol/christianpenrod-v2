@@ -4,15 +4,7 @@ const { withContentlayer } = require('next-contentlayer');
 const nextConfig = withContentlayer({
   reactStrictMode: true,
   swcMinify: true,
-  experimental: {
-    appDir: true,
-    fontLoaders: [
-      {
-        loader: '@next/font/google',
-        options: { subsets: ['cyrillic'] },
-      },
-    ],
-  },
+  experimental: { appDir: true },
 });
 
 module.exports = nextConfig;

@@ -1,5 +1,5 @@
+import { getPost } from '@lib/contentlayer/posts';
 import { Line } from '@ui/Line';
-import { getPost } from '@utils/contentlayer/posts';
 import { allPosts } from 'contentlayer/generated';
 import { Header } from './Header';
 import { MDX } from './Mdx';

@@ -1,6 +1,5 @@
 'use client';
 
-import { GetSortedRoles } from '@utils/contentlayer/roles';
 import { useMDXComponent } from 'next-contentlayer/hooks';
 import { FC, PropsWithChildren } from 'react';
 
@@ -18,7 +17,7 @@ const components = {
 };
 
 export interface MDXProps {
-  content: GetSortedRoles[number]['body']['code'];
+  content: string;
 }
 
 export const MDX: FC<MDXProps> = ({ content }) => {

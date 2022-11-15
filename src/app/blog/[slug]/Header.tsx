@@ -1,6 +1,6 @@
 'use client';
 
-import { GetPost } from '@utils/contentlayer/posts';
+import { GetPost } from '@lib/contentlayer/posts';
 import { Calendar, Clock } from 'lucide-react';
 import { FC } from 'react';
 

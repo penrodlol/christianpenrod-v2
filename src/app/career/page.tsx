@@ -1,9 +1,10 @@
 import { Title } from '@ui/Title';
-import { getSortedRoles } from '@utils/contentlayer/roles';
+import { allRoles } from 'contentlayer/generated';
+import sortBy from 'just-sort-by';
 import { MDX } from './Mdx';
 
 const CareerPage = () => {
-  const roles = getSortedRoles();
+  const roles = sortBy(allRoles, 'slug').reverse();
 
   return (
     <>
@@ -13,7 +14,7 @@ const CareerPage = () => {
           <div key={role._id} className="rounded-md bg-2 p-7 elevation-10">
             <h3 className="text-2xl">{role.company}</h3>
             <h4 className="text-2 text-lg">
-              {role.start} - {role.end}
+              {role.start} - {role.end ?? 'Present'}
             </h4>
             <div className="relative">
               <div className="absolute top-5 bottom-1 w-2 rounded-md bg-brand-2 opacity-30" />

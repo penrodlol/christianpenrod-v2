@@ -1,6 +1,6 @@
 'use client';
 
-import { GetProfile } from '@utils/octokit/profile';
+import { GetProfile } from '@lib/octokit/profile';
 import { Book } from 'lucide-react';
 import Link from 'next/link';
 import { FC } from 'react';

@@ -1,9 +1,9 @@
+import { getPosts } from '@lib/contentlayer/posts';
 import { Posts } from '@ui/Posts';
 import { Title } from '@ui/Title';
-import { getSortedPosts } from '@utils/contentlayer/posts';
 
 const BlogPage = () => {
-  const posts = getSortedPosts();
+  const posts = getPosts();
 
   return (
     <>

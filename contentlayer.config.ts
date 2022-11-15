@@ -9,7 +9,7 @@ export const Post = defineDocumentType(() => ({
   contentType: 'mdx',
   fields: {
     title: { type: 'string', required: true },
-    published: { type: 'date', required: true },
+    published: { type: 'string', required: true },
     description: { type: 'string', required: true },
     tags: { type: 'list', of: { type: 'string' }, required: true },
     repo: { type: 'string' },
@@ -17,7 +17,7 @@ export const Post = defineDocumentType(() => ({
   computedFields: {
     slug: {
       type: 'string',
-      resolve: (post) => post._raw.flattenedPath.replace('posts/', ''),
+      resolve: (post) => post._raw.flattenedPath.replace(/^posts\/\d+-/, ''),
     },
     readingTime: {
       type: 'number',
@@ -38,8 +38,8 @@ export const Role = defineDocumentType(() => ({
   contentType: 'mdx',
   fields: {
     company: { type: 'string', required: true },
-    start: { type: 'date', required: true },
-    end: { type: 'date' },
+    start: { type: 'string', required: true },
+    end: { type: 'string' },
   },
 }));
 
