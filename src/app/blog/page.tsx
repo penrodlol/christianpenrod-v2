@@ -1,6 +1,6 @@
-import { getPosts } from '@lib/contentlayer/posts';
 import { Posts } from '@ui/Posts';
 import { Title } from '@ui/Title';
+import { getPosts } from '@utils/contentlayer/posts';
 
 const BlogPage = () => {
   const posts = getPosts();

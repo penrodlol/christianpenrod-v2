@@ -1,4 +1,4 @@
-import { getRepo, GetRepo } from '@lib/octokit/repo';
+import { getRepo, GetRepo } from '@utils/octokit/repo';
 import { Book, GitFork, Star } from 'lucide-react';
 import Link from 'next/link';
 

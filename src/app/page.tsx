@@ -1,12 +1,12 @@
 import env from '@env/client.mjs';
-import { getPosts } from '@lib/contentlayer/posts';
-import { getProfile } from '@lib/octokit/profile';
 import { Anchor } from '@ui/Anchor';
 import { Contact } from '@ui/Contact';
 import { GithubProject } from '@ui/GithubProject';
 import { GithubStats } from '@ui/GithubStats';
 import { Line } from '@ui/Line';
 import { Posts } from '@ui/Posts';
+import { getPosts } from '@utils/contentlayer/posts';
+import { getProfile } from '@utils/octokit/profile';
 import { ArrowRight } from 'lucide-react';
 
 const HomePage = async () => {

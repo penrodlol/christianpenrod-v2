@@ -1,6 +1,6 @@
 'use client';
 
-import { GetPosts } from '@lib/contentlayer/posts';
+import { GetPosts } from '@utils/contentlayer/posts';
 import Link from 'next/link';
 import { FC } from 'react';
 import { Chip } from './Chip';

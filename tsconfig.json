@@ -20,7 +20,7 @@
       "@components/*": ["src/components/*"],
       "@env/*": ["src/env/*"],
       "@ui/*": ["src/ui/*"],
-      "@lib/*": ["src/lib/*"],
+      "@utils/*": ["src/utils/*"],
       "contentlayer/generated": ["./.contentlayer/generated"]
     },
     "plugins": [{ "name": "next" }]

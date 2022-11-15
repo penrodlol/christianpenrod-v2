@@ -1,7 +1,7 @@
 'use client';
 
-import { GetPost } from '@lib/contentlayer/posts';
 import { Anchor, AnchorProps } from '@ui/Anchor';
+import { GetPost } from '@utils/contentlayer/posts';
 import { useMDXComponent } from 'next-contentlayer/hooks';
 import { FC } from 'react';
 import { Code, CodeProps } from './Code';

@@ -1,8 +1,8 @@
 'use client';
 
-import { GetPost } from '@lib/contentlayer/posts';
 import { NextAnchor } from '@ui/Anchor';
 import { Line } from '@ui/Line';
+import { GetPost } from '@utils/contentlayer/posts';
 import { FC } from 'react';
 
 export interface TocProps {

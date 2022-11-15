@@ -1,7 +1,7 @@
 'use client';
 
-import { GetPost } from '@lib/contentlayer/posts';
 import { NextAnchor } from '@ui/Anchor';
+import { GetPost } from '@utils/contentlayer/posts';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { FC } from 'react';
 
