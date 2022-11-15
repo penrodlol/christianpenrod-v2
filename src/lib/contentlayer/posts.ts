@@ -1,11 +1,11 @@
 import { pick } from 'contentlayer/client';
 import { allPosts, Post } from 'contentlayer/generated';
-import sortBy from 'just-sort-by';
 
 export type GetPosts = ReturnType<typeof getPosts>;
 export type GetPost = ReturnType<typeof getPost>;
 
-export const getPosts = () => sortBy(allPosts, '_id').reverse();
+export const getPosts = () =>
+  allPosts.sort((a, b) => b._id.localeCompare(a._id));
 
 export const getPost = (slug: string) => {
   const posts = getPosts();

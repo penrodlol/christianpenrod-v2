@@ -1,10 +1,9 @@
 import { Title } from '@ui/Title';
 import { allRoles } from 'contentlayer/generated';
-import sortBy from 'just-sort-by';
 import { MDX } from './Mdx';
 
 const CareerPage = () => {
-  const roles = sortBy(allRoles, 'slug').reverse();
+  const roles = allRoles.sort((a, b) => b._id.localeCompare(a._id));
 
   return (
     <>
