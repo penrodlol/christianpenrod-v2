@@ -11,13 +11,13 @@
     "postbuild": "next-sitemap"
   },
   "dependencies": {
-    "@next/font": "^13.0.3",
+    "@next/font": "^13.0.4",
     "@octokit/graphql": "^5.0.4",
     "@octokit/graphql-schema": "^12.21.0",
     "@prisma/client": "^4.5.0",
     "contentlayer": "^0.2.9",
     "lucide-react": "^0.93.0",
-    "next": "^13.0.3",
+    "next": "^13.0.4",
     "next-contentlayer": "^0.2.9",
     "prism-theme-vars": "^0.2.3",
     "react": "^18.2.0",
@@ -30,7 +30,6 @@
     "@typescript-eslint/eslint-plugin": "^5.37.0",
     "@typescript-eslint/parser": "^5.37.0",
     "autoprefixer": "^10.4.12",
-    "encoding": "^0.1.13",
     "eslint": "8.15.0",
     "eslint-config-next": "^13.0.0",
     "next-sitemap": "^3.1.22",
