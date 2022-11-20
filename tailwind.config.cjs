@@ -7,7 +7,7 @@ const internalPlugin = require('./tailwind.plugins.cjs');
 module.exports = {
   content: ['./src/app/**/*.tsx', './src/ui/**/*.tsx'],
   theme: {
-    fontFamily: { serif: ['var(--font-serif), system-ui'] },
+    fontFamily: { serif: ['var(--font-serif)'] },
     extend: {
       textColor: { 1: '#cdd6f4', 2: '#bac2de', 3: '#a6adc8' },
       backgroundColor: { 1: '#363a4f', 2: '#232634', 3: '#181926' },

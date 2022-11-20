@@ -9,6 +9,7 @@ const serif = Nunito({
   weight: ['600', '800'],
   subsets: ['cyrillic'],
   variable: '--font-serif',
+  fallback: ['system-ui'],
 });
 
 const RootLayout = ({ children }: PropsWithChildren) => (
