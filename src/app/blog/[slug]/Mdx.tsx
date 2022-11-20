@@ -11,7 +11,7 @@ import { SubHeader, SubHeaderProps } from './SubHeader';
 import { Tabs, TabsProps } from './Tabs';
 
 export interface MDXProps {
-  content: GetPost['body']['code'];
+  content: NonNullable<GetPost>['body']['code'];
 }
 
 export const MDX: FC<MDXProps> = ({ content }) => {

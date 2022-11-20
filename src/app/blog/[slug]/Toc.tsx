@@ -6,7 +6,7 @@ import { GetPost } from '@utils/contentlayer/posts';
 import { FC } from 'react';
 
 export interface TocProps {
-  headings: NonNullable<GetPost['headings']>;
+  headings: NonNullable<GetPost>['headings'];
 }
 
 export const Toc: FC<TocProps> = ({ headings }) => (

@@ -1,6 +1,7 @@
 import { Line } from '@ui/Line';
 import { getPost } from '@utils/contentlayer/posts';
 import { allPosts } from 'contentlayer/generated';
+import { notFound } from 'next/navigation';
 import { Header } from './Header';
 import { MDX } from './Mdx';
 import { Pagination } from './Pagination';
@@ -14,6 +15,8 @@ export const generateStaticParams = () =>
 
 const BlogSlugPage = async ({ params }: { params: { slug: string } }) => {
   const post = getPost(params.slug);
+
+  if (!post) notFound();
 
   return (
     <div className="flex gap-28">

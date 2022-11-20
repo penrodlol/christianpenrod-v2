@@ -6,8 +6,8 @@ import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { FC } from 'react';
 
 export interface PaginationProps {
-  prev: GetPost['prev'];
-  next: GetPost['next'];
+  prev: NonNullable<GetPost>['prev'];
+  next: NonNullable<GetPost>['next'];
 }
 
 export const Pagination: FC<PaginationProps> = ({ prev, next }) => (

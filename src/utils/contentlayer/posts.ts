@@ -1,5 +1,5 @@
 import { pick } from 'contentlayer/client';
-import { allPosts, Post } from 'contentlayer/generated';
+import { allPosts } from 'contentlayer/generated';
 
 export type GetPosts = ReturnType<typeof getPosts>;
 export type GetPost = ReturnType<typeof getPost>;
@@ -9,7 +9,10 @@ export const getPosts = () =>
 
 export const getPost = (slug: string) => {
   const posts = getPosts();
-  const post = posts.find((post) => post.slug === slug) as NonNullable<Post>;
+  const post = posts.find((post) => post.slug === slug);
+
+  if (!post) return null;
+
   const prev = posts[posts.indexOf(post) + 1];
   const next = posts[posts.indexOf(post) - 1];
 

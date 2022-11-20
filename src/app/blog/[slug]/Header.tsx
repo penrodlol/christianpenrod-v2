@@ -5,7 +5,7 @@ import { Calendar, Clock } from 'lucide-react';
 import { FC } from 'react';
 
 export interface HeaderProps {
-  post: GetPost;
+  post: NonNullable<GetPost>;
 }
 
 export const Header: FC<HeaderProps> = ({ post }) => (
