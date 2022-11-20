@@ -2,6 +2,7 @@
 const fluidTypePlugin = require('tailwindcss-fluid-type');
 const elevationPlugin = require('tailwindcss-elevation')(['responsive']);
 const internalPlugin = require('./tailwind.plugins.cjs');
+const { frappe, mocha, macchiato } = require('@catppuccin/palette').variants;
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -9,10 +10,22 @@ module.exports = {
   theme: {
     fontFamily: { serif: ['var(--font-serif)'] },
     extend: {
-      textColor: { 1: '#cdd6f4', 2: '#bac2de', 3: '#a6adc8' },
-      backgroundColor: { 1: '#363a4f', 2: '#232634', 3: '#181926' },
+      textColor: {
+        1: mocha.text.hex,
+        2: mocha.subtext1.hex,
+        3: mocha.subtext0.hex,
+      },
+      backgroundColor: {
+        1: macchiato.surface0.hex,
+        2: frappe.crust.hex,
+        3: macchiato.crust.hex,
+      },
       colors: {
-        brand: { 1: '#b4befe', 2: '#b7bdf8', 3: '#babbf1' },
+        brand: {
+          1: mocha.lavender.hex,
+          2: macchiato.lavender.hex,
+          3: frappe.lavender.hex,
+        },
         accent: { 1: '#e3d6f5', 2: '#ddc9f8' },
       },
       spacing: {

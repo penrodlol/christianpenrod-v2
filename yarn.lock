@@ -17,6 +17,11 @@
   dependencies:
     regenerator-runtime "^0.13.10"
 
+"@catppuccin/palette@^0.1.5":
+  version "0.1.5"
+  resolved "https://registry.yarnpkg.com/@catppuccin/palette/-/palette-0.1.5.tgz#79350555c86707913942bf4feaac9fe9bc0c1d7c"
+  integrity sha512-IQLsZwXDMpLc5CFGjIMa/gFnnFL/QLB280F11B51JweZHerZ/FgPXdIR4eQqn1CgrqI3wGfgnj1LVPx12DV/Uw==
+
 "@contentlayer/cli@0.2.9":
   version "0.2.9"
   resolved "https://registry.yarnpkg.com/@contentlayer/cli/-/cli-0.2.9.tgz#3e57f9752758649a808810f329f5f999e11c3649"
