@@ -25,6 +25,7 @@
   },
   "devDependencies": {
     "@catppuccin/palette": "^0.1.5",
+    "@netlify/plugin-nextjs": "^4.28.4-appdir.0",
     "@types/node": "^17.0.35",
     "@types/react": "^18.0.9",
     "@types/remark-prism": "^1.3.3",
