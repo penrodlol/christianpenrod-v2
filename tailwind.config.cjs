@@ -2,7 +2,7 @@
 const fluidTypePlugin = require('tailwindcss-fluid-type');
 const elevationPlugin = require('tailwindcss-elevation')(['responsive']);
 const internalPlugin = require('./tailwind.plugins.cjs');
-const { frappe, mocha, macchiato } = require('@catppuccin/palette').variants;
+const { frappe, macchiato, mocha } = require('@catppuccin/palette').variants;
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
