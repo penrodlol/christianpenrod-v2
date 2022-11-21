@@ -16,7 +16,7 @@ export const NotFound: FC<NotFoundProps> = ({ page, title }) => (
     </h1>
     <h2 className="text-3xl">{title ?? 'Page Not Found'}</h2>
     <Link
-      href={`/${page?.toLowerCase()}` ?? '/'}
+      href={page ? `/${page.toLowerCase()}` : '/'}
       className="group mt-fluid-5 flex items-center justify-center gap-5 text-xl"
     >
       <ArrowLeft className="h-8 w-8 stroke-accent-2 group-hover:stroke-accent-1" />

@@ -6,17 +6,20 @@ import { usePathname } from 'next/navigation';
 const TITLE = 'Christian Penrod | Front-End Web Developer';
 const DESC = 'Developing for the web since 2015, based in Pittsburgh PA.';
 
-export interface SEOProps {
+export interface HeadProps {
   title?: string;
   description?: string;
 }
 
-export const SEO = ({ title, description }: SEOProps) => {
+export const Head = ({ title, description }: HeadProps) => {
   const pathname = usePathname();
 
   return (
     <>
       <title>{title ? `${title} | Christian Penrod` : TITLE}</title>
+
+      <meta charSet="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
 
       <meta name="title" content={title ?? TITLE} />
       <meta name="description" content={description ?? DESC} />

@@ -1,5 +1,5 @@
-import { SEO } from '@ui/Seo';
+import { Head as _Head } from '@ui/Head';
 
-const Head = () => <SEO title="Blog" />;
+const Head = () => <_Head title="Blog" />;
 
 export default Head;
