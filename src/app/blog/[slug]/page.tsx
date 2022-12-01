@@ -25,7 +25,7 @@ const BlogSlugPage = async ({ params }: { params: { slug: string } }) => {
         <div className="mx-auto mt-fluid-5 flex flex-col gap-12 px-fluid-1">
           <MDX content={post.body.code} />
           {/* @ts-expect-error Server Component */}
-          {post.repo && <Repo name={post.repo} />}
+          {post.repo && <Repo slug={post.repo} />}
           <div className="self-end">
             {/* @ts-expect-error Server Component */}
             <Views slug={params.slug} />

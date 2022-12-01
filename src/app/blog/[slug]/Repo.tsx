@@ -1,13 +1,11 @@
-import { getRepo, GetRepo } from '@utils/octokit/repo';
+import env from '@env/server.mjs';
+import { Repository } from '@octokit/graphql-schema';
+import { octokit } from '@utils/octokit';
 import { Book, GitFork, Star } from 'lucide-react';
 import Link from 'next/link';
 
-export interface RepoProps {
-  name: NonNullable<GetRepo['name']>;
-}
-
-export const Repo = async ({ name }: RepoProps) => {
-  const repo = await getRepo(name);
+export const Repo = async ({ slug }: { slug: string }) => {
+  const repo = await getRepo(slug);
 
   return (
     <Link
@@ -43,4 +41,17 @@ export const Repo = async ({ name }: RepoProps) => {
       </div>
     </Link>
   );
+};
+
+const getRepo = async (slug: string) => {
+  const query = `query { user(login: "${env.GITHUB_USERNAME}") { repo: repository(name: "${slug}") { id name description url stargazerCount forkCount primaryLanguage { name } } } }`;
+  return octokit<{ user: { repo: Repository } }>(query).then(({ user }) => ({
+    id: user.repo.id,
+    name: user.repo.name,
+    description: user.repo.description,
+    url: user.repo.url,
+    stars: user.repo.stargazerCount,
+    forks: user.repo.forkCount,
+    language: user.repo.primaryLanguage?.name,
+  }));
 };

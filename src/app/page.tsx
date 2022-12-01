@@ -1,16 +1,14 @@
 import env from '@env/client.mjs';
 import { Anchor } from '@ui/Anchor';
 import { Contact } from '@ui/Contact';
-import { GithubProject } from '@ui/GithubProject';
-import { GithubStats } from '@ui/GithubStats';
 import { Line } from '@ui/Line';
 import { Posts } from '@ui/Posts';
 import { getPosts } from '@utils/contentlayer/posts';
-import { getProfile } from '@utils/octokit/profile';
 import { ArrowRight } from 'lucide-react';
+import { Projects } from './Projects';
+import { Stats } from './Stats';
 
 const HomePage = async () => {
-  const profile = await getProfile();
   const posts = getPosts().slice(0, 3);
 
   return (
@@ -41,17 +39,13 @@ const HomePage = async () => {
         <div className="flex flex-col gap-fluid-4 lg:w-2/5">
           <section className="flex flex-col gap-2">
             <h3 className="text-2 text-xl">Projects</h3>
-            <ul className="flex flex-col gap-4">
-              {profile.projects.map((project) => (
-                <li key={project.name}>
-                  <GithubProject project={project} />
-                </li>
-              ))}
-            </ul>
+            {/* @ts-expect-error Server Component */}
+            <Projects />
           </section>
           <section className="flex flex-col gap-2">
             <h3 className="text-2 text-xl">Open Source</h3>
-            <GithubStats user={profile.user} />
+            {/* @ts-expect-error Server Component */}
+            <Stats />
           </section>
         </div>
       </div>
