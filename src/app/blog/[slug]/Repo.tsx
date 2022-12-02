@@ -2,13 +2,12 @@ import env from '@env/server.mjs';
 import { Repository } from '@octokit/graphql-schema';
 import { octokit } from '@utils/octokit';
 import { Book, GitFork, Star } from 'lucide-react';
-import Link from 'next/link';
 
 export const Repo = async ({ slug }: { slug: string }) => {
   const repo = await getRepo(slug);
 
   return (
-    <Link
+    <a
       href={repo.url}
       className="group rounded-md bg-2 p-5 elevation-10 hover:outline-2
                  hover:outline-offset-4 hover:outline"
@@ -39,7 +38,7 @@ export const Repo = async ({ slug }: { slug: string }) => {
           <span className="font-semibold text-2">{repo.forks ?? 0}</span>
         </div>
       </div>
-    </Link>
+    </a>
   );
 };
 

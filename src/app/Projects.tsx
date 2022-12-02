@@ -3,7 +3,6 @@ import { PinnableItemConnection, Repository } from '@octokit/graphql-schema';
 import { Chip } from '@ui/Chip';
 import { octokit } from '@utils/octokit';
 import { Book } from 'lucide-react';
-import Link from 'next/link';
 
 export const Projects = async () => {
   const projects = await getProjects();
@@ -12,7 +11,7 @@ export const Projects = async () => {
     <ul className="flex flex-col gap-4">
       {projects.map((project) => (
         <li key={project.name}>
-          <Link
+          <a
             href={project.url}
             className="group flex flex-col gap-2 rounded-md bg-2 py-3 px-5 elevation-10 hover-card"
             target="_blank"
@@ -29,7 +28,7 @@ export const Projects = async () => {
               <Chip className="capitalize">{project.topic}</Chip>
             </div>
             <p className="text-2 text-sm">{project.description}</p>
-          </Link>
+          </a>
         </li>
       ))}
     </ul>
