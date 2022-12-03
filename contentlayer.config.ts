@@ -48,6 +48,6 @@ export default makeSource({
   documentTypes: [Post, Role],
   mdx: {
     rehypePlugins: [rehypeSlug],
-    remarkPlugins: [() => remarkPrism({ transformInlineCode: true })],
+    remarkPlugins: [[remarkPrism, { transformInlineCode: true }]],
   },
 });
