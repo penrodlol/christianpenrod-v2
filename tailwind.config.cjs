@@ -8,8 +8,8 @@ const { frappe, macchiato, mocha } = require('@catppuccin/palette').variants;
 module.exports = {
   content: ['./src/app/**/*.tsx', './src/ui/**/*.tsx'],
   theme: {
-    fontFamily: { serif: ['var(--font-serif)'] },
     extend: {
+      fontFamily: { sans: ['var(--font-nunito)'] },
       textColor: {
         1: mocha.text.hex,
         2: mocha.subtext1.hex,
