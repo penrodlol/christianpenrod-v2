@@ -32,7 +32,7 @@ module.exports = {
   prism: plugin(({ addBase, theme }) =>
     addBase({
       ':root': {
-        '--prism-font-family': theme('fontFamily.serif'),
+        '--prism-font-family': theme('fontFamily.sans'),
         '--prism-font-size': theme('fontSize.base'),
         '--prism-background': 'hsl(231.4, 20%, 6.9%)',
         '--prism-foreground': theme('textColor.2'),
