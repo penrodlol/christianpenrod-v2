@@ -23,7 +23,7 @@ const handler: Handler = async () => {
 
   return {
     statusCode: 200,
-    headers: { 'Content-Type': 'image/png' },
+    headers: { 'Content-Type': 'image/webp' },
     body: payload.toString('base64'),
     isBase64Encoded: true,
   };
