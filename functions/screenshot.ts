@@ -1,14 +1,16 @@
 import { Handler } from '@netlify/functions';
+import chromium from 'chrome-aws-lambda';
 import { launch, ScreenshotClip } from 'puppeteer';
 import sharp from 'sharp';
 
 const handler: Handler = async () => {
-  const url = process.env.NEXT_PUBLIC_URL;
+  const url = 'https://christianpenrod.com';
   if (!url) return { statusCode: 400, body: 'Missing URL' };
 
   const browser = await launch({
     defaultViewport: { width: 1920, height: 1280 },
-    args: ['--no-sandbox', '--disable-setuid-sandbox'],
+    args: chromium.args,
+    executablePath: await chromium.executablePath,
   });
 
   const page = await browser.newPage();
