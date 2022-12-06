@@ -1,6 +1,6 @@
 import { Handler } from '@netlify/functions';
 import chromium from 'chrome-aws-lambda';
-import { launch, ScreenshotClip } from 'puppeteer';
+import { launch, ScreenshotClip } from 'puppeteer-core';
 import sharp from 'sharp';
 
 const handler: Handler = async () => {
