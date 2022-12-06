@@ -1,7 +1,0 @@
-[build]
-  command = 'yarn build'
-  publish = ".next"
-  functions = "functions"
-
-[dev]
-  autoLaunch = false
