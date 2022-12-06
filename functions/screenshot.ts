@@ -1,13 +1,15 @@
 import { Handler } from '@netlify/functions';
-import { launch, ScreenshotClip, Viewport } from 'puppeteer';
+import { launch, ScreenshotClip } from 'puppeteer';
 import sharp from 'sharp';
 
 const handler: Handler = async () => {
   const url = process.env.NEXT_PUBLIC_URL;
   if (!url) return { statusCode: 400, body: 'Missing URL' };
 
-  const viewport: Viewport = { width: 1920, height: 1280 };
-  const browser = await launch({ defaultViewport: viewport });
+  const browser = await launch({
+    defaultViewport: { width: 1920, height: 1280 },
+    args: ['--no-sandbox', '--disable-setuid-sandbox'],
+  });
 
   const page = await browser.newPage();
   await page.goto(url, { waitUntil: 'domcontentloaded' });
