@@ -40,5 +40,6 @@ module.exports = {
     internalPlugin.scollbar,
     internalPlugin.focusVisible,
     internalPlugin.prism,
+    internalPlugin.evelation,
   ],
 };

@@ -12,7 +12,7 @@ const components = {
   h5: ({children}: PropsWithChildren) =>
     <h5 className="text-lg relative mt-6 before:content-[''] before:absolute before:top-[50%]
                    before:translate-y-[-50%] before:-left-6 before:translate-x-[-0.215rem] before:w-[0.95rem]
-                   before:h-[0.95rem] before:rounded-full before:bg-brand-2 before:elevation-10
+                   before:h-[0.95rem] before:rounded-full before:bg-brand-2 before:elevation-3
                    last-of-type:before:border-[0.2rem] last-of-type:before:border-brand-2
                    last-of-type:before:bg-transparent">
       {children}
@@ -23,7 +23,7 @@ export const RoleTimeline: FC<RoleTimelineProps> = ({ role }) => {
   const RoleMDX = useMDXComponent(role.body.code);
 
   return (
-    <div className="bg-2 rounded-md elevation-10 p-7">
+    <div className="bg-2 rounded-md elevation-3 p-7">
       <h3 className="text-2xl">{role.company}</h3>
       <h4 className="text-lg text-2">
         {role.start} - {role.end}

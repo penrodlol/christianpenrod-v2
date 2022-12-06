@@ -10,7 +10,7 @@ export interface PostGithubProps {
 export const PostGithub: FC<PostGithubProps> = ({ repo }) => (
   <Link href={repo.url} passHref>
     <a
-      className="group bg-2 elevation-10 rounded-md p-5 hover:outline
+      className="group bg-2 elevation-3 rounded-md p-5 hover:outline
                  hover:outline-2 hover:outline-offset-4"
       target="_blank"
       rel="nofollow noopener noreferrer"

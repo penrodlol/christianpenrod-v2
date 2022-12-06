@@ -15,7 +15,7 @@ export const Posts: FC<PostsProps> = ({ posts }) => (
         <Link href={`/blog/${post.slug}`} passHref>
           <a
             aria-label={`${post.title}. ${post.description}`}
-            className="group h-full relative flex flex-col bg-2 px-6 py-5 rounded-lg elevation-8
+            className="group h-full relative flex flex-col bg-2 px-6 py-5 rounded-lg elevation-2
                        hover:outline hover:outline-2 hover:outline-offset-4"
           >
             <div className="flex gap-2 flex-wrap mb-2">

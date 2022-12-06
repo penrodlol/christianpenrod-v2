@@ -8,7 +8,7 @@ export interface GithubStatsProps {
 
 export const GithubStats: FC<GithubStatsProps> = ({ user }) => (
   <div
-    className="flex flex-wrap justify-between gap-x-4 gap-y-1 bg-2 elevation-10
+    className="flex flex-wrap justify-between gap-x-4 gap-y-1 bg-2 elevation-3
                rounded-md py-4 px-6 text-sm"
   >
     <div className="flex flex-col gap-1">

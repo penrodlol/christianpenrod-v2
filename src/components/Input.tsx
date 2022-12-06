@@ -1,8 +1,8 @@
 import { FC, InputHTMLAttributes, TextareaHTMLAttributes } from 'react';
 
 const CLASSNAME =
-  'bg-3 caret-brand-2 rounded-md elevation-8 w-full py-2 px-4 ' +
-  'outline-none hover:elevation-10 text-base';
+  'bg-3 caret-brand-2 rounded-md elevation-2 w-full py-2 px-4 ' +
+  'outline-none hover:elevation-3 text-base';
 
 export const Input: FC<InputHTMLAttributes<HTMLInputElement>> = ({
   className,
