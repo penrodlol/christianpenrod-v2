@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const fluidTypePlugin = require('tailwindcss-fluid-type');
-const elevationPlugin = require('tailwindcss-elevation')(['responsive']);
 const internalPlugin = require('./tailwind.plugins.cjs');
 
 /** @type {import('tailwindcss').Config} */
@@ -38,7 +37,6 @@ module.exports = {
   },
   plugins: [
     fluidTypePlugin,
-    elevationPlugin,
     internalPlugin.scollbar,
     internalPlugin.focusVisible,
     internalPlugin.prism,
