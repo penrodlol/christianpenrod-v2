@@ -26,7 +26,7 @@ export const Contact = () => {
     <>
       <dialog
         ref={dialog}
-        className="w-[90%] max-w-screen-sm rounded-md bg-2 p-0 text-1 elevation-10
+        className="w-[90%] max-w-screen-sm rounded-md bg-2 p-0 text-1 elevation-3
                    backdrop:backdrop-blur-md"
         aria-modal="true"
         onClick={(e) => (e.target as Element).tagName === 'DIALOG' && close()}

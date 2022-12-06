@@ -72,4 +72,26 @@ module.exports = {
       },
     }),
   ),
+  evelation: plugin(({ addUtilities }) =>
+    addUtilities({
+      '.elevation-1': {
+        boxShadow:
+          '0 3px 5px -1px rgba(0,0,0,.2), ' +
+          '0 5px 8px 0 rgba(0,0,0,.14), ' +
+          '0 1px 14px 0 rgba(0,0,0,.12)',
+      },
+      '.elevation-2': {
+        boxShadow:
+          '0 5px 5px -3px rgba(0,0,0,.2), ' +
+          '0 8px 10px 1px rgba(0,0,0,.14), ' +
+          '0 3px 14px 2px rgba(0,0,0,.12)',
+      },
+      '.elevation-3': {
+        boxShadow:
+          '0 3px 5px -1px rgba(0,0,0,.2), ' +
+          '0 5px 8px 0 rgba(0,0,0,.14), ' +
+          '0 1px 14px 0 rgba(0,0,0,.12)',
+      },
+    }),
+  ),
 };

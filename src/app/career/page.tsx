@@ -10,7 +10,7 @@ const CareerPage = () => {
       <Title title="Career" subtitle="What has Christian done?" />
       <section className="mx-auto flex max-w-max flex-col gap-8">
         {roles.map((role) => (
-          <div key={role._id} className="rounded-md bg-2 p-7 elevation-10">
+          <div key={role._id} className="rounded-md bg-2 p-7 elevation-3">
             <h3 className="text-2xl">{role.company}</h3>
             <h4 className="text-2 text-lg">
               {role.start} - {role.end ?? 'Present'}

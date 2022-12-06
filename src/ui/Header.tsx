@@ -5,7 +5,7 @@ import { useCallback, useRef } from 'react';
 import { NextAnchor } from './Anchor';
 
 export const Header = () => (
-  <header className="sticky top-0 left-0 right-0 z-50 bg-3 elevation-5">
+  <header className="sticky top-0 left-0 right-0 z-50 bg-3 elevation-1">
     <nav className="mx-auto my-0 flex max-w-screen-2xl items-center justify-between py-2 px-fluid-4">
       <Route href="/" aria-label="Home">
         <svg

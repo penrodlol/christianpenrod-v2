@@ -14,7 +14,7 @@ export const Stats = async () => {
   const user = await getUser();
 
   return (
-    <div className="flex flex-wrap justify-between gap-x-4 gap-y-1 rounded-md bg-2 py-4 px-6 text-sm elevation-10">
+    <div className="flex flex-wrap justify-between gap-x-4 gap-y-1 rounded-md bg-2 py-4 px-6 text-sm elevation-3">
       <div className="flex flex-col gap-1">
         <Stat label="Total Commits:" data={user.commits} icon={<Clock />} />
         <Stat label="Total Stars:" data={user.stars} icon={<Star />} />

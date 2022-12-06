@@ -9,7 +9,7 @@ export interface HeaderProps {
 }
 
 export const Header: FC<HeaderProps> = ({ post }) => (
-  <div className="flex flex-col justify-between rounded-md bg-2 elevation-10 sm:flex-row">
+  <div className="flex flex-col justify-between rounded-md bg-2 elevation-3 sm:flex-row">
     <div className="p-fluid-3 sm:self-center">
       <h1 className="text-2xl">{post.title}</h1>
     </div>

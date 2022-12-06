@@ -8,7 +8,7 @@ import { Anchor } from './Anchor';
 export const Footer = () => (
   <footer
     className="relative bg-3 px-4 pt-6 pb-4 before:absolute before:inset-0
-             before:z-10 before:rotate-180 before:content-[''] before:elevation-5"
+             before:z-10 before:rotate-180 before:content-[''] before:elevation-1"
   >
     <div className="relative z-20 flex flex-col gap-6 font-semibold text-2 text-sm">
       <div className="flex justify-center gap-20">

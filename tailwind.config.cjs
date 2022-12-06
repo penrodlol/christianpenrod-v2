@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const fluidTypePlugin = require('tailwindcss-fluid-type');
-const elevationPlugin = require('tailwindcss-elevation')(['responsive']);
 const internalPlugin = require('./tailwind.plugins.cjs');
 const { frappe, macchiato, mocha } = require('@catppuccin/palette').variants;
 
@@ -49,11 +48,11 @@ module.exports = {
   future: { hoverOnlyWhenSupported: true },
   plugins: [
     fluidTypePlugin,
-    elevationPlugin,
     internalPlugin.scollbar,
     internalPlugin.focusVisible,
     internalPlugin.prism,
     internalPlugin.hoverCard,
     internalPlugin.svg,
+    internalPlugin.evelation,
   ],
 };

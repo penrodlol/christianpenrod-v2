@@ -46,7 +46,7 @@ export const Tabs: FC<TabsProps> = ({ values, children }) => {
   );
 
   return (
-    <div className="rounded-md bg-1 elevation-10">
+    <div className="rounded-md bg-1 elevation-3">
       <div
         className="flex justify-between overflow-auto"
         role="tablist"

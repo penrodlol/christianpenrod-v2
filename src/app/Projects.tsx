@@ -13,7 +13,7 @@ export const Projects = async () => {
         <li key={project.name}>
           <a
             href={project.url}
-            className="group flex flex-col gap-2 rounded-md bg-2 py-3 px-5 elevation-10 hover-card"
+            className="group flex flex-col gap-2 rounded-md bg-2 py-3 px-5 hover-card elevation-3"
             target="_blank"
             rel="nofollow noopener noreferrer"
             aria-label={`${project.name}. ${project.description}`}

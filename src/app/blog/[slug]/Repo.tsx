@@ -9,7 +9,7 @@ export const Repo = async ({ slug }: { slug: string }) => {
   return (
     <a
       href={repo.url}
-      className="group rounded-md bg-2 p-5 elevation-10 hover:outline-2
+      className="group rounded-md bg-2 p-5 elevation-3 hover:outline-2
                  hover:outline-offset-4 hover:outline"
       target="_blank"
       rel="nofollow noopener noreferrer"
